@@ -22,7 +22,7 @@ namespace CD_ConexionDatos
         {
             if (con == null)
             {
-                con = new ConnectionBD();
+                con = new connectionBD();
             }
             return con;
         }
@@ -50,7 +50,8 @@ namespace CD_ConexionDatos
             try
             {
                 // creo la variable de conexion
-                Cadena.ConnectionString = $"Server={this.Servidor}; database={this.Base}; User Id= {this.Usuario}; Password = {this.Clave}; integrate security = {this.Seguridad}";
+                Cadena.ConnectionString = $"Data Source={this.Servidor};Initial Catalog={this.Base};Integrated Security={this.Seguridad}";
+                //Cadena.ConnectionString = $"Server={this.Servidor}; database={this.Base}; User Id= {this.Usuario}; Password = {this.Clave}; integrate security = {this.Seguridad}";
                 // validar tipo de seguridad para conctarnos a SQL
                 if (this.Seguridad) 
                 {
@@ -73,7 +74,7 @@ namespace CD_ConexionDatos
         {
             if (con == null) //en el caso de que la conexion no esté abierta realizara una.
             {
-                con = new ConnectionBD();
+                con = new connectionBD();
             }
             return con;
         }   

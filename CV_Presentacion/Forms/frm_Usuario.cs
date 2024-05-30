@@ -18,10 +18,10 @@ namespace CV_Presentacion
         {
             InitializeComponent();
         }
-        private void frm_Usuario_Load(object sender, EventArgs e)
+        private void frm_Usuario_Load_1(object sender, EventArgs e)
         {
             // llamar al método listar
-
+            lista();
         }
 
         // crear un metod void para llenar el datagridview

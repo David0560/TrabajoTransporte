@@ -20,7 +20,7 @@ namespace CL_Negocios
             SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
             try
             {
-                String sqlconsulta = "SELECT * FROM Usuario";
+                String sqlconsulta = "SELECT * FROM Rol";
                 // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
                 con = connectionBD.CreaInstacia().CrearConexion(); // nos devuelve el string de conexin a sql
                 SqlCommand comando = new SqlCommand(sqlconsulta, con); // preparo la BD para que reciva la consulta (consulta, conexion)

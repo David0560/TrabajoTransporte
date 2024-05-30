@@ -315,6 +315,7 @@
             this.Controls.Add(this.tabAltaUsuario);
             this.Name = "frm_Usuario";
             this.Text = "frmUsuario";
+            this.Load += new System.EventHandler(this.frm_Usuario_Load_1);
             this.tabAltaUsuario.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
