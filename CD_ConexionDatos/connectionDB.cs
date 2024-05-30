@@ -37,7 +37,7 @@ namespace CD_ConexionDatos
             //
             this.Base = "BD_Trasnporte";
             this.Servidor = "DESKTOP-8ROL9DF";
-            this.Usuario = "";
+            this.Usuario = "DESKTOP-8ROL9DF//Morinigo David";
             this.Clave = "";
             this.Seguridad = true;
         }
@@ -50,8 +50,8 @@ namespace CD_ConexionDatos
             try
             {
                 // creo la variable de conexion
-                Cadena.ConnectionString = $"Data Source={this.Servidor};Initial Catalog={this.Base};Integrated Security={this.Seguridad}";
-                //Cadena.ConnectionString = $"Server={this.Servidor}; database={this.Base}; User Id= {this.Usuario}; Password = {this.Clave}; integrate security = {this.Seguridad}";
+                // Cadena.ConnectionString = $"Data Source={this.Servidor};Initial Catalog={this.Base};Integrated Security=true";
+                Cadena.ConnectionString = $"Server={this.Servidor}; Database={this.Base}; ";
                 // validar tipo de seguridad para conctarnos a SQL
                 if (this.Seguridad) 
                 {
