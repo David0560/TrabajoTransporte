@@ -93,6 +93,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frm_Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Almacen.Designer.cs">
+      <DependentUpon>frm_Almacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Configuracion.Designer.cs">
+      <DependentUpon>frm_Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Empleados.Designer.cs">
+      <DependentUpon>frm_Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Vehiculos.Designer.cs">
+      <DependentUpon>frm_Vehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +135,32 @@
     <Compile Include="Forms\frm_Usuario.Designer.cs">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm_Informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Informes.Designer.cs">
+      <DependentUpon>frm_Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Registros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Registros.Designer.cs">
+      <DependentUpon>frm_Registros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frm_Almacen.resx">
+      <DependentUpon>frm_Almacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Configuracion.resx">
+      <DependentUpon>frm_Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Empleados.resx">
+      <DependentUpon>frm_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Vehiculos.resx">
+      <DependentUpon>frm_Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Usuario.resx">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Informes.resx">
+      <DependentUpon>frm_Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Registros.resx">
+      <DependentUpon>frm_Registros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

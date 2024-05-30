@@ -73,6 +73,7 @@
             this.btnConfiguracion.TabIndex = 7;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnAlmacen
             // 
@@ -86,6 +87,7 @@
             this.btnAlmacen.TabIndex = 6;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
             // btnRegistro
             // 
@@ -99,6 +101,7 @@
             this.btnRegistro.TabIndex = 5;
             this.btnRegistro.Text = "Registros";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // btnVehiculo
             // 
@@ -112,6 +115,7 @@
             this.btnVehiculo.TabIndex = 4;
             this.btnVehiculo.Text = "Vehiculos";
             this.btnVehiculo.UseVisualStyleBackColor = true;
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
             // btnEmpleados
             // 
