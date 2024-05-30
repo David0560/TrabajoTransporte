@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CL_Negocios;
+
 
 namespace CV_Presentacion
 {
@@ -16,7 +18,29 @@ namespace CV_Presentacion
         {
             InitializeComponent();
         }
+        private void frm_Usuario_Load(object sender, EventArgs e)
+        {
+            // llamar al método listar
 
+        }
+
+        // crear un metod void para llenar el datagridview
+        private void lista()
+        {
+            try
+            {
+                // referencia hacia la clase datosSql
+                datosSql ds = new datosSql();
+                dgvDatos.DataSource = ds.listar();
+                lblFilas.Text = "total registros: " + Convert.ToString(dgvDatos.Rows.Count -1); // resto 1 solo si me pone una fina en blanco.
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
 
     }
+
 }

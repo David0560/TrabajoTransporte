@@ -30,6 +30,9 @@
         {
             this.tabAltaUsuario = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -44,31 +47,31 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.verUsuarios = new System.Windows.Forms.TabPage();
+            this.lblFilas = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.tabAltaUsuario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.verUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabAltaUsuario
             // 
             this.tabAltaUsuario.Controls.Add(this.tabPage1);
-            this.tabAltaUsuario.Controls.Add(this.tabPage2);
+            this.tabAltaUsuario.Controls.Add(this.verUsuarios);
             this.tabAltaUsuario.Controls.Add(this.tabPage3);
             this.tabAltaUsuario.Controls.Add(this.tabPage4);
             this.tabAltaUsuario.Controls.Add(this.tabPage5);
-            this.tabAltaUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabAltaUsuario.Location = new System.Drawing.Point(0, 0);
+            this.tabAltaUsuario.Location = new System.Drawing.Point(0, 230);
             this.tabAltaUsuario.Name = "tabAltaUsuario";
             this.tabAltaUsuario.SelectedIndex = 0;
-            this.tabAltaUsuario.Size = new System.Drawing.Size(580, 423);
+            this.tabAltaUsuario.Size = new System.Drawing.Size(386, 193);
             this.tabAltaUsuario.TabIndex = 0;
             // 
             // tabPage1
@@ -92,6 +95,32 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Alta";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(257, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Cargar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(115, 170);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 178);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Permisos:";
             // 
             // label5
             // 
@@ -219,22 +248,32 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // tabPage2
+            // verUsuarios
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(572, 397);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.verUsuarios.Controls.Add(this.lblFilas);
+            this.verUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.verUsuarios.Name = "verUsuarios";
+            this.verUsuarios.Padding = new System.Windows.Forms.Padding(3);
+            this.verUsuarios.Size = new System.Drawing.Size(378, 167);
+            this.verUsuarios.TabIndex = 1;
+            this.verUsuarios.Text = "Ver Usuarios";
+            this.verUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // lblFilas
+            // 
+            this.lblFilas.AutoSize = true;
+            this.lblFilas.Location = new System.Drawing.Point(316, 320);
+            this.lblFilas.Name = "lblFilas";
+            this.lblFilas.Size = new System.Drawing.Size(84, 13);
+            this.lblFilas.TabIndex = 1;
+            this.lblFilas.Text = "cantidad de filas";
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(637, 394);
+            this.tabPage3.Size = new System.Drawing.Size(572, 397);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -244,7 +283,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(637, 394);
+            this.tabPage4.Size = new System.Drawing.Size(572, 397);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -254,42 +293,25 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(637, 394);
+            this.tabPage5.Size = new System.Drawing.Size(572, 397);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // dgvDatos
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 178);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Permisos:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(115, 170);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 17;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(257, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Cargar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(300, 23);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.Size = new System.Drawing.Size(231, 134);
+            this.dgvDatos.TabIndex = 1;
             // 
             // frm_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 423);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.tabAltaUsuario);
             this.Name = "frm_Usuario";
             this.Text = "frmUsuario";
@@ -299,6 +321,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.verUsuarios.ResumeLayout(false);
+            this.verUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,7 +332,7 @@
 
         private System.Windows.Forms.TabControl tabAltaUsuario;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage verUsuarios;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
@@ -328,5 +353,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblFilas;
+        private System.Windows.Forms.DataGridView dgvDatos;
     }
 }
