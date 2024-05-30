@@ -68,10 +68,11 @@
             this.tabAltaUsuario.Controls.Add(this.tabPage3);
             this.tabAltaUsuario.Controls.Add(this.tabPage4);
             this.tabAltaUsuario.Controls.Add(this.tabPage5);
-            this.tabAltaUsuario.Location = new System.Drawing.Point(0, 230);
+            this.tabAltaUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabAltaUsuario.Location = new System.Drawing.Point(0, 0);
             this.tabAltaUsuario.Name = "tabAltaUsuario";
             this.tabAltaUsuario.SelectedIndex = 0;
-            this.tabAltaUsuario.Size = new System.Drawing.Size(386, 193);
+            this.tabAltaUsuario.Size = new System.Drawing.Size(580, 423);
             this.tabAltaUsuario.TabIndex = 0;
             // 
             // tabPage1
@@ -250,11 +251,12 @@
             // 
             // verUsuarios
             // 
+            this.verUsuarios.Controls.Add(this.dgvDatos);
             this.verUsuarios.Controls.Add(this.lblFilas);
             this.verUsuarios.Location = new System.Drawing.Point(4, 22);
             this.verUsuarios.Name = "verUsuarios";
             this.verUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.verUsuarios.Size = new System.Drawing.Size(378, 167);
+            this.verUsuarios.Size = new System.Drawing.Size(572, 397);
             this.verUsuarios.TabIndex = 1;
             this.verUsuarios.Text = "Ver Usuarios";
             this.verUsuarios.UseVisualStyleBackColor = true;
@@ -301,9 +303,9 @@
             // dgvDatos
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(300, 23);
+            this.dgvDatos.Location = new System.Drawing.Point(76, 63);
             this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(231, 134);
+            this.dgvDatos.Size = new System.Drawing.Size(406, 227);
             this.dgvDatos.TabIndex = 1;
             // 
             // frm_Usuario
@@ -311,7 +313,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 423);
-            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.tabAltaUsuario);
             this.Name = "frm_Usuario";
             this.Text = "frmUsuario";

@@ -35,6 +35,14 @@ namespace CD_ConexionDatos
         {
             // esto se usa para que la segurida sea mejor ya que las variables se encuentran en el contructor provado
             //
+
+            //---------------------------------//
+            // ustendes tendrian que cargar    //
+            // los valores que tiene en        //
+            // su maquina, para poder         //
+            // hacer la conexion.             //
+            //--------------------------------//
+
             this.Base = "BD_Trasnporte";
             this.Servidor = "DESKTOP-8ROL9DF";
             this.Usuario = "DESKTOP-8ROL9DF//Morinigo David";
@@ -60,7 +68,7 @@ namespace CD_ConexionDatos
                 }
                 else
                 {
-                    Cadena.ConnectionString = Cadena.ConnectionString + $"User Id = {this.Usuario}; Password={this.Clave}";
+                    Cadena.ConnectionString = Cadena.ConnectionString + $"User Id = {this.Usuario}; Password={this.Clave}"; // seguridad requeridad por SQL server
                 }
             }
             catch (Exception ex)
