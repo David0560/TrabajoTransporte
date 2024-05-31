@@ -20,10 +20,10 @@ namespace CL_Negocios
             SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
             try
             {
-                String sqlconsulta = "SELECT nombre_rol as Permisos FROM Rol";
+                //String sqlconsulta = "SELECT nombre_rol as Permisos FROM Rol";
                 // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
                 con = connectionBD.CreaInstacia().CrearConexion(); // nos devuelve el string de conexin a sql
-                SqlCommand comando = new SqlCommand(sqlconsulta, con); // preparo la BD para que reciva la consulta (consulta, conexion)
+                SqlCommand comando = new SqlCommand("spVerPermisos", con); // preparo la BD para que reciva la consulta (consulta, conexion)
                 con.Open();
                 lista = comando.ExecuteReader(); // comando va a tener los resultados de la consulta y los lleva atraves del executereade estos los voy a cargar en la lista.
                 Tabla.Load(lista); // la variable tabla (dataTable) va a cargar lo que tiene lista

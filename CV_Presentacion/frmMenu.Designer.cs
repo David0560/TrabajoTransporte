@@ -58,7 +58,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(127, 442);
+            this.pnlMenu.Size = new System.Drawing.Size(127, 570);
             this.pnlMenu.TabIndex = 1;
             // 
             // btnConfiguracion
@@ -195,14 +195,14 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(127, 80);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(645, 362);
+            this.panelMenu.Size = new System.Drawing.Size(645, 490);
             this.panelMenu.TabIndex = 3;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 442);
+            this.ClientSize = new System.Drawing.Size(772, 570);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlBarraTitulo);
             this.Controls.Add(this.pnlMenu);
