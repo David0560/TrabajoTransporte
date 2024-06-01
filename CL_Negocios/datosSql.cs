@@ -42,24 +42,30 @@ namespace CL_Negocios
                 }
              }
         }
-
+        int id_tipo_usuario;
         public DataTable listarPermisos()
         {
-            SqlDataReader lista; // permite lee la secuencia de filas en una tabla "lista es una variable"
-            DataTable Tabla = new DataTable();
+            //SqlDataReader lista; // permite lee la secuencia de filas en una tabla "lista es una variable"
+            int id_tipo_usuario = 2;
             // nos conectamos a la base de datos
             SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
+            
             try
             {
-                //String sqlconsulta = "SELECT nombre_rol as Permisos FROM Rol";
-                // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
-                con = connectionBD.CreaInstacia().CrearConexion(); // nos devuelve el string de conexin a sql
-                SqlCommand comando = new SqlCommand("SELECT id_familia_rol, nombre_rol FROM Famil_Rol inner join Rol on Famil_Rol.id_rol = Rol.id_rol Where id_familia = 2;", con); // preparo la BD para que reciva la consulta (consulta, conexion)
-                con.Open();
-                lista = comando.ExecuteReader(); // comando va a tener los resultados de la consulta y los lleva atraves del executereade estos los voy a cargar en la lista.
-                Tabla.Load(lista); // la variable tabla (dataTable) va a cargar lo que tiene lista
-                return Tabla; // devuelvo tabla que lo contiene en memora depues lo mando al grid
-
+                using (con = connectionBD.CreaInstacia().CrearConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));
+                        comando.Parameters["@id_tipo_usuario"].Value = @id_tipo_usuario;
+                        DataTable Tabla = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(comando);
+                        con.Open();
+                        da.Fill(Tabla);
+                        return Tabla; 
+                    } 
+                }
             }
             catch (Exception ex)
             {

@@ -59,12 +59,11 @@ namespace CD_ConexionDatos
             try
             {
                 // creo la variable de conexion
-                // Cadena.ConnectionString = $"Data Source={this.Servidor};Initial Catalog={this.Base};Integrated Security=true";
                 Cadena.ConnectionString = $"Server={this.Servidor}; Database={this.Base}; ";
                 // validar tipo de seguridad para conctarnos a SQL
                 if (this.Seguridad) 
                 {
-                    //si es por win
+                    //si es por windows
                     Cadena.ConnectionString = Cadena.ConnectionString + "Integrated Security = SSPI";// tipo de seguridad que utiliza windows
                 }
                 else
@@ -78,19 +77,6 @@ namespace CD_ConexionDatos
                 throw ex; //mostramos un mensaje con el error de la conexion.
             }
             return Cadena;// va devolver cadena.
-        } 
-        public static connectionBD getInstancia() 
-        {
-            if (con == null) //en el caso de que la conexion no esté abierta realizara una.
-            {
-                con = new connectionBD();
-            }
-            return con;
-        }   
-
-        //Crear un método para generar una instancia al constructor dentro del la clase
-        //para poder activar la asignacion de las variables al contrustor.
-        
-            
+        }  
     }
 }
