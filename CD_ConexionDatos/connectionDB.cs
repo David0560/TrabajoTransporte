@@ -54,6 +54,7 @@ namespace CD_ConexionDatos
         public SqlConnection CrearConexion() 
         {
             SqlConnection Cadena = new SqlConnection(); // instancio la cadena para la conexion
+            
             // manera para controlar los errores
             try
             {
@@ -76,7 +77,7 @@ namespace CD_ConexionDatos
                 Cadena = null; //por un problema de error cadena vuelve a ser null
                 throw ex; //mostramos un mensaje con el error de la conexion.
             }
-            return Cadena; // va devolver cadena.
+            return Cadena;// va devolver cadena.
         } 
         public static connectionBD getInstancia() 
         {

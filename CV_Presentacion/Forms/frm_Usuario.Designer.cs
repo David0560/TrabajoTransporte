@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabAltaUsuario = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboPermisos = new System.Windows.Forms.ComboBox();
             this.btnCargar = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
@@ -56,6 +57,9 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblVerValor = new System.Windows.Forms.Label();
             this.tabAltaUsuario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,6 +85,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblVerValor);
+            this.tabPage1.Controls.Add(this.lblDate);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.lblNombreUsuario);
@@ -104,7 +110,7 @@
             // 
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btnEliminar);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.cboPermisos);
             this.groupBox2.Controls.Add(this.btnCargar);
             this.groupBox2.Location = new System.Drawing.Point(22, 189);
             this.groupBox2.Name = "groupBox2";
@@ -131,13 +137,13 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // cboPermisos
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(104, 22);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(230, 21);
-            this.comboBox3.TabIndex = 17;
+            this.cboPermisos.FormattingEnabled = true;
+            this.cboPermisos.Location = new System.Drawing.Point(104, 22);
+            this.cboPermisos.Name = "cboPermisos";
+            this.cboPermisos.Size = new System.Drawing.Size(230, 21);
+            this.cboPermisos.TabIndex = 17;
             // 
             // btnCargar
             // 
@@ -147,6 +153,7 @@
             this.btnCargar.TabIndex = 18;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // textBox3
             // 
@@ -340,6 +347,28 @@
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(465, 15);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(29, 13);
+            this.lblDate.TabIndex = 22;
+            this.lblDate.Text = "Dia: ";
+            // 
+            // lblVerValor
+            // 
+            this.lblVerValor.AutoSize = true;
+            this.lblVerValor.Location = new System.Drawing.Point(316, 21);
+            this.lblVerValor.Name = "lblVerValor";
+            this.lblVerValor.Size = new System.Drawing.Size(35, 13);
+            this.lblVerValor.TabIndex = 23;
+            this.lblVerValor.Text = "label2";
+            // 
             // frm_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,7 +415,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkRecordar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboPermisos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Label lblFilas;
@@ -394,5 +423,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblVerValor;
     }
 }
