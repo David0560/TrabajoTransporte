@@ -18,14 +18,7 @@ namespace CD_ConexionDatos
         private string Clave;
         private bool Seguridad;
 
-        public static connectionBD CreaInstacia()
-        {
-            if (con == null)
-            {
-                con = new connectionBD();
-            }
-            return con;
-        }
+        
 
         // crear un objeto de tipo conecxion es estatica para no perder la informacion
         // es para conpartir y realiza la conexion a la base de datos
@@ -77,6 +70,16 @@ namespace CD_ConexionDatos
                 throw ex; //mostramos un mensaje con el error de la conexion.
             }
             return Cadena;// va devolver cadena.
-        }  
+        }
+
+
+        public static connectionBD CreaInstacia()
+        {
+            if (con == null)
+            {
+                con = new connectionBD();
+            }
+            return con;
+        }
     }
 }
