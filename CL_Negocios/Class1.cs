@@ -8,5 +8,6 @@ namespace CL_Negocios
 {
     public class Class1
     {
+
     }
 }
