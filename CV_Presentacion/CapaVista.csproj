@@ -208,6 +208,10 @@
       <Project>{e0ce412a-466e-4059-b763-54b6ced6939c}</Project>
       <Name>CapaSesion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CD_ConexionDatos\CapaDatos.csproj">
+      <Project>{F04CBABA-8F93-4896-BDFE-634C4DB7F8DB}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CL_Negocios\CapaLogica.csproj">
       <Project>{b0c861a2-2319-4758-8b88-8692b664ca4c}</Project>
       <Name>CapaLogica</Name>

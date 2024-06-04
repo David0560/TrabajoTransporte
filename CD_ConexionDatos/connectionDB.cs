@@ -23,8 +23,8 @@ namespace CD_ConexionDatos
         // crear un objeto de tipo conecxion es estatica para no perder la informacion
         // es para conpartir y realiza la conexion a la base de datos
         private static connectionBD con = null; //variable de conexion iniciada con un valor nulo
-        
-        private connectionBD() //constructor de clase, contiene los valores de las variables que va a tener la conexion
+
+        public connectionBD(string nombre_base, string servidor, string usuario, string clave) //constructor de clase, contiene los valores de las variables que va a tener la conexion
         {
             // esto se usa para que la segurida sea mejor ya que las variables se encuentran en el contructor provado
             //
@@ -35,11 +35,14 @@ namespace CD_ConexionDatos
             // su maquina, para poder         //
             // hacer la conexion.             //
             //--------------------------------//
+            //this.Base = "BD_Trasnporte";
+            //this.Servidor = "DESKTOP-8ROL9DF";
+            //this.Usuario = "DESKTOP-8ROL9DF//Morinigo David";
 
-            this.Base = "BD_Trasnporte";
-            this.Servidor = "DESKTOP-8ROL9DF";
-            this.Usuario = "DESKTOP-8ROL9DF//Morinigo David";
-            this.Clave = "";
+            this.Base = nombre_base;
+            this.Servidor= servidor;
+            this.Usuario = usuario;
+            this.Clave = clave;
             this.Seguridad = true;
         }
 
@@ -77,7 +80,7 @@ namespace CD_ConexionDatos
         {
             if (con == null)
             {
-                con = new connectionBD();
+                con = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
             }
             return con;
         }
