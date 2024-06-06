@@ -17,16 +17,17 @@ namespace CV_Presentacion
     public partial class frm_Usuario : Form
     {
         connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
-
+        
         public frm_Usuario()
         {
             InitializeComponent();
+            
         }
                 
         private void frm_Usuario_Load_1(object sender, EventArgs e)
         {
             // llamar al método listar
-           
+            
             timer1.Enabled = true;
             lista();
             comboEmpleado();
@@ -45,6 +46,7 @@ namespace CV_Presentacion
             // indicamos las tablas a mostrar  y el valor que va a tomar.
             cboPermisos.DisplayMember = "nombre_rol"; // acá indicamos que es lo que queremos visualizar
             cboPermisos.ValueMember = "id_rol"; // en esta nos dice que valor va a tomar ese combo
+            
 
         }
         private void comboEmpleado()
@@ -85,6 +87,7 @@ namespace CV_Presentacion
         {
             try
             {
+                ;
                 // referencia hacia la clase datosSql
                 datosSql ds = new datosSql();
                 dgvPermisoUsuario.DataSource = ds.listarPermisos();
@@ -102,6 +105,11 @@ namespace CV_Presentacion
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
+        {
+            //lblVerValor.Text = cboPermisos.SelectedValue.ToString();
+        }
+
+        private void cboPermisos_SelectedValueChanged(object sender, EventArgs e)
         {
             lblVerValor.Text = cboPermisos.SelectedValue.ToString();
         }

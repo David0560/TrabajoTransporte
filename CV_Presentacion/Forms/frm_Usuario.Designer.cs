@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabAltaUsuario = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblVerValor = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -58,8 +60,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblVerValor = new System.Windows.Forms.Label();
             this.tabAltaUsuario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,6 +106,24 @@
             this.tabPage1.Text = "Alta";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lblVerValor
+            // 
+            this.lblVerValor.AutoSize = true;
+            this.lblVerValor.Location = new System.Drawing.Point(316, 21);
+            this.lblVerValor.Name = "lblVerValor";
+            this.lblVerValor.Size = new System.Drawing.Size(35, 13);
+            this.lblVerValor.TabIndex = 23;
+            this.lblVerValor.Text = "label2";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(465, 15);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(29, 13);
+            this.lblDate.TabIndex = 22;
+            this.lblDate.Text = "Dia: ";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
@@ -144,6 +162,7 @@
             this.cboPermisos.Name = "cboPermisos";
             this.cboPermisos.Size = new System.Drawing.Size(230, 21);
             this.cboPermisos.TabIndex = 17;
+            this.cboPermisos.SelectedValueChanged += new System.EventHandler(this.cboPermisos_SelectedValueChanged);
             // 
             // btnCargar
             // 
@@ -350,24 +369,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(465, 15);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(29, 13);
-            this.lblDate.TabIndex = 22;
-            this.lblDate.Text = "Dia: ";
-            // 
-            // lblVerValor
-            // 
-            this.lblVerValor.AutoSize = true;
-            this.lblVerValor.Location = new System.Drawing.Point(316, 21);
-            this.lblVerValor.Name = "lblVerValor";
-            this.lblVerValor.Size = new System.Drawing.Size(35, 13);
-            this.lblVerValor.TabIndex = 23;
-            this.lblVerValor.Text = "label2";
             // 
             // frm_Usuario
             // 

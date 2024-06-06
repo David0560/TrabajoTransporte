@@ -54,17 +54,17 @@ namespace CL_Negocios
         {
             //utilizo el DataReader que fue instanciado antes como dr"
             //utiliso la variable declarada antes.
-
-            int id_tipo_usuario = 2;            
+           
             try
             {
+                int id_tipo_usuario = 2;
                 using (con = connectionBD.CreaInstacia().CrearConexion())
                 {
                     using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));
-                        comando.Parameters["@id_tipo_usuario"].Value = @id_tipo_usuario;
+                        comando.Parameters["@id_tipo_usuario"].Value = id_tipo_usuario;
                         DataTable dt = new DataTable();
                         SqlDataAdapter da = new SqlDataAdapter(comando);
                         con.Open();
