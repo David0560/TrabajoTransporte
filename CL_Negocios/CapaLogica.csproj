@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="combosSql.cs" />
     <Compile Include="datosSql.cs" />
+    <Compile Include="Entidades\Contraseña.cs" />
     <Compile Include="Entidades\Permisos.cs" />
     <Compile Include="Entidades\Persona.cs" />
     <Compile Include="Entidades\Usuario.cs" />
