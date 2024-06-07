@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CV_Presentacion.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +47,32 @@ namespace CV_Presentacion
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            btnVehiculo.Visible = false;
+            OpenChildForm(new frm_informes(), sender);
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Empleados(), sender);
+        }
+
+        private void btnVehiculo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Vehiculos(), sender);
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Registros(), sender);
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Almacen(), sender);
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Configuracion(), sender);
         }
     }
 }

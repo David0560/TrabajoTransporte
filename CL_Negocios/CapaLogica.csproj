@@ -86,7 +86,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="combosSql.cs" />
+    <Compile Include="datosSql.cs" />
+    <Compile Include="Entidades\Contraseña.cs" />
+    <Compile Include="Entidades\Permisos.cs" />
+    <Compile Include="Entidades\Persona.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="operaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

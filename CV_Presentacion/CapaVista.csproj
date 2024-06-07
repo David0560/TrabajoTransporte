@@ -42,7 +42,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.0-preview2-24180-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -91,6 +93,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frm_Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Almacen.Designer.cs">
+      <DependentUpon>frm_Almacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Configuracion.Designer.cs">
+      <DependentUpon>frm_Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Empleados.Designer.cs">
+      <DependentUpon>frm_Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Vehiculos.Designer.cs">
+      <DependentUpon>frm_Vehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,8 +135,32 @@
     <Compile Include="Forms\frm_Usuario.Designer.cs">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm_Informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Informes.Designer.cs">
+      <DependentUpon>frm_Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Registros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Registros.Designer.cs">
+      <DependentUpon>frm_Registros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frm_Almacen.resx">
+      <DependentUpon>frm_Almacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Configuracion.resx">
+      <DependentUpon>frm_Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Empleados.resx">
+      <DependentUpon>frm_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Vehiculos.resx">
+      <DependentUpon>frm_Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Usuario.resx">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Informes.resx">
+      <DependentUpon>frm_Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Registros.resx">
+      <DependentUpon>frm_Registros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,6 +207,10 @@
     <ProjectReference Include="..\CapaSesion\CapaSesion.csproj">
       <Project>{e0ce412a-466e-4059-b763-54b6ced6939c}</Project>
       <Name>CapaSesion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CD_ConexionDatos\CapaDatos.csproj">
+      <Project>{F04CBABA-8F93-4896-BDFE-634C4DB7F8DB}</Project>
+      <Name>CapaDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\CL_Negocios\CapaLogica.csproj">
       <Project>{b0c861a2-2319-4758-8b88-8692b664ca4c}</Project>

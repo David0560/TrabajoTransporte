@@ -59,7 +59,6 @@
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(190, 680);
             this.pnlMenu.TabIndex = 1;
             // 
             // btnConfiguracion
@@ -75,6 +74,7 @@
             this.btnConfiguracion.TabIndex = 7;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnAlmacen
             // 
@@ -89,6 +89,7 @@
             this.btnAlmacen.TabIndex = 6;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
             // btnRegistro
             // 
@@ -103,6 +104,7 @@
             this.btnRegistro.TabIndex = 5;
             this.btnRegistro.Text = "Registros";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // btnVehiculo
             // 
@@ -117,6 +119,7 @@
             this.btnVehiculo.TabIndex = 4;
             this.btnVehiculo.Text = "Vehiculos";
             this.btnVehiculo.UseVisualStyleBackColor = true;
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
             // btnEmpleados
             // 
@@ -203,14 +206,12 @@
             this.panelMenu.Location = new System.Drawing.Point(190, 123);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(968, 557);
             this.panelMenu.TabIndex = 3;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 680);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlBarraTitulo);
             this.Controls.Add(this.pnlMenu);

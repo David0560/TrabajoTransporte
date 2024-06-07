@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CD_ConexionDatos
+namespace CapaServicios
 {
-    public class Class1
+    public class Servicio
     {
+
+        public Servicio() { }
+
+
     }
 }

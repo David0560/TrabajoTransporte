@@ -7,18 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CL_Negocios;
-
 
 namespace CV_Presentacion
 {
-    public partial class frmLogin : Form
+    public partial class frm_Registros : Form
     {
-        operaciones operaciones = new operaciones();
-        public frmLogin()
+        public frm_Registros()
         {
             InitializeComponent();
         }
-
     }
 }
