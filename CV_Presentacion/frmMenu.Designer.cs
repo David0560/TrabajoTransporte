@@ -57,8 +57,8 @@
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(127, 570);
             this.pnlMenu.TabIndex = 1;
             // 
             // btnConfiguracion
@@ -66,10 +66,11 @@
             this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 320);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 495);
+            this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnConfiguracion.Size = new System.Drawing.Size(127, 40);
+            this.btnConfiguracion.Size = new System.Drawing.Size(190, 62);
             this.btnConfiguracion.TabIndex = 7;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
@@ -80,10 +81,11 @@
             this.btnAlmacen.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlmacen.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAlmacen.Location = new System.Drawing.Point(0, 280);
+            this.btnAlmacen.Location = new System.Drawing.Point(0, 433);
+            this.btnAlmacen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAlmacen.Size = new System.Drawing.Size(127, 40);
+            this.btnAlmacen.Size = new System.Drawing.Size(190, 62);
             this.btnAlmacen.TabIndex = 6;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.UseVisualStyleBackColor = true;
@@ -94,10 +96,11 @@
             this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRegistro.Location = new System.Drawing.Point(0, 240);
+            this.btnRegistro.Location = new System.Drawing.Point(0, 371);
+            this.btnRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnRegistro.Size = new System.Drawing.Size(127, 40);
+            this.btnRegistro.Size = new System.Drawing.Size(190, 62);
             this.btnRegistro.TabIndex = 5;
             this.btnRegistro.Text = "Registros";
             this.btnRegistro.UseVisualStyleBackColor = true;
@@ -108,10 +111,11 @@
             this.btnVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnVehiculo.Location = new System.Drawing.Point(0, 200);
+            this.btnVehiculo.Location = new System.Drawing.Point(0, 309);
+            this.btnVehiculo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVehiculo.Name = "btnVehiculo";
             this.btnVehiculo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnVehiculo.Size = new System.Drawing.Size(127, 40);
+            this.btnVehiculo.Size = new System.Drawing.Size(190, 62);
             this.btnVehiculo.TabIndex = 4;
             this.btnVehiculo.Text = "Vehiculos";
             this.btnVehiculo.UseVisualStyleBackColor = true;
@@ -122,10 +126,11 @@
             this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 160);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 247);
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEmpleados.Size = new System.Drawing.Size(127, 40);
+            this.btnEmpleados.Size = new System.Drawing.Size(190, 62);
             this.btnEmpleados.TabIndex = 3;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
@@ -135,10 +140,11 @@
             this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnInformes.Location = new System.Drawing.Point(0, 120);
+            this.btnInformes.Location = new System.Drawing.Point(0, 185);
+            this.btnInformes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnInformes.Size = new System.Drawing.Size(127, 40);
+            this.btnInformes.Size = new System.Drawing.Size(190, 62);
             this.btnInformes.TabIndex = 2;
             this.btnInformes.Text = "Informes";
             this.btnInformes.UseVisualStyleBackColor = true;
@@ -149,10 +155,11 @@
             this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnUsuario.Location = new System.Drawing.Point(0, 80);
+            this.btnUsuario.Location = new System.Drawing.Point(0, 123);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnUsuario.Size = new System.Drawing.Size(127, 40);
+            this.btnUsuario.Size = new System.Drawing.Size(190, 62);
             this.btnUsuario.TabIndex = 1;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = true;
@@ -163,49 +170,52 @@
             this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(127, 80);
+            this.pnlLogo.Size = new System.Drawing.Size(190, 123);
             this.pnlLogo.TabIndex = 0;
             // 
             // pnlBarraTitulo
             // 
-            this.pnlBarraTitulo.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
             this.pnlBarraTitulo.Controls.Add(this.lblTitulo);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBarraTitulo.Location = new System.Drawing.Point(127, 0);
+            this.pnlBarraTitulo.Location = new System.Drawing.Point(190, 0);
+            this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(645, 80);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(968, 123);
             this.pnlBarraTitulo.TabIndex = 2;
             // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(274, 26);
+            this.lblTitulo.Location = new System.Drawing.Point(411, 40);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(57, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(86, 36);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Inicio";
             // 
             // panelMenu
             // 
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenu.Location = new System.Drawing.Point(127, 80);
+            this.panelMenu.Location = new System.Drawing.Point(190, 123);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(645, 490);
             this.panelMenu.TabIndex = 3;
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 570);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlBarraTitulo);
             this.Controls.Add(this.pnlMenu);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMenu";
             this.Text = "Menu";
             this.pnlMenu.ResumeLayout(false);

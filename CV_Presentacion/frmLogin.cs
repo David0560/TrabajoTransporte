@@ -20,25 +20,5 @@ namespace CV_Presentacion
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int Resultado = operaciones.ValidarUsuario(txtPassword.Text, txtUsuario.Text);
-
-           if(Resultado > 0 )
-            {
-                FrmMenu menu = new FrmMenu();
-                this.Hide();
-                menu.ShowDialog();
-            }
-            else if(Resultado <= 0)
-            {
-                MessageBox.Show("Usuario o contraseña incorrectas");
-            }
-        }
     }
 }
