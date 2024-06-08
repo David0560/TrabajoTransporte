@@ -20,5 +20,9 @@ namespace CV_Presentacion
             InitializeComponent();
         }
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblRecupero = new System.Windows.Forms.Label();
@@ -50,10 +49,9 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(655, 171);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(196, 83);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(97, 28);
+            this.lblUsuario.Size = new System.Drawing.Size(65, 19);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -61,20 +59,18 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(646, 268);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Location = new System.Drawing.Point(190, 146);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(121, 28);
+            this.lblPassword.Size = new System.Drawing.Size(80, 19);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
             // lblRecupero
             // 
             this.lblRecupero.AutoSize = true;
-            this.lblRecupero.Location = new System.Drawing.Point(812, 442);
-            this.lblRecupero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRecupero.Location = new System.Drawing.Point(300, 259);
             this.lblRecupero.Name = "lblRecupero";
-            this.lblRecupero.Size = new System.Drawing.Size(156, 20);
+            this.lblRecupero.Size = new System.Drawing.Size(105, 13);
             this.lblRecupero.TabIndex = 2;
             this.lblRecupero.Text = "Recuperar password";
             // 
@@ -84,10 +80,9 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(493, 204);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsuario.Location = new System.Drawing.Point(88, 105);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(434, 37);
+            this.txtUsuario.Size = new System.Drawing.Size(290, 27);
             this.txtUsuario.TabIndex = 10;
             // 
             // txtPassword
@@ -96,21 +91,64 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(493, 301);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Location = new System.Drawing.Point(88, 168);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(434, 37);
+            this.txtPassword.Size = new System.Drawing.Size(290, 27);
             this.txtPassword.TabIndex = 11;
             // 
             // pictureBoxLogin
             // 
-          
+            this.pictureBoxLogin.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLogin.Name = "pictureBoxLogin";
+            this.pictureBoxLogin.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxLogin.TabIndex = 0;
+            this.pictureBoxLogin.TabStop = false;
+            // 
+            // btnCerrarLogin
+            // 
+            this.btnCerrarLogin.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrarLogin.Name = "btnCerrarLogin";
+            this.btnCerrarLogin.Size = new System.Drawing.Size(100, 50);
+            this.btnCerrarLogin.TabIndex = 0;
+            this.btnCerrarLogin.TabStop = false;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.Location = new System.Drawing.Point(0, 0);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(100, 23);
+            this.lblLogin.TabIndex = 0;
+            // 
+            // pbxMostrar
+            // 
+            this.pbxMostrar.Location = new System.Drawing.Point(0, 0);
+            this.pbxMostrar.Name = "pbxMostrar";
+            this.pbxMostrar.Size = new System.Drawing.Size(100, 50);
+            this.pbxMostrar.TabIndex = 0;
+            this.pbxMostrar.TabStop = false;
+            // 
+            // pbxOcultar
+            // 
+            this.pbxOcultar.Location = new System.Drawing.Point(0, 0);
+            this.pbxOcultar.Name = "pbxOcultar";
+            this.pbxOcultar.Size = new System.Drawing.Size(100, 50);
+            this.pbxOcultar.TabIndex = 0;
+            this.pbxOcultar.TabStop = false;
+            // 
+            // btnAcceder
+            // 
+            this.btnAcceder.Location = new System.Drawing.Point(0, 0);
+            this.btnAcceder.Name = "btnAcceder";
+            this.btnAcceder.Size = new System.Drawing.Size(75, 23);
+            this.btnAcceder.TabIndex = 0;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.btnAcceder;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(461, 340);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblRecupero);
@@ -118,10 +156,15 @@
             this.Controls.Add(this.lblUsuario);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.HelpButton = true;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMostrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOcultar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
