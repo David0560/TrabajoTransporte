@@ -147,6 +147,18 @@
     <Compile Include="Forms\frm_Registros.Designer.cs">
       <DependentUpon>frm_Registros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarPassword.Designer.cs">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRespuestas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRespuestas.Designer.cs">
+      <DependentUpon>frmRespuestas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frm_Almacen.resx">
@@ -175,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Registros.resx">
       <DependentUpon>frm_Registros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarPassword.resx">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRespuestas.resx">
+      <DependentUpon>frmRespuestas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
