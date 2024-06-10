@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CD_ConexionDatos;
+using CL_Negocios.Entidades;
 
 namespace CL_Negocios
 {
@@ -81,9 +82,37 @@ namespace CL_Negocios
             }
         }
 
-
-
-
+        public List<cachePermisosAlta> obtenerRoles(string id_usuario)
+        {
+            int str1 = Convert.ToInt32(id_usuario);
+            List<cachePermisosAlta> Roles = new List<cachePermisosAlta>(); // instancio la lista
+            using(con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
+            {
+                using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));
+                    comando.Parameters["@id_tipo_usuario"].Value = str1;
+                    con.Open();// abro la conexion.
+                    using(SqlDataReader leer = comando.ExecuteReader())
+                    {
+                        while (leer.Read())// mientras tenga algo para leer
+                        {
+                            cachePermisosAlta Permiso = new cachePermisosAlta()// instancio el objeto cachePermisos
+                            {
+                                //cargo los Valores de reader en sus atributos correspondientes
+                                IdRol = Convert.ToInt32(leer["id_rol"]),
+                                NombreRol = leer["nombre_rol"].ToString()
+                            };
+                            
+                            Roles.Add(Permiso);// los agrego a la lista llamada roles
+                        }
+                       
+                    }
+                }
+            }
+            return Roles; // devuelvo la lista roles
+        }
 
     }
 }

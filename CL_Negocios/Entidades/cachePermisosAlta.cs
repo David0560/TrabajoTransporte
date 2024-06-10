@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace CL_Negocios.Entidades
 {
-    internal class cachePermisosAlta
+    public class cachePermisosAlta
     {
-        public int idRol { set; get; }
-        public string nombreRol { set; get; }
+        public int IdRol { set; get; }
+        public string NombreRol { set; get; }
     }
+
+   
 }

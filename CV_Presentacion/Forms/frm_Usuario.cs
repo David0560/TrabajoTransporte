@@ -18,7 +18,7 @@ namespace CV_Presentacion
     public partial class frm_Usuario : Form
     {
         connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
-        
+        datosSql datos = new datosSql();
         public frm_Usuario()
         {
             InitializeComponent();
@@ -116,6 +116,20 @@ namespace CV_Presentacion
             }
         }
 
+        private void listaDePermisos()
+        {
+            try
+            {
+                // referencia hacia la clase datosSql
+                //datosSql ds = new datosSql();
+                dgvPermisoUsuario.DataSource = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString()).ToString();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
        
        
         private void timer1_Tick(object sender, EventArgs e)
@@ -146,7 +160,7 @@ namespace CV_Presentacion
         {
             if(cboFamilias.SelectedIndex != -1) //reparo la falta de seleccion en el combobox.
             {
-                listaPermiso();
+                listaDePermisos();
             }
         }
 
