@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CL_Negocios.Entidades
 {
-    internal class Usuario
+    public class Usuario
     {
         public string Nombre_usuario { get; set; }
         public bool Estado { get; set; }
@@ -17,7 +17,12 @@ namespace CL_Negocios.Entidades
         public DateTime Fecha_user_temporal { get; set; }
         public DateTime Fecha_alta { get; set; }
         public int Id_familia { get; set; }
-        
+
+
+        public Usuario()
+        {
+
+        }
         public Usuario (string nombre_usuario, bool estado, int id_persona, string password_user, DateTime fecha_vence_pass, DateTime fecha_user_temporal, DateTime fecha_alta, int id_familia)
         {
             Nombre_usuario = nombre_usuario;

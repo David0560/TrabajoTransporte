@@ -49,7 +49,7 @@ namespace CL_Negocios
                 DataTable dt = new DataTable(); // creo un datatable
                 da.Fill(dt); // cargo el dr con los valores del Da mediante su metodo fill
                 DataRow dr = dt.NewRow();
-                dr["nombre"] = null;
+                dr["nombre"] =  null;
                 dt.Rows.InsertAt(dr, 0);
                 con.Close();
                 return dt; // retorno dt
@@ -162,6 +162,28 @@ namespace CL_Negocios
                 da.Fill(dt); // cargo el dr con los valores del Da mediante su metodo fill
                 DataRow dr = dt.NewRow(); // creo una nueva fila
                 dr["nombre"] = null; // indico el nombre de la coluna y su contenido en este caso es vacio.
+                dt.Rows.InsertAt(dr, 0); // la agrego a la primera fila.
+                return dt; // retorno dt
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public DataTable CargarUsuarios()
+        {
+            try
+            {
+                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
+                SqlDataAdapter da = new SqlDataAdapter("spVerUsuario", con); // cargo el da con el sp y la conexion.
+                con.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
+                DataTable dt = new DataTable(); // creo un datatable
+                da.Fill(dt); // cargo el dr con los valores del Da mediante su metodo fill
+                DataRow dr = dt.NewRow(); // creo una nueva fila
+                dr["nombre_usuario"] = null; // indico el nombre de la coluna y su contenido en este caso es vacio.
                 dt.Rows.InsertAt(dr, 0); // la agrego a la primera fila.
                 return dt; // retorno dt
 

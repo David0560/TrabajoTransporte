@@ -15,10 +15,7 @@ namespace CL_Negocios
         SqlDataReader dr; // permite lee la secuencia de filas en una tabla "dr es una variable"
         DataTable dt = new DataTable(); // instancia un objeto tipo tabla
         SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
-        
-        
-
-
+  
         //metodo para listar los elementos de la tablas.
         public DataTable listar()
         {           
@@ -48,30 +45,28 @@ namespace CL_Negocios
                 }
              }
         }
-
-
-        public DataTable listarPermisos()
+        public DataTable listarPermisos(string str)
         {
             //utilizo el DataReader que fue instanciado antes como dr"
             //utiliso la variable declarada antes.
            
             try
             {
-                int id_tipo_usuario = 2;
+                int str1 = Convert.ToInt32(str);
                 using (con = connectionBD.CreaInstacia().CrearConexion())
                 {
                     using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));
-                        comando.Parameters["@id_tipo_usuario"].Value = id_tipo_usuario;
+                        comando.Parameters["@id_tipo_usuario"].Value = str1;
                         DataTable dt = new DataTable();
                         SqlDataAdapter da = new SqlDataAdapter(comando);
                         con.Open();
                         da.Fill(dt);
                         return dt; 
-                    } 
-                }
+                        }
+                    }                
             }
             catch (Exception ex)
             {

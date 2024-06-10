@@ -207,6 +207,7 @@
             this.Controls.Add(this.pnlBarraTitulo);
             this.Controls.Add(this.pnlMenu);
             this.Name = "FrmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.pnlMenu.ResumeLayout(false);
             this.pnlBarraTitulo.ResumeLayout(false);

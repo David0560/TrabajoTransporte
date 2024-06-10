@@ -88,6 +88,8 @@
   <ItemGroup>
     <Compile Include="combosSql.cs" />
     <Compile Include="datosSql.cs" />
+    <Compile Include="Entidades\cacheManager.cs" />
+    <Compile Include="Entidades\cachePermisosAlta.cs" />
     <Compile Include="Entidades\Contraseña.cs" />
     <Compile Include="Entidades\Permisos.cs" />
     <Compile Include="Entidades\Persona.cs" />
