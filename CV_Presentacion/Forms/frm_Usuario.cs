@@ -18,7 +18,7 @@ namespace CV_Presentacion
     public partial class frm_Usuario : Form
     {
         connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
-        datosSql datos = new datosSql();
+        
         public frm_Usuario()
         {
             InitializeComponent();
@@ -122,8 +122,10 @@ namespace CV_Presentacion
             {
                 // referencia hacia la clase datosSql
                 //datosSql ds = new datosSql();
-                dgvPermisoUsuario.DataSource = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString()).ToString();
-               
+                datosSql datos = new datosSql();
+                List<cachePermisosAlta> permisos = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString());
+                dgvPermisoUsuario.DataSource = permisos;
+
             }
             catch (Exception ex)
             {

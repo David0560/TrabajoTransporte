@@ -82,9 +82,9 @@ namespace CL_Negocios
             }
         }
 
-        public List<cachePermisosAlta> obtenerRoles(string id_usuario)
+        public List<cachePermisosAlta> obtenerRoles(string id_familiaRol)
         {
-            int str1 = Convert.ToInt32(id_usuario);
+            int str1 = Convert.ToInt32(id_familiaRol);
             List<cachePermisosAlta> Roles = new List<cachePermisosAlta>(); // instancio la lista
             using(con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
@@ -101,7 +101,7 @@ namespace CL_Negocios
                             cachePermisosAlta Permiso = new cachePermisosAlta()// instancio el objeto cachePermisos
                             {
                                 //cargo los Valores de reader en sus atributos correspondientes
-                                IdRol = Convert.ToInt32(leer["id_rol"]),
+                                IdRol = Convert.ToInt32(leer["id_familia_rol"]),
                                 NombreRol = leer["nombre_rol"].ToString()
                             };
                             
