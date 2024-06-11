@@ -131,6 +131,5 @@ namespace CL_Negocios
         {
             return Roles;
         }
-        
     }
 }

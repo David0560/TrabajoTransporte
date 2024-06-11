@@ -29,8 +29,23 @@ namespace CV_Presentacion
                 
         private void frm_Usuario_Load_1(object sender, EventArgs e)
         {
+            // Comportamiento
+            dgvPermisoUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selecciona toda la fila al hacer click en alguna celda
+            dgvPermisoUsuario.MultiSelect = false; // Que no pueda seleccionar multiples filas
+            dgvPermisoUsuario.ReadOnly = true; // Hace que la grilla no se pueda editar
+            dgvPermisoUsuario.AllowUserToAddRows = false; // Desactiva  la ultima fila 
+            dgvPermisoUsuario.RowHeadersVisible = false; // Oculto los encabezados de filas
+
+            // Grafica
+            dgvPermisoUsuario.EnableHeadersVisualStyles = false; // Para poder modificar estilos en la cabecera
+            dgvPermisoUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None; // Quito los bordes de la cabecera
+            //dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue; // Color de fondo de la cabecera
+            //dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Color de texto de la cabecera
+            //dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue; // Color de fondo de la celda del encabezado seleccionada
+            dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;// Centro el texto de las cabeceras
+
             // llamar al método listar
-            
+
             timer1.Enabled = true;
             lista();
             comboEmpleado();
@@ -122,10 +137,9 @@ namespace CV_Presentacion
         {
             try
             {
-
-                dgvPermisoUsuario.DataSource = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString());
-                actualizarDataGrid();
-
+                listaPermiso();
+                //dgvPermisoUsuario.DataSource = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString());
+                //actualizarDataGrid();
             }
             catch (Exception ex)
             {
@@ -190,6 +204,7 @@ namespace CV_Presentacion
             dgvPermisoUsuario.DataSource = null;
             dgvPermisoUsuario.DataSource = datos.totalRoles();
         }
+
 
         
     }

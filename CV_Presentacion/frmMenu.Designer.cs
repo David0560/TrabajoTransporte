@@ -40,6 +40,11 @@
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.lblTipoUsuario = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlBarraTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +71,7 @@
             this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 320);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 339);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnConfiguracion.Size = new System.Drawing.Size(133, 40);
@@ -80,7 +85,7 @@
             this.btnAlmacen.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlmacen.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAlmacen.Location = new System.Drawing.Point(0, 280);
+            this.btnAlmacen.Location = new System.Drawing.Point(0, 299);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAlmacen.Size = new System.Drawing.Size(133, 40);
@@ -94,7 +99,7 @@
             this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRegistro.Location = new System.Drawing.Point(0, 240);
+            this.btnRegistro.Location = new System.Drawing.Point(0, 259);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnRegistro.Size = new System.Drawing.Size(133, 40);
@@ -108,7 +113,7 @@
             this.btnVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnVehiculo.Location = new System.Drawing.Point(0, 200);
+            this.btnVehiculo.Location = new System.Drawing.Point(0, 219);
             this.btnVehiculo.Name = "btnVehiculo";
             this.btnVehiculo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnVehiculo.Size = new System.Drawing.Size(133, 40);
@@ -122,7 +127,7 @@
             this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 160);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 179);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEmpleados.Size = new System.Drawing.Size(133, 40);
@@ -135,7 +140,7 @@
             this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnInformes.Location = new System.Drawing.Point(0, 120);
+            this.btnInformes.Location = new System.Drawing.Point(0, 139);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnInformes.Size = new System.Drawing.Size(133, 40);
@@ -149,7 +154,7 @@
             this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnUsuario.Location = new System.Drawing.Point(0, 80);
+            this.btnUsuario.Location = new System.Drawing.Point(0, 99);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnUsuario.Size = new System.Drawing.Size(133, 40);
@@ -164,17 +169,22 @@
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(133, 80);
+            this.pnlLogo.Size = new System.Drawing.Size(133, 99);
             this.pnlLogo.TabIndex = 0;
             // 
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
+            this.pnlBarraTitulo.Controls.Add(this.button1);
+            this.pnlBarraTitulo.Controls.Add(this.lblHora);
+            this.pnlBarraTitulo.Controls.Add(this.lblFecha);
+            this.pnlBarraTitulo.Controls.Add(this.lblTipoUsuario);
+            this.pnlBarraTitulo.Controls.Add(this.lblNombreUsuario);
             this.pnlBarraTitulo.Controls.Add(this.lblTitulo);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(133, 0);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(604, 80);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(604, 99);
             this.pnlBarraTitulo.TabIndex = 2;
             // 
             // lblTitulo
@@ -182,21 +192,66 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(254, 26);
+            this.lblTitulo.Location = new System.Drawing.Point(15, 71);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(57, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(42, 18);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Inicio";
             // 
             // panelMenu
             // 
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenu.Location = new System.Drawing.Point(133, 80);
+            this.panelMenu.Location = new System.Drawing.Point(133, 99);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(604, 499);
+            this.panelMenu.Size = new System.Drawing.Size(604, 480);
             this.panelMenu.TabIndex = 3;
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(19, 17);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(94, 13);
+            this.lblNombreUsuario.TabIndex = 1;
+            this.lblNombreUsuario.Text = "nombre de usuario";
+            // 
+            // lblTipoUsuario
+            // 
+            this.lblTipoUsuario.AutoSize = true;
+            this.lblTipoUsuario.Location = new System.Drawing.Point(19, 44);
+            this.lblTipoUsuario.Name = "lblTipoUsuario";
+            this.lblTipoUsuario.Size = new System.Drawing.Size(76, 13);
+            this.lblTipoUsuario.TabIndex = 2;
+            this.lblTipoUsuario.Text = "tipo de usuario";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(450, 17);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(75, 13);
+            this.lblFecha.TabIndex = 3;
+            this.lblFecha.Text = "Fecha sistema";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(548, 17);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(28, 13);
+            this.lblHora.TabIndex = 4;
+            this.lblHora.Text = "hora";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(508, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMenu
             // 
@@ -229,6 +284,11 @@
         private System.Windows.Forms.Panel pnlBarraTitulo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblTipoUsuario;
+        private System.Windows.Forms.Label lblNombreUsuario;
     }
 }
 
