@@ -18,6 +18,8 @@ namespace CV_Presentacion
     public partial class frm_Usuario : Form
     {
         connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
+        private datosSql datos = new datosSql();
+       
         
         public frm_Usuario()
         {
@@ -120,11 +122,9 @@ namespace CV_Presentacion
         {
             try
             {
-                // referencia hacia la clase datosSql
-                //datosSql ds = new datosSql();
-                datosSql datos = new datosSql();
-                List<cachePermisosAlta> permisos = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString());
-                dgvPermisoUsuario.DataSource = permisos;
+
+                dgvPermisoUsuario.DataSource = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString());
+                actualizarDataGrid();
 
             }
             catch (Exception ex)
@@ -132,7 +132,8 @@ namespace CV_Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-       
+        
+         
        
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -166,5 +167,30 @@ namespace CV_Presentacion
             }
         }
 
+        private void btnCargar_Click(object sender, EventArgs e)
+        {         
+            cachePermisosAlta permiso = new cachePermisosAlta()// instancio el objeto cachePermisos
+            {
+                //cargo los Valores de reader en sus atributos correspondientes
+                IdRol = Convert.ToInt32(cboPermisos.SelectedIndex.ToString()),
+                NombreRol = cboPermisos.Text.ToString()
+            };
+            datos.agregarRoles(permiso);
+            actualizarDataGrid();
+            
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+            datos.eliminarRoles(1);
+            actualizarDataGrid();
+        }
+        private void actualizarDataGrid()
+        {
+            dgvPermisoUsuario.DataSource = null;
+            dgvPermisoUsuario.DataSource = datos.totalRoles();
+        }
+
+        
     }
 }

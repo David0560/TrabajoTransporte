@@ -12,7 +12,7 @@ namespace CL_Negocios
 {
     public class datosSql
     {
-
+        List<cachePermisosAlta> Roles = new List<cachePermisosAlta>();// instancio la lista
         SqlDataReader dr; // permite lee la secuencia de filas en una tabla "dr es una variable"
         DataTable dt = new DataTable(); // instancia un objeto tipo tabla
         SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
@@ -82,10 +82,12 @@ namespace CL_Negocios
             }
         }
 
+
+        // cargar roles en alta de usuario.
         public List<cachePermisosAlta> obtenerRoles(string id_familiaRol)
         {
             int str1 = Convert.ToInt32(id_familiaRol);
-            List<cachePermisosAlta> Roles = new List<cachePermisosAlta>(); // instancio la lista
+            //List<cachePermisosAlta> Roles = new List<cachePermisosAlta>(); // instancio la lista
             using(con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
                 using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
@@ -113,6 +115,22 @@ namespace CL_Negocios
             }
             return Roles; // devuelvo la lista roles
         }
+        public void agregarRoles(cachePermisosAlta actores) //cargar un nuevo registro
+        {
+            if(actores != null)
+            {
+                Roles.Add(actores);
+            }
 
+        }
+        public void eliminarRoles(int actores)// eliminar un objeto de la lista
+        {
+            Roles.RemoveAt(actores);
+        }
+        public List<cachePermisosAlta> totalRoles()
+        {
+            return Roles;
+        }
+        
     }
 }

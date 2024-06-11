@@ -12,5 +12,6 @@ namespace CL_Negocios.Entidades
         public string NombreRol { set; get; }
     }
 
+    
    
 }

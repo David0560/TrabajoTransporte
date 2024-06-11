@@ -1,6 +1,7 @@
 ﻿namespace CapaServicios
 {
-    internal class combosSql
+    internal class Servicios
     {
+
     }
 }
