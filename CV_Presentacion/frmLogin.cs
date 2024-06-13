@@ -24,5 +24,12 @@ namespace CV_Presentacion
         {
 
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            //frmMenu menu = new FrmMenu();
+            //this.Hide();
+            //menu.ShowDialog();
+        }
     }
 }

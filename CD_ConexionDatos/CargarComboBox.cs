@@ -8,13 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CL_Negocios
+namespace CD_ConexionDatos
 {
-    public class combosSql
+    public class CargarComboBox
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
+        public CargarComboBox() { }
 
-        public combosSql() { }
+        public DataTable ObtenerDatosComboBox(string query)
+        {
+            con = connectionBD.CreaInstacia().CrearConexion();
+            con.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(query,con);
+            adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable datos = new DataTable();
+            adaptador.Fill(datos);
+            DataRow dr = datos.NewRow();
+            dr["nombre"] = null;
+            con.Close();
+            return datos;
+        }
 
         public DataTable CargarEmpleados()
         {
@@ -196,10 +209,5 @@ namespace CL_Negocios
         }
 
 
-
-        public DataRow NewRow()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

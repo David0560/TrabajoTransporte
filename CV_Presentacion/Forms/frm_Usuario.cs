@@ -60,7 +60,7 @@ namespace CV_Presentacion
         // llenar el comboBox
         private void comboRoles()
         {
-            combosSql cn = new combosSql();
+            CargarComboBox cn = new CargarComboBox();
             cboPermisos.DataSource = cn.CargarRoles();
             // indicamos las tablas a mostrar  y el valor que va a tomar.
             cboPermisos.DisplayMember = "nombre_rol"; // acá indicamos que es lo que queremos visualizar
@@ -71,7 +71,7 @@ namespace CV_Presentacion
         }
         private void comboEmpleado()
         {
-            combosSql cn = new combosSql();
+            CargarComboBox cn = new CargarComboBox();
             cboEmpleados.DataSource = cn.CargarEmpleados();
             // indicamos las tablas a mostrar  y el valor que va a tomar.
             cboEmpleados.DisplayMember = "nombre"; // acá indicamos que es lo que queremos visualizar
@@ -82,7 +82,7 @@ namespace CV_Presentacion
         }
         private void comboFamilia()
         {
-            combosSql cn = new combosSql();
+            CargarComboBox cn = new CargarComboBox();
             cboFamilias.DataSource = cn.CargarFamilia();
             //indicamos las tablas a mostrar  y el valor que va a tomar.
             cboFamilias.DisplayMember = "nombre"; // acá indicamos que es lo que queremos visualizar
@@ -92,7 +92,7 @@ namespace CV_Presentacion
         }
         private void comboUsuarios()
         {
-            combosSql cn = new combosSql();
+            CargarComboBox cn = new CargarComboBox();
             cboUsuario.DataSource = cn.CargarUsuarios();
             //indicamos las tablas a mostrar  y el valor que va a tomar.
             cboUsuario.DisplayMember = "nombre_usuario"; // acá indicamos que es lo que queremos visualizar
@@ -205,7 +205,9 @@ namespace CV_Presentacion
             dgvPermisoUsuario.DataSource = datos.totalRoles();
         }
 
+        private void cboFamilias_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }

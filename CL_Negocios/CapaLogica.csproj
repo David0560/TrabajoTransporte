@@ -86,7 +86,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="combosSql.cs" />
     <Compile Include="datosSql.cs" />
     <Compile Include="Entidades\cacheManager.cs" />
     <Compile Include="Entidades\cachePermisosAlta.cs" />

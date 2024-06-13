@@ -287,7 +287,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 28);
+            this.label7.Location = new System.Drawing.Point(39, 31);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 26;
@@ -296,7 +296,7 @@
             // cboUsuario
             // 
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(127, 25);
+            this.cboUsuario.Location = new System.Drawing.Point(127, 28);
             this.cboUsuario.Name = "cboUsuario";
             this.cboUsuario.Size = new System.Drawing.Size(220, 21);
             this.cboUsuario.TabIndex = 25;
@@ -598,6 +598,7 @@
             this.cboFamilias.Name = "cboFamilias";
             this.cboFamilias.Size = new System.Drawing.Size(121, 21);
             this.cboFamilias.TabIndex = 1;
+            this.cboFamilias.SelectedIndexChanged += new System.EventHandler(this.cboFamilias_SelectedIndexChanged);
             this.cboFamilias.SelectedValueChanged += new System.EventHandler(this.cboFamilias_SelectedValueChanged);
             // 
             // cboEmpleados
@@ -964,11 +965,6 @@
         private System.Windows.Forms.TabPage tabCrearUsuario;
         private System.Windows.Forms.Label lblVerValor;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox cboPermisos;
-        private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label label5;
@@ -1012,5 +1008,10 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ComboBox cboPermisos;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
