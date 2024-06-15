@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics.SymbolStore;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace CD_ConexionDatos
+{
+    public abstract class cls_Conexion
+    {                                                 
+        private readonly string conexion;         //"conexion" solo es accesible dentro de esta clase que es donde se declara.
+                                                  //Además una vez que se inicializa su valor no puede ser modificado,
+                                                  //solo puede ser establecido adentro del constructor de la clase en este caso.
+        public cls_Conexion()
+        {
+            conexion = $"Server=DESKTOP-HJFED8D; Database=BD_Trasnporte; User Id=DESKTOP-HJFED8D\\juanm; Integrated Security=True;"; // Si no usamos Integrated Security (por defecto de Windows)
+                                                                                                                                     // y sí autenticación SQL, hay que incluir Password.
+        }
+
+        protected SqlConnection GetConexion()  //Property que devuelve la conexion
+        {
+            return new SqlConnection(conexion);  //Devuelve una nueva instancia de SqlConnection utilizando la cadena de conexión.
+        }
+
+    }
+}

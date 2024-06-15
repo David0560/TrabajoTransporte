@@ -9,7 +9,7 @@ using CD_ConexionDatos;
 
 namespace CL_Negocios
 {
-    public class datosSql
+    public class datosSql : cls_EjecutarQ
     {
 
         SqlDataReader dr; // permite lee la secuencia de filas en una tabla "dr es una variable"
@@ -25,7 +25,7 @@ namespace CL_Negocios
             try
             {
                 // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
-                using (con = connectionBD.CreaInstacia().CrearConexion())// nos devuelve el string de conexin a sql
+                using (con = conexion.CreaInstacia().CrearConexion())// nos devuelve el string de conexin a sql
                 {
                     using (SqlCommand comando = new SqlCommand("spListaPermisos", con))
                     {

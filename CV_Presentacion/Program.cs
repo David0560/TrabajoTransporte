@@ -16,7 +16,15 @@ namespace CV_Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+
+            CapaVista.frmLogin frm = new CapaVistaUsuario.frmLogin();
+            frm.ShowDialog();
+
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new frmMenu());
+            }
+                
         }
     }
 }
