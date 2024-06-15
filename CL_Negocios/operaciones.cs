@@ -23,7 +23,7 @@ namespace CL_Negocios
             
             try
             {
-                using (con = connectionBD.CreaInstacia().CrearConexion())
+                using (con)
                 {
                     con.Open();
                     using (SqlCommand comando = new SqlCommand("spValidarUsuario", con))

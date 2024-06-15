@@ -20,7 +20,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerEmpleados", con); // cargo el da con el sp y la conexion.
                 con.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
@@ -42,7 +41,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerFamilias", con); // cargo el da con el sp y la conexion.
                 con.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
@@ -65,7 +63,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerRoles", con); // cargo el da con el sp y la conexion.
                 con.Open();                                                          
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
@@ -88,7 +85,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerDocumentoIdent", con); // cargo el da con el sp y la conexion.
                 con.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
@@ -110,7 +106,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerLocalidad", con); // cargo el da con el sp y la conexion.
                 con.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
@@ -132,7 +127,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerSexo", con); // cargo el da con el sp y la conexion.
                 con.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType
@@ -154,7 +148,6 @@ namespace CL_Negocios
         {
             try
             {
-                con = connectionBD.CreaInstacia().CrearConexion(); //devuelve el string de conexin a sql
                 SqlDataAdapter da = new SqlDataAdapter("spVerTareas", con); // cargo el da con el sp y la conexion.
                 con.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure; // indico que este dataAdapter es un procedimiento almacenado con el CommnadType

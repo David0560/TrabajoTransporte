@@ -16,8 +16,6 @@ namespace CV_Presentacion
 {
     public partial class frm_Usuario : Form
     {
-        connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
-        
         public frm_Usuario()
         {
             InitializeComponent();

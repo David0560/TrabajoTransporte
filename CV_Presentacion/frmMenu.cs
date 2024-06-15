@@ -1,26 +1,18 @@
 ﻿using CV_Presentacion.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CV_Presentacion
 {
-    public partial class FrmMenu : Form
+    public partial class frmMenu : Form
     {
 
-        private Button currentButton;
         private Form activeForm;
-        public FrmMenu()
+        public frmMenu()
         {
-            
             InitializeComponent();
         }
+
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CV_Presentacion
@@ -17,7 +14,7 @@ namespace CV_Presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            CapaVista.frmLogin frm = new CapaVistaUsuario.frmLogin();
+            CV_Presentacion.frmLogin frm = new CV_Presentacion.frmLogin();
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.OK)

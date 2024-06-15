@@ -29,116 +29,234 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblRecupero = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
+            this.picBoxLogin = new System.Windows.Forms.PictureBox();
             this.btnCerrarLogin = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.pbxMostrar = new System.Windows.Forms.PictureBox();
-            this.pbxOcultar = new System.Windows.Forms.PictureBox();
+            this.txtBoxUsers = new System.Windows.Forms.TextBox();
+            this.txtBoxPassw = new System.Windows.Forms.TextBox();
             this.btnAcceder = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
+            this.lblForgotPass = new System.Windows.Forms.LinkLabel();
+            this.lblErrorMsg = new System.Windows.Forms.Label();
+            this.picError = new System.Windows.Forms.PictureBox();
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.picShowPass = new System.Windows.Forms.PictureBox();
+            this.picHidePass = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMostrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOcultar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
+            this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShowPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHidePass)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblUsuario
+            // picBoxLogin
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(655, 171);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(97, 28);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Usuario";
+            this.picBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
+            this.picBoxLogin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picBoxLogin.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogin.Image")));
+            this.picBoxLogin.Location = new System.Drawing.Point(0, 0);
+            this.picBoxLogin.Name = "picBoxLogin";
+            this.picBoxLogin.Size = new System.Drawing.Size(368, 350);
+            this.picBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxLogin.TabIndex = 0;
+            this.picBoxLogin.TabStop = false;
+            this.picBoxLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picBoxLogin_MouseDown);
             // 
-            // lblPassword
+            // btnCerrarLogin
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(646, 268);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(121, 28);
-            this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "Password";
+            this.btnCerrarLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarLogin.Image")));
+            this.btnCerrarLogin.Location = new System.Drawing.Point(366, 11);
+            this.btnCerrarLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarLogin.Name = "btnCerrarLogin";
+            this.btnCerrarLogin.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrarLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarLogin.TabIndex = 7;
+            this.btnCerrarLogin.TabStop = false;
+            this.btnCerrarLogin.Click += new System.EventHandler(this.btnCerrarLogin_Click);
             // 
-            // lblRecupero
+            // lblLogin
             // 
-            this.lblRecupero.AutoSize = true;
-            this.lblRecupero.Location = new System.Drawing.Point(812, 442);
-            this.lblRecupero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRecupero.Name = "lblRecupero";
-            this.lblRecupero.Size = new System.Drawing.Size(156, 20);
-            this.lblRecupero.TabIndex = 2;
-            this.lblRecupero.Text = "Recuperar password";
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Century Gothic", 22.25455F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.White;
+            this.lblLogin.Location = new System.Drawing.Point(142, 53);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(127, 41);
+            this.lblLogin.TabIndex = 8;
+            this.lblLogin.Text = "LOGIN";
+            this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtUsuario
+            // txtBoxUsers
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(493, 204);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(434, 37);
-            this.txtUsuario.TabIndex = 10;
+            this.txtBoxUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtBoxUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtBoxUsers.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUsers.ForeColor = System.Drawing.Color.Silver;
+            this.txtBoxUsers.Location = new System.Drawing.Point(35, 109);
+            this.txtBoxUsers.Name = "txtBoxUsers";
+            this.txtBoxUsers.Size = new System.Drawing.Size(340, 30);
+            this.txtBoxUsers.TabIndex = 2;
+            this.txtBoxUsers.Text = "USUARIO";
+            this.txtBoxUsers.Enter += new System.EventHandler(this.txtBoxUsers_Enter);
+            this.txtBoxUsers.Leave += new System.EventHandler(this.txtBoxUsers_Leave);
             // 
-            // txtPassword
+            // txtBoxPassw
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(493, 301);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(434, 37);
-            this.txtPassword.TabIndex = 11;
+            this.txtBoxPassw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtBoxPassw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxPassw.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtBoxPassw.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPassw.ForeColor = System.Drawing.Color.Silver;
+            this.txtBoxPassw.Location = new System.Drawing.Point(35, 160);
+            this.txtBoxPassw.Name = "txtBoxPassw";
+            this.txtBoxPassw.Size = new System.Drawing.Size(340, 30);
+            this.txtBoxPassw.TabIndex = 3;
+            this.txtBoxPassw.Text = "CONTRASEÑA";
+            this.txtBoxPassw.Enter += new System.EventHandler(this.txtBoxPassw_Enter);
+            this.txtBoxPassw.Leave += new System.EventHandler(this.txtBoxPassw_Leave);
             // 
-            // pictureBoxLogin
+            // btnAcceder
             // 
-          
+            this.btnAcceder.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAcceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAcceder.FlatAppearance.BorderSize = 0;
+            this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceder.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceder.ForeColor = System.Drawing.Color.White;
+            this.btnAcceder.Location = new System.Drawing.Point(60, 245);
+            this.btnAcceder.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAcceder.Name = "btnAcceder";
+            this.btnAcceder.Size = new System.Drawing.Size(291, 50);
+            this.btnAcceder.TabIndex = 4;
+            this.btnAcceder.Text = "ACCEDER";
+            this.btnAcceder.UseVisualStyleBackColor = false;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
+            // 
+            // lblForgotPass
+            // 
+            this.lblForgotPass.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lblForgotPass.AutoSize = true;
+            this.lblForgotPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblForgotPass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPass.ForeColor = System.Drawing.Color.White;
+            this.lblForgotPass.LinkColor = System.Drawing.Color.DarkGray;
+            this.lblForgotPass.Location = new System.Drawing.Point(137, 313);
+            this.lblForgotPass.Name = "lblForgotPass";
+            this.lblForgotPass.Size = new System.Drawing.Size(133, 21);
+            this.lblForgotPass.TabIndex = 1;
+            this.lblForgotPass.TabStop = true;
+            this.lblForgotPass.Text = "Forgot Password?";
+            // 
+            // lblErrorMsg
+            // 
+            this.lblErrorMsg.AutoSize = true;
+            this.lblErrorMsg.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.818182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMsg.ForeColor = System.Drawing.Color.White;
+            this.lblErrorMsg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblErrorMsg.Location = new System.Drawing.Point(25, 205);
+            this.lblErrorMsg.Name = "lblErrorMsg";
+            this.lblErrorMsg.Size = new System.Drawing.Size(116, 19);
+            this.lblErrorMsg.TabIndex = 10;
+            this.lblErrorMsg.Text = "Error Message";
+            this.lblErrorMsg.Visible = false;
+            // 
+            // picError
+            // 
+            this.picError.Image = ((System.Drawing.Image)(resources.GetObject("picError.Image")));
+            this.picError.Location = new System.Drawing.Point(3, 202);
+            this.picError.Name = "picError";
+            this.picError.Size = new System.Drawing.Size(24, 27);
+            this.picError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picError.TabIndex = 11;
+            this.picError.TabStop = false;
+            this.picError.Visible = false;
+            // 
+            // panelLogin
+            // 
+            this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(118)))));
+            this.panelLogin.Controls.Add(this.picHidePass);
+            this.panelLogin.Controls.Add(this.picShowPass);
+            this.panelLogin.Controls.Add(this.btnCerrarLogin);
+            this.panelLogin.Controls.Add(this.lblForgotPass);
+            this.panelLogin.Controls.Add(this.picError);
+            this.panelLogin.Controls.Add(this.btnAcceder);
+            this.panelLogin.Controls.Add(this.lblLogin);
+            this.panelLogin.Controls.Add(this.lblErrorMsg);
+            this.panelLogin.Controls.Add(this.txtBoxUsers);
+            this.panelLogin.Controls.Add(this.txtBoxPassw);
+            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLogin.Location = new System.Drawing.Point(368, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(412, 350);
+            this.panelLogin.TabIndex = 12;
+            this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
+            // 
+            // picShowPass
+            // 
+            this.picShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picShowPass.Image = ((System.Drawing.Image)(resources.GetObject("picShowPass.Image")));
+            this.picShowPass.Location = new System.Drawing.Point(379, 160);
+            this.picShowPass.Name = "picShowPass";
+            this.picShowPass.Size = new System.Drawing.Size(30, 30);
+            this.picShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picShowPass.TabIndex = 12;
+            this.picShowPass.TabStop = false;
+            this.picShowPass.Click += new System.EventHandler(this.picShowPass_Click);
+            // 
+            // picHidePass
+            // 
+            this.picHidePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picHidePass.Image = ((System.Drawing.Image)(resources.GetObject("picHidePass.Image")));
+            this.picHidePass.Location = new System.Drawing.Point(379, 160);
+            this.picHidePass.Name = "picHidePass";
+            this.picHidePass.Size = new System.Drawing.Size(30, 30);
+            this.picHidePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHidePass.TabIndex = 13;
+            this.picHidePass.TabStop = false;
+            this.picHidePass.Click += new System.EventHandler(this.picHidePass_Click);
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.lblRecupero);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsuario);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(780, 350);
+            this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.picBoxLogin);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Ejemplo ADO.Net en N-Capas";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_Login_MouseDown);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShowPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHidePass)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblRecupero;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.PictureBox pictureBoxLogin;
+        private System.Windows.Forms.PictureBox picBoxLogin;
         private System.Windows.Forms.PictureBox btnCerrarLogin;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.PictureBox pbxMostrar;
-        private System.Windows.Forms.PictureBox pbxOcultar;
+        private System.Windows.Forms.TextBox txtBoxUsers;
+        private System.Windows.Forms.TextBox txtBoxPassw;
         private System.Windows.Forms.Button btnAcceder;
+        private System.Windows.Forms.LinkLabel lblForgotPass;
+        private System.Windows.Forms.Label lblErrorMsg;
+        private System.Windows.Forms.PictureBox picError;
+        private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.PictureBox picHidePass;
+        private System.Windows.Forms.PictureBox picShowPass;
     }
 }

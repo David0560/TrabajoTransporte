@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cls_UserCache.cs" />
     <Compile Include="combosSql.cs" />
     <Compile Include="Servicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
