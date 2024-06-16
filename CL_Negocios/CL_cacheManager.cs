@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using CD_ConexionDatos;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CL_Negocios.Entidades
+namespace CL_Negocios
 {
-    internal class cacheManager
+    internal class CL_cacheManager
     {
         private List<cachePermisosAlta> listaRoles;
 
-        public cacheManager() //constructor
+        public CL_cacheManager() //constructor
         {
             listaRoles = new List<cachePermisosAlta>(); // creo una lista de roles
         }

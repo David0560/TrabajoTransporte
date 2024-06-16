@@ -14,7 +14,7 @@ namespace CV_Presentacion
 {
     public partial class frmLogin : Form
     {
-        operaciones operaciones = new operaciones();
+        //operaciones operaciones = new operaciones();
         public frmLogin()
         {
             InitializeComponent();

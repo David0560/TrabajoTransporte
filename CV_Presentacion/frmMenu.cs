@@ -14,7 +14,6 @@ namespace CV_Presentacion
     public partial class FrmMenu : Form
     {
 
-        private Button currentButton;
         private Form activeForm;
         public FrmMenu()
         {
@@ -73,6 +72,11 @@ namespace CV_Presentacion
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Configuracion(), sender);
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

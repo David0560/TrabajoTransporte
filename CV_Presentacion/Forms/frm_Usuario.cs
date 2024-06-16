@@ -17,7 +17,7 @@ namespace CV_Presentacion
 {
     public partial class frm_Usuario : Form
     {
-        connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
+        connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
         private datosSql datos = new datosSql();
        
         

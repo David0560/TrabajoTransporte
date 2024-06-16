@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CD_ConexionDatos;
-using CL_Negocios.Entidades;
 
-namespace CL_Negocios
+namespace CD_ConexionDatos
 {
     public class datosSql
     {

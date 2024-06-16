@@ -8,18 +8,9 @@ using System.Threading.Tasks;
 
 namespace CapaServicios
 {
-    internal class AdministrarComboBox
+    internal class CS_AdministrarComboBox
     {
-
-        private CargarComboBox combo;
-
-        public AdministrarComboBox() 
-        {
-            combo = new CargarComboBox();
-        }
-
-
-
-
+       
+       
     }
 }

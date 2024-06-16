@@ -62,7 +62,7 @@ namespace CD_ConexionDatos
         {
             if (con == null)
             {
-                con = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
+                con = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
             }
             return con;
         }

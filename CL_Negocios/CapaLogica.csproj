@@ -86,14 +86,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="datosSql.cs" />
-    <Compile Include="Entidades\cacheManager.cs" />
-    <Compile Include="Entidades\cachePermisosAlta.cs" />
-    <Compile Include="Entidades\Contraseña.cs" />
-    <Compile Include="Entidades\Permisos.cs" />
-    <Compile Include="Entidades\Persona.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="operaciones.cs" />
+    <Compile Include="CL_administrarPreguntas.cs" />
+    <Compile Include="CL_cacheManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

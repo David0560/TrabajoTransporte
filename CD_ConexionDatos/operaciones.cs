@@ -9,18 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 
-namespace CL_Negocios
+namespace CD_ConexionDatos
 {
     public class operaciones
     {
         SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
-        
-
         public operaciones() { }
 
         public int ValidarUsuario(string password, string usuario)
-        {
-            
+        {            
             try
             {
                 using (con = connectionBD.CreaInstacia().CrearConexion())
