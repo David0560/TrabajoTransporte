@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 using CD_ConexionDatos;
 using CL_Negocios;
 using CL_Negocios.Entidades;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace CV_Presentacion
@@ -19,8 +21,7 @@ namespace CV_Presentacion
     {
         connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
         private datosSql datos = new datosSql();
-       
-        
+        CL_administrarComboBox combo = new CL_administrarComboBox();
         public frm_Usuario()
         {
             InitializeComponent();
@@ -48,59 +49,14 @@ namespace CV_Presentacion
 
             timer1.Enabled = true;
             lista();
-            comboEmpleado();
-            comboFamilia();
-            comboRoles();
-            comboUsuarios();
+            combo.seleccionCombo(cboEmpleados, "spVerEmpleados");
+            combo.seleccionCombo(cboFamilias,"spVerFamilias");
+            combo.seleccionCombo(cboPermisos, "spVerRoles");
+            combo.seleccionCombo(cboUsuario, "spVerUsuario");
             //listaPermiso(); // es mejor cargarlo en una lista para porde borrarlo antes de cargarles los permisos..... pendiente
             
 
         }
-
-        // llenar el comboBox
-        private void comboRoles()
-        {
-            CargarComboBox cn = new CargarComboBox();
-            cboPermisos.DataSource = cn.CargarRoles();
-            // indicamos las tablas a mostrar  y el valor que va a tomar.
-            cboPermisos.DisplayMember = "nombre_rol"; // acá indicamos que es lo que queremos visualizar
-            cboPermisos.ValueMember = "id_rol"; // en esta nos dice que valor va a tomar ese combo
-            cboPermisos.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cboPermisos.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-
-        }
-        private void comboEmpleado()
-        {
-            CargarComboBox cn = new CargarComboBox();
-            cboEmpleados.DataSource = cn.CargarEmpleados();
-            // indicamos las tablas a mostrar  y el valor que va a tomar.
-            cboEmpleados.DisplayMember = "nombre"; // acá indicamos que es lo que queremos visualizar
-            cboEmpleados.ValueMember = "id_persona"; // en esta nos dice que valor va a tomar ese combo
-            cboEmpleados.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cboEmpleados.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-
-        }
-        private void comboFamilia()
-        {
-            CargarComboBox cn = new CargarComboBox();
-            cboFamilias.DataSource = cn.CargarFamilia();
-            //indicamos las tablas a mostrar  y el valor que va a tomar.
-            cboFamilias.DisplayMember = "nombre"; // acá indicamos que es lo que queremos visualizar
-            cboFamilias.ValueMember = "id_familia"; // en esta nos dice que valor va a tomar ese combo
-            cboFamilias.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cboFamilias.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        }
-        private void comboUsuarios()
-        {
-            CargarComboBox cn = new CargarComboBox();
-            cboUsuario.DataSource = cn.CargarUsuarios();
-            //indicamos las tablas a mostrar  y el valor que va a tomar.
-            cboUsuario.DisplayMember = "nombre_usuario"; // acá indicamos que es lo que queremos visualizar
-            cboUsuario.ValueMember = "id_usuario"; // en esta nos dice que valor va a tomar ese combo
-            cboUsuario.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cboUsuario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        }
-
 
         // crear un metod void para llenar el datagridview
         private void lista()
@@ -138,8 +94,6 @@ namespace CV_Presentacion
             try
             {
                 listaPermiso();
-                //dgvPermisoUsuario.DataSource = datos.obtenerRoles(cboFamilias.SelectedIndex.ToString());
-                //actualizarDataGrid();
             }
             catch (Exception ex)
             {
@@ -170,7 +124,7 @@ namespace CV_Presentacion
 
         private void cboPermisos_SelectedValueChanged(object sender, EventArgs e)
         {
-            lblVerValor.Text = cboPermisos.SelectedValue.ToString();
+            //lblVerValor.Text = cboPermisos.SelectedValue.ToString();
         }
 
         private void cboFamilias_SelectedValueChanged(object sender, EventArgs e)
@@ -209,5 +163,12 @@ namespace CV_Presentacion
         {
 
         }
+
+        private void btnGuardarPregunta_Click(object sender, EventArgs e)
+        {
+            CL_administrarPreguntas pre = new CL_administrarPreguntas();
+            pre.crearNuevaPregunta(textBox7.Text);
+        }
+
     }
 }

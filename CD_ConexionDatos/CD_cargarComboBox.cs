@@ -8,26 +8,27 @@ using System.Threading.Tasks;
 
 namespace CD_ConexionDatos
 {
-    internal class cargarComboBox
+    public class CD_cargarComboBox
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
-        public cargarComboBox() { }
+        public CD_cargarComboBox() { }
 
         public DataTable ObtenerDatosComboBox(string query)
         {
-            con = connectionBD.CreaInstacia().CrearConexion();
-            con.Open();
-            SqlDataAdapter adaptador = new SqlDataAdapter(query, con);
-            adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-            DataTable datos = new DataTable();
-            adaptador.Fill(datos);
-            DataRow dr = datos.NewRow();
-            dr["nombre"] = null;
-            con.Close();
-            return datos;
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand(query, con);
+                comando.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                DataTable tablaDatos = new DataTable();
+                adaptador.Fill(tablaDatos);
+                con.Close();
+                return tablaDatos;
+            }
         }
 
-        public DataTable CargarEmpleados()
+        /*public DataTable CargarEmpleados()
         {
             try
             {
@@ -83,7 +84,7 @@ namespace CD_ConexionDatos
                 DataTable dt = new DataTable(); // creo un datatable
                 da.Fill(dt); // cargo el dr con los valores del Da mediante su metodo fill
                 DataRow dr = dt.NewRow();
-                dr["nombre_rol"] = null;
+                dr["nombre"] = null;
                 dt.Rows.InsertAt(dr, 0);
                 con.Close();
                 return dt; // retorno dt
@@ -194,7 +195,7 @@ namespace CD_ConexionDatos
                 DataTable dt = new DataTable(); // creo un datatable
                 da.Fill(dt); // cargo el dr con los valores del Da mediante su metodo fill
                 DataRow dr = dt.NewRow(); // creo una nueva fila
-                dr["nombre_usuario"] = null; // indico el nombre de la coluna y su contenido en este caso es vacio.
+                dr["nombre"] = null; // indico el nombre de la coluna y su contenido en este caso es vacio.
                 dt.Rows.InsertAt(dr, 0); // la agrego a la primera fila.
                 return dt; // retorno dt
 
@@ -204,7 +205,7 @@ namespace CD_ConexionDatos
 
                 throw ex;
             }
-        }
+        }*/
 
 
     }

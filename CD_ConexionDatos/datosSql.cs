@@ -48,14 +48,14 @@ namespace CD_ConexionDatos
            
             try
             {
-                int str1 = Convert.ToInt32(str);
+                int id_familia = Convert.ToInt32(str);
                 using (con = connectionBD.CreaInstacia().CrearConexion())
                 {
                     using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));
-                        comando.Parameters["@id_tipo_usuario"].Value = str1;
+                        comando.Parameters["@id_tipo_usuario"].Value = id_familia;
                         DataTable dt = new DataTable();
                         SqlDataAdapter da = new SqlDataAdapter(comando);
                         con.Open();

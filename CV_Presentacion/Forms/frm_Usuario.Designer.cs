@@ -666,6 +666,7 @@
             this.btnGuardarPregunta.TabIndex = 1;
             this.btnGuardarPregunta.Text = "&Guardar";
             this.btnGuardarPregunta.UseVisualStyleBackColor = true;
+            this.btnGuardarPregunta.Click += new System.EventHandler(this.btnGuardarPregunta_Click);
             // 
             // textBox7
             // 
