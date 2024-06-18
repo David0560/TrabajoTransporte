@@ -24,7 +24,10 @@ namespace CD_ConexionDatos
                     comando.ExecuteNonQuery();
                     
                 }
+
             }
+
+            // cargar data grid
         }
     }
 }

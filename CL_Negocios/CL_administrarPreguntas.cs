@@ -19,5 +19,6 @@ namespace CL_Negocios
             MessageBox.Show("pregunta guardad");
         }
         
+        //gestionar data grid
     }
 }
