@@ -20,8 +20,9 @@ namespace CV_Presentacion
     public partial class frm_Usuario : Form
     {
         connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
-        private datosSql datos = new datosSql();
+        //private datosSql datos = new datosSql();
         CL_administrarComboBox combo = new CL_administrarComboBox();
+        CL_administrarTablas tabla = new CL_administrarTablas();
         public frm_Usuario()
         {
             InitializeComponent();
@@ -45,21 +46,20 @@ namespace CV_Presentacion
             //dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue; // Color de fondo de la celda del encabezado seleccionada
             dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;// Centro el texto de las cabeceras
 
-            // llamar al método listar
 
             timer1.Enabled = true;
-            lista();
             combo.seleccionCombo(cboEmpleados, "spVerEmpleados");
             combo.seleccionCombo(cboFamilias,"spVerFamilias");
-            combo.seleccionCombo(cboPermisos, "spVerRoles");
-            combo.seleccionCombo(cboUsuario, "spVerUsuario");
-            //listaPermiso(); // es mejor cargarlo en una lista para porde borrarlo antes de cargarles los permisos..... pendiente
-            
+            combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");
+
+
+
+
 
         }
 
         // crear un metod void para llenar el datagridview
-        private void lista()
+        /*private void lista()
         {
             try
             {
@@ -99,7 +99,7 @@ namespace CV_Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }
+        }*/
         
          
        
@@ -121,13 +121,7 @@ namespace CV_Presentacion
                 lblTituloPregunta.Text = "Cargar nueva pregunta de seguridad";
             }
         }
-
-        private void cboPermisos_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //lblVerValor.Text = cboPermisos.SelectedValue.ToString();
-        }
-
-        private void cboFamilias_SelectedValueChanged(object sender, EventArgs e)
+        /*private void cboFamilias_SelectedValueChanged(object sender, EventArgs e)
         {
             if(cboFamilias.SelectedIndex != -1) //reparo la falta de seleccion en el combobox.
             {
@@ -148,8 +142,7 @@ namespace CV_Presentacion
             
         }
         private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            
+        {            
             datos.eliminarRoles(1);
             actualizarDataGrid();
         }
@@ -157,12 +150,7 @@ namespace CV_Presentacion
         {
             dgvPermisoUsuario.DataSource = null;
             dgvPermisoUsuario.DataSource = datos.totalRoles();
-        }
-
-        private void cboFamilias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }*/
 
         private void btnGuardarPregunta_Click(object sender, EventArgs e)
         {
@@ -170,5 +158,33 @@ namespace CV_Presentacion
             pre.crearNuevaPregunta(textBox7.Text);
         }
 
+        private void cboEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblVerValor.Text = Convert.ToString(cboEmpleados.SelectedValue);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (cboEmpleados.SelectedValue != null)
+            {
+                bool respuesta = tabla.validarExistenciaDeUsuario(Convert.ToInt32(cboEmpleados.SelectedValue));
+                    if (respuesta)
+                {
+                    MessageBox.Show("valores a cargar");
+                    lblVerValor.Text = respuesta.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("El empleado ya cuenta con un usuario");
+                    lblVerValor.Text = respuesta.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("ya existe un usuario con este empleado");
+                //lblVerValor.Text = respuesta.ToString();
+            }
+        }
     }
 }

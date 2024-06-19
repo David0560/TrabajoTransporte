@@ -89,7 +89,7 @@
     <Compile Include="CD_cargarComboBox.cs" />
     <Compile Include="CD_Pregunta.cs" />
     <Compile Include="connectionDB.cs" />
-    <Compile Include="datosSql.cs" />
+    <Compile Include="CD_listarTablas.cs" />
     <Compile Include="Entidades\cachePermisosAlta.cs" />
     <Compile Include="Entidades\Contraseña.cs" />
     <Compile Include="Entidades\Permisos.cs" />

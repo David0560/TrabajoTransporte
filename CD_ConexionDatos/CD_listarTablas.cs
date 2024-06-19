@@ -5,13 +5,32 @@ using System.Data.SqlClient;
 
 namespace CD_ConexionDatos
 {
-    public class datosSql
+    public class CD_listarTablas
     {
         List<cachePermisosAlta> Roles = new List<cachePermisosAlta>();// instancio la lista
         SqlDataReader dr; // permite lee la secuencia de filas en una tabla "dr es una variable"
         DataTable dt = new DataTable(); // instancia un objeto tipo tabla
         SqlConnection con = new SqlConnection(); // prepara el objeto para recibir los valores
-  
+        
+        public int ConsultarId (int str1, string query)
+        {
+            //int str1 = Convert.ToInt32(valor);
+
+            using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
+            {
+                int cantidad;
+                using (SqlCommand comando = new SqlCommand(query, con))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.Add(new SqlParameter("@xid", con));
+                    comando.Parameters["@xid"].Value = str1;
+                    con.Open();// abro la conexion.
+                    cantidad = (int)comando.ExecuteScalar(); //                   
+                }
+                return cantidad;
+            }
+        }
+
         //metodo para listar los elementos de la tablas.
         public DataTable listar()
         {           
