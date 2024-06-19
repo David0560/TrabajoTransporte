@@ -2,18 +2,18 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CL_Negocios.Logica_Login;
 
 namespace CV_Presentacion
 {
     public partial class frmLogin : Form
     {
-        //ProdLogica logica_prod = new ProdLogica();
-
+        cls_LogicaLogin logica_log = new cls_LogicaLogin(); //Instancio objeto para clase Logica Login
 
         public frmLogin()
         {
             InitializeComponent();
-            picShowPass.BringToFront();
+            picShowPass.BringToFront(); //que inicie con el logo para habilitar la contraseña Show (que se vea)
         }
 
         private int intentos = 0;

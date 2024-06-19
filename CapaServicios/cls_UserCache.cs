@@ -23,6 +23,6 @@ namespace CapaServicios
         public static string Nombres { get; set; }
         public static string Cargo { get; set; }
 
-        public static List<cls_Permisos> PermisosUser = new List<>;
+        public static List<string> PermisosUser = new List<string>();
     }
 }

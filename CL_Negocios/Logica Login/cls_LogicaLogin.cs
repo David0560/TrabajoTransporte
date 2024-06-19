@@ -10,11 +10,11 @@ namespace CL_Negocios.Logica_Login
     {
         private bool existe;
 
-        cls_ConectarUser userLoguin = new cls_ConectarUser();
+        cls_ConectarUser userLogin = new cls_ConectarUser();
         cls_Permisos Permisos = new cls_Permisos();
         public bool LoginUser(string user, string pass)
         {
-            existe = userLoguin.Login(user, pass);
+            existe = userLogin.Login(user, pass);
             //existe = userLoguin.Login(user, pass);
             if (existe)
             {
