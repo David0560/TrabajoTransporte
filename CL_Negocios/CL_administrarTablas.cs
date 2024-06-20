@@ -1,6 +1,7 @@
 ﻿using CD_ConexionDatos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,13 @@ namespace CL_Negocios
             {
                 return false;
             }
-            
+        }
+
+        public DataTable permisosPorFamilia(int id_familia)
+        {
+            DataTable data =  datosTabla.tablaPermisosPorFamilia(id_familia, "spListarPermisosPorTipoUser");
+            return data;
+
         }
     }
 }

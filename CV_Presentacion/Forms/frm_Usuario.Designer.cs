@@ -85,17 +85,18 @@
             this.lblFilas = new System.Windows.Forms.Label();
             this.tabAltaUsuario = new System.Windows.Forms.TabControl();
             this.tabCrearUsuario = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblVerValor = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpVenceUsuario = new System.Windows.Forms.DateTimePicker();
+            this.dtpVencePass = new System.Windows.Forms.DateTimePicker();
             this.chkRecordar = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFechaPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFechaUsuario = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.lblTipoUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -665,9 +666,10 @@
             // 
             // tabCrearUsuario
             // 
+            this.tabCrearUsuario.Controls.Add(this.label6);
             this.tabCrearUsuario.Controls.Add(this.lblVerValor);
             this.tabCrearUsuario.Controls.Add(this.lblDate);
-            this.tabCrearUsuario.Controls.Add(this.textBox3);
+            this.tabCrearUsuario.Controls.Add(this.txtNombreUsuario);
             this.tabCrearUsuario.Controls.Add(this.lblNombreUsuario);
             this.tabCrearUsuario.Controls.Add(this.label5);
             this.tabCrearUsuario.Controls.Add(this.groupBox1);
@@ -684,6 +686,15 @@
             this.tabCrearUsuario.TabIndex = 0;
             this.tabCrearUsuario.Text = "Nuevo Usuaurio";
             this.tabCrearUsuario.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(252, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Lista de permisos predefinidos por el tipo de usuario.";
             // 
             // lblVerValor
             // 
@@ -704,12 +715,12 @@
             this.lblDate.TabIndex = 22;
             this.lblDate.Text = "Dia: ";
             // 
-            // textBox3
+            // txtNombreUsuario
             // 
-            this.textBox3.Location = new System.Drawing.Point(158, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 20;
+            this.txtNombreUsuario.Location = new System.Drawing.Point(158, 94);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(121, 20);
+            this.txtNombreUsuario.TabIndex = 20;
             // 
             // lblNombreUsuario
             // 
@@ -732,17 +743,40 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpVenceUsuario);
+            this.groupBox1.Controls.Add(this.dtpVencePass);
             this.groupBox1.Controls.Add(this.chkRecordar);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtFechaPassword);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtFechaUsuario);
             this.groupBox1.Location = new System.Drawing.Point(321, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(222, 124);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fechas de Vencimientos";
+            // 
+            // dtpVenceUsuario
+            // 
+            this.dtpVenceUsuario.Checked = false;
+            this.dtpVenceUsuario.CustomFormat = "yyyy/MM/dd";
+            this.dtpVenceUsuario.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpVenceUsuario.Location = new System.Drawing.Point(79, 54);
+            this.dtpVenceUsuario.Name = "dtpVenceUsuario";
+            this.dtpVenceUsuario.Size = new System.Drawing.Size(120, 20);
+            this.dtpVenceUsuario.TabIndex = 16;
+            this.dtpVenceUsuario.Value = new System.DateTime(2024, 6, 19, 0, 0, 0, 0);
+            this.dtpVenceUsuario.ValueChanged += new System.EventHandler(this.dtpVenceUsuario_ValueChanged);
+            // 
+            // dtpVencePass
+            // 
+            this.dtpVencePass.CustomFormat = "yyyy/MM/dd";
+            this.dtpVencePass.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpVencePass.Location = new System.Drawing.Point(79, 25);
+            this.dtpVencePass.Name = "dtpVencePass";
+            this.dtpVencePass.Size = new System.Drawing.Size(119, 20);
+            this.dtpVencePass.TabIndex = 15;
+            this.dtpVencePass.Value = new System.DateTime(2024, 6, 19, 0, 0, 0, 0);
+            this.dtpVencePass.ValueChanged += new System.EventHandler(this.dtpVencePass_ValueChanged);
             // 
             // chkRecordar
             // 
@@ -763,13 +797,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Password:";
             // 
-            // txtFechaPassword
-            // 
-            this.txtFechaPassword.Location = new System.Drawing.Point(97, 28);
-            this.txtFechaPassword.Name = "txtFechaPassword";
-            this.txtFechaPassword.Size = new System.Drawing.Size(101, 20);
-            this.txtFechaPassword.TabIndex = 10;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -778,13 +805,6 @@
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Usuario:";
-            // 
-            // txtFechaUsuario
-            // 
-            this.txtFechaUsuario.Location = new System.Drawing.Point(97, 57);
-            this.txtFechaUsuario.Name = "txtFechaUsuario";
-            this.txtFechaUsuario.Size = new System.Drawing.Size(101, 20);
-            this.txtFechaUsuario.TabIndex = 11;
             // 
             // button3
             // 
@@ -817,9 +837,9 @@
             // dgvPermisoUsuario
             // 
             this.dgvPermisoUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPermisoUsuario.Location = new System.Drawing.Point(18, 162);
+            this.dgvPermisoUsuario.Location = new System.Drawing.Point(18, 186);
             this.dgvPermisoUsuario.Name = "dgvPermisoUsuario";
-            this.dgvPermisoUsuario.Size = new System.Drawing.Size(525, 242);
+            this.dgvPermisoUsuario.Size = new System.Drawing.Size(525, 218);
             this.dgvPermisoUsuario.TabIndex = 4;
             // 
             // cboFamilias
@@ -829,6 +849,7 @@
             this.cboFamilias.Name = "cboFamilias";
             this.cboFamilias.Size = new System.Drawing.Size(121, 21);
             this.cboFamilias.TabIndex = 1;
+            this.cboFamilias.SelectedIndexChanged += new System.EventHandler(this.cboFamilias_SelectedIndexChanged);
             // 
             // cboEmpleados
             // 
@@ -935,20 +956,21 @@
         private System.Windows.Forms.TabPage tabCrearUsuario;
         private System.Windows.Forms.Label lblVerValor;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkRecordar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFechaPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtFechaUsuario;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblTipoUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvPermisoUsuario;
         private System.Windows.Forms.ComboBox cboFamilias;
         private System.Windows.Forms.ComboBox cboEmpleados;
+        private System.Windows.Forms.DateTimePicker dtpVenceUsuario;
+        private System.Windows.Forms.DateTimePicker dtpVencePass;
+        private System.Windows.Forms.Label label6;
     }
 }

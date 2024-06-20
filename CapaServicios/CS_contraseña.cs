@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace CL_Negocios.Entidades
+namespace CapaServicios
 {
-    public class Contraseña
+    public class CS_contraseña
     {
             private const string Minusculas = "abcdefghijklmnopqrstuvwxyz";
             private const string Mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

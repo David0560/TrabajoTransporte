@@ -60,17 +60,17 @@ namespace CD_ConexionDatos
                 }
              }
         }
-        public DataTable listarPermisos(string str)
+        public DataTable tablaPermisosPorFamilia(int id_familia, string query)
         {
             //utilizo el DataReader que fue instanciado antes como dr"
             //utiliso la variable declarada antes.
            
             try
             {
-                int id_familia = Convert.ToInt32(str);
+                
                 using (con = connectionBD.CreaInstacia().CrearConexion())
                 {
-                    using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
+                    using (SqlCommand comando = new SqlCommand(query, con))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));

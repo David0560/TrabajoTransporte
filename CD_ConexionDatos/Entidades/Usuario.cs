@@ -9,30 +9,35 @@ namespace CL_Negocios.Entidades
 {
     public class Usuario
     {
-        public string Nombre_usuario { get; set; }
-        public bool Estado { get; set; }
+        public int Id { get; set; }
+        public string Nombre{ get; set; }
+        public int Estado { get; set; }
         public int Id_persona { get; set; }
         public string Password_user { get; set; }
-        public DateTime Fecha_vence_pass { get; set; }
-        public DateTime Fecha_user_temporal { get; set; }
+        public DateTime? Fecha_vence_pass { get; set; }
+        public DateTime? Fecha_user_temporal { get; set; }
         public DateTime Fecha_alta { get; set; }
         public int Id_familia { get; set; }
 
-
-        public Usuario()
+        public Usuario(string nombre, int estado, int id_persona, string password_user, int id_familia, DateTime fecha_vence_pass, DateTime fecha_user_temporal)
         {
+            this.Nombre = nombre;
+            this.Estado = estado;
+            this.Id_persona = id_persona;
+            this.Password_user = password_user;
+            this.Id_familia = id_familia;
+            this.Fecha_vence_pass = fecha_vence_pass;
+            this.Fecha_user_temporal = fecha_user_temporal;
+        }
 
-        }
-        public Usuario (string nombre_usuario, bool estado, int id_persona, string password_user, DateTime fecha_vence_pass, DateTime fecha_user_temporal, DateTime fecha_alta, int id_familia)
+        public Usuario(string nombre, int estado, int id_persona, string password_user, int id_familia)
         {
-            Nombre_usuario = nombre_usuario;
-            Estado = estado;
-            Id_persona = id_persona;
-            Password_user = password_user;
-            Fecha_vence_pass = fecha_vence_pass;
-            Fecha_user_temporal = fecha_user_temporal;
-            Fecha_alta = fecha_alta;
-            Id_familia = id_familia;
+            this.Nombre = nombre;
+            this.Estado = estado;
+            this.Id_persona = id_persona;
+            this.Password_user = password_user;
+            this.Id_familia = id_familia;
         }
+
     }
 }
