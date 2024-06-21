@@ -71,13 +71,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabAdministrarPermisos = new System.Windows.Forms.TabPage();
-            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cboSeleccionarUsuario = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminarPermisos = new System.Windows.Forms.Button();
-            this.cmbSeleccionarPermiso = new System.Windows.Forms.ComboBox();
+            this.cboSeleccionarPermiso = new System.Windows.Forms.ComboBox();
             this.txtFechaVencePermiso = new System.Windows.Forms.TextBox();
             this.btnCargarPermisos = new System.Windows.Forms.Button();
             this.lblFechaVence = new System.Windows.Forms.Label();
@@ -90,7 +89,6 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpVenceUsuario = new System.Windows.Forms.DateTimePicker();
             this.dtpVencePass = new System.Windows.Forms.DateTimePicker();
@@ -519,14 +517,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 76);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(523, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(523, 288);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabAdministrarPermisos
             // 
-            this.tabAdministrarPermisos.Controls.Add(this.btnGuardarCambios);
             this.tabAdministrarPermisos.Controls.Add(this.label7);
             this.tabAdministrarPermisos.Controls.Add(this.cboSeleccionarUsuario);
             this.tabAdministrarPermisos.Controls.Add(this.groupBox3);
@@ -539,15 +536,6 @@
             this.tabAdministrarPermisos.TabIndex = 1;
             this.tabAdministrarPermisos.Text = "Administrar Permisos";
             this.tabAdministrarPermisos.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardarCambios
-            // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(466, 406);
-            this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarCambios.TabIndex = 27;
-            this.btnGuardarCambios.Text = "&Guardar";
-            this.btnGuardarCambios.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -570,7 +558,7 @@
             // 
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.btnEliminarPermisos);
-            this.groupBox3.Controls.Add(this.cmbSeleccionarPermiso);
+            this.groupBox3.Controls.Add(this.cboSeleccionarPermiso);
             this.groupBox3.Controls.Add(this.txtFechaVencePermiso);
             this.groupBox3.Controls.Add(this.btnCargarPermisos);
             this.groupBox3.Controls.Add(this.lblFechaVence);
@@ -592,20 +580,20 @@
             // 
             // btnEliminarPermisos
             // 
-            this.btnEliminarPermisos.Location = new System.Drawing.Point(334, 52);
+            this.btnEliminarPermisos.Location = new System.Drawing.Point(429, 51);
             this.btnEliminarPermisos.Name = "btnEliminarPermisos";
             this.btnEliminarPermisos.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarPermisos.TabIndex = 8;
             this.btnEliminarPermisos.Text = "Eliminar";
             this.btnEliminarPermisos.UseVisualStyleBackColor = true;
             // 
-            // cmbSeleccionarPermiso
+            // cboSeleccionarPermiso
             // 
-            this.cmbSeleccionarPermiso.FormattingEnabled = true;
-            this.cmbSeleccionarPermiso.Location = new System.Drawing.Point(108, 22);
-            this.cmbSeleccionarPermiso.Name = "cmbSeleccionarPermiso";
-            this.cmbSeleccionarPermiso.Size = new System.Drawing.Size(220, 21);
-            this.cmbSeleccionarPermiso.TabIndex = 17;
+            this.cboSeleccionarPermiso.FormattingEnabled = true;
+            this.cboSeleccionarPermiso.Location = new System.Drawing.Point(108, 22);
+            this.cboSeleccionarPermiso.Name = "cboSeleccionarPermiso";
+            this.cboSeleccionarPermiso.Size = new System.Drawing.Size(220, 21);
+            this.cboSeleccionarPermiso.TabIndex = 17;
             // 
             // txtFechaVencePermiso
             // 
@@ -616,7 +604,7 @@
             // 
             // btnCargarPermisos
             // 
-            this.btnCargarPermisos.Location = new System.Drawing.Point(253, 52);
+            this.btnCargarPermisos.Location = new System.Drawing.Point(429, 19);
             this.btnCargarPermisos.Name = "btnCargarPermisos";
             this.btnCargarPermisos.Size = new System.Drawing.Size(75, 23);
             this.btnCargarPermisos.TabIndex = 18;
@@ -635,15 +623,15 @@
             // dgvDatos
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(19, 156);
+            this.dgvDatos.Location = new System.Drawing.Point(19, 162);
             this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(522, 239);
+            this.dgvDatos.Size = new System.Drawing.Size(522, 274);
             this.dgvDatos.TabIndex = 1;
             // 
             // lblFilas
             // 
             this.lblFilas.AutoSize = true;
-            this.lblFilas.Location = new System.Drawing.Point(16, 411);
+            this.lblFilas.Location = new System.Drawing.Point(386, 28);
             this.lblFilas.Name = "lblFilas";
             this.lblFilas.Size = new System.Drawing.Size(84, 13);
             this.lblFilas.TabIndex = 1;
@@ -663,6 +651,7 @@
             this.tabAltaUsuario.SelectedIndex = 0;
             this.tabAltaUsuario.Size = new System.Drawing.Size(571, 476);
             this.tabAltaUsuario.TabIndex = 2;
+            this.tabAltaUsuario.SelectedIndexChanged += new System.EventHandler(this.tabAltaUsuario_SelectedIndexChanged);
             // 
             // tabCrearUsuario
             // 
@@ -671,7 +660,6 @@
             this.tabCrearUsuario.Controls.Add(this.lblDate);
             this.tabCrearUsuario.Controls.Add(this.txtNombreUsuario);
             this.tabCrearUsuario.Controls.Add(this.lblNombreUsuario);
-            this.tabCrearUsuario.Controls.Add(this.label5);
             this.tabCrearUsuario.Controls.Add(this.groupBox1);
             this.tabCrearUsuario.Controls.Add(this.button3);
             this.tabCrearUsuario.Controls.Add(this.lblTipoUsuario);
@@ -717,7 +705,7 @@
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(158, 94);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(159, 70);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtNombreUsuario.TabIndex = 20;
@@ -725,21 +713,11 @@
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(42, 96);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(43, 72);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(98, 13);
             this.lblNombreUsuario.TabIndex = 19;
             this.lblNombreUsuario.Text = "Nombre de Usuario";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(63, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 25);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Crear nuevo Usuario";
             // 
             // groupBox1
             // 
@@ -769,6 +747,7 @@
             // 
             // dtpVencePass
             // 
+            this.dtpVencePass.Checked = false;
             this.dtpVencePass.CustomFormat = "yyyy/MM/dd";
             this.dtpVencePass.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpVencePass.Location = new System.Drawing.Point(79, 25);
@@ -819,7 +798,7 @@
             // lblTipoUsuario
             // 
             this.lblTipoUsuario.AutoSize = true;
-            this.lblTipoUsuario.Location = new System.Drawing.Point(43, 129);
+            this.lblTipoUsuario.Location = new System.Drawing.Point(44, 105);
             this.lblTipoUsuario.Name = "lblTipoUsuario";
             this.lblTipoUsuario.Size = new System.Drawing.Size(85, 13);
             this.lblTipoUsuario.TabIndex = 6;
@@ -828,7 +807,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 67);
+            this.label1.Location = new System.Drawing.Point(44, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 5;
@@ -845,7 +824,7 @@
             // cboFamilias
             // 
             this.cboFamilias.FormattingEnabled = true;
-            this.cboFamilias.Location = new System.Drawing.Point(158, 123);
+            this.cboFamilias.Location = new System.Drawing.Point(159, 99);
             this.cboFamilias.Name = "cboFamilias";
             this.cboFamilias.Size = new System.Drawing.Size(121, 21);
             this.cboFamilias.TabIndex = 1;
@@ -854,7 +833,7 @@
             // cboEmpleados
             // 
             this.cboEmpleados.FormattingEnabled = true;
-            this.cboEmpleados.Location = new System.Drawing.Point(158, 60);
+            this.cboEmpleados.Location = new System.Drawing.Point(159, 36);
             this.cboEmpleados.Name = "cboEmpleados";
             this.cboEmpleados.Size = new System.Drawing.Size(121, 21);
             this.cboEmpleados.TabIndex = 0;
@@ -940,13 +919,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabAdministrarPermisos;
-        private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboSeleccionarUsuario;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminarPermisos;
-        private System.Windows.Forms.ComboBox cmbSeleccionarPermiso;
+        private System.Windows.Forms.ComboBox cboSeleccionarPermiso;
         private System.Windows.Forms.TextBox txtFechaVencePermiso;
         private System.Windows.Forms.Button btnCargarPermisos;
         private System.Windows.Forms.Label lblFechaVence;
@@ -958,7 +936,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkRecordar;
         private System.Windows.Forms.Label label4;

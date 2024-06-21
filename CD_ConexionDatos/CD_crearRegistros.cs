@@ -14,6 +14,9 @@ namespace CD_ConexionDatos
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
         public CD_crearRegistros() { }
 
+        //
+        // relacionados al Usuario
+        //
         public void guardarNuevoUsuario(Usuario usuario)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion())
@@ -33,5 +36,37 @@ namespace CD_ConexionDatos
                 comando.ExecuteNonQuery();
             }
         }
+        public void borrarUsuario(string nombreUsuario)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spBorrarUsuario", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new SqlParameter("@xnombre", con));
+                comando.Parameters["@xpregunta"].Value = nombreUsuario;
+
+                comando.ExecuteNonQuery();
+            }
+        }
+        public void bloqueoDeUsuario(string nombreUsuario)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spBloquearUsuario", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new SqlParameter("@xnombre", con));
+                comando.Parameters["@xpregunta"].Value = nombreUsuario;
+
+                comando.ExecuteNonQuery();
+            }
+        }
+
+        
+        //
+        // relacionados con los roles
+        //
+
     }
 }

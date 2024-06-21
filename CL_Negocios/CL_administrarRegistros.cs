@@ -17,6 +17,14 @@ namespace CL_Negocios
         {
             registros.guardarNuevoUsuario(usuario);
         }
+        public void eliminarUsuari(string nombreUsuario)
+        {
+            registros.borrarUsuario(nombreUsuario);
+        }
+        public void bloquearUsuario(string nombreUsuario)
+        {
+            registros.bloqueoDeUsuario(nombreUsuario);
+        }
 
     }
 }

@@ -14,8 +14,6 @@ namespace CD_ConexionDatos
         
         public int ConsultarId (int str1, string query)
         {
-            //int str1 = Convert.ToInt32(valor);
-
             using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
                 int cantidad;
@@ -64,10 +62,8 @@ namespace CD_ConexionDatos
         {
             //utilizo el DataReader que fue instanciado antes como dr"
             //utiliso la variable declarada antes.
-           
             try
             {
-                
                 using (con = connectionBD.CreaInstacia().CrearConexion())
                 {
                     using (SqlCommand comando = new SqlCommand(query, con))
@@ -80,8 +76,8 @@ namespace CD_ConexionDatos
                         con.Open();
                         da.Fill(dt);
                         return dt; 
-                        }
-                    }                
+                    }
+                }                
             }
             catch (Exception ex)
             {
@@ -96,12 +92,13 @@ namespace CD_ConexionDatos
             }
         }
 
-
+        //
         // cargar roles en alta de usuario.
+        //
         public List<cachePermisosAlta> obtenerRoles(string id_familiaRol)
         {
             int str1 = Convert.ToInt32(id_familiaRol);
-            //List<cachePermisosAlta> Roles = new List<cachePermisosAlta>(); // instancio la lista
+            
             using(con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
                 using (SqlCommand comando = new SqlCommand("spListarPermisosPorTipoUser", con))
