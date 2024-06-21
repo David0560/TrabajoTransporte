@@ -31,5 +31,11 @@ namespace CL_Negocios
             return data;
 
         }
+
+        public DataTable permisosPorUsuario(int id_usuario)
+        {
+            DataTable data = datosTabla.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");
+            return data;
+        }
     }
 }

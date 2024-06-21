@@ -203,7 +203,42 @@ namespace CV_Presentacion
             combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
             combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
         }
-        private void btnCargarPermisos_Click(object sender, EventArgs e)
+        private void listaRoles()
+        {
+            // Obtener el valor seleccionado del ComboBox
+            if (cboSeleccionarUsuario.SelectedItem != null)
+            {
+                int valorSeleccionado;
+                if (int.TryParse(cboSeleccionarUsuario.SelectedValue.ToString(), out valorSeleccionado))
+                {
+                    // Llamar a la función con el valor obtenido del ComboBox
+                    dgvDatos.DataSource = tabla.permisosPorFamilia(valorSeleccionado);
+                }
+                else
+                {
+                    // Manejar el caso en que no se pueda convertir el valor a entero
+                    //MessageBox.Show("El valor seleccionado no es válido");
+                }
+            }
+        }
+
+        private void cboSeleccionarUsuario_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+            if (cboSeleccionarUsuario.SelectedValue != null) //reparo la falta de seleccion en el combobox.
+            {
+                listaRoles();
+                lblFilas.Text = cboSeleccionarUsuario.SelectedValue.ToString();
+            }
+        }
+        
+
+
+
+
+
+
+        /*private void btnCargarPermisos_Click(object sender, EventArgs e)
         {
              cachePermisosAlta permiso = new cachePermisosAlta()// instancio el objeto cachePermisos
              {
@@ -248,8 +283,6 @@ namespace CV_Presentacion
             CL_administrarPreguntas pre = new CL_administrarPreguntas();
             pre.crearNuevaPregunta(textBox7.Text);
         }
-
-
 
     }
 }

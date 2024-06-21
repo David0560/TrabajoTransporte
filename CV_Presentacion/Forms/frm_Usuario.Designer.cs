@@ -553,6 +553,7 @@
             this.cboSeleccionarUsuario.Name = "cboSeleccionarUsuario";
             this.cboSeleccionarUsuario.Size = new System.Drawing.Size(220, 21);
             this.cboSeleccionarUsuario.TabIndex = 25;
+            this.cboSeleccionarUsuario.SelectedIndexChanged += new System.EventHandler(this.cboSeleccionarUsuario_SelectedIndexChanged_1);
             // 
             // groupBox3
             // 
