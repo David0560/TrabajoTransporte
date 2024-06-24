@@ -91,6 +91,40 @@ namespace CD_ConexionDatos
                 }
             }
         }
+
+        public DataTable tablaPermisoDelUsuario(int id_usuario, string query)
+        {
+            //utilizo el DataReader que fue instanciado antes como dr"
+            //utiliso la variable declarada antes.
+            try
+            {
+                using (con = connectionBD.CreaInstacia().CrearConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand(query, con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.Add(new SqlParameter("@id_tipo_usuario", con));
+                        comando.Parameters["@id_tipo_usuario"].Value = id_usuario;
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(comando);
+                        con.Open();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally // permite colocar una condicion para saber el estado de la conexión
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close(); // cierra la conexión
+                }
+            }
+        }
         public DataTable tablaPermisos(int numero, string query)
         {
             //utilizo el DataReader que fue instanciado antes como dr"

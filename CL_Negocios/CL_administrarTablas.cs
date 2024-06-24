@@ -25,7 +25,7 @@ namespace CL_Negocios
             }
         }
 
-        public DataTable permisosPorFamilia(int id_familia)
+        public DataTable permisosTorTipoDeUsuario(int id_familia)
         {
             DataTable data =  datosTabla.tablaPermisosPorFamilia(id_familia, "spListarPermisosPorTipoUser");
             return data;
@@ -36,6 +36,11 @@ namespace CL_Negocios
         {
             DataTable data = datosTabla.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");
             return data;
+        }
+
+        public DataTable ListarUsuarios()
+        {
+
         }
     }
 }

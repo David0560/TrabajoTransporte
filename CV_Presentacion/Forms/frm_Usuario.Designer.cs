@@ -71,13 +71,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabAdministrarPermisos = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cboSeleccionarUsuario = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.mkdFechaVence = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminarPermisos = new System.Windows.Forms.Button();
             this.cboSeleccionarPermiso = new System.Windows.Forms.ComboBox();
-            this.txtFechaVencePermiso = new System.Windows.Forms.TextBox();
             this.btnCargarPermisos = new System.Windows.Forms.Button();
             this.lblFechaVence = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
@@ -498,11 +500,11 @@
             // 
             // btnGuardarBloqueos
             // 
-            this.btnGuardarBloqueos.Location = new System.Drawing.Point(465, 405);
+            this.btnGuardarBloqueos.Location = new System.Drawing.Point(465, 413);
             this.btnGuardarBloqueos.Name = "btnGuardarBloqueos";
             this.btnGuardarBloqueos.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarBloqueos.TabIndex = 2;
-            this.btnGuardarBloqueos.Text = "&Guardar";
+            this.btnGuardarBloqueos.Text = "&Actualizar";
             this.btnGuardarBloqueos.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -520,11 +522,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 76);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(523, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(523, 323);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabAdministrarPermisos
             // 
+            this.tabAdministrarPermisos.Controls.Add(this.label5);
             this.tabAdministrarPermisos.Controls.Add(this.label7);
             this.tabAdministrarPermisos.Controls.Add(this.cboSeleccionarUsuario);
             this.tabAdministrarPermisos.Controls.Add(this.groupBox3);
@@ -537,6 +540,16 @@
             this.tabAdministrarPermisos.TabIndex = 1;
             this.tabAdministrarPermisos.Text = "Administrar Permisos";
             this.tabAdministrarPermisos.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(408, 13);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Para eliminar o modificar debe seleccionar la fila a la cual desea aplicar dicha " +
+    "acción.";
             // 
             // label7
             // 
@@ -552,24 +565,44 @@
             this.cboSeleccionarUsuario.FormattingEnabled = true;
             this.cboSeleccionarUsuario.Location = new System.Drawing.Point(127, 28);
             this.cboSeleccionarUsuario.Name = "cboSeleccionarUsuario";
-            this.cboSeleccionarUsuario.Size = new System.Drawing.Size(220, 21);
+            this.cboSeleccionarUsuario.Size = new System.Drawing.Size(201, 21);
             this.cboSeleccionarUsuario.TabIndex = 25;
             this.cboSeleccionarUsuario.SelectedIndexChanged += new System.EventHandler(this.cboSeleccionarUsuario_SelectedIndexChanged_1);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnModificar);
+            this.groupBox3.Controls.Add(this.mkdFechaVence);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.btnEliminarPermisos);
             this.groupBox3.Controls.Add(this.cboSeleccionarPermiso);
-            this.groupBox3.Controls.Add(this.txtFechaVencePermiso);
             this.groupBox3.Controls.Add(this.btnCargarPermisos);
             this.groupBox3.Controls.Add(this.lblFechaVence);
             this.groupBox3.Location = new System.Drawing.Point(19, 62);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(522, 88);
+            this.groupBox3.Size = new System.Drawing.Size(518, 88);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Permisos";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(356, 59);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 25;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // mkdFechaVence
+            // 
+            this.mkdFechaVence.Location = new System.Drawing.Point(425, 22);
+            this.mkdFechaVence.Mask = "00/00/0000";
+            this.mkdFechaVence.Name = "mkdFechaVence";
+            this.mkdFechaVence.Size = new System.Drawing.Size(70, 20);
+            this.mkdFechaVence.TabIndex = 24;
+            this.mkdFechaVence.ValidatingType = typeof(System.DateTime);
             // 
             // label2
             // 
@@ -582,41 +615,36 @@
             // 
             // btnEliminarPermisos
             // 
-            this.btnEliminarPermisos.Location = new System.Drawing.Point(429, 51);
+            this.btnEliminarPermisos.Location = new System.Drawing.Point(437, 59);
             this.btnEliminarPermisos.Name = "btnEliminarPermisos";
             this.btnEliminarPermisos.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarPermisos.TabIndex = 8;
             this.btnEliminarPermisos.Text = "Eliminar";
             this.btnEliminarPermisos.UseVisualStyleBackColor = true;
+            this.btnEliminarPermisos.Click += new System.EventHandler(this.btnEliminarPermisos_Click);
             // 
             // cboSeleccionarPermiso
             // 
             this.cboSeleccionarPermiso.FormattingEnabled = true;
             this.cboSeleccionarPermiso.Location = new System.Drawing.Point(108, 22);
             this.cboSeleccionarPermiso.Name = "cboSeleccionarPermiso";
-            this.cboSeleccionarPermiso.Size = new System.Drawing.Size(220, 21);
+            this.cboSeleccionarPermiso.Size = new System.Drawing.Size(201, 21);
             this.cboSeleccionarPermiso.TabIndex = 17;
-            // 
-            // txtFechaVencePermiso
-            // 
-            this.txtFechaVencePermiso.Location = new System.Drawing.Point(108, 53);
-            this.txtFechaVencePermiso.Name = "txtFechaVencePermiso";
-            this.txtFechaVencePermiso.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaVencePermiso.TabIndex = 24;
             // 
             // btnCargarPermisos
             // 
-            this.btnCargarPermisos.Location = new System.Drawing.Point(429, 19);
+            this.btnCargarPermisos.Location = new System.Drawing.Point(275, 59);
             this.btnCargarPermisos.Name = "btnCargarPermisos";
             this.btnCargarPermisos.Size = new System.Drawing.Size(75, 23);
             this.btnCargarPermisos.TabIndex = 18;
             this.btnCargarPermisos.Text = "Cargar";
             this.btnCargarPermisos.UseVisualStyleBackColor = true;
+            this.btnCargarPermisos.Click += new System.EventHandler(this.btnCargarPermisos_Click);
             // 
             // lblFechaVence
             // 
             this.lblFechaVence.AutoSize = true;
-            this.lblFechaVence.Location = new System.Drawing.Point(20, 57);
+            this.lblFechaVence.Location = new System.Drawing.Point(340, 26);
             this.lblFechaVence.Name = "lblFechaVence";
             this.lblFechaVence.Size = new System.Drawing.Size(71, 13);
             this.lblFechaVence.TabIndex = 23;
@@ -625,10 +653,12 @@
             // dgvDatos
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(19, 162);
+            this.dgvDatos.Location = new System.Drawing.Point(19, 184);
             this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(522, 274);
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDatos.Size = new System.Drawing.Size(522, 258);
             this.dgvDatos.TabIndex = 1;
+            this.dgvDatos.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvDatos_ColumnAdded);
             // 
             // lblFilas
             // 
@@ -833,7 +863,6 @@
             this.cboEmpleados.Name = "cboEmpleados";
             this.cboEmpleados.Size = new System.Drawing.Size(150, 21);
             this.cboEmpleados.TabIndex = 0;
-            this.cboEmpleados.SelectedIndexChanged += new System.EventHandler(this.cboEmpleados_SelectedIndexChanged);
             // 
             // frm_Usuario
             // 
@@ -921,7 +950,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminarPermisos;
         private System.Windows.Forms.ComboBox cboSeleccionarPermiso;
-        private System.Windows.Forms.TextBox txtFechaVencePermiso;
         private System.Windows.Forms.Button btnCargarPermisos;
         private System.Windows.Forms.Label lblFechaVence;
         private System.Windows.Forms.DataGridView dgvDatos;
@@ -945,5 +973,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox mkdVenceUsuario;
         private System.Windows.Forms.MaskedTextBox mkdVencePass;
+        private System.Windows.Forms.MaskedTextBox mkdFechaVence;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label label5;
     }
 }

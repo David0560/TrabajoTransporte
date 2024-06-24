@@ -9,6 +9,7 @@ using CapaServicios;
 using static System.Net.WebRequestMethods;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace CL_Negocios
 {
@@ -50,7 +51,7 @@ namespace CL_Negocios
             }
                 
         }
-        public void eliminarUsuari(string nombreUsuario)
+        public void eliminarUsuario(string nombreUsuario)
         {
             _crearRegistros.borrarUsuario(nombreUsuario);
         }
@@ -58,13 +59,50 @@ namespace CL_Negocios
         {
             _crearRegistros.bloqueoDeUsuario(nombreUsuario);
         }
-        
+
+        //relacionados a los roles
+        public void insertarPermisoPorFamilia (Permisos permiso)
+        {
+            int id_famil_rol =permiso.Id_familia_rol;
+            int id_usuario =_crearRegistros.obtenerUltimoUsuario();
+            DateTime? fecha_baja = null;
+
+            Permisos NuevoPermiso = new Permisos(id_famil_rol, id_usuario, fecha_baja);
+
+            _crearRegistros.guardarNuevoPermiso(NuevoPermiso);
+        }
+        public void insertarNuevoPermiso(Permisos permiso)
+        {
+            int id_famil_rol = permiso.Id_familia_rol;
+            int id_usuario = permiso.Id_usuario;
+            DateTime? fecha_baja = ValidarFecha(permiso.fecha_vence);
+
+            Permisos NuevoPermiso = new Permisos(id_famil_rol, id_usuario, fecha_baja);
+
+            _crearRegistros.guardarNuevoPermiso(NuevoPermiso);
+        }
+        public void elimiarPermiso(int id)
+        {
+            _crearRegistros.EliminarPermisoDeUsuario(id);
+        }
+
+        public void ActualizarFechaRegistro(int id, string fecha)
+        {
+            DateTime? fecha_baja = ValidarFecha(fecha);
+            _crearRegistros.ActualizarFechaVencimiento(id, fecha_baja);
+        }
+
         //validaciones
         public DateTime? ValidarFecha(string valor)
         {
             if(valor == "  /  /")
             {
                 DateTime? fecha= null;
+                return fecha;
+            }
+            else if (valor == "")
+            {
+                DateTime? fecha = null;
                 return fecha;
             }
             else
@@ -141,11 +179,17 @@ namespace CL_Negocios
                     dataGridView.DataSource = null; // Eliminar la fuente de datos del DataGridView
                     dataGridView.Rows.Clear(); // Limpiar las filas en el DataGridView
                 }
+                if (control is MaskedTextBox maskedtextBox)
+                {
+                    maskedtextBox.Text = string.Empty; // Limpiar el contenido del maskedTextBox
+                }
+
+
             }
         }
-        
+
        
-        //relacionados a los roles
+       
 
 
 
