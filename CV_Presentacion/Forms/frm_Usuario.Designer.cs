@@ -34,21 +34,21 @@
             this.btnGuardarConfiguracion = new System.Windows.Forms.Button();
             this.ckbPregunta = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCantidadDias = new System.Windows.Forms.TextBox();
+            this.txtCantIntentos = new System.Windows.Forms.TextBox();
+            this.txtMaxCaracter = new System.Windows.Forms.TextBox();
+            this.txtMinCaracter = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.chkPreguntaSeguridad = new System.Windows.Forms.CheckBox();
+            this.chkBolqueoAuto = new System.Windows.Forms.CheckBox();
+            this.chkDatosPersonales = new System.Windows.Forms.CheckBox();
             this.lblMinCaracteres = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkPassAnterior = new System.Windows.Forms.CheckBox();
+            this.chkDosPasos = new System.Windows.Forms.CheckBox();
+            this.chkCaracterEspecial = new System.Windows.Forms.CheckBox();
+            this.chkNumLetras = new System.Windows.Forms.CheckBox();
+            this.chkMayusMinus = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPreguntas = new System.Windows.Forms.TabPage();
             this.grbPregunta = new System.Windows.Forms.GroupBox();
@@ -90,8 +90,8 @@
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpVenceUsuario = new System.Windows.Forms.DateTimePicker();
-            this.dtpVencePass = new System.Windows.Forms.DateTimePicker();
+            this.mkdVenceUsuario = new System.Windows.Forms.MaskedTextBox();
+            this.mkdVencePass = new System.Windows.Forms.MaskedTextBox();
             this.chkRecordar = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -127,21 +127,21 @@
             this.tabConfigurarPass.Controls.Add(this.btnGuardarConfiguracion);
             this.tabConfigurarPass.Controls.Add(this.ckbPregunta);
             this.tabConfigurarPass.Controls.Add(this.label12);
-            this.tabConfigurarPass.Controls.Add(this.textBox6);
-            this.tabConfigurarPass.Controls.Add(this.textBox5);
-            this.tabConfigurarPass.Controls.Add(this.textBox4);
-            this.tabConfigurarPass.Controls.Add(this.textBox2);
+            this.tabConfigurarPass.Controls.Add(this.txtCantidadDias);
+            this.tabConfigurarPass.Controls.Add(this.txtCantIntentos);
+            this.tabConfigurarPass.Controls.Add(this.txtMaxCaracter);
+            this.tabConfigurarPass.Controls.Add(this.txtMinCaracter);
             this.tabConfigurarPass.Controls.Add(this.label11);
             this.tabConfigurarPass.Controls.Add(this.label10);
-            this.tabConfigurarPass.Controls.Add(this.checkBox8);
-            this.tabConfigurarPass.Controls.Add(this.checkBox7);
-            this.tabConfigurarPass.Controls.Add(this.checkBox6);
+            this.tabConfigurarPass.Controls.Add(this.chkPreguntaSeguridad);
+            this.tabConfigurarPass.Controls.Add(this.chkBolqueoAuto);
+            this.tabConfigurarPass.Controls.Add(this.chkDatosPersonales);
             this.tabConfigurarPass.Controls.Add(this.lblMinCaracteres);
-            this.tabConfigurarPass.Controls.Add(this.checkBox5);
-            this.tabConfigurarPass.Controls.Add(this.checkBox4);
-            this.tabConfigurarPass.Controls.Add(this.checkBox3);
-            this.tabConfigurarPass.Controls.Add(this.checkBox2);
-            this.tabConfigurarPass.Controls.Add(this.checkBox1);
+            this.tabConfigurarPass.Controls.Add(this.chkPassAnterior);
+            this.tabConfigurarPass.Controls.Add(this.chkDosPasos);
+            this.tabConfigurarPass.Controls.Add(this.chkCaracterEspecial);
+            this.tabConfigurarPass.Controls.Add(this.chkNumLetras);
+            this.tabConfigurarPass.Controls.Add(this.chkMayusMinus);
             this.tabConfigurarPass.Controls.Add(this.label9);
             this.tabConfigurarPass.Location = new System.Drawing.Point(4, 22);
             this.tabConfigurarPass.Name = "tabConfigurarPass";
@@ -159,6 +159,7 @@
             this.btnGuardarConfiguracion.TabIndex = 18;
             this.btnGuardarConfiguracion.Text = "&Guardar";
             this.btnGuardarConfiguracion.UseVisualStyleBackColor = true;
+            this.btnGuardarConfiguracion.Click += new System.EventHandler(this.btnGuardarConfiguracion_Click);
             // 
             // ckbPregunta
             // 
@@ -176,37 +177,37 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(268, 366);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(162, 13);
+            this.label12.Size = new System.Drawing.Size(102, 13);
             this.label12.TabIndex = 16;
-            this.label12.Text = "Cantidad de dias para el bloqueo";
+            this.label12.Text = "dias para el bloqueo";
             // 
-            // textBox6
+            // txtCantidadDias
             // 
-            this.textBox6.Location = new System.Drawing.Point(227, 362);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(35, 20);
-            this.textBox6.TabIndex = 15;
+            this.txtCantidadDias.Location = new System.Drawing.Point(227, 362);
+            this.txtCantidadDias.Name = "txtCantidadDias";
+            this.txtCantidadDias.Size = new System.Drawing.Size(35, 20);
+            this.txtCantidadDias.TabIndex = 15;
             // 
-            // textBox5
+            // txtCantIntentos
             // 
-            this.textBox5.Location = new System.Drawing.Point(36, 139);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(36, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtCantIntentos.Location = new System.Drawing.Point(36, 139);
+            this.txtCantIntentos.Name = "txtCantIntentos";
+            this.txtCantIntentos.Size = new System.Drawing.Size(36, 20);
+            this.txtCantIntentos.TabIndex = 14;
             // 
-            // textBox4
+            // txtMaxCaracter
             // 
-            this.textBox4.Location = new System.Drawing.Point(36, 109);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(36, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtMaxCaracter.Location = new System.Drawing.Point(36, 109);
+            this.txtMaxCaracter.Name = "txtMaxCaracter";
+            this.txtMaxCaracter.Size = new System.Drawing.Size(36, 20);
+            this.txtMaxCaracter.TabIndex = 12;
             // 
-            // textBox2
+            // txtMinCaracter
             // 
-            this.textBox2.Location = new System.Drawing.Point(36, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(36, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtMinCaracter.Location = new System.Drawing.Point(36, 81);
+            this.txtMinCaracter.Name = "txtMinCaracter";
+            this.txtMinCaracter.Size = new System.Drawing.Size(36, 20);
+            this.txtMinCaracter.TabIndex = 7;
             // 
             // label11
             // 
@@ -226,35 +227,35 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Valor máximo de caracteres";
             // 
-            // checkBox8
+            // chkPreguntaSeguridad
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(36, 314);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(178, 17);
-            this.checkBox8.TabIndex = 10;
-            this.checkBox8.Text = "Realizar preguntas de seguridad";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.chkPreguntaSeguridad.AutoSize = true;
+            this.chkPreguntaSeguridad.Location = new System.Drawing.Point(36, 314);
+            this.chkPreguntaSeguridad.Name = "chkPreguntaSeguridad";
+            this.chkPreguntaSeguridad.Size = new System.Drawing.Size(178, 17);
+            this.chkPreguntaSeguridad.TabIndex = 10;
+            this.chkPreguntaSeguridad.Text = "Realizar preguntas de seguridad";
+            this.chkPreguntaSeguridad.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // chkBolqueoAuto
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(35, 365);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(172, 17);
-            this.checkBox7.TabIndex = 9;
-            this.checkBox7.Text = "Bloqueo de usuario automático";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkBolqueoAuto.AutoSize = true;
+            this.chkBolqueoAuto.Location = new System.Drawing.Point(35, 365);
+            this.chkBolqueoAuto.Name = "chkBolqueoAuto";
+            this.chkBolqueoAuto.Size = new System.Drawing.Size(172, 17);
+            this.chkBolqueoAuto.TabIndex = 9;
+            this.chkBolqueoAuto.Text = "Bloqueo de usuario automático";
+            this.chkBolqueoAuto.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkDatosPersonales
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(36, 291);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(207, 17);
-            this.checkBox6.TabIndex = 8;
-            this.checkBox6.Text = "No incluir datos personales del usuario";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkDatosPersonales.AutoSize = true;
+            this.chkDatosPersonales.Location = new System.Drawing.Point(36, 291);
+            this.chkDatosPersonales.Name = "chkDatosPersonales";
+            this.chkDatosPersonales.Size = new System.Drawing.Size(207, 17);
+            this.chkDatosPersonales.TabIndex = 8;
+            this.chkDatosPersonales.Text = "No incluir datos personales del usuario";
+            this.chkDatosPersonales.UseVisualStyleBackColor = true;
             // 
             // lblMinCaracteres
             // 
@@ -265,55 +266,55 @@
             this.lblMinCaracteres.TabIndex = 6;
             this.lblMinCaracteres.Text = "Valor mínimo de caracteres";
             // 
-            // checkBox5
+            // chkPassAnterior
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(36, 268);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(154, 17);
-            this.checkBox5.TabIndex = 5;
-            this.checkBox5.Text = "Repetir contraseña anterior";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkPassAnterior.AutoSize = true;
+            this.chkPassAnterior.Location = new System.Drawing.Point(36, 268);
+            this.chkPassAnterior.Name = "chkPassAnterior";
+            this.chkPassAnterior.Size = new System.Drawing.Size(154, 17);
+            this.chkPassAnterior.TabIndex = 5;
+            this.chkPassAnterior.Text = "Repetir contraseña anterior";
+            this.chkPassAnterior.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkDosPasos
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(36, 245);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(206, 17);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "Realizará autenticacion en dos pasos.";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkDosPasos.AutoSize = true;
+            this.chkDosPasos.Location = new System.Drawing.Point(36, 245);
+            this.chkDosPasos.Name = "chkDosPasos";
+            this.chkDosPasos.Size = new System.Drawing.Size(206, 17);
+            this.chkDosPasos.TabIndex = 4;
+            this.chkDosPasos.Text = "Realizará autenticacion en dos pasos.";
+            this.chkDosPasos.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkCaracterEspecial
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(36, 222);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(289, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Requiere la precencia de al menos un caracter especial";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkCaracterEspecial.AutoSize = true;
+            this.chkCaracterEspecial.Location = new System.Drawing.Point(36, 222);
+            this.chkCaracterEspecial.Name = "chkCaracterEspecial";
+            this.chkCaracterEspecial.Size = new System.Drawing.Size(289, 17);
+            this.chkCaracterEspecial.TabIndex = 3;
+            this.chkCaracterEspecial.Text = "Requiere la precencia de al menos un caracter especial";
+            this.chkCaracterEspecial.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkNumLetras
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(36, 199);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(241, 17);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Requiere convinaciones con numeros y letras";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkNumLetras.AutoSize = true;
+            this.chkNumLetras.Location = new System.Drawing.Point(36, 199);
+            this.chkNumLetras.Name = "chkNumLetras";
+            this.chkNumLetras.Size = new System.Drawing.Size(241, 17);
+            this.chkNumLetras.TabIndex = 2;
+            this.chkNumLetras.Text = "Requiere convinaciones con numeros y letras";
+            this.chkNumLetras.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkMayusMinus
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(36, 176);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(266, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Requiere convinacion de mayusculas y minusculas";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkMayusMinus.AutoSize = true;
+            this.chkMayusMinus.Location = new System.Drawing.Point(36, 176);
+            this.chkMayusMinus.Name = "chkMayusMinus";
+            this.chkMayusMinus.Size = new System.Drawing.Size(266, 17);
+            this.chkMayusMinus.TabIndex = 1;
+            this.chkMayusMinus.Text = "Requiere convinacion de mayusculas y minusculas";
+            this.chkMayusMinus.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -673,7 +674,7 @@
             this.tabCrearUsuario.Padding = new System.Windows.Forms.Padding(3);
             this.tabCrearUsuario.Size = new System.Drawing.Size(563, 450);
             this.tabCrearUsuario.TabIndex = 0;
-            this.tabCrearUsuario.Text = "Nuevo Usuaurio";
+            this.tabCrearUsuario.Text = "Nuevo Usuario";
             this.tabCrearUsuario.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -708,7 +709,7 @@
             // 
             this.txtNombreUsuario.Location = new System.Drawing.Point(159, 70);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(121, 20);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(150, 20);
             this.txtNombreUsuario.TabIndex = 20;
             // 
             // lblNombreUsuario
@@ -722,41 +723,35 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpVenceUsuario);
-            this.groupBox1.Controls.Add(this.dtpVencePass);
+            this.groupBox1.Controls.Add(this.mkdVenceUsuario);
+            this.groupBox1.Controls.Add(this.mkdVencePass);
             this.groupBox1.Controls.Add(this.chkRecordar);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(321, 20);
+            this.groupBox1.Location = new System.Drawing.Point(336, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 124);
+            this.groupBox1.Size = new System.Drawing.Size(207, 124);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fechas de Vencimientos";
             // 
-            // dtpVenceUsuario
+            // mkdVenceUsuario
             // 
-            this.dtpVenceUsuario.Checked = false;
-            this.dtpVenceUsuario.CustomFormat = "yyyy/MM/dd";
-            this.dtpVenceUsuario.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpVenceUsuario.Location = new System.Drawing.Point(79, 54);
-            this.dtpVenceUsuario.Name = "dtpVenceUsuario";
-            this.dtpVenceUsuario.Size = new System.Drawing.Size(120, 20);
-            this.dtpVenceUsuario.TabIndex = 16;
-            this.dtpVenceUsuario.Value = new System.DateTime(2024, 6, 19, 0, 0, 0, 0);
-            this.dtpVenceUsuario.ValueChanged += new System.EventHandler(this.dtpVenceUsuario_ValueChanged);
+            this.mkdVenceUsuario.Location = new System.Drawing.Point(79, 54);
+            this.mkdVenceUsuario.Mask = "00/00/0000";
+            this.mkdVenceUsuario.Name = "mkdVenceUsuario";
+            this.mkdVenceUsuario.Size = new System.Drawing.Size(70, 20);
+            this.mkdVenceUsuario.TabIndex = 26;
+            this.mkdVenceUsuario.ValidatingType = typeof(System.DateTime);
             // 
-            // dtpVencePass
+            // mkdVencePass
             // 
-            this.dtpVencePass.Checked = false;
-            this.dtpVencePass.CustomFormat = "yyyy/MM/dd";
-            this.dtpVencePass.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpVencePass.Location = new System.Drawing.Point(79, 25);
-            this.dtpVencePass.Name = "dtpVencePass";
-            this.dtpVencePass.Size = new System.Drawing.Size(119, 20);
-            this.dtpVencePass.TabIndex = 15;
-            this.dtpVencePass.Value = new System.DateTime(2024, 6, 19, 0, 0, 0, 0);
-            this.dtpVencePass.ValueChanged += new System.EventHandler(this.dtpVencePass_ValueChanged);
+            this.mkdVencePass.Location = new System.Drawing.Point(79, 28);
+            this.mkdVencePass.Mask = "00/00/0000";
+            this.mkdVencePass.Name = "mkdVencePass";
+            this.mkdVencePass.Size = new System.Drawing.Size(70, 20);
+            this.mkdVencePass.TabIndex = 25;
+            this.mkdVencePass.ValidatingType = typeof(System.DateTime);
             // 
             // chkRecordar
             // 
@@ -827,7 +822,7 @@
             this.cboFamilias.FormattingEnabled = true;
             this.cboFamilias.Location = new System.Drawing.Point(159, 99);
             this.cboFamilias.Name = "cboFamilias";
-            this.cboFamilias.Size = new System.Drawing.Size(121, 21);
+            this.cboFamilias.Size = new System.Drawing.Size(150, 21);
             this.cboFamilias.TabIndex = 1;
             this.cboFamilias.SelectedIndexChanged += new System.EventHandler(this.cboFamilias_SelectedIndexChanged);
             // 
@@ -836,7 +831,7 @@
             this.cboEmpleados.FormattingEnabled = true;
             this.cboEmpleados.Location = new System.Drawing.Point(159, 36);
             this.cboEmpleados.Name = "cboEmpleados";
-            this.cboEmpleados.Size = new System.Drawing.Size(121, 21);
+            this.cboEmpleados.Size = new System.Drawing.Size(150, 21);
             this.cboEmpleados.TabIndex = 0;
             this.cboEmpleados.SelectedIndexChanged += new System.EventHandler(this.cboEmpleados_SelectedIndexChanged);
             // 
@@ -883,21 +878,21 @@
         private System.Windows.Forms.Button btnGuardarConfiguracion;
         private System.Windows.Forms.CheckBox ckbPregunta;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCantidadDias;
+        private System.Windows.Forms.TextBox txtCantIntentos;
+        private System.Windows.Forms.TextBox txtMaxCaracter;
+        private System.Windows.Forms.TextBox txtMinCaracter;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox chkPreguntaSeguridad;
+        private System.Windows.Forms.CheckBox chkBolqueoAuto;
+        private System.Windows.Forms.CheckBox chkDatosPersonales;
         private System.Windows.Forms.Label lblMinCaracteres;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkPassAnterior;
+        private System.Windows.Forms.CheckBox chkDosPasos;
+        private System.Windows.Forms.CheckBox chkCaracterEspecial;
+        private System.Windows.Forms.CheckBox chkNumLetras;
+        private System.Windows.Forms.CheckBox chkMayusMinus;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPreguntas;
         private System.Windows.Forms.GroupBox grbPregunta;
@@ -947,8 +942,8 @@
         private System.Windows.Forms.DataGridView dgvPermisoUsuario;
         private System.Windows.Forms.ComboBox cboFamilias;
         private System.Windows.Forms.ComboBox cboEmpleados;
-        private System.Windows.Forms.DateTimePicker dtpVenceUsuario;
-        private System.Windows.Forms.DateTimePicker dtpVencePass;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox mkdVenceUsuario;
+        private System.Windows.Forms.MaskedTextBox mkdVencePass;
     }
 }

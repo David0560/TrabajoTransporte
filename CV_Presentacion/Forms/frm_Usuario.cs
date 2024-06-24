@@ -20,24 +20,34 @@ namespace CV_Presentacion
 {
     public partial class frm_Usuario : Form
     {
-        connectionBD conexion = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
         CL_administrarComboBox combo = new CL_administrarComboBox();
         CL_administrarTablas tabla = new CL_administrarTablas();
         CL_administrarRegistros registro = new CL_administrarRegistros();
-        CS_contraseña password = new CS_contraseña();
+        CS_contraseña conta = new CS_contraseña();
+        ConfiguracionPassword configure = new ConfiguracionPassword();
         public frm_Usuario()
         {
             InitializeComponent();
-            
         }
                 
         private void frm_Usuario_Load_1(object sender, EventArgs e)
 
         {
+            configure.Configuracion(4, 8, true, true, false);
+            // declaro la configuracion inicial
+            txtMinCaracter.Text = configure.Minimo.ToString();
+            txtMaxCaracter.Text = configure.Maximo.ToString() ;
+            chkMayusMinus.Checked = configure.Mayuscula;
+            chkNumLetras.Checked = configure.Mayuscula;
+            chkCaracterEspecial.Checked = configure.Especial;
+            
+            
+
+
             //
             // valores para hacer el dateTimePicker null
             //
-            dtpVencePass.CustomFormat = " ";
+            /*dtpVencePass.CustomFormat = " ";
             dtpVencePass.ValueChanged += new System.EventHandler(this.dtpVencePass_ValueChanged);
             dtpVencePass.ShowCheckBox = true;
             dtpVencePass.Checked = false;
@@ -47,7 +57,7 @@ namespace CV_Presentacion
             dtpVenceUsuario.ValueChanged += new System.EventHandler(this.dtpVenceUsuario_ValueChanged);
             dtpVenceUsuario.ShowCheckBox = true;
             dtpVenceUsuario.Checked = false;
-            dtpVenceUsuario.MinDate = DateTime.Today;
+            dtpVenceUsuario.MinDate = DateTime.Today;*/
 
             //
             // Comportamiento del DatagridView
@@ -71,10 +81,14 @@ namespace CV_Presentacion
             timer1.Enabled = true;
             combo.seleccionCombo(cboEmpleados, "spVerEmpleados");
             combo.seleccionCombo(cboFamilias,"spVerFamilias");
-            lblVerValor.Text = dtpVencePass.Value.ToString();
+            //lblVerValor.Text = dtpVencePass.Value.ToString();
             //dateTime.now.toString("yyyy-MM-dd")
             // txtBox.text =hoy.ToShirtDateString; devuelve la fecha de hoy.
             // hoy.ToString("yyyy-MM-dd=);
+            mkdVencePass.Text = null;
+            mkdVenceUsuario.Text = null;
+            //lblVerValor.Text = cboEmpleados.SelectedIndex.ToString();
+        
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -83,7 +97,7 @@ namespace CV_Presentacion
         }
         private void cboEmpleados_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblVerValor.Text = Convert.ToString(cboEmpleados.SelectedValue);// selectedValue toma el id del combo
+            //lblVerValor.Text = Convert.ToString(cboEmpleados.SelectedValue);// selectedValue toma el id del combo
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,33 +109,36 @@ namespace CV_Presentacion
                 if (respuesta)
                 {
                     
-                    string pass = password.crearContraseñaRandom(4,8,true,false,false,false);
-                    DateTime fecha = DateTime.Now;
+                    string nombre = txtNombreUsuario.Text;
                     int id_empleado = Convert.ToInt32(cboEmpleados.SelectedValue.ToString());
                     int id_familia = Convert.ToInt32(cboFamilias.SelectedValue.ToString());
-                    DateTime fvp = dtpVencePass.Value;
-                    DateTime fvu = dtpVenceUsuario.Value;
-                   
+                    string fvp = mkdVencePass.Text;
+                    string fvu = mkdVenceUsuario.Text;
 
                     // cargar un nuevo usuario
-                    Usuario usuario = new Usuario(txtNombreUsuario.Text,1,id_empleado,pass,id_familia,fvp,fvu);
-                    registro.insertarNuevoUsuario(usuario);
-                    MessageBox.Show("Nuevo Usuario cargado");
+                    Usuario usuario = new Usuario(nombre, id_empleado,id_familia,fvp,fvu);
+                    if (registro.insertarNuevoUsuario(usuario, configure))
+                      {
+                        MessageBox.Show("Nuevo Usuario cargado");
+                        registro.LimpiarControlesEnTabPage(tabCrearUsuario);
+                    }
+                    else
+                    {
+                        MessageBox.Show("error al cargar el Usuario");
+                    }
+
+                    //cargar permisos del tipo de familia seleccionado.
 
 
-
-                    lblVerValor.Text = respuesta.ToString();
                 }
                 else
                 {
                     MessageBox.Show("El empleado ya cuenta con un usuario");
-                    lblVerValor.Text = respuesta.ToString();
                 }
             }
             else
             {
                 MessageBox.Show("No se encuentra usuario seleccionado");
-                //lblVerValor.Text = respuesta.ToString();
             }
         }
 
@@ -130,7 +147,7 @@ namespace CV_Presentacion
             if (cboFamilias.SelectedValue != null) //reparo la falta de seleccion en el combobox.
             {
                 listaPermiso();
-                lblVerValor.Text = cboFamilias.SelectedValue.ToString();
+                //lblVerValor.Text = cboFamilias.SelectedValue.ToString();
             }
         }
 
@@ -231,13 +248,6 @@ namespace CV_Presentacion
                 lblFilas.Text = cboSeleccionarUsuario.SelectedValue.ToString();
             }
         }
-        
-
-
-
-
-
-
         /*private void btnCargarPermisos_Click(object sender, EventArgs e)
         {
              cachePermisosAlta permiso = new cachePermisosAlta()// instancio el objeto cachePermisos
@@ -284,5 +294,20 @@ namespace CV_Presentacion
             pre.crearNuevaPregunta(textBox7.Text);
         }
 
+        //
+        // configuracion del password
+        //
+        private void btnGuardarConfiguracion_Click(object sender, EventArgs e)
+        {
+            int min = Convert.ToInt32(txtMinCaracter.Text);
+            int max = Convert.ToInt32(txtMaxCaracter.Text);
+            bool mayu = chkMayusMinus.Checked;
+            bool num = chkNumLetras.Checked;
+            bool esp = chkCaracterEspecial.Checked;
+
+             configure.Configuracion(min, max, mayu, num, esp);
+
+        }
+        
     }
 }

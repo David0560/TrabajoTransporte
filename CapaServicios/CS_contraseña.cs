@@ -9,12 +9,43 @@ namespace CapaServicios
 {
     public class CS_contraseña
     {
-            private const string Minusculas = "abcdefghijklmnopqrstuvwxyz";
-            private const string Mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            private const string Numeros = "0123456789";
-            private const string CaracteresEspeciales = "!@#$%^&*()_+-=[]{}|;:,.<>?";
-               
-            public string crearContraseñaRandom(int minimo, int maximo, bool mayusculas, bool caracteresEspeciales, bool solonumero, bool soloLetras)
+        private const string Minusculas = "abcdefghijklmnopqrstuvwxyz";
+        private const string Mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private const string Numeros = "0123456789";
+        private const string CaracteresEspeciales = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+       
+        public string crearContraseña(ConfiguracionPassword configure)
+        {
+            Random random = new Random();
+            string passwordCharacters = Minusculas;
+
+            if (configure.Mayuscula)
+            {
+                passwordCharacters += Mayusculas;
+            }
+
+            if (configure.Especial)
+            {
+                passwordCharacters += CaracteresEspeciales;
+            }
+
+            if (configure.Numero)
+            {
+                passwordCharacters += Numeros;
+            }
+
+            int passwordLargo = random.Next(configure.Minimo, configure.Maximo + 1);
+
+            char[] password = new char[passwordLargo];
+            for (int i = 0; i < passwordLargo; i++)
+            {
+                password[i] = passwordCharacters[random.Next(passwordCharacters.Length)];
+            }
+
+            return new string(password);
+        }
+        public string crearContraseñaRandom(int minimo, int maximo, bool mayusculas, bool numero, bool caracteresEspeciales)
             {
                 Random random = new Random();
                 string passwordCharacters = Minusculas;
@@ -29,14 +60,9 @@ namespace CapaServicios
                     passwordCharacters += CaracteresEspeciales;
                 }
 
-                if (solonumero)
+                if (numero)
                 {
-                    passwordCharacters = Numeros;
-                }
-
-                if (soloLetras)
-                {
-                    passwordCharacters = Minusculas + Mayusculas;
+                    passwordCharacters += Numeros;
                 }
 
                 int passwordLargo = random.Next(minimo, maximo + 1);
@@ -49,9 +75,7 @@ namespace CapaServicios
 
                 return new string(password);
             }
-
-
-            public string crearSHA256(string str1, string str2)
+        public string crearSHA256(string str1, string str2)
              {
                 string valor = str1 + str2;
                  using (SHA256 sha256Hash = SHA256.Create())
@@ -65,8 +89,7 @@ namespace CapaServicios
                      return builder.ToString();
                  }
              }
-
-            public int crearCodigoVerificador(string str1, string str2)
+        public int crearCodigoVerificador(string str1, string str2)
             {
                 string concatenacion = str1 + str2;
 
@@ -102,10 +125,35 @@ namespace CapaServicios
                 return luhn;
 
             }
-
-        public void crearContraseña()
+        public bool validarPassword(string password, int minimo, int maximo, bool mayusculas, bool numeros, bool carateresEspeciales)
         {
-            throw new NotImplementedException();
+            int minLength = minimo;
+            int maxLength = maximo;
+            
+            if (password.Length < minLength || password.Length > maxLength)
+            {
+                return false;
+            }
+
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c))
+                {
+                    mayusculas = true;
+                }
+                else if (char.IsDigit(c))
+                {
+                    numeros = true;
+                }
+                else if (!char.IsLetterOrDigit(c))
+                {
+                    carateresEspeciales = true;
+                }
+            }
+
+            return mayusculas && numeros && carateresEspeciales;
         }
+
+       
     }
 }
