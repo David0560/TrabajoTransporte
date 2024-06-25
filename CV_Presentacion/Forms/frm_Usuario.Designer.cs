@@ -69,7 +69,7 @@
             this.tabBloqueos = new System.Windows.Forms.TabPage();
             this.btnGuardarBloqueos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.tabAdministrarPermisos = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@
             this.tabGruposUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabBloqueos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.tabAdministrarPermisos.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -489,7 +489,7 @@
             // 
             this.tabBloqueos.Controls.Add(this.btnGuardarBloqueos);
             this.tabBloqueos.Controls.Add(this.label8);
-            this.tabBloqueos.Controls.Add(this.dataGridView1);
+            this.tabBloqueos.Controls.Add(this.dgvListaUsuarios);
             this.tabBloqueos.Location = new System.Drawing.Point(4, 22);
             this.tabBloqueos.Name = "tabBloqueos";
             this.tabBloqueos.Padding = new System.Windows.Forms.Padding(3);
@@ -497,6 +497,7 @@
             this.tabBloqueos.TabIndex = 2;
             this.tabBloqueos.Text = "Bloqueos";
             this.tabBloqueos.UseVisualStyleBackColor = true;
+            this.tabBloqueos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabBloqueos_MouseClick);
             // 
             // btnGuardarBloqueos
             // 
@@ -517,13 +518,13 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Bloqueos de usuarios";
             // 
-            // dataGridView1
+            // dgvListaUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 76);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(523, 323);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaUsuarios.Location = new System.Drawing.Point(17, 76);
+            this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.Size = new System.Drawing.Size(523, 323);
+            this.dgvListaUsuarios.TabIndex = 0;
             // 
             // tabAdministrarPermisos
             // 
@@ -885,7 +886,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabBloqueos.ResumeLayout(false);
             this.tabBloqueos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.tabAdministrarPermisos.ResumeLayout(false);
             this.tabAdministrarPermisos.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -942,7 +943,7 @@
         private System.Windows.Forms.TabPage tabBloqueos;
         private System.Windows.Forms.Button btnGuardarBloqueos;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaUsuarios;
         private System.Windows.Forms.TabPage tabAdministrarPermisos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboSeleccionarUsuario;

@@ -10,10 +10,17 @@ namespace CL_Negocios
 {
     public class CL_administrarTablas
     {
-        private CD_listarTablas datosTabla = new CD_listarTablas();
+       
+        private CD_listarTablas _crearTablas; //creo una propiedad con un objeto Crear Registro
+        public CL_administrarTablas()
+        {
+            _crearTablas = new CD_listarTablas(); //dentro del constructor instancio el objeto.    
+        }
+
+
         public bool validarExistenciaDeUsuario (int valor)
         {
-            int resultado = datosTabla.ConsultarId(valor, "spExisteUsuario");
+            int resultado = _crearTablas.ConsultarId(valor, "spExisteUsuario");
             
             if (resultado == 0)
             {
@@ -27,20 +34,21 @@ namespace CL_Negocios
 
         public DataTable permisosTorTipoDeUsuario(int id_familia)
         {
-            DataTable data =  datosTabla.tablaPermisosPorFamilia(id_familia, "spListarPermisosPorTipoUser");
+            DataTable data =  _crearTablas.tablaPermisosPorFamilia(id_familia, "spListarPermisosPorTipoUser");
             return data;
 
         }
 
         public DataTable permisosPorUsuario(int id_usuario)
         {
-            DataTable data = datosTabla.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");
+            DataTable data = _crearTablas.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");
             return data;
         }
 
         public DataTable ListarUsuarios()
         {
-
+            DataTable data = _crearTablas.listarQuery("spListarUsuarios");
+            return data;
         }
     }
 }

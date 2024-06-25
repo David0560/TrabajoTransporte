@@ -64,6 +64,10 @@ namespace CV_Presentacion
             combo.seleccionCombo(cboFamilias,"spVerFamilias");
             mkdVencePass.Text = null;
             mkdVenceUsuario.Text = null;
+            dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
+
+
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -120,10 +124,13 @@ namespace CV_Presentacion
 
         private void cboFamilias_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (cboFamilias.SelectedValue != null) //reparo la falta de seleccion en el combobox.
             {
+                
                 listaPermiso();
             }
+            
         }
 
         private void listaPermiso()
@@ -151,8 +158,12 @@ namespace CV_Presentacion
         //
         private void tabAltaUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
-            combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
+            if (tabAltaUsuario.SelectedTab == tabAdministrarPermisos)
+            {
+                combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
+                combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
+            }
+            
         }
        
         private void cboSeleccionarUsuario_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -161,7 +172,10 @@ namespace CV_Presentacion
              {
                 listaRoles();                
              }
-            lblFilas.Text = Convert.ToString(cboSeleccionarUsuario.SelectedValue);
+            else
+            {
+                dgvDatos.DataSource = null;
+            }
         }
         private void listaRoles()
         {
@@ -266,6 +280,16 @@ namespace CV_Presentacion
              configure.Configuracion(min, max, mayu, num, esp);
 
         }
+
+        private void tabBloqueos_MouseClick(object sender, MouseEventArgs e)
+        {
+            registro.LimpiarControlesEnTabPage(tabBloqueos);
+            //this.dgvListaUsuarios.DataSource = null;
+            //this.dgvListaUsuarios.Rows.Clear();
+
+
+        }
+
         //
         // Tab Bolqueos de usuarios
         //

@@ -10,12 +10,14 @@ using static System.Net.WebRequestMethods;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using System.Data;
 
 namespace CL_Negocios
 {
     public class CL_administrarRegistros
     {
         CS_contraseña password = new CS_contraseña();
+
 
         private CD_crearRegistros _crearRegistros; //creo una propiedad con un objeto Crear Registro
         public CL_administrarRegistros()
@@ -85,13 +87,11 @@ namespace CL_Negocios
         {
             _crearRegistros.EliminarPermisoDeUsuario(id);
         }
-
         public void ActualizarFechaRegistro(int id, string fecha)
         {
             DateTime? fecha_baja = ValidarFecha(fecha);
             _crearRegistros.ActualizarFechaVencimiento(id, fecha_baja);
         }
-
         //validaciones
         public DateTime? ValidarFecha(string valor)
         {
@@ -154,10 +154,10 @@ namespace CL_Negocios
                 }
 
                 // Verificar si el control es un DataGridView
-                if (control is DataGridView dataGridView)
+                if (c is DataGridView)
                 {
-                    dataGridView.DataSource = null; // Eliminar la fuente de datos del DataGridView
-                    dataGridView.Rows.Clear(); // Limpiar las filas en el DataGridView
+                    ((DataGridView)c).DataSource = null; // Eliminar la fuente de datos del DataGridView
+                    ((DataGridView)c).Rows.Clear(); // Limpiar las filas en el DataGridView
                 }
             }
 

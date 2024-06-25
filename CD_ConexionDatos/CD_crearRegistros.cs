@@ -11,6 +11,7 @@ namespace CD_ConexionDatos
 {
     public class CD_crearRegistros
     {
+
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
         public CD_crearRegistros() { }
         int cantidad;
@@ -87,6 +88,7 @@ namespace CD_ConexionDatos
             return cantidad;
         }
 
+
         //
         // relacionados con los roles
         //
@@ -119,7 +121,6 @@ namespace CD_ConexionDatos
                 comando.ExecuteNonQuery();
             }
         }
-
         public void ActualizarFechaVencimiento(int id, DateTime? nuevafecha)
         {
             using(con = connectionBD.CreaInstacia().CrearConexion())
@@ -135,5 +136,5 @@ namespace CD_ConexionDatos
                 comando.ExecuteNonQuery();
             }
         }
-    }
+   }
 }

@@ -58,6 +58,35 @@ namespace CD_ConexionDatos
                 }
              }
         }
+
+        public DataTable listarQuery(string query)
+        {
+            try
+            {
+                // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
+                using (con = connectionBD.CreaInstacia().CrearConexion())// nos devuelve el string de conexin a sql
+                {
+                    using (SqlCommand comando = new SqlCommand(query, con))
+                    {
+                        con.Open();// abro la conexion.
+                        dr = comando.ExecuteReader(); // comando va a tener los resultados de la consulta y los lleva atraves del executereade estos los voy a cargar en la lista.
+                        dt.Load(dr); // la variable tabla (dataTable) va a cargar lo que tiene lista
+                        return dt; // devuelvo tabla que lo contiene en memora depues lo mando al grid
+                    }; // preparo la BD para que reciva la consulta (consulta, conexion)
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally // permite colocar una condicion para saber el estado de la conexión
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close(); // cierra la conexión
+                }
+            }
+        }
         public DataTable tablaPermisosPorFamilia(int id_familia, string query)
         {
             //utilizo el DataReader que fue instanciado antes como dr"
