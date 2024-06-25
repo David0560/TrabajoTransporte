@@ -497,7 +497,6 @@
             this.tabBloqueos.TabIndex = 2;
             this.tabBloqueos.Text = "Bloqueos";
             this.tabBloqueos.UseVisualStyleBackColor = true;
-            this.tabBloqueos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabBloqueos_MouseClick);
             // 
             // btnGuardarBloqueos
             // 
@@ -507,6 +506,7 @@
             this.btnGuardarBloqueos.TabIndex = 2;
             this.btnGuardarBloqueos.Text = "&Actualizar";
             this.btnGuardarBloqueos.UseVisualStyleBackColor = true;
+            this.btnGuardarBloqueos.Click += new System.EventHandler(this.btnGuardarBloqueos_Click);
             // 
             // label8
             // 
@@ -659,7 +659,6 @@
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(522, 258);
             this.dgvDatos.TabIndex = 1;
-            this.dgvDatos.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvDatos_ColumnAdded);
             // 
             // lblFilas
             // 

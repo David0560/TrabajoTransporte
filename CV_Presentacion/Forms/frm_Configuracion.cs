@@ -24,10 +24,15 @@ namespace CV_Presentacion.Forms
         {
             CS_contraseña a = new CS_contraseña();
             //textBox2.Text= a.crearContraseñaRandom(4,8,true,true,true,true);
+            string encrip = a.crearSHA256(textBox1.Text, textBox2.Text);
+            
+            label5.Text = encrip;
 
-            label6.Text = Convert.ToString(a.crearCodigoVerificador(textBox1.Text, textBox2.Text));
+            int valor = a.crearCodigoVerificador(encrip);
+            label6.Text = Convert.ToString(valor);
 
-            label5.Text = a.crearSHA256(textBox1.Text, textBox2.Text);
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -90,9 +90,11 @@
     <Compile Include="CD_cargarComboBox.cs" />
     <Compile Include="CD_crearRegistros.cs" />
     <Compile Include="CD_Pregunta.cs" />
+    <Compile Include="codigoVerificador.cs" />
     <Compile Include="connectionDB.cs" />
     <Compile Include="CD_listarTablas.cs" />
     <Compile Include="Entidades\cachePermisosAlta.cs" />
+    <Compile Include="Entidades\ContrasenaUsuario.cs" />
     <Compile Include="Entidades\Permisos.cs" />
     <Compile Include="Entidades\Persona.cs" />
     <Compile Include="Entidades\Pregunta.cs" />

@@ -14,6 +14,7 @@ namespace CV_Presentacion
         CL_administrarTablas tabla = new CL_administrarTablas();
         CL_administrarRegistros registro = new CL_administrarRegistros();
         CS_contraseña conta = new CS_contraseña();
+        CS_servicios servicio = new CS_servicios();
         ConfiguracionPassword configure = new ConfiguracionPassword();
         public frm_Usuario()
         {
@@ -34,46 +35,24 @@ namespace CV_Presentacion
             //
             // Comportamiento del DatagridView
             //
-
-            //dgvDatos.Columns[0].Visible = false; // oculatar id de la comunna
-            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect; //seleccionar solo la fila
-            dgvDatos.RowHeadersVisible = false; // columna de indice "Flecha" 
-            dgvDatos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // centra el encabezado de la colunna
-            dgvDatos.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // centra los valores de las filas
-            dgvDatos.ReadOnly = true; // no se permite editar desde la grilla
-            dgvDatos.AllowUserToAddRows = false; // Desactiva  la ultima fila 
-            dgvDatos.AllowUserToResizeColumns = false; // no permite cambiar el tamaño de la columna
-            dgvDatos.AllowUserToResizeRows = false; // no permite cambiar el tamaño de la fila
-
-
-            dgvPermisoUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selecciona toda la fila al hacer click en alguna celda
-            dgvPermisoUsuario.MultiSelect = false; // Que no pueda seleccionar multiples filas
-            dgvPermisoUsuario.ReadOnly = true; // Hace que la grilla no se pueda editar
-            dgvPermisoUsuario.AllowUserToAddRows = false; // Desactiva  la ultima fila 
-            dgvPermisoUsuario.RowHeadersVisible = false; // Oculto los encabezados de filas
-            // Grafica
-            dgvPermisoUsuario.AutoResizeColumns();
-            dgvPermisoUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvPermisoUsuario.EnableHeadersVisualStyles = false; // Para poder modificar estilos en la cabecera
-            dgvPermisoUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None; // Quito los bordes de la cabecera
-            dgvPermisoUsuario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;// Centro el texto de las cabeceras
-
+            servicio.parametrosDataGridView(dgvDatos);
+            servicio.parametrosDataGridView(dgvListaUsuarios);
+            servicio.parametrosDataGridView(dgvPermisoUsuario);
 
             timer1.Enabled = true;
             combo.seleccionCombo(cboEmpleados, "spVerEmpleados");
             combo.seleccionCombo(cboFamilias,"spVerFamilias");
             mkdVencePass.Text = null;
             mkdVenceUsuario.Text = null;
+
+            registro.LimpiarControlesEnTabPage(tabBloqueos);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
-
-
 
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd");// coloco la hora actual de la pc en el label
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             // cargar nuevo usuario
@@ -89,7 +68,7 @@ namespace CV_Presentacion
                     string fvp = mkdVencePass.Text;
                     string fvu = mkdVenceUsuario.Text;
 
-                    // cargar un nuevo usuario
+                    // Registro del nuevo usuario
                     Usuario usuario = new Usuario(nombre, id_empleado,id_familia,fvp,fvu);
                     if (registro.insertarNuevoUsuario(usuario, configure))
                       {
@@ -103,7 +82,7 @@ namespace CV_Presentacion
                             Permisos permiso = new Permisos(id_famil_rol);
                             registro.insertarPermisoPorFamilia(permiso);
                         }
-
+                        
                         registro.LimpiarControlesEnTabPage(tabCrearUsuario);
                     }
                     else
@@ -121,18 +100,15 @@ namespace CV_Presentacion
                 MessageBox.Show("No se encuentra usuario seleccionado");
             }
         }
-
         private void cboFamilias_SelectedIndexChanged(object sender, EventArgs e)
         {
             
             if (cboFamilias.SelectedValue != null) //reparo la falta de seleccion en el combobox.
             {
-                
                 listaPermiso();
             }
             
         }
-
         private void listaPermiso()
         {
             // Obtener el valor seleccionado del ComboBox
@@ -158,14 +134,21 @@ namespace CV_Presentacion
         //
         private void tabAltaUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabAltaUsuario.SelectedTab == tabAdministrarPermisos)
-            {
-                combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
+
+            //if (tabAltaUsuario.SelectedTab == tabAdministrarPermisos)
+            
+
+             //dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
+            //dgvListaUsuarios.DataSource = null;
+
+
+            // if (tabAltaUsuario.SelectedTab == tabAdministrarPermisos)
+
+            combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
                 combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
-            }
+            
             
         }
-       
         private void cboSeleccionarUsuario_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cboSeleccionarUsuario.SelectedValue != null) //reparo la falta de seleccion en el combobox.
@@ -196,7 +179,6 @@ namespace CV_Presentacion
             }
 
         }
-
         private void btnCargarPermisos_Click(object sender, EventArgs e)
         {
             int id_usuario = Convert.ToInt32(cboSeleccionarUsuario.SelectedValue);
@@ -208,7 +190,6 @@ namespace CV_Presentacion
             limpiarPermisos();
             listaRoles();
         }
-          
         private void btnEliminarPermisos_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(this.dgvDatos.SelectedRows[0].Cells[0].Value);
@@ -231,11 +212,11 @@ namespace CV_Presentacion
             limpiarPermisos();
             listaRoles();
         }
-        private void dgvDatos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        /*private void dgvDatos_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
             //e.Column.SortMode = DataGridViewColumnSortMode.NotSortable; // sin flecha para ordenar
             e.Column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // llenar la tabla al espacio del datagridview
-        }
+        }*/
         
         public void limpiarPermisos()
         {
@@ -267,7 +248,7 @@ namespace CV_Presentacion
         }
 
         //
-        // configuracion del password
+        // tab configuracion del password
         //
         private void btnGuardarConfiguracion_Click(object sender, EventArgs e)
         {
@@ -280,18 +261,19 @@ namespace CV_Presentacion
              configure.Configuracion(min, max, mayu, num, esp);
 
         }
-
-        private void tabBloqueos_MouseClick(object sender, MouseEventArgs e)
-        {
-            registro.LimpiarControlesEnTabPage(tabBloqueos);
-            //this.dgvListaUsuarios.DataSource = null;
-            //this.dgvListaUsuarios.Rows.Clear();
-
-
-        }
-
         //
         // Tab Bolqueos de usuarios
         //
+        private void btnGuardarBloqueos_Click(object sender, EventArgs e)
+        {
+            string nombre = this.dgvListaUsuarios.SelectedRows[0].Cells[3].Value.ToString();
+
+            int id = Convert.ToInt32(this.dgvListaUsuarios.SelectedRows[0].Cells[0].Value);
+            string estado = Convert.ToString(Interaction.InputBox($"Realizará cambios en el estado del \nUsuario: \n \n{nombre} \n \nColoque el estado que desee para el usuario \n0 = bloqueado, 1 = activo"));
+            registro.bloquearUsuario(id, estado);
+            registro.LimpiarControlesEnTabPage(tabBloqueos);
+            dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
+        }
+
     }
 }

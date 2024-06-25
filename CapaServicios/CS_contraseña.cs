@@ -75,9 +75,9 @@ namespace CapaServicios
 
                 return new string(password);
             }
-        public string crearSHA256(string str1, string str2)
-             {
-                string valor = str1 + str2;
+        public string crearSHA256(string nombreUsuario, string pass)
+        {
+                string valor = nombreUsuario + pass;
                  using (SHA256 sha256Hash = SHA256.Create())
                  {
                     byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(valor));
@@ -88,13 +88,13 @@ namespace CapaServicios
                      }
                      return builder.ToString();
                  }
-             }
-        public int crearCodigoVerificador(string str1, string str2)
+        }
+        public int crearCodigoVerificador(string valor)
             {
-                string concatenacion = str1 + str2;
+                //string concatenacion = nombreUsuario + pass;
 
                 string hex = "";
-                foreach (char c in concatenacion)
+                foreach (char c in valor)
                 {
                     hex += String.Format("{0:X}", (int)c);
                 }

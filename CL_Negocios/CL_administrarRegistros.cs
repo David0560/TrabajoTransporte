@@ -1,16 +1,9 @@
 ﻿using CL_Negocios.Entidades;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CD_ConexionDatos;
 using CapaServicios;
-using static System.Net.WebRequestMethods;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Windows.Forms;
-using Microsoft.Win32;
-using System.Data;
+using CD_ConexionDatos.Entidades;
 
 namespace CL_Negocios
 {
@@ -41,6 +34,20 @@ namespace CL_Negocios
                     {
                         Usuario guardarUsuario = new Usuario(usuario.Nombre, usuario.Id_persona, usuario.Id_familia, fechaVP, fechaVU, 1, pass);
                         _crearRegistros.guardarNuevoUsuario(guardarUsuario);
+
+                        // Cargar password a la tabla.
+                        string nombreUsuario = usuario.Nombre;
+                        int id_usuario = _crearRegistros.obtenerUltimoUsuario();
+                        string contraseña = password.crearSHA256(nombreUsuario, pass);
+                        bool system = true;
+                        ContrasenaUsuario passUser = new ContrasenaUsuario(id_usuario, contraseña, system);
+                        _crearRegistros.GuardarNuevaContraseña(passUser);
+
+                        // cargar codigo verificador
+                        int codV = Convert.ToInt32(password.crearCodigoVerificador(contraseña));
+                        codigoVerificador codigoV = new codigoVerificador(id_usuario, codV);
+                        _crearRegistros.GuardarNuevoCodigoV(codigoV);
+
                         return true;
                     }
                     return false;
@@ -57,10 +64,20 @@ namespace CL_Negocios
         {
             _crearRegistros.borrarUsuario(nombreUsuario);
         }
-        public void bloquearUsuario(string nombreUsuario)
+        public void bloquearUsuario(int nombreUsuario, string estado)
         {
-            _crearRegistros.bloqueoDeUsuario(nombreUsuario);
+            bool valor;
+            if(estado == "0" || estado == "false" || estado == "bloqueado")
+            {
+                valor = false;
+            }
+            else
+            {
+                valor = true;
+            }
+            _crearRegistros.bloqueoDeUsuario(nombreUsuario, valor);
         }
+
 
         //relacionados a los roles
         public void insertarPermisoPorFamilia (Permisos permiso)
@@ -92,7 +109,9 @@ namespace CL_Negocios
             DateTime? fecha_baja = ValidarFecha(fecha);
             _crearRegistros.ActualizarFechaVencimiento(id, fecha_baja);
         }
+        //
         //validaciones
+        //
         public DateTime? ValidarFecha(string valor)
         {
             if(valor == "  /  /")

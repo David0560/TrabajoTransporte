@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CL_Negocios.Entidades;
+using CD_ConexionDatos.Entidades;
 
 namespace CD_ConexionDatos
 {
@@ -50,17 +51,20 @@ namespace CD_ConexionDatos
                 comando.ExecuteNonQuery();
             }
         }
-        public void bloqueoDeUsuario(string nombreUsuario)
+        public void bloqueoDeUsuario(int id, bool valor)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion())
             {
                 con.Open();
                 SqlCommand comando = new SqlCommand("spBloquearUsuario", con);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add(new SqlParameter("@xnombre", con));
-                comando.Parameters["@xpregunta"].Value = nombreUsuario;
+                comando.Parameters.Add(new SqlParameter("@xid", con));
+                comando.Parameters["@xid"].Value = id;
+                comando.Parameters.Add(new SqlParameter("@xestado", con));
+                comando.Parameters["@xestado"].Value = valor;
 
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         public int obtenerUltimoUsuario()
@@ -87,8 +91,6 @@ namespace CD_ConexionDatos
             }
             return cantidad;
         }
-
-
         //
         // relacionados con los roles
         //
@@ -106,6 +108,7 @@ namespace CD_ConexionDatos
                 
                 comando.ExecuteNonQuery();
             }
+            
         }
         public void EliminarPermisoDeUsuario(int id)
         {
@@ -132,6 +135,38 @@ namespace CD_ConexionDatos
                 comando.Parameters["@xid"].Value = id;
                 comando.Parameters.Add(new SqlParameter("@xfecha_baja", con));
                 comando.Parameters["@xfecha_baja"].Value = nuevafecha;
+
+                comando.ExecuteNonQuery();
+            }
+        }
+        //
+        //relacionado a las Contraseñas
+        //
+        public void GuardarNuevaContraseña(ContrasenaUsuario constrasena)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spGuardarNuevaContraseña", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xid_usuario", constrasena.Id_usuario);
+                comando.Parameters.AddWithValue("@xcontraseña", constrasena.Contraseña);
+                comando.Parameters.AddWithValue("@xsistema", constrasena.Sistema);
+                comando.Parameters.AddWithValue("@xfecha", DateTime.Now);
+
+                comando.ExecuteNonQuery();
+            }
+        }
+
+        public void GuardarNuevoCodigoV(codigoVerificador codeV)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spGuardarNuevoCodigo", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xid_usuario", codeV.Id_usuario);
+                comando.Parameters.AddWithValue("@xvalor", codeV.Valor);
 
                 comando.ExecuteNonQuery();
             }
