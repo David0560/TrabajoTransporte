@@ -14,7 +14,6 @@ namespace CD_ConexionDatos
             using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
                 con.Open();
-                //string query = "INSERT INTO Pregunta (pregunta) VALUES (@xpregunta)";
                 using (SqlCommand comando = new SqlCommand("spGuardarNuevaPregunta", con))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
@@ -26,8 +25,6 @@ namespace CD_ConexionDatos
                 }
 
             }
-
-            // cargar data grid
         }
     }
 }

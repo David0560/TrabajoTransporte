@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,22 +15,68 @@ namespace CV_Presentacion
 {
     public partial class frmLogin : Form
     {
-        //operaciones operaciones = new operaciones();
+        CL_administrarLogin login = new CL_administrarLogin();
         public frmLogin()
         {
             InitializeComponent();
         }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //frmMenu menu = new FrmMenu();
-            //this.Hide();
-            //menu.ShowDialog();
+
+            int valor = login.UbicarUsuario(txtUsuario.Text.ToString(), txtPassword.Text.ToString());
+
+            switch (valor)
+            {
+                case 1:
+                    msgError("Usuario no encontrado");
+                    //MessageBox.Show("No se encuentra usuario con este nombre", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Clear();
+                    txtUsuario.Focus();
+                    break;
+
+                case 2:
+                    msgError("password no ingresado o incorrecto");
+                    //MessageBox.Show("El password no fue ingresado o es incorrecto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+
+                    break;
+
+                case 3:
+                    MessageBox.Show("Usuario Bolqueado, Comuniquese con su administrador", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
+                    txtUsuario.Focus();
+                    break;
+
+                case 4:
+                    FrmMenu menu = new FrmMenu();
+                    this.Hide();
+                    menu.Show();
+                    menu.FormClosed += CerrarSesion;
+                    
+                    break;
+
+                default:
+                    MessageBox.Show("El sistema se encuetra en reparacion intente nuevamenta mas tarde \n Muchas gracias.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+            }
         }
+        // metodo
+        private void msgError(string msg)
+        {
+            lblError.Text ="ERROR: " + msg;
+            lblError.Visible = true;
+        }
+
+        private void CerrarSesion(object sender, FormClosedEventArgs e)
+        {
+            txtUsuario.Clear();
+            txtPassword.Clear();
+            lblError.Visible = false;
+            this.Show();
+            txtUsuario.Focus();
+        }
+
     }
 }

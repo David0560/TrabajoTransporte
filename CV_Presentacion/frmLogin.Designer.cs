@@ -40,6 +40,7 @@
             this.pbxOcultar = new System.Windows.Forms.PictureBox();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMostrar)).BeginInit();
@@ -146,7 +147,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(157, 217);
+            this.btnAceptar.Location = new System.Drawing.Point(152, 218);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(167, 35);
             this.btnAceptar.TabIndex = 12;
@@ -154,12 +155,26 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoEllipsis = true;
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblError.Location = new System.Drawing.Point(149, 190);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(70, 13);
+            this.lblError.TabIndex = 13;
+            this.lblError.Text = "mensaje error";
+            this.lblError.Visible = false;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 340);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
@@ -172,7 +187,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMostrar)).EndInit();
@@ -196,5 +210,6 @@
         private System.Windows.Forms.PictureBox pbxOcultar;
         private System.Windows.Forms.Button btnAcceder;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lblError;
     }
 }

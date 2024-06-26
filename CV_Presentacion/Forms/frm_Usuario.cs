@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using CL_Negocios;
-using CL_Negocios.Entidades;
 using CapaServicios;
 using Microsoft.VisualBasic;
+using CL_Negocios.Entidades;
 
 
 namespace CV_Presentacion

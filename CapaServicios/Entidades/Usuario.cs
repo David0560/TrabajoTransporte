@@ -20,8 +20,22 @@ namespace CL_Negocios.Entidades
         public int Id_familia { get; set; }
 
         public string fechaVP { get; set; }
-        public string fechaVU  { get; set; } 
+        public string fechaVU  { get; set; }
 
+        public Usuario() { }
+
+        public Usuario(string nombre, int estado, int id_persona, int id_familia, DateTime? fecha_vence_pass, DateTime? fecha_user_temporal,  string password_user, int id, DateTime fecha_alta)
+        {
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Estado = estado;
+            this.Id_persona = id_persona;
+            this.Password_user = password_user;
+            this.Id_familia = id_familia;
+            this.Fecha_vence_pass = fecha_vence_pass;
+            this.Fecha_user_temporal = fecha_user_temporal;
+            this.Fecha_alta = fecha_alta;
+        }
         public Usuario(string nombre, int id_persona, int id_familia, DateTime? fecha_vence_pass, DateTime? fecha_user_temporal, int estado, string password_user)
         {
             this.Nombre = nombre;

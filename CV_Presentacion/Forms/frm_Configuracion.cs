@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaServicios;
-using CL_Negocios.Entidades;
+using CL_Negocios;
 
 namespace CV_Presentacion.Forms
 {

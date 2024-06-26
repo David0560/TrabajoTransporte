@@ -88,11 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CL_administrarComboBox.cs" />
+    <Compile Include="CL_administrarLogin.cs" />
     <Compile Include="CL_administrarPreguntas.cs" />
     <Compile Include="CL_administrarRegistros.cs" />
     <Compile Include="CL_administrarTablas.cs" />
     <Compile Include="CL_cacheManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaServicios\CapaServicios.csproj">
@@ -107,10 +112,6 @@
       <Project>{f04cbaba-8f93-4896-bdfe-634c4db7f8db}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

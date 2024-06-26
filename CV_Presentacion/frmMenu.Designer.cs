@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnAlmacen = new System.Windows.Forms.Button();
@@ -37,16 +38,23 @@
             this.btnInformes = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalirUsuario = new System.Windows.Forms.Button();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTipoUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmrFecha = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
+            this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.pnlBarraTitulo.SuspendLayout();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -134,6 +142,7 @@
             this.btnEmpleados.TabIndex = 3;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click_1);
             // 
             // btnInformes
             // 
@@ -166,16 +175,28 @@
             // pnlLogo
             // 
             this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(77)))), ((int)(((byte)(96)))));
+            this.pnlLogo.Controls.Add(this.btnMenu);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(133, 99);
             this.pnlLogo.TabIndex = 0;
             // 
+            // btnMenu
+            // 
+            this.btnMenu.Image = global::CV_Presentacion.Properties.Resources.pngegg__1_;
+            this.btnMenu.Location = new System.Drawing.Point(0, 12);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(127, 77);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenu.TabIndex = 0;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
-            this.pnlBarraTitulo.Controls.Add(this.button1);
+            this.pnlBarraTitulo.Controls.Add(this.btnSalirUsuario);
             this.pnlBarraTitulo.Controls.Add(this.lblHora);
             this.pnlBarraTitulo.Controls.Add(this.lblFecha);
             this.pnlBarraTitulo.Controls.Add(this.lblTipoUsuario);
@@ -187,59 +208,67 @@
             this.pnlBarraTitulo.Size = new System.Drawing.Size(604, 99);
             this.pnlBarraTitulo.TabIndex = 2;
             // 
-            // button1
+            // btnSalirUsuario
             // 
-            this.button1.Location = new System.Drawing.Point(508, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalirUsuario.Location = new System.Drawing.Point(453, 66);
+            this.btnSalirUsuario.Name = "btnSalirUsuario";
+            this.btnSalirUsuario.Size = new System.Drawing.Size(130, 23);
+            this.btnSalirUsuario.TabIndex = 5;
+            this.btnSalirUsuario.Text = "Cerrar Sesion";
+            this.btnSalirUsuario.UseVisualStyleBackColor = true;
+            this.btnSalirUsuario.Click += new System.EventHandler(this.btnSalirUsuario_Click);
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(548, 17);
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblHora.Location = new System.Drawing.Point(525, 40);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(28, 13);
+            this.lblHora.Size = new System.Drawing.Size(34, 16);
             this.lblHora.TabIndex = 4;
             this.lblHora.Text = "hora";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(450, 17);
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblFecha.Location = new System.Drawing.Point(488, 12);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(75, 13);
+            this.lblFecha.Size = new System.Drawing.Size(95, 16);
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "Fecha sistema";
             // 
             // lblTipoUsuario
             // 
             this.lblTipoUsuario.AutoSize = true;
-            this.lblTipoUsuario.Location = new System.Drawing.Point(19, 44);
+            this.lblTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTipoUsuario.Location = new System.Drawing.Point(13, 40);
             this.lblTipoUsuario.Name = "lblTipoUsuario";
-            this.lblTipoUsuario.Size = new System.Drawing.Size(76, 13);
+            this.lblTipoUsuario.Size = new System.Drawing.Size(95, 16);
             this.lblTipoUsuario.TabIndex = 2;
             this.lblTipoUsuario.Text = "tipo de usuario";
             // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(19, 17);
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(10, 9);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(94, 13);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(132, 18);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "nombre de usuario";
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(15, 71);
+            this.lblTitulo.Location = new System.Drawing.Point(13, 71);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(42, 18);
             this.lblTitulo.TabIndex = 0;
@@ -247,11 +276,28 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(133, 99);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(604, 480);
             this.panelMenu.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.pngegg__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(143, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(290, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tmrFecha
+            // 
+            this.tmrFecha.Enabled = true;
+            this.tmrFecha.Tick += new System.EventHandler(this.tmrFecha_Tick);
             // 
             // FrmMenu
             // 
@@ -266,8 +312,12 @@
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.pnlMenu.ResumeLayout(false);
+            this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlBarraTitulo.PerformLayout();
+            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,11 +335,14 @@
         private System.Windows.Forms.Panel pnlBarraTitulo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalirUsuario;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblTipoUsuario;
         private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.PictureBox btnMenu;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tmrFecha;
     }
 }
 
