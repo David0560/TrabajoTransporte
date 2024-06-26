@@ -58,7 +58,7 @@ namespace CV_Presentacion
                     break;
 
                 default:
-                    MessageBox.Show("El sistema se encuetra en reparacion intente nuevamenta mas tarde \n Muchas gracias.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Su Usuario se encuentra en reparación\nComuniquese con su administrador \n\n Muchas gracias.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
         }
@@ -78,5 +78,11 @@ namespace CV_Presentacion
             txtUsuario.Focus();
         }
 
+        private void lblRecupero_Click(object sender, EventArgs e)
+        {
+            frmRecuperarPassword contraseña = new frmRecuperarPassword();
+            this.Hide();
+            contraseña.Show();
+        }
     }
 }

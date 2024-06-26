@@ -90,6 +90,7 @@
     <Compile Include="CL_administrarComboBox.cs" />
     <Compile Include="CL_administrarLogin.cs" />
     <Compile Include="CL_administrarPreguntas.cs" />
+    <Compile Include="CL_administrarPreguntasUsuario.cs" />
     <Compile Include="CL_administrarRegistros.cs" />
     <Compile Include="CL_administrarTablas.cs" />
     <Compile Include="CL_cacheManager.cs" />

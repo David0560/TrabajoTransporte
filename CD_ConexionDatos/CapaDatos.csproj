@@ -91,6 +91,7 @@
     <Compile Include="CD_crearRegistros.cs" />
     <Compile Include="CD_loginUsuario.cs" />
     <Compile Include="CD_Pregunta.cs" />
+    <Compile Include="CD_PreguntaUsuario.cs" />
     <Compile Include="codigoVerificador.cs" />
     <Compile Include="connectionDB.cs" />
     <Compile Include="CD_listarTablas.cs" />

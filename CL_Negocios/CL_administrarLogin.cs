@@ -58,7 +58,7 @@ namespace CL_Negocios
                     respuesta = 2; // password del usuario incorrecto
                     return respuesta;
                 }
-                return 0; // error en el sistema
+                return 0; // El ususario se encuntra bloqueado 
             }
         }
 

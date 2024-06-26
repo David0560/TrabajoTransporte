@@ -32,8 +32,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -45,6 +43,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "&Aceptar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -54,11 +53,12 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "&Volver";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(100, 118);
+            this.lblUsuario.Location = new System.Drawing.Point(100, 137);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(99, 13);
             this.lblUsuario.TabIndex = 2;
@@ -66,26 +66,10 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(223, 118);
+            this.txtUsuario.Location = new System.Drawing.Point(223, 137);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(165, 20);
             this.txtUsuario.TabIndex = 3;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(223, 165);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(165, 20);
-            this.txtCorreo.TabIndex = 5;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(100, 172);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(97, 13);
-            this.lblCorreo.TabIndex = 4;
-            this.lblCorreo.Text = "Correo Electronico:";
             // 
             // label1
             // 
@@ -102,13 +86,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 340);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.HelpButton = true;
+            this.MaximizeBox = false;
             this.Name = "frmRecuperarPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRecuperarPassword";
@@ -123,8 +109,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -19,10 +19,14 @@ namespace CL_Negocios.Entidades
         public DateTime Fecha_alta { get; set; }
         public int Id_familia { get; set; }
 
+
+        public List<string> PreguntasSeguridad { get; set; }
+        public List<string> RespuestasSeguridad { get; set; }
+
         public string fechaVP { get; set; }
         public string fechaVU  { get; set; }
 
-        public Usuario() { }
+
 
         public Usuario(string nombre, int estado, int id_persona, int id_familia, DateTime? fecha_vence_pass, DateTime? fecha_user_temporal,  string password_user, int id, DateTime fecha_alta)
         {
@@ -54,6 +58,28 @@ namespace CL_Negocios.Entidades
             this.Id_familia = id_familia;
             this.fechaVP= fechaVencePass;
             this.fechaVU = fechaVenceUsuario;
+        }
+
+        public Usuario()
+        {
+            PreguntasSeguridad = new List<string>();
+            RespuestasSeguridad = new List<string>();
+        }
+
+        // Método para validar las respuestas de seguridad del usuario
+        public bool ValidarRespuestasSeguridad(List<string> respuestasUsuario)
+        {
+            if (respuestasUsuario.Count != RespuestasSeguridad.Count)
+                return false;
+
+            for (int i = 0; i < respuestasUsuario.Count; i++)
+            {
+                if (!respuestasUsuario[i].Equals(RespuestasSeguridad[i], StringComparison.Ordinal))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
     }

@@ -75,7 +75,6 @@
             this.lblPregunta3.Size = new System.Drawing.Size(35, 13);
             this.lblPregunta3.TabIndex = 3;
             this.lblPregunta3.Text = "label4";
-            this.lblPregunta3.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtRespuesta1
             // 
@@ -106,6 +105,7 @@
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // btnVolver
             // 
@@ -115,6 +115,7 @@
             this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "&Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmRespuestas
             // 
@@ -130,6 +131,7 @@
             this.Controls.Add(this.lblPregunta2);
             this.Controls.Add(this.lblPregunta1);
             this.Controls.Add(this.lblSeguridad);
+            this.MaximizeBox = false;
             this.Name = "frmRespuestas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRespuestas";

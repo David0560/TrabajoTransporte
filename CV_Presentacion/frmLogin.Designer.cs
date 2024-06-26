@@ -75,6 +75,7 @@
             this.lblRecupero.Size = new System.Drawing.Size(105, 13);
             this.lblRecupero.TabIndex = 2;
             this.lblRecupero.Text = "Recuperar password";
+            this.lblRecupero.Click += new System.EventHandler(this.lblRecupero_Click);
             // 
             // txtUsuario
             // 
@@ -182,8 +183,9 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsuario);
             this.ForeColor = System.Drawing.Color.DimGray;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.HelpButton = true;
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

@@ -25,7 +25,7 @@ namespace CV_Presentacion.Forms
             CS_contraseña a = new CS_contraseña();
             //textBox2.Text= a.crearContraseñaRandom(4,8,true,true,true,true);
             string encrip = a.crearSHA256(textBox1.Text, textBox2.Text);
-            
+            txtEncrip.Text = encrip;
             label5.Text = encrip;
 
             int valor = a.crearCodigoVerificador(encrip);
