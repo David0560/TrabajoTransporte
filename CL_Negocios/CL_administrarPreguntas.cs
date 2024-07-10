@@ -12,6 +12,8 @@ namespace CL_Negocios
     public class CL_administrarPreguntas
     {
         private CD_Pregunta pregunta = new CD_Pregunta();
+        private CD_PreguntaUsuario preguntaUsuario = new CD_PreguntaUsuario();
+        private CD_crearRegistros crearRegistros = new CD_crearRegistros(); // Instancia de CD_crearRegistros
         public bool crearNuevaPregunta(string text)
         {
             if (text != "")
@@ -31,7 +33,18 @@ namespace CL_Negocios
         {
             pregunta.EliminarPregunta(id);
         }
-        
+
+        public List<string> ObtenerTresPreguntasAleatorias()
+        {
+            return preguntaUsuario.ObtenerTresPreguntasAleatorias();
+        }
+
+        public void GuardarRespuestasUsuario(string nombreUsuario, List<Tuple<int, string>> preguntasYRespuestas)
+        {
+            int idUsuario = crearRegistros.ObtenerIdUsuarioPorNombre(nombreUsuario); // Llama al método desde CD_crearRegistros
+            preguntaUsuario.GuardarRespuestasUsuario(idUsuario, preguntasYRespuestas);
+        }
+
         //gestionar data grid
     }
 }

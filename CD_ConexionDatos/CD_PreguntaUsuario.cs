@@ -93,6 +93,62 @@ namespace CD_ConexionDatos
             }
             return respuestas; // Devuelve la lista de respuestas de seguridad
         }
+
+        /// Obtiene tres preguntas aleatorias de la base de datos.
+        public List<string> ObtenerTresPreguntasAleatorias()
+        {
+            List<string> preguntas = new List<string>();
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                string query = "SELECT TOP 3 pregunta FROM Pregunta ORDER BY NEWID()";
+                SqlCommand command = new SqlCommand(query, con);
+
+                try
+                {
+                    con.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        preguntas.Add(reader["pregunta"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al obtener preguntas aleatorias", ex);
+                }
+            }
+            return preguntas;
+        }
+
+        /// Guarda las respuestas de seguridad del usuario en la base de datos.
+        public void GuardarRespuestasUsuario(int idUsuario, List<Tuple<int, string>> preguntasYRespuestas)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlTransaction transaction = con.BeginTransaction();
+
+                try
+                {
+                    foreach (var par in preguntasYRespuestas)
+                    {
+                        string query = "INSERT INTO Respuesta_Usuario (id_pregunta, id_usuario, respuesta) VALUES (@id_pregunta, @id_usuario, @respuesta)";
+                        SqlCommand command = new SqlCommand(query, con, transaction);
+                        command.Parameters.AddWithValue("@id_pregunta", par.Item1);
+                        command.Parameters.AddWithValue("@id_usuario", idUsuario);
+                        command.Parameters.AddWithValue("@respuesta", par.Item2);
+                        command.ExecuteNonQuery();
+                    }
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw new Exception("Error al guardar las respuestas del usuario", ex);
+                }
+            }
+
+        }
     }
 
 }
