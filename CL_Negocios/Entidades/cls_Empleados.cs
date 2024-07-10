@@ -60,6 +60,7 @@ namespace CapaLogicaNegocio.Entidades
 
             datos_emp.ModificarEmp();
         }
+
         public void EliminarEmpleado(int idEmpleado)
         {
             datos_emp.EliminarEmp(idEmpleado);

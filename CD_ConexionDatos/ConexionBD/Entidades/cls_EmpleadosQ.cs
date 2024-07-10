@@ -58,20 +58,20 @@ namespace CapaDatos.Entidades
             try
             {
                 string sSQL = "INSERT INTO Persona (nombre, apellido, id_sexo, id_documento_ident, numero_ident, fecha_nacimiento, email, id_localidad, calle, numero_domicilio, id_tarea) " +
-                              "VALUES (@nombre, @apellido, @id_sexo, @id_tipodni, @dni, @fecha_nac, @correo, @telefono, @id_localidad, @calle, @numero_calle, @id_cargo)";
+                              "VALUES (@nombre, @apellido, @id_sexo, @id_documento_ident, @numero_ident, @fecha_nacimiento, @correo, @id_localidad, @calle, @numero_domicilio, @id_tarea)";
                 List<SqlParameter> listaParametros = new List<SqlParameter>
                 {
                     new SqlParameter("@nombre", Nombre),
                     new SqlParameter("@apellido", Apellido),
                     new SqlParameter("@id_sexo", Id_Sexo),
-                    new SqlParameter("@id_tipodni", Id_Documento_Ident),
-                    new SqlParameter("@dni", Numero_Ident),
-                    new SqlParameter("@fecha_nac", Fecha_Nacimiento),
+                    new SqlParameter("@id_documento_ident", Id_Documento_Ident),
+                    new SqlParameter("@numero_ident", Numero_Ident),
+                    new SqlParameter("@fecha_nacimiento", Fecha_Nacimiento),
                     new SqlParameter("@correo", Email),
                     new SqlParameter("@id_localidad", Id_Localidad),
                     new SqlParameter("@calle", Calle),
-                    new SqlParameter("@numero_calle", Numero_Domicilio),
-                    new SqlParameter("@id_cargo", Id_Tarea),
+                    new SqlParameter("@numero_domicilio", Numero_Domicilio),
+                    new SqlParameter("@id_tarea", Id_Tarea),
                 };
                 ConsultaWrite(sSQL, listaParametros);
             }

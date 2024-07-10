@@ -116,7 +116,6 @@ namespace CapaVistas.ABM_Empleados
                 return false;
             }
 
-
             return true;
         }
         #endregion
@@ -242,6 +241,7 @@ namespace CapaVistas.ABM_Empleados
         {
             TraerTodos(dgvVerEmpAlta);
         }
+
         private void btnAgregarEmp_Click(object sender, EventArgs e)
         {
             string mensaje;
@@ -277,11 +277,7 @@ namespace CapaVistas.ABM_Empleados
             {
                 MessageBox.Show($"Ocurrió un Error: {ex.Message}");
             }
-
         }
-
-
-
         #endregion
 
         #region Tab Modificar Empleados
@@ -371,11 +367,6 @@ namespace CapaVistas.ABM_Empleados
             TraerTodos(dgvVerEmpBaja);
         }
 
-
-
-
-        #endregion
-
         private void dgvVerEmpBaja_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvVerEmpBaja.SelectedRows.Count > 0)
@@ -411,5 +402,6 @@ namespace CapaVistas.ABM_Empleados
                 MessageBox.Show($"Ocurrió un Error: {ex.Message}");
             }
         }
+        #endregion
     }
 }
