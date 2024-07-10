@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using CapaLogicaNegocio.Entidades;
 using CapaLogicaNegocio.Llenar_Combos;
 
-namespace CapaVistas.Form_Menu
+namespace CapaVistas.ABM_Empleados
 {
     public partial class frmEmpleados : Form
     {

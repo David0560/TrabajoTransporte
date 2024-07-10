@@ -95,6 +95,8 @@
     <Compile Include="codigoVerificador.cs" />
     <Compile Include="ConexionBD\cls_EjecutarQ.cs" />
     <Compile Include="ConexionBD\cls_ConexionBD.cs" />
+    <Compile Include="ConexionBD\Entidades\cls_EmpleadosQ.cs" />
+    <Compile Include="ConexionBD\Llenar Combos\cls_LlenarCombosQ.cs" />
     <Compile Include="connectionDB.cs" />
     <Compile Include="CD_listarTablas.cs" />
     <Compile Include="Entidades\cachePermisosAlta.cs" />
@@ -117,6 +119,7 @@
       <Name>CapaSesion</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

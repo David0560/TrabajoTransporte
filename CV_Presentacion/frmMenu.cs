@@ -60,7 +60,7 @@ namespace CV_Presentacion
         }
         private void btnEmpleados_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Empleados(), sender);
+            OpenChildForm(new CapaVistas.ABM_Empleados.frmEmpleados(), sender);
         }
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
