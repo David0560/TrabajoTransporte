@@ -50,5 +50,11 @@ namespace CL_Negocios
             DataTable data = _crearTablas.listarQuery("spListarUsuarios");
             return data;
         }
+
+        public DataTable ListarPreguntas()
+        {
+            DataTable data = _crearTablas.listarQuery("spListarPreguntas");
+            return data;
+        }
     }
 }

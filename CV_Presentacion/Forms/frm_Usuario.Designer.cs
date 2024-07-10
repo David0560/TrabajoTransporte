@@ -52,11 +52,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPreguntas = new System.Windows.Forms.TabPage();
             this.grbPregunta = new System.Windows.Forms.GroupBox();
+            this.btnEliminarPregunta = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.btnGuardarPregunta = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.lblTituloPregunta = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvPreguntas = new System.Windows.Forms.DataGridView();
             this.tabGruposUsuarios = new System.Windows.Forms.TabPage();
             this.btnCargarPermiso = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -106,7 +107,7 @@
             this.tabConfigurarPass.SuspendLayout();
             this.tabPreguntas.SuspendLayout();
             this.grbPregunta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPreguntas)).BeginInit();
             this.tabGruposUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabBloqueos.SuspendLayout();
@@ -332,7 +333,7 @@
             // 
             this.tabPreguntas.Controls.Add(this.grbPregunta);
             this.tabPreguntas.Controls.Add(this.lblTituloPregunta);
-            this.tabPreguntas.Controls.Add(this.dataGridView2);
+            this.tabPreguntas.Controls.Add(this.dgvPreguntas);
             this.tabPreguntas.Location = new System.Drawing.Point(4, 22);
             this.tabPreguntas.Name = "tabPreguntas";
             this.tabPreguntas.Padding = new System.Windows.Forms.Padding(3);
@@ -343,15 +344,26 @@
             // 
             // grbPregunta
             // 
+            this.grbPregunta.Controls.Add(this.btnEliminarPregunta);
             this.grbPregunta.Controls.Add(this.label13);
             this.grbPregunta.Controls.Add(this.btnGuardarPregunta);
             this.grbPregunta.Controls.Add(this.textBox7);
             this.grbPregunta.Location = new System.Drawing.Point(19, 58);
             this.grbPregunta.Name = "grbPregunta";
-            this.grbPregunta.Size = new System.Drawing.Size(518, 59);
+            this.grbPregunta.Size = new System.Drawing.Size(518, 90);
             this.grbPregunta.TabIndex = 5;
             this.grbPregunta.TabStop = false;
             this.grbPregunta.Text = "Agregar";
+            // 
+            // btnEliminarPregunta
+            // 
+            this.btnEliminarPregunta.Location = new System.Drawing.Point(345, 55);
+            this.btnEliminarPregunta.Name = "btnEliminarPregunta";
+            this.btnEliminarPregunta.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarPregunta.TabIndex = 4;
+            this.btnEliminarPregunta.Text = "&Eliminar";
+            this.btnEliminarPregunta.UseVisualStyleBackColor = true;
+            this.btnEliminarPregunta.Click += new System.EventHandler(this.btnEliminarPregunta_Click);
             // 
             // label13
             // 
@@ -364,7 +376,7 @@
             // 
             // btnGuardarPregunta
             // 
-            this.btnGuardarPregunta.Location = new System.Drawing.Point(431, 21);
+            this.btnGuardarPregunta.Location = new System.Drawing.Point(426, 55);
             this.btnGuardarPregunta.Name = "btnGuardarPregunta";
             this.btnGuardarPregunta.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarPregunta.TabIndex = 1;
@@ -376,7 +388,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(115, 23);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(295, 20);
+            this.textBox7.Size = new System.Drawing.Size(386, 20);
             this.textBox7.TabIndex = 3;
             // 
             // lblTituloPregunta
@@ -389,13 +401,13 @@
             this.lblTituloPregunta.TabIndex = 4;
             this.lblTituloPregunta.Text = "Cargar nueva pregunta de seguridad";
             // 
-            // dataGridView2
+            // dgvPreguntas
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(19, 133);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(525, 283);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPreguntas.Location = new System.Drawing.Point(19, 162);
+            this.dgvPreguntas.Name = "dgvPreguntas";
+            this.dgvPreguntas.Size = new System.Drawing.Size(525, 254);
+            this.dgvPreguntas.TabIndex = 0;
             // 
             // tabGruposUsuarios
             // 
@@ -879,7 +891,7 @@
             this.tabPreguntas.PerformLayout();
             this.grbPregunta.ResumeLayout(false);
             this.grbPregunta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPreguntas)).EndInit();
             this.tabGruposUsuarios.ResumeLayout(false);
             this.tabGruposUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -929,7 +941,7 @@
         private System.Windows.Forms.Button btnGuardarPregunta;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label lblTituloPregunta;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvPreguntas;
         private System.Windows.Forms.TabPage tabGruposUsuarios;
         private System.Windows.Forms.Button btnCargarPermiso;
         private System.Windows.Forms.Label label15;
@@ -976,5 +988,6 @@
         private System.Windows.Forms.MaskedTextBox mkdFechaVence;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEliminarPregunta;
     }
 }

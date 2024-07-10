@@ -26,7 +26,7 @@ namespace CV_Presentacion
                     // Abrir el formulario de respuestas y pasar el objeto Usuario
                     frmRespuestas frmRespuestas = new frmRespuestas(usuario);
                     this.Hide(); // Ocultar el formulario actual
-                    frmRespuestas.Show();
+                    frmRespuestas.ShowDialog();
                     this.Show(); // Mostrar nuevamente el formulario actual después de cerrar frmRespuestas
                 }
                 else
@@ -46,8 +46,6 @@ namespace CV_Presentacion
             this.Close();
             home.Show();
 
-            //if (MessageBox.Show("Estas por Cerrar la sesion, ¿Estas seguro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            //this.Close();
 
         }
     }

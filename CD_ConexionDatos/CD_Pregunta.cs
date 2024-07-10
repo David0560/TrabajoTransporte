@@ -26,5 +26,19 @@ namespace CD_ConexionDatos
 
             }
         }
+        public void EliminarPregunta(int id)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spBorrarPregunta", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new SqlParameter("@xid", con));
+                comando.Parameters["@xid"].Value = id;
+
+                comando.ExecuteNonQuery();
+            }
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using CL_Negocios;
 using CapaServicios;
 using Microsoft.VisualBasic;
 using CL_Negocios.Entidades;
+using System.Runtime.InteropServices.ComTypes;
 
 
 namespace CV_Presentacion
@@ -12,10 +13,13 @@ namespace CV_Presentacion
     {
         CL_administrarComboBox combo = new CL_administrarComboBox();
         CL_administrarTablas tabla = new CL_administrarTablas();
+        CL_administrarTablas tabla2 = new CL_administrarTablas();
         CL_administrarRegistros registro = new CL_administrarRegistros();
         CS_contraseña conta = new CS_contraseña();
         CS_servicios servicio = new CS_servicios();
         ConfiguracionPassword configure = new ConfiguracionPassword();
+        CL_administrarPreguntas pre = new CL_administrarPreguntas();
+
         public frm_Usuario()
         {
             InitializeComponent();
@@ -47,6 +51,8 @@ namespace CV_Presentacion
 
             registro.LimpiarControlesEnTabPage(tabBloqueos);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
+
+            
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -135,19 +141,14 @@ namespace CV_Presentacion
         private void tabAltaUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            //if (tabAltaUsuario.SelectedTab == tabAdministrarPermisos)
-            
-
-             //dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
-            //dgvListaUsuarios.DataSource = null;
-
-
-            // if (tabAltaUsuario.SelectedTab == tabAdministrarPermisos)
-
             combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
-                combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
-            
-            
+            combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
+
+            servicio.parametrosDataGridView(dgvPreguntas);
+            dgvPreguntas.DataSource = null;
+            dgvPreguntas.DataSource = tabla2.ListarPreguntas();
+
+
         }
         private void cboSeleccionarUsuario_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -243,8 +244,28 @@ namespace CV_Presentacion
         }
         private void btnGuardarPregunta_Click(object sender, EventArgs e)
         {
-            CL_administrarPreguntas pre = new CL_administrarPreguntas();
-            pre.crearNuevaPregunta(textBox7.Text);
+            bool valor;
+            valor = pre.crearNuevaPregunta(textBox7.Text);
+            if (valor)
+            {
+                MessageBox.Show("pregunta guardad");
+            }
+            else
+            {
+                MessageBox.Show("se esperaba un nueva pregunta intente nuevamente.");
+            }
+        }
+        private void btnEliminarPregunta_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(this.dgvPreguntas.SelectedRows[0].Cells[0].Value);
+            DialogResult resultado = MessageBox.Show("Está a punto de ELIMINAR un registros. ¿Está seguro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (resultado == DialogResult.OK)
+            {
+                pre.eliminarPregunta(id);
+                registro.LimpiarControlesEnTabPage(tabPreguntas);
+                dgvPreguntas.DataSource = tabla2.ListarPreguntas();
+
+            }
         }
 
         //

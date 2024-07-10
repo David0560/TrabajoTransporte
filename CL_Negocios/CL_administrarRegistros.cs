@@ -109,6 +109,9 @@ namespace CL_Negocios
             DateTime? fecha_baja = ValidarFecha(fecha);
             _crearRegistros.ActualizarFechaVencimiento(id, fecha_baja);
         }
+        
+        
+        
         //
         //validaciones
         //

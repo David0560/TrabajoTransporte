@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,15 +38,6 @@ namespace CV_Presentacion
                 lblPregunta3.Text = usuario.PreguntasSeguridad[2];
         }
 
-
-        private void MostrarLoginForm()
-        {
-            if (loginForm == null || loginForm.IsDisposed)
-            {
-                loginForm = new frmLogin();
-            }
-            loginForm.Show();
-        }
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
@@ -99,5 +91,22 @@ namespace CV_Presentacion
             //if (MessageBox.Show("Estas por Cerrar la sesion, ¿Estas seguro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             //this.Close();
         }
+
+        private void MostrarLoginForm()
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is frmLogin)
+                {
+                    loginForm = (frmLogin)form;
+                    loginForm.Show();
+                }
+                else
+                {
+                    form.Close();
+                }
+            }
+        }
+        
     }
 }
