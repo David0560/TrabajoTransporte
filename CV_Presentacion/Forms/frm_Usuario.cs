@@ -51,8 +51,11 @@ namespace CV_Presentacion
 
             registro.LimpiarControlesEnTabPage(tabBloqueos);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
-
             
+            servicio.parametrosDataGridView(dgvPreguntas);
+            dgvPreguntas.DataSource = null;
+            dgvPreguntas.DataSource = tabla2.ListarPreguntas();
+
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -144,11 +147,6 @@ namespace CV_Presentacion
             combo.seleccionCombo(cboSeleccionarUsuario, "spVerUsuario");// carga los registros al seleccionar un tab
             combo.seleccionCombo(cboSeleccionarPermiso, "spVerRoles");
 
-            servicio.parametrosDataGridView(dgvPreguntas);
-            dgvPreguntas.DataSource = null;
-            dgvPreguntas.DataSource = tabla2.ListarPreguntas();
-
-
         }
         private void cboSeleccionarUsuario_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -178,6 +176,12 @@ namespace CV_Presentacion
                     //MessageBox.Show("El valor seleccionado no es válido");
                 }
             }
+
+        }
+        public void limpiarPermisos()
+        {
+            cboSeleccionarPermiso.SelectedValue = -1;
+            mkdFechaVence.Text = string.Empty;
 
         }
         private void btnCargarPermisos_Click(object sender, EventArgs e)
@@ -219,12 +223,7 @@ namespace CV_Presentacion
             e.Column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // llenar la tabla al espacio del datagridview
         }*/
         
-        public void limpiarPermisos()
-        {
-            cboSeleccionarPermiso.SelectedValue = -1;
-            mkdFechaVence.Text = string.Empty;
-
-        }
+ 
        
         //
         //Tab para generar nuevas preguntas.
@@ -263,7 +262,6 @@ namespace CV_Presentacion
             {
                 pre.eliminarPregunta(id);
                 registro.LimpiarControlesEnTabPage(tabPreguntas);
-                dgvPreguntas.DataSource = tabla2.ListarPreguntas();
 
             }
         }
@@ -296,5 +294,18 @@ namespace CV_Presentacion
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
         }
 
+        private void btnNuevoPassword_Click(object sender, EventArgs e)
+        {
+
+            string usuario = this.dgvListaUsuarios.SelectedRows[0].Cells[3].Value.ToString();
+            DialogResult resultado = MessageBox.Show($"Generará una nueva contraseña para el Usuario \n {usuario} \n ¿Está seguro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (resultado == DialogResult.OK)
+            {
+                int id = Convert.ToInt32(this.dgvListaUsuarios.SelectedRows[0].Cells[0].Value);
+                string nombre = Convert.ToString(this.dgvListaUsuarios.SelectedRows[0].Cells[3].Value);
+                registro.enviarNuevoPassword(id, nombre, configure);
+            }
+            
+        }
     }
 }

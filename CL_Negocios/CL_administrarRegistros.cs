@@ -77,6 +77,24 @@ namespace CL_Negocios
             }
             _crearRegistros.bloqueoDeUsuario(nombreUsuario, valor);
         }
+        public void enviarNuevoPassword (int idUsuario, string nombreUsuario, ConfiguracionPassword config)
+        {
+            string pass = password.crearContraseña(config);
+            // Cargar password a la tabla.
+            string contraseña = password.crearSHA256(nombreUsuario, pass);
+            bool system = true;
+            ContrasenaUsuario passUser = new ContrasenaUsuario(idUsuario, contraseña, system);
+            _crearRegistros.GuardarNuevaContraseña(passUser);
+
+            // Actualizar codigo verificador
+            int codV = Convert.ToInt32(password.crearCodigoVerificador(contraseña));
+            codigoVerificador codigoV = new codigoVerificador(idUsuario, codV);
+            _crearRegistros.ActualizarCodigoV(codigoV);
+
+            // actualizar passwordusurario
+            _crearRegistros.actualizarPasswordUsuario(idUsuario, pass);
+
+        }
 
 
         //relacionados a los roles

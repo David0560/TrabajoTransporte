@@ -35,7 +35,7 @@ namespace CV_Presentacion
                     break;
 
                 case 2:
-                    msgError("password no ingresado o incorrecto");
+                    msgError("password no ingresado o incorrecto (2)");
                     //MessageBox.Show("El password no fue ingresado o es incorrecto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPassword.Clear();
                     txtPassword.Focus();

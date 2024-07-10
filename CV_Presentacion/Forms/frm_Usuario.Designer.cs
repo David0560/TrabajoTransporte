@@ -104,6 +104,7 @@
             this.dgvPermisoUsuario = new System.Windows.Forms.DataGridView();
             this.cboFamilias = new System.Windows.Forms.ComboBox();
             this.cboEmpleados = new System.Windows.Forms.ComboBox();
+            this.btnNuevoPassword = new System.Windows.Forms.Button();
             this.tabConfigurarPass.SuspendLayout();
             this.tabPreguntas.SuspendLayout();
             this.grbPregunta.SuspendLayout();
@@ -499,6 +500,7 @@
             // 
             // tabBloqueos
             // 
+            this.tabBloqueos.Controls.Add(this.btnNuevoPassword);
             this.tabBloqueos.Controls.Add(this.btnGuardarBloqueos);
             this.tabBloqueos.Controls.Add(this.label8);
             this.tabBloqueos.Controls.Add(this.dgvListaUsuarios);
@@ -876,6 +878,16 @@
             this.cboEmpleados.Size = new System.Drawing.Size(150, 21);
             this.cboEmpleados.TabIndex = 0;
             // 
+            // btnNuevoPassword
+            // 
+            this.btnNuevoPassword.Location = new System.Drawing.Point(384, 413);
+            this.btnNuevoPassword.Name = "btnNuevoPassword";
+            this.btnNuevoPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoPassword.TabIndex = 3;
+            this.btnNuevoPassword.Text = "Password";
+            this.btnNuevoPassword.UseVisualStyleBackColor = true;
+            this.btnNuevoPassword.Click += new System.EventHandler(this.btnNuevoPassword_Click);
+            // 
             // frm_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -989,5 +1001,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEliminarPregunta;
+        private System.Windows.Forms.Button btnNuevoPassword;
     }
 }

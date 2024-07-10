@@ -91,6 +91,20 @@ namespace CD_ConexionDatos
             }
             return cantidad;
         }
+        public void actualizarPasswordUsuario(int idUsuario, string password)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spActualizarPasswordUsuario", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xid", idUsuario);
+                comando.Parameters.AddWithValue("@xpassword_user", password);
+
+                comando.ExecuteNonQuery();
+            }
+        }
+
         //
         // relacionados con los roles
         //
@@ -164,6 +178,19 @@ namespace CD_ConexionDatos
             {
                 con.Open();
                 SqlCommand comando = new SqlCommand("spGuardarNuevoCodigo", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xid_usuario", codeV.Id_usuario);
+                comando.Parameters.AddWithValue("@xvalor", codeV.Valor);
+
+                comando.ExecuteNonQuery();
+            }
+        }
+        public void ActualizarCodigoV(codigoVerificador codeV)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spActualizarCodigo", con);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@xid_usuario", codeV.Id_usuario);
                 comando.Parameters.AddWithValue("@xvalor", codeV.Valor);
