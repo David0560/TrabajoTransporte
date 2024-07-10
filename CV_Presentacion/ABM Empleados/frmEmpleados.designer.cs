@@ -38,8 +38,6 @@
             this.tabAltaEmp = new System.Windows.Forms.TabPage();
             this.btnRefreshAlta = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtCelularAlta = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.txtNumCalle = new System.Windows.Forms.TextBox();
@@ -255,8 +253,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.txtCelularAlta);
-            this.groupBox5.Controls.Add(this.label37);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.cmbCargo);
             this.groupBox5.Controls.Add(this.txtNumCalle);
@@ -286,22 +282,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Datos del Empleado";
             // 
-            // txtCelularAlta
-            // 
-            this.txtCelularAlta.Location = new System.Drawing.Point(299, 156);
-            this.txtCelularAlta.Name = "txtCelularAlta";
-            this.txtCelularAlta.Size = new System.Drawing.Size(151, 20);
-            this.txtCelularAlta.TabIndex = 63;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(251, 159);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(42, 13);
-            this.label37.TabIndex = 62;
-            this.label37.Text = "Celular:";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -321,7 +301,7 @@
             // 
             // txtNumCalle
             // 
-            this.txtNumCalle.Location = new System.Drawing.Point(83, 185);
+            this.txtNumCalle.Location = new System.Drawing.Point(316, 114);
             this.txtNumCalle.Name = "txtNumCalle";
             this.txtNumCalle.Size = new System.Drawing.Size(134, 20);
             this.txtNumCalle.TabIndex = 58;
@@ -329,7 +309,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(30, 188);
+            this.label20.Location = new System.Drawing.Point(263, 117);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(47, 13);
             this.label20.TabIndex = 57;
@@ -353,7 +333,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(299, 127);
+            this.txtEmail.Location = new System.Drawing.Point(299, 160);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(151, 20);
             this.txtEmail.TabIndex = 54;
@@ -361,7 +341,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(255, 129);
+            this.label18.Location = new System.Drawing.Point(255, 162);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 53;
@@ -1249,8 +1229,6 @@
         private System.Windows.Forms.Button btnModificarEmp;
         private System.Windows.Forms.DataGridView dgvVerEmpModif;
         private System.Windows.Forms.Button btnRefreshAlta;
-        private System.Windows.Forms.TextBox txtCelularAlta;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtCelularBaja;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtCelularModif;

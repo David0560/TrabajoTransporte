@@ -91,11 +91,6 @@ namespace CapaVistas.ABM_Empleados
                 mensaje = "El campo Email es obligatorio.";
                 return false;
             }
-            if (!EsNumero(txtCelularAlta.Text))
-            {
-                mensaje = "El campo Celular debe ser numérico.";
-                return false;
-            }
 
             if (cmbLocalidad.SelectedIndex == -1)
             {
@@ -313,30 +308,29 @@ namespace CapaVistas.ABM_Empleados
                 MessageBox.Show(mensaje);
                 return;
             }
+
             try
             {
-                if (dgvVerEmpModif.SelectedRows.Count > 0)
-                {
-                    DataGridViewRow row = dgvVerEmpModif.SelectedRows[0];
-                    EmpleadoSeleccionadoId = Convert.ToInt32(row.Cells["id"].Value);
+                empleado.Id = EmpleadoSeleccionadoId;
+                empleado.Nombre = txtNombreModif.Text;
+                empleado.Apellido = txtApellidoModif.Text;
+                empleado.Id_Sexo = Convert.ToInt32(cmbSexoModif.SelectedValue);
+                empleado.Id_Documento_Ident = Convert.ToInt32(cmbTipoDNIModif.SelectedValue);
+                empleado.Numero_Ident = Convert.ToInt32(txtDNIModif.Text);
+                empleado.Fecha_Nacimiento = dateNacimientoModif.Value;
+                empleado.Email = txtEmailModif.Text;
+                empleado.Id_Localidad = Convert.ToInt32(cmbLocalidadModif.SelectedValue);
+                empleado.Calle = txtCalleModif.Text;
+                empleado.Numero_Domicilio = Convert.ToInt32(txtNumCalleModif.Text);
+                empleado.Id_Tarea = Convert.ToInt32(cmbCargoModif.SelectedValue);
 
-                    // Asignar los datos de la fila seleccionada a los controles correspondientes
-                    txtNombreModif.Text = row.Cells["nombre"].Value?.ToString();
-                    txtApellidoModif.Text = row.Cells["apellido"].Value?.ToString();
-                    cmbSexoModif.SelectedValue = row.Cells["id_sexo"].Value ?? -1;
-                    cmbTipoDNIModif.SelectedValue = row.Cells["id_documento_ident"].Value ?? -1;
-                    txtDNIModif.Text = row.Cells["numero_ident"].Value?.ToString();
-                    dateNacimientoModif.Value = row.Cells["fecha_nacimiento"].Value != null ? Convert.ToDateTime(row.Cells["fecha_nacimiento"].Value) : DateTime.Now;
-                    txtEmailModif.Text = row.Cells["email"].Value?.ToString();
-                    cmbLocalidadModif.SelectedValue = row.Cells["id_localidad"].Value ?? -1;
-                    txtCalleModif.Text = row.Cells["calle"].Value?.ToString();
-                    txtNumCalleModif.Text = row.Cells["numero_domicilio"].Value?.ToString();
-                    cmbCargoModif.SelectedValue = row.Cells["id_tarea"].Value ?? -1;
-                }
+                empleado.ModificarEmpleado();
+                MessageBox.Show("Empleado Modificado Correctamente");
+                TraerTodos(dgvVerEmpModif);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar los datos del empleado: {ex.Message}");
+                MessageBox.Show($"Ocurrió un Error: {ex.Message}");
             }
         }
 
@@ -350,17 +344,16 @@ namespace CapaVistas.ABM_Empleados
                 // Asignar los datos de la fila seleccionada a los controles correspondientes
                 txtNombreModif.Text = row.Cells["nombre"].Value.ToString();
                 txtApellidoModif.Text = row.Cells["apellido"].Value.ToString();
-                cmbSexoModif.SelectedValue = row.Cells["id_sexo"].Value;
-                cmbTipoDNIModif.SelectedValue = row.Cells["id"].Value;
+                cmbSexoModif.SelectedValue = Convert.ToInt32(row.Cells["id_sexo"].Value);
+                cmbTipoDNIModif.SelectedValue = Convert.ToInt32(row.Cells["id_documento_ident"].Value);
                 txtDNIModif.Text = row.Cells["numero_ident"].Value.ToString();
                 dateNacimientoModif.Value = Convert.ToDateTime(row.Cells["fecha_nacimiento"].Value);
-                txtEmailModif.Text = row.Cells["email"].Value.ToString(); 
-                cmbLocalidadModif.SelectedValue = row.Cells["id"].Value;
+                txtEmailModif.Text = row.Cells["email"].Value.ToString();
+                cmbLocalidadModif.SelectedValue = Convert.ToInt32(row.Cells["id_localidad"].Value);
                 txtCalleModif.Text = row.Cells["calle"].Value.ToString();
                 txtNumCalleModif.Text = row.Cells["numero_domicilio"].Value.ToString();
-                cmbCargoModif.SelectedValue = row.Cells["id"].Value;
+                cmbCargoModif.SelectedValue = Convert.ToInt32(row.Cells["id_tarea"].Value);
             }
-
         }
         #endregion
 

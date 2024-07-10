@@ -35,7 +35,7 @@ namespace CV_Presentacion
                     break;
 
                 case 2:
-                    msgError("password no ingresado o incorrecto");
+                    msgError("Password no ingresado o incorrecto");
                     //MessageBox.Show("El password no fue ingresado o es incorrecto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPassword.Clear();
                     txtPassword.Focus();
@@ -43,7 +43,7 @@ namespace CV_Presentacion
                     break;
 
                 case 3:
-                    MessageBox.Show("Usuario Bolqueado, Comuniquese con su administrador", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Usuario Bloqueado, Comuniquese con su administrador", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtUsuario.Clear();
                     txtPassword.Clear();
                     txtUsuario.Focus();
