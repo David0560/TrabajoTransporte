@@ -118,6 +118,12 @@
     <Compile Include="Forms\frm_Vehiculos.Designer.cs">
       <DependentUpon>frm_Vehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGuardarRespuestas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGuardarRespuestas.Designer.cs">
+      <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Vehiculos.resx">
       <DependentUpon>frm_Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGuardarRespuestas.resx">
+      <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
@@ -235,6 +244,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngegg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-seguridad-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

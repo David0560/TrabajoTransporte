@@ -127,9 +127,24 @@ namespace CL_Negocios
             DateTime? fecha_baja = ValidarFecha(fecha);
             _crearRegistros.ActualizarFechaVencimiento(id, fecha_baja);
         }
-        
-        
-        
+
+        // Método para cambiar la contraseña del usuario
+        public void CambiarContraseña(string nombreUsuario, string contraseñaActual, string nuevaContraseña)
+        {
+            // Obtener el ID del usuario por nombre
+            int idUsuario = _crearRegistros.ObtenerIdUsuarioPorNombre(nombreUsuario);
+
+            // Generar la nueva contraseña hasheada usando la instancia 'password'
+            string nuevaContraseñaHasheada = password.crearSHA256(nombreUsuario, nuevaContraseña);
+
+            // Generar el nuevo código verificador usando la instancia 'password'
+            int nuevoCodigoVerificador = password.crearCodigoVerificador(nuevaContraseñaHasheada);
+
+            // Actualizar las tablas con la nueva contraseña
+            _crearRegistros.ActualizarContraseña(idUsuario, nombreUsuario, contraseñaActual, nuevaContraseña, nuevaContraseñaHasheada, nuevoCodigoVerificador);
+        }
+
+
         //
         //validaciones
         //

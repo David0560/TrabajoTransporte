@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CL_Negocios;
-using CV_Presentacion.Forms;
 
 
 namespace CV_Presentacion
@@ -32,12 +31,11 @@ namespace CV_Presentacion
                     msgError("Usuario no encontrado");
                     //MessageBox.Show("No se encuentra usuario con este nombre", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtUsuario.Clear();
-                    txtPassword.Clear();
                     txtUsuario.Focus();
                     break;
 
                 case 2:
-                    msgError("password no ingresado o incorrecto");
+                    msgError("password no ingresado o incorrecto (2)");
                     //MessageBox.Show("El password no fue ingresado o es incorrecto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPassword.Clear();
                     txtPassword.Focus();
@@ -59,34 +57,12 @@ namespace CV_Presentacion
                     
                     break;
 
-                case 5:
-                    MessageBox.Show("Es la primera vez que ingresa al sistema. Por favor, cambie su contraseña.");
-                    frmGuardarRespuestas frmGuardar = new frmGuardarRespuestas(txtUsuario.Text.ToString());
-                    this.Hide();
-                    frmGuardar.ShowDialog();
-                    this.Show();
-                    break;
-
-                case 6:
-                    MessageBox.Show("Tiene que cambiar la contraseña.");
-                    frm_Configuracion frmCambiar = new frm_Configuracion(txtUsuario.Text.ToString());
-                    this.Hide(); 
-                    frmCambiar.ShowDialog(); 
-                    this.Show(); 
-                    break;
-
-
                 default:
                     MessageBox.Show("Su Usuario se encuentra en reparación\nComuniquese con su administrador \n\n Muchas gracias.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
         }
         // metodo
-        public void LimpiarCampos()
-        {
-            txtUsuario.Text = string.Empty;
-            txtPassword.Text = string.Empty;
-        }
         private void msgError(string msg)
         {
             lblError.Text ="ERROR: " + msg;
@@ -108,17 +84,5 @@ namespace CV_Presentacion
             this.Hide();
             contraseña.Show();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-                pbxOcultarPass.BringToFront();
-                txtPassword.PasswordChar = '\0';
-            }
-
-        private void pbxOcultarPass_Click(object sender, EventArgs e)
-        {
-            pbxMostrarPass.BringToFront();
-            txtPassword.PasswordChar = '*';
-        }
     }
-    }
+}

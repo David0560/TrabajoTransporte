@@ -14,30 +14,63 @@ namespace CV_Presentacion.Forms
 {
     public partial class frm_Configuracion : Form
     {
+        public frm_Configuracion(string nombreUsuario)
+        {
+            InitializeComponent();
+            lblNombreUsuario.Text = nombreUsuario;
+        }
         public frm_Configuracion()
         {
             InitializeComponent();
-            
         }
-       
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CS_contraseña a = new CS_contraseña();
-            //textBox2.Text= a.crearContraseñaRandom(4,8,true,true,true,true);
-            string encrip = a.crearSHA256(textBox1.Text, textBox2.Text);
-            txtEncrip.Text = encrip;
-            label5.Text = encrip;
+            string nombreUsuario = lblNombreUsuario.Text;
+            string contraseñaActual = txtContraseñaActual.Text;
+            string nuevaContraseña = txtNuevaContraseña.Text;
+            string repetirContraseña = txtRepetir.Text;
 
-            int valor = a.crearCodigoVerificador(encrip);
-            label6.Text = Convert.ToString(valor);
+            if (string.IsNullOrWhiteSpace(contraseñaActual))
+            {
+                MessageBox.Show("Debe ingresar la contraseña actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            if (nuevaContraseña == repetirContraseña)
+            {
+                try
+                {
+                    CL_administrarRegistros adminRegistros = new CL_administrarRegistros();
+                    adminRegistros.CambiarContraseña(nombreUsuario, contraseñaActual, nuevaContraseña);
+                    MessageBox.Show("Contraseña cambiada exitosamente.");
 
+                    // Obtener referencia al formulario de login
+                    frmLogin loginForm = (frmLogin)Application.OpenForms["frmLogin"];
+                    if (loginForm != null)
+                    {
+                        loginForm.LimpiarCampos(); // Llama al método para limpiar los campos en frmLogin
+                        loginForm.Show(); // Mostrar frmLogin
+                    }
 
+                    // Cerrar el formulario actual (frm_Configuracion)
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cambiar la contraseña: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden.");
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+/*private void button1_Click(object sender, EventArgs e)
+{
+
+}
+
+*/

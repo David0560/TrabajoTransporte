@@ -40,28 +40,51 @@ namespace CL_Negocios
                 {
                     if (codigo == Convert.ToInt32(tablaValores.Rows[0][2])) // valido codigo verificador
                     {
-                        if (Convert.ToInt32(tablaValores.Rows[0][1]) == 1) // valido estado de usuario
+                        int estadoUsuario = Convert.ToInt32(tablaValores.Rows[0][1]); // obtener el estado del usuario
+                        int contraseñaSistema = Convert.ToInt32(tablaValores.Rows[0][3]); // obtener el valor de la columna sistema
+                        bool tienePreguntas = UsuarioTienePreguntas(nombreUsuario); // verificar si el usuario tiene preguntas de seguridad
+
+                        if (estadoUsuario == 1) // validar estado de usuario
                         {
-                            respuesta = 4; // acceso correcto
-                            _revisarLogin.CargarUsuarioLogeado(valor);// cargo en cache al usuario
-                            return respuesta;
+                            if (contraseñaSistema == 1 && !tienePreguntas) // primera vez que ingresa
+                            {
+                                respuesta = 5; // primera vez que ingresa al sistema
+                            }
+                            else if (contraseñaSistema == 1 && tienePreguntas) // sistema es 1 y tiene preguntas cargadas
+                            {
+                                respuesta = 6; // tiene que cambiar la contraseña
+                            }
+                            else
+                            {
+                                respuesta = 4; // acceso correcto
+                                _revisarLogin.CargarUsuarioLogeado(valor); // cargar en caché al usuario
+                            }
+                        }
+                        else
+                        {
+                            respuesta = 3; // bloqueo de usuario por datos erróneos de seguridad
                         }
                     }
                     else
                     {
-                        respuesta = 3;// bloqueo de usuario por datos erroneros de seguridad.
-                        return respuesta;
+                        respuesta = 2; // password del usuario incorrecto
                     }
                 }
                 else
                 {
                     respuesta = 2; // password del usuario incorrecto
-                    return respuesta;
                 }
-                return 0; // El ususario se encuntra bloqueado 
+
+                return respuesta; // retornar la respuesta según el estado del usuario
             }
         }
 
+        // Método para verificar si un usuario tiene preguntas de seguridad cargadas
+        private bool UsuarioTienePreguntas(string nombreUsuario)
+        {
+            // Utilizo el método existente para verificar si el usuario tiene preguntas de seguridad
+            return new CL_administrarPreguntasUsuario().UsuarioTienePreguntas(nombreUsuario);
+        }
 
 
     }

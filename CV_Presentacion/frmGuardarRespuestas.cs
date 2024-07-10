@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CV_Presentacion
+{
+    public partial class frmGuardarRespuestas : Form
+    {
+        private string nombreUsuario;
+
+        public frmGuardarRespuestas(string nombreUsuario)
+        {
+            InitializeComponent();
+            this.nombreUsuario = nombreUsuario;
+            
+        }
+
+        
+    }
+}

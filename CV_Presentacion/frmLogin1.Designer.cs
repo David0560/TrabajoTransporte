@@ -33,18 +33,14 @@
             this.lblRecupero = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
+            this.btnCerrarLogin = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.pbxMostrar = new System.Windows.Forms.PictureBox();
+            this.pbxOcultar = new System.Windows.Forms.PictureBox();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
-            this.pbxMostrarPass = new System.Windows.Forms.PictureBox();
-            this.pbxOcultarPass = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
-            this.btnCerrarLogin = new System.Windows.Forms.PictureBox();
-            this.pbxMostrar = new System.Windows.Forms.PictureBox();
-            this.pbxOcultar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMostrarPass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOcultarPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMostrar)).BeginInit();
@@ -104,12 +100,44 @@
             this.txtPassword.Size = new System.Drawing.Size(290, 27);
             this.txtPassword.TabIndex = 11;
             // 
+            // pictureBoxLogin
+            // 
+            this.pictureBoxLogin.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLogin.Name = "pictureBoxLogin";
+            this.pictureBoxLogin.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxLogin.TabIndex = 0;
+            this.pictureBoxLogin.TabStop = false;
+            // 
+            // btnCerrarLogin
+            // 
+            this.btnCerrarLogin.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrarLogin.Name = "btnCerrarLogin";
+            this.btnCerrarLogin.Size = new System.Drawing.Size(100, 50);
+            this.btnCerrarLogin.TabIndex = 0;
+            this.btnCerrarLogin.TabStop = false;
+            // 
             // lblLogin
             // 
             this.lblLogin.Location = new System.Drawing.Point(0, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(100, 23);
             this.lblLogin.TabIndex = 0;
+            // 
+            // pbxMostrar
+            // 
+            this.pbxMostrar.Location = new System.Drawing.Point(0, 0);
+            this.pbxMostrar.Name = "pbxMostrar";
+            this.pbxMostrar.Size = new System.Drawing.Size(100, 50);
+            this.pbxMostrar.TabIndex = 0;
+            this.pbxMostrar.TabStop = false;
+            // 
+            // pbxOcultar
+            // 
+            this.pbxOcultar.Location = new System.Drawing.Point(0, 0);
+            this.pbxOcultar.Name = "pbxOcultar";
+            this.pbxOcultar.Size = new System.Drawing.Size(100, 50);
+            this.pbxOcultar.TabIndex = 0;
+            this.pbxOcultar.TabStop = false;
             // 
             // btnAcceder
             // 
@@ -141,69 +169,12 @@
             this.lblError.Text = "mensaje error";
             this.lblError.Visible = false;
             // 
-            // pbxMostrarPass
-            // 
-            this.pbxMostrarPass.Image = global::CV_Presentacion.Properties.Resources.icons8_seguridad_64;
-            this.pbxMostrarPass.Location = new System.Drawing.Point(402, 140);
-            this.pbxMostrarPass.Margin = new System.Windows.Forms.Padding(2);
-            this.pbxMostrarPass.Name = "pbxMostrarPass";
-            this.pbxMostrarPass.Size = new System.Drawing.Size(63, 36);
-            this.pbxMostrarPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxMostrarPass.TabIndex = 14;
-            this.pbxMostrarPass.TabStop = false;
-            this.pbxMostrarPass.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pbxOcultarPass
-            // 
-            this.pbxOcultarPass.Image = global::CV_Presentacion.Properties.Resources.descarga;
-            this.pbxOcultarPass.Location = new System.Drawing.Point(402, 140);
-            this.pbxOcultarPass.Margin = new System.Windows.Forms.Padding(2);
-            this.pbxOcultarPass.Name = "pbxOcultarPass";
-            this.pbxOcultarPass.Size = new System.Drawing.Size(63, 36);
-            this.pbxOcultarPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOcultarPass.TabIndex = 15;
-            this.pbxOcultarPass.TabStop = false;
-            this.pbxOcultarPass.Click += new System.EventHandler(this.pbxOcultarPass_Click);
-            // 
-            // pictureBoxLogin
-            // 
-            this.pictureBoxLogin.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxLogin.Name = "pictureBoxLogin";
-            this.pictureBoxLogin.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxLogin.TabIndex = 0;
-            this.pictureBoxLogin.TabStop = false;
-            // 
-            // btnCerrarLogin
-            // 
-            this.btnCerrarLogin.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrarLogin.Name = "btnCerrarLogin";
-            this.btnCerrarLogin.Size = new System.Drawing.Size(100, 50);
-            this.btnCerrarLogin.TabIndex = 0;
-            this.btnCerrarLogin.TabStop = false;
-            // 
-            // pbxMostrar
-            // 
-            this.pbxMostrar.Location = new System.Drawing.Point(0, 0);
-            this.pbxMostrar.Name = "pbxMostrar";
-            this.pbxMostrar.Size = new System.Drawing.Size(100, 50);
-            this.pbxMostrar.TabIndex = 0;
-            this.pbxMostrar.TabStop = false;
-            // 
-            // pbxOcultar
-            // 
-            this.pbxOcultar.Location = new System.Drawing.Point(0, 0);
-            this.pbxOcultar.Name = "pbxOcultar";
-            this.pbxOcultar.Size = new System.Drawing.Size(100, 50);
-            this.pbxOcultar.TabIndex = 0;
-            this.pbxOcultar.TabStop = false;
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 340);
-            this.Controls.Add(this.pbxMostrarPass);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtPassword);
@@ -211,7 +182,6 @@
             this.Controls.Add(this.lblRecupero);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.pbxOcultarPass);
             this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.HelpButton = true;
@@ -219,8 +189,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMostrarPass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOcultarPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMostrar)).EndInit();
@@ -245,7 +213,5 @@
         private System.Windows.Forms.Button btnAcceder;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.PictureBox pbxMostrarPass;
-        private System.Windows.Forms.PictureBox pbxOcultarPass;
     }
 }
