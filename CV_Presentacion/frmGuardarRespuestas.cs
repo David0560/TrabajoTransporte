@@ -14,6 +14,7 @@ namespace CV_Presentacion
     public partial class frmGuardarRespuestas : Form
     {
         private string nombreUsuario;
+
         private CL_administrarPreguntas administradorPreguntas = new CL_administrarPreguntas();
 
         public frmGuardarRespuestas(string nombreUsuario)
@@ -77,6 +78,11 @@ namespace CV_Presentacion
             {
                 MessageBox.Show($"Error al guardar respuestas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
