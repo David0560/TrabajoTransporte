@@ -40,7 +40,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtCelularAlta = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.chkEstadoAlta = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.txtNumCalle = new System.Windows.Forms.TextBox();
@@ -72,7 +71,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCelularBaja = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.chkEstadoBaja = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCargoBaja = new System.Windows.Forms.ComboBox();
             this.txtNumCalleBaja = new System.Windows.Forms.TextBox();
@@ -104,7 +102,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCelularModif = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.chkEstadoModif = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbCargoModif = new System.Windows.Forms.ComboBox();
             this.txtNumCalleModif = new System.Windows.Forms.TextBox();
@@ -260,7 +257,6 @@
             // 
             this.groupBox5.Controls.Add(this.txtCelularAlta);
             this.groupBox5.Controls.Add(this.label37);
-            this.groupBox5.Controls.Add(this.chkEstadoAlta);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.cmbCargo);
             this.groupBox5.Controls.Add(this.txtNumCalle);
@@ -305,19 +301,6 @@
             this.label37.Size = new System.Drawing.Size(42, 13);
             this.label37.TabIndex = 62;
             this.label37.Text = "Celular:";
-            // 
-            // chkEstadoAlta
-            // 
-            this.chkEstadoAlta.AutoSize = true;
-            this.chkEstadoAlta.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkEstadoAlta.Checked = true;
-            this.chkEstadoAlta.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.chkEstadoAlta.Location = new System.Drawing.Point(386, 11);
-            this.chkEstadoAlta.Name = "chkEstadoAlta";
-            this.chkEstadoAlta.Size = new System.Drawing.Size(65, 17);
-            this.chkEstadoAlta.TabIndex = 61;
-            this.chkEstadoAlta.Text = "Estado: ";
-            this.chkEstadoAlta.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -577,7 +560,6 @@
             // 
             this.groupBox1.Controls.Add(this.txtCelularBaja);
             this.groupBox1.Controls.Add(this.label38);
-            this.groupBox1.Controls.Add(this.chkEstadoBaja);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmbCargoBaja);
             this.groupBox1.Controls.Add(this.txtNumCalleBaja);
@@ -623,19 +605,6 @@
             this.label38.Size = new System.Drawing.Size(42, 13);
             this.label38.TabIndex = 64;
             this.label38.Text = "Celular:";
-            // 
-            // chkEstadoBaja
-            // 
-            this.chkEstadoBaja.AutoSize = true;
-            this.chkEstadoBaja.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkEstadoBaja.Checked = true;
-            this.chkEstadoBaja.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.chkEstadoBaja.Location = new System.Drawing.Point(0, 182);
-            this.chkEstadoBaja.Name = "chkEstadoBaja";
-            this.chkEstadoBaja.Size = new System.Drawing.Size(65, 17);
-            this.chkEstadoBaja.TabIndex = 62;
-            this.chkEstadoBaja.Text = "Estado: ";
-            this.chkEstadoBaja.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -896,7 +865,6 @@
             // 
             this.groupBox2.Controls.Add(this.txtCelularModif);
             this.groupBox2.Controls.Add(this.label39);
-            this.groupBox2.Controls.Add(this.chkEstadoModif);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cmbCargoModif);
             this.groupBox2.Controls.Add(this.txtNumCalleModif);
@@ -941,19 +909,6 @@
             this.label39.Size = new System.Drawing.Size(42, 13);
             this.label39.TabIndex = 64;
             this.label39.Text = "Celular:";
-            // 
-            // chkEstadoModif
-            // 
-            this.chkEstadoModif.AutoSize = true;
-            this.chkEstadoModif.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkEstadoModif.Checked = true;
-            this.chkEstadoModif.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.chkEstadoModif.Location = new System.Drawing.Point(19, 179);
-            this.chkEstadoModif.Name = "chkEstadoModif";
-            this.chkEstadoModif.Size = new System.Drawing.Size(65, 17);
-            this.chkEstadoModif.TabIndex = 63;
-            this.chkEstadoModif.Text = "Estado: ";
-            this.chkEstadoModif.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -1294,9 +1249,6 @@
         private System.Windows.Forms.Button btnModificarEmp;
         private System.Windows.Forms.DataGridView dgvVerEmpModif;
         private System.Windows.Forms.Button btnRefreshAlta;
-        private System.Windows.Forms.CheckBox chkEstadoAlta;
-        private System.Windows.Forms.CheckBox chkEstadoBaja;
-        private System.Windows.Forms.CheckBox chkEstadoModif;
         private System.Windows.Forms.TextBox txtCelularAlta;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtCelularBaja;

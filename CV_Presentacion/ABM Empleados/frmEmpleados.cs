@@ -22,26 +22,26 @@ namespace CapaVistas.ABM_Empleados
         private void LlenarCombos()  //Método que llena los combos de Empleados
         {
             // Llenar ComboBox de Sexos
-            cls_LlenarCombos CMBSexo = new cls_LlenarCombos(cmbSexo, "Sexos", "id_sexos", "sexo");
+            cls_LlenarCombos CMBSexo = new cls_LlenarCombos(cmbSexo, "Sexo", "id", "descripcion");
 
             // Llenar ComboBox de Tipos de DNI
-            cls_LlenarCombos CMBTipoDNI = new cls_LlenarCombos(cmbTipoDNI, "TiposDocumentos", "id_tipodni", "tipodni");
+            cls_LlenarCombos CMBTipoDNI = new cls_LlenarCombos(cmbTipoDNI, "Documento_ident", "id", "tipo");
 
             // Llenar ComboBox de Localidades
-            cls_LlenarCombos CMBLocalidad = new cls_LlenarCombos(cmbLocalidad, "Localidades", "id_localidad", "localidad");
+            cls_LlenarCombos CMBLocalidad = new cls_LlenarCombos(cmbLocalidad, "Localidad", "id", "localidad");
 
             // Llenar ComboBox de Cargos
-            cls_LlenarCombos CMBCargo = new cls_LlenarCombos(cmbCargo, "Cargos", "id_cargos", "cargos");
+            cls_LlenarCombos CMBCargo = new cls_LlenarCombos(cmbCargo, "Tarea", "id_tarea", "nombre_tarea");
 
-            cls_LlenarCombos CMBSexoModif = new cls_LlenarCombos(cmbSexoModif, "Sexos", "id_sexos", "sexo");
-            cls_LlenarCombos CMBTipoDNIModif = new cls_LlenarCombos(cmbTipoDNIModif, "TiposDocumentos", "id_tipodni", "tipodni");
-            cls_LlenarCombos CMBLocalidadModif = new cls_LlenarCombos(cmbLocalidadModif, "Localidades", "id_localidad", "localidad");
-            cls_LlenarCombos CMBCargoModif = new cls_LlenarCombos(cmbCargoModif, "Cargos", "id_cargos", "cargos");
+            cls_LlenarCombos CMBSexoModif = new cls_LlenarCombos(cmbSexoModif, "Sexo", "id", "descripcion");
+            cls_LlenarCombos CMBTipoDNIModif = new cls_LlenarCombos(cmbTipoDNIModif, "Documento_ident", "id", "tipo");
+            cls_LlenarCombos CMBLocalidadModif = new cls_LlenarCombos(cmbLocalidadModif, "Localidad", "id", "localidad");
+            cls_LlenarCombos CMBCargoModif = new cls_LlenarCombos(cmbCargoModif, "Tarea", "id_tarea", "nombre_tarea");
 
-            cls_LlenarCombos CMBSexoBaja = new cls_LlenarCombos(cmbSexoBaja, "Sexos", "id_sexos", "sexo");
-            cls_LlenarCombos CMBTipoDNIBaja = new cls_LlenarCombos(cmbTipoDNIBaja, "TiposDocumentos", "id_tipodni", "tipodni");
-            cls_LlenarCombos CMBLocalidadBaja = new cls_LlenarCombos(cmbLocalidadBaja, "Localidades", "id_localidad", "localidad");
-            cls_LlenarCombos CMBCargoBaja = new cls_LlenarCombos(cmbCargoBaja, "Cargos", "id_cargos", "cargos");
+            cls_LlenarCombos CMBSexoBaja = new cls_LlenarCombos(cmbSexoBaja, "Sexo", "id", "descripcion");
+            cls_LlenarCombos CMBTipoDNIBaja = new cls_LlenarCombos(cmbTipoDNIBaja, "Documento_ident", "id", "tipo");
+            cls_LlenarCombos CMBLocalidadBaja = new cls_LlenarCombos(cmbLocalidadBaja, "Localidad", "id", "localidad");
+            cls_LlenarCombos CMBCargoBaja = new cls_LlenarCombos(cmbCargoBaja, "Tarea", "id_tarea", "nombre_tarea");
         }
 
 
@@ -118,11 +118,6 @@ namespace CapaVistas.ABM_Empleados
             if (cmbCargo.SelectedIndex == -1)
             {
                 mensaje = "Debe seleccionar un Cargo válido.";
-                return false;
-            }
-            if (!chkEstadoAlta.Checked || chkEstadoAlta.CheckState == CheckState.Indeterminate)
-            {
-                mensaje = "Debe marcar el estado del empleado. (Activo o Inactivo";
                 return false;
             }
 
@@ -270,16 +265,14 @@ namespace CapaVistas.ABM_Empleados
                 empleado.Nombre = txtNombre.Text;
                 empleado.Apellido = txtApellido.Text;
                 empleado.Id_Sexo = Convert.ToInt32(cmbSexo.SelectedValue);
-                empleado.Id_Tipodni = Convert.ToInt32(cmbTipoDNI.SelectedValue);
-                empleado.Dni = Convert.ToInt32(txtDNI.Text);
-                empleado.Fecha_Nac = dateNacimiento.Value;
+                empleado.Id_Documento_Ident = Convert.ToInt32(cmbTipoDNI.SelectedValue);
+                empleado.Numero_Ident = Convert.ToInt32(txtDNI.Text);
+                empleado.Fecha_Nacimiento = dateNacimiento.Value;
                 empleado.Email = txtEmail.Text;
-                empleado.Telefono = Convert.ToInt32(txtCelularAlta.Text);
                 empleado.Id_Localidad = Convert.ToInt32(cmbLocalidad.SelectedValue);
                 empleado.Calle = txtCalle.Text;
-                empleado.Numero_Calle = Convert.ToInt32(txtNumCalle.Text);
-                empleado.Id_Cargo = Convert.ToInt32(cmbCargo.SelectedValue);
-                empleado.Estado = chkEstadoAlta.Checked;
+                empleado.Numero_Domicilio = Convert.ToInt32(txtNumCalle.Text);
+                empleado.Id_Tarea = Convert.ToInt32(cmbCargo.SelectedValue);
 
                 empleado.AgregarEmpleado();
                 MessageBox.Show("Empleado Agregado Correctamente");
@@ -320,40 +313,30 @@ namespace CapaVistas.ABM_Empleados
                 MessageBox.Show(mensaje);
                 return;
             }
-
             try
             {
-                int selectedRowIndex = dgvVerEmpModif.CurrentCell.RowIndex;
-
-                empleado.Id_Empleado = EmpleadoSeleccionadoId;
-                empleado.Nombre = txtNombreModif.Text;
-                empleado.Apellido = txtApellidoModif.Text;
-                empleado.Id_Sexo = Convert.ToInt32(cmbSexoModif.SelectedValue);
-                empleado.Id_Tipodni = Convert.ToInt32(cmbTipoDNIModif.SelectedValue);
-                empleado.Dni = Convert.ToInt32(txtDNIModif.Text);
-                empleado.Fecha_Nac = dateNacimientoModif.Value;
-                empleado.Email = txtEmailModif.Text;
-                empleado.Telefono = Convert.ToInt32(txtCelularModif.Text);
-                empleado.Id_Localidad = Convert.ToInt32(cmbLocalidadModif.SelectedValue);
-                empleado.Calle = txtCalleModif.Text;
-                empleado.Numero_Calle = Convert.ToInt32(txtNumCalleModif.Text);
-                empleado.Id_Cargo = Convert.ToInt32(cmbCargoModif.SelectedValue);
-                empleado.Estado = chkEstadoModif.Checked;
-
-                empleado.ModificarEmpleado();
-                MessageBox.Show("Empleado Modificado Correctamente");
-                TraerTodos(dgvVerEmpModif);
-
-                dgvVerEmpModif.ClearSelection();
-                if (selectedRowIndex >= 0 && selectedRowIndex < dgvVerEmpModif.Rows.Count)
+                if (dgvVerEmpModif.SelectedRows.Count > 0)
                 {
-                    dgvVerEmpModif.Rows[selectedRowIndex].Selected = true;
-                    dgvVerEmpModif.CurrentCell = dgvVerEmpModif.Rows[selectedRowIndex].Cells[0];
+                    DataGridViewRow row = dgvVerEmpModif.SelectedRows[0];
+                    EmpleadoSeleccionadoId = Convert.ToInt32(row.Cells["id"].Value);
+
+                    // Asignar los datos de la fila seleccionada a los controles correspondientes
+                    txtNombreModif.Text = row.Cells["nombre"].Value?.ToString();
+                    txtApellidoModif.Text = row.Cells["apellido"].Value?.ToString();
+                    cmbSexoModif.SelectedValue = row.Cells["id_sexo"].Value ?? -1;
+                    cmbTipoDNIModif.SelectedValue = row.Cells["id_documento_ident"].Value ?? -1;
+                    txtDNIModif.Text = row.Cells["numero_ident"].Value?.ToString();
+                    dateNacimientoModif.Value = row.Cells["fecha_nacimiento"].Value != null ? Convert.ToDateTime(row.Cells["fecha_nacimiento"].Value) : DateTime.Now;
+                    txtEmailModif.Text = row.Cells["email"].Value?.ToString();
+                    cmbLocalidadModif.SelectedValue = row.Cells["id_localidad"].Value ?? -1;
+                    txtCalleModif.Text = row.Cells["calle"].Value?.ToString();
+                    txtNumCalleModif.Text = row.Cells["numero_domicilio"].Value?.ToString();
+                    cmbCargoModif.SelectedValue = row.Cells["id_tarea"].Value ?? -1;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un Error: {ex.Message}");
+                MessageBox.Show($"Error al cargar los datos del empleado: {ex.Message}");
             }
         }
 
@@ -362,22 +345,20 @@ namespace CapaVistas.ABM_Empleados
             if (dgvVerEmpModif.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvVerEmpModif.SelectedRows[0];
-                EmpleadoSeleccionadoId = Convert.ToInt32(row.Cells["id_empleado"].Value);
+                EmpleadoSeleccionadoId = Convert.ToInt32(row.Cells["id"].Value);
 
                 // Asignar los datos de la fila seleccionada a los controles correspondientes
                 txtNombreModif.Text = row.Cells["nombre"].Value.ToString();
                 txtApellidoModif.Text = row.Cells["apellido"].Value.ToString();
                 cmbSexoModif.SelectedValue = row.Cells["id_sexo"].Value;
-                cmbTipoDNIModif.SelectedValue = row.Cells["id_tipodni"].Value;
-                txtDNIModif.Text = row.Cells["dni"].Value.ToString();
-                dateNacimientoModif.Value = Convert.ToDateTime(row.Cells["fecha_nac"].Value);
-                txtEmailModif.Text = row.Cells["email"].Value.ToString();
-                txtCelularModif.Text = row.Cells["telefono"].Value.ToString(); 
-                cmbLocalidadModif.SelectedValue = row.Cells["id_localidad"].Value;
+                cmbTipoDNIModif.SelectedValue = row.Cells["id"].Value;
+                txtDNIModif.Text = row.Cells["numero_ident"].Value.ToString();
+                dateNacimientoModif.Value = Convert.ToDateTime(row.Cells["fecha_nacimiento"].Value);
+                txtEmailModif.Text = row.Cells["email"].Value.ToString(); 
+                cmbLocalidadModif.SelectedValue = row.Cells["id"].Value;
                 txtCalleModif.Text = row.Cells["calle"].Value.ToString();
-                txtNumCalleModif.Text = row.Cells["numero_calle"].Value.ToString();
-                cmbCargoModif.SelectedValue = row.Cells["id_cargo"].Value;
-                chkEstadoModif.Checked = Convert.ToBoolean(row.Cells["estado"].Value);
+                txtNumCalleModif.Text = row.Cells["numero_domicilio"].Value.ToString();
+                cmbCargoModif.SelectedValue = row.Cells["id"].Value;
             }
 
         }
@@ -407,22 +388,20 @@ namespace CapaVistas.ABM_Empleados
             if (dgvVerEmpBaja.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvVerEmpBaja.SelectedRows[0];
-                EmpleadoSeleccionadoId = Convert.ToInt32(row.Cells["id_empleado"].Value);
+                EmpleadoSeleccionadoId = Convert.ToInt32(row.Cells["id"].Value);
 
                 // Asignar los datos de la fila seleccionada a los controles correspondientes
-                txtNombreBaja.Text = row.Cells["nombre"].Value.ToString();
-                txtApellidoBaja.Text = row.Cells["apellido"].Value.ToString();
-                cmbSexoBaja.SelectedValue = row.Cells["id_sexo"].Value;
-                cmbTipoDNIBaja.SelectedValue = row.Cells["id_tipodni"].Value;
-                txtDNIBaja.Text = row.Cells["dni"].Value.ToString();
-                dateNacimientoBaja.Value = Convert.ToDateTime(row.Cells["fecha_nac"].Value);
-                txtEmailBaja.Text = row.Cells["email"].Value.ToString();
-                txtCelularBaja.Text = row.Cells["telefono"].Value.ToString();
-                cmbLocalidadBaja.SelectedValue = row.Cells["id_localidad"].Value;
-                txtCalleBaja.Text = row.Cells["calle"].Value.ToString();
-                txtNumCalleBaja.Text = row.Cells["numero_calle"].Value.ToString();
-                cmbCargoBaja.SelectedValue = row.Cells["id_cargo"].Value;
-                chkEstadoBaja.Checked = Convert.ToBoolean(row.Cells["estado"].Value);
+                txtNombreModif.Text = row.Cells["nombre"].Value.ToString();
+                txtApellidoModif.Text = row.Cells["apellido"].Value.ToString();
+                cmbSexoModif.SelectedValue = row.Cells["id_sexo"].Value;
+                cmbTipoDNIModif.SelectedValue = row.Cells["id"].Value;
+                txtDNIModif.Text = row.Cells["numero_ident"].Value.ToString();
+                dateNacimientoModif.Value = Convert.ToDateTime(row.Cells["fecha_nacimiento"].Value);
+                txtEmailModif.Text = row.Cells["email"].Value.ToString();
+                cmbLocalidadModif.SelectedValue = row.Cells["id"].Value;
+                txtCalleModif.Text = row.Cells["calle"].Value.ToString();
+                txtNumCalleModif.Text = row.Cells["numero_domicilio"].Value.ToString();
+                cmbCargoModif.SelectedValue = row.Cells["id"].Value;
             }
         }
 
