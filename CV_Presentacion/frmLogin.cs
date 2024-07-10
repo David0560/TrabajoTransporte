@@ -104,9 +104,9 @@ namespace CV_Presentacion
 
         private void lblRecupero_Click(object sender, EventArgs e)
         {
-            frmRecuperarPassword contraseña = new frmRecuperarPassword();
-            this.Hide();
-            contraseña.Show();
+            Program.login.Hide();
+            frmRecuperarPassword recuperoPassword = new frmRecuperarPassword();
+            recuperoPassword.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -121,4 +121,4 @@ namespace CV_Presentacion
             txtPassword.PasswordChar = '*';
         }
     }
-    }
+}

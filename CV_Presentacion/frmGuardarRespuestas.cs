@@ -70,9 +70,8 @@ namespace CV_Presentacion
 
                 // Abrir el formulario de configuración
                 frm_Configuracion frmCambiar = new frm_Configuracion(nombreUsuario);
-                this.Hide();
                 frmCambiar.ShowDialog();
-                this.Show();
+                //this.Show();
             }
             catch (Exception ex)
             {

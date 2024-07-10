@@ -85,9 +85,9 @@ namespace CV_Presentacion
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmLogin home = new frmLogin();
             this.Close();
-            home.Show();
+            frmRecuperarPassword recuperoPassword = new frmRecuperarPassword();
+            recuperoPassword.Show();
             //if (MessageBox.Show("Estas por Cerrar la sesion, ¿Estas seguro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             //this.Close();
         }

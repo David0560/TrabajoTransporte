@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using CL_Negocios;
 
+
 namespace CV_Presentacion
 {
     public partial class frmRecuperarPassword : Form
@@ -24,10 +25,11 @@ namespace CV_Presentacion
                     Usuario usuario = preguntasUsuario.ObtenerUsuario(nombreUsuario);
 
                     // Abrir el formulario de respuestas y pasar el objeto Usuario
-                    frmRespuestas frmRespuestas = new frmRespuestas(usuario);
-                    this.Hide(); // Ocultar el formulario actual
-                    frmRespuestas.ShowDialog();
-                    this.Show(); // Mostrar nuevamente el formulario actual después de cerrar frmRespuestas
+                    
+                    this.Close(); // Ocultar el formulario actual
+                    frmRespuestas respuesta = new frmRespuestas(usuario);
+                    respuesta.ShowDialog();
+                    //this.Show(); // Mostrar nuevamente el formulario actual después de cerrar frmRespuestas
                 }
                 else
                 {
@@ -42,9 +44,8 @@ namespace CV_Presentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmLogin home = new frmLogin();
             this.Close();
-            home.Show();
+            Program.login.Show();
 
 
         }
