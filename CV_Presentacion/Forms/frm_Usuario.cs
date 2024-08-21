@@ -19,10 +19,15 @@ namespace CV_Presentacion
         CS_servicios servicio = new CS_servicios();
         ConfiguracionPassword configure = new ConfiguracionPassword();
         CL_administrarPreguntas pre = new CL_administrarPreguntas();
+        private ConfiguracionPasswordBLL configuracionPasswordBLL;
+        private string connectionString = "Data Source=not_CASA\\MSSQLSERVER01;Initial Catalog=BD_Trasnporte;Integrated Security=True;"; //Cambiar el data Source por tu cadena de conexión
+
 
         public frm_Usuario()
         {
+           
             InitializeComponent();
+            configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
         }
                 
         private void frm_Usuario_Load_1(object sender, EventArgs e)
@@ -271,13 +276,47 @@ namespace CV_Presentacion
         //
         private void btnGuardarConfiguracion_Click(object sender, EventArgs e)
         {
-            int min = Convert.ToInt32(txtMinCaracter.Text);
-            int max = Convert.ToInt32(txtMaxCaracter.Text);
-            bool mayu = chkMayusMinus.Checked;
-            bool num = chkNumLetras.Checked;
-            bool esp = chkCaracterEspecial.Checked;
 
-             configure.Configuracion(min, max, mayu, num, esp);
+            try
+            {
+                // Obtener valores de los controles del formulario
+                int id = 1;
+                int minimo = Convert.ToInt32(txtMinCaracter.Text);
+                int maximo = Convert.ToInt32(txtMaxCaracter.Text);
+                int intentos = Convert.ToInt32(txtCantIntentos.Text);
+                bool mayusMinus = chkMayusMinus.Checked;
+                bool numerosLetras = chkNumLetras.Checked;
+                bool especial = chkCaracterEspecial.Checked;
+                bool dosPasos = chkDosPasos.Checked;
+                bool repetir = chkPassAnterior.Checked;
+                bool datosPersonales = chkDatosPersonales.Checked;
+                bool preguntaSeguridad = chkPreguntaSeguridad.Checked;
+                bool nuevasPreguntas = ckbPregunta.Checked;
+                bool bloqueoAuto = chkBolqueoAuto.Checked;
+                int diasBloqueo = Convert.ToInt32(txtCantidadDias.Text);
+                if (configuracionPasswordBLL != null)
+                {
+                    // Llamar al método en la capa de lógica de negocio para guardar la configuración
+                    configuracionPasswordBLL.GuardarConfiguracion(minimo, maximo, intentos, mayusMinus, numerosLetras, especial, dosPasos, repetir, datosPersonales, preguntaSeguridad, nuevasPreguntas, bloqueoAuto, diasBloqueo);
+
+                    MessageBox.Show("Configuración guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+
+                {
+                    MessageBox.Show("Configuración NO  guardada correctamente.", "NO Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Por favor, ingrese valores numéricos válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar la configuración: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         //
