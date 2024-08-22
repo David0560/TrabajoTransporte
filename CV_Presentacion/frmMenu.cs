@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using CapaSesion;
 using System.Runtime.InteropServices.ComTypes;
+using CV_Presentacion.Frm_Usuario;
 
 namespace CV_Presentacion
 {
@@ -52,7 +53,7 @@ namespace CV_Presentacion
         }
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Usuario(), sender);
+            OpenChildForm(new frm_AltaUsuario(), sender);
         }
         private void btnInformes_Click(object sender, EventArgs e)
         {
