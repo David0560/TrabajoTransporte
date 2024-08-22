@@ -127,36 +127,55 @@
             // btnConfig02
             // 
             this.btnConfig02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfig02.FlatAppearance.BorderSize = 0;
+            this.btnConfig02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnConfig02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnConfig02.Location = new System.Drawing.Point(0, 23);
             this.btnConfig02.Name = "btnConfig02";
+            this.btnConfig02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnConfig02.Size = new System.Drawing.Size(116, 23);
             this.btnConfig02.TabIndex = 3;
             this.btnConfig02.Text = "config 2";
+            this.btnConfig02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig02.UseVisualStyleBackColor = true;
             this.btnConfig02.Click += new System.EventHandler(this.btnConfig02_Click);
             // 
             // btnConfig01
             // 
             this.btnConfig01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfig01.FlatAppearance.BorderSize = 0;
+            this.btnConfig01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnConfig01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig01.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnConfig01.Location = new System.Drawing.Point(0, 0);
             this.btnConfig01.Name = "btnConfig01";
+            this.btnConfig01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnConfig01.Size = new System.Drawing.Size(116, 23);
             this.btnConfig01.TabIndex = 1;
             this.btnConfig01.Text = "config 1";
+            this.btnConfig01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig01.UseVisualStyleBackColor = true;
             this.btnConfig01.Click += new System.EventHandler(this.btnConfig01_Click);
             // 
             // btnConfiguracion
             // 
             this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnConfiguracion.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConfiguracion.Location = new System.Drawing.Point(0, 570);
             this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnConfiguracion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnConfiguracion.Size = new System.Drawing.Size(116, 30);
             this.btnConfiguracion.TabIndex = 13;
             this.btnConfiguracion.Text = "Configuracion";
+            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
@@ -174,36 +193,55 @@
             // btnTaller02
             // 
             this.btnTaller02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaller02.FlatAppearance.BorderSize = 0;
+            this.btnTaller02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnTaller02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaller02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTaller02.Location = new System.Drawing.Point(0, 23);
             this.btnTaller02.Name = "btnTaller02";
+            this.btnTaller02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnTaller02.Size = new System.Drawing.Size(116, 23);
             this.btnTaller02.TabIndex = 3;
             this.btnTaller02.Text = "taller 02";
+            this.btnTaller02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaller02.UseVisualStyleBackColor = true;
             this.btnTaller02.Click += new System.EventHandler(this.btnTaller02_Click);
             // 
             // btnTaller01
             // 
             this.btnTaller01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaller01.FlatAppearance.BorderSize = 0;
+            this.btnTaller01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnTaller01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaller01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaller01.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTaller01.Location = new System.Drawing.Point(0, 0);
             this.btnTaller01.Name = "btnTaller01";
+            this.btnTaller01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnTaller01.Size = new System.Drawing.Size(116, 23);
             this.btnTaller01.TabIndex = 1;
             this.btnTaller01.Text = "taller 01";
+            this.btnTaller01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaller01.UseVisualStyleBackColor = true;
             this.btnTaller01.Click += new System.EventHandler(this.btnTaller01_Click);
             // 
             // btnAlmacen
             // 
             this.btnAlmacen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAlmacen.FlatAppearance.BorderSize = 0;
+            this.btnAlmacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlmacen.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAlmacen.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlmacen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAlmacen.Location = new System.Drawing.Point(0, 491);
             this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAlmacen.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnAlmacen.Size = new System.Drawing.Size(116, 30);
             this.btnAlmacen.TabIndex = 11;
             this.btnAlmacen.Text = "Almacen";
+            this.btnAlmacen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlmacen.UseVisualStyleBackColor = true;
             this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
@@ -213,6 +251,7 @@
             this.pnlRegistros.Controls.Add(this.btnRegistros02);
             this.pnlRegistros.Controls.Add(this.btnRegistros01);
             this.pnlRegistros.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlRegistros.Location = new System.Drawing.Point(0, 442);
             this.pnlRegistros.Name = "pnlRegistros";
             this.pnlRegistros.Size = new System.Drawing.Size(116, 49);
@@ -221,36 +260,55 @@
             // btnRegistros02
             // 
             this.btnRegistros02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistros02.FlatAppearance.BorderSize = 0;
+            this.btnRegistros02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnRegistros02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistros02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistros02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRegistros02.Location = new System.Drawing.Point(0, 23);
             this.btnRegistros02.Name = "btnRegistros02";
+            this.btnRegistros02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnRegistros02.Size = new System.Drawing.Size(116, 23);
             this.btnRegistros02.TabIndex = 3;
             this.btnRegistros02.Text = "regis 02";
+            this.btnRegistros02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistros02.UseVisualStyleBackColor = true;
             this.btnRegistros02.Click += new System.EventHandler(this.btnRegistros02_Click);
             // 
             // btnRegistros01
             // 
             this.btnRegistros01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistros01.FlatAppearance.BorderSize = 0;
+            this.btnRegistros01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnRegistros01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistros01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistros01.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRegistros01.Location = new System.Drawing.Point(0, 0);
             this.btnRegistros01.Name = "btnRegistros01";
+            this.btnRegistros01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnRegistros01.Size = new System.Drawing.Size(116, 23);
             this.btnRegistros01.TabIndex = 1;
             this.btnRegistros01.Text = "regis 01";
+            this.btnRegistros01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistros01.UseVisualStyleBackColor = true;
             this.btnRegistros01.Click += new System.EventHandler(this.btnRegistros01_Click);
             // 
             // btnRegistro
             // 
             this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistro.FlatAppearance.BorderSize = 0;
+            this.btnRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRegistro.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistro.Location = new System.Drawing.Point(0, 412);
             this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnRegistro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnRegistro.Size = new System.Drawing.Size(116, 30);
             this.btnRegistro.TabIndex = 9;
             this.btnRegistro.Text = "Registros";
+            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistro.UseVisualStyleBackColor = true;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
@@ -268,36 +326,55 @@
             // btnUnidades02
             // 
             this.btnUnidades02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUnidades02.FlatAppearance.BorderSize = 0;
+            this.btnUnidades02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnUnidades02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnidades02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnidades02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUnidades02.Location = new System.Drawing.Point(0, 23);
             this.btnUnidades02.Name = "btnUnidades02";
+            this.btnUnidades02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnUnidades02.Size = new System.Drawing.Size(116, 23);
             this.btnUnidades02.TabIndex = 3;
             this.btnUnidades02.Text = "unidad 02";
+            this.btnUnidades02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUnidades02.UseVisualStyleBackColor = true;
             this.btnUnidades02.Click += new System.EventHandler(this.btnUnidades02_Click);
             // 
             // btnUnidades01
             // 
             this.btnUnidades01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUnidades01.FlatAppearance.BorderSize = 0;
+            this.btnUnidades01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnUnidades01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnidades01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnidades01.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUnidades01.Location = new System.Drawing.Point(0, 0);
             this.btnUnidades01.Name = "btnUnidades01";
+            this.btnUnidades01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnUnidades01.Size = new System.Drawing.Size(116, 23);
             this.btnUnidades01.TabIndex = 1;
             this.btnUnidades01.Text = "unidad 01";
+            this.btnUnidades01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUnidades01.UseVisualStyleBackColor = true;
             this.btnUnidades01.Click += new System.EventHandler(this.btnUnidades01_Click);
             // 
             // btnVehiculo
             // 
             this.btnVehiculo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVehiculo.FlatAppearance.BorderSize = 0;
+            this.btnVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehiculo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVehiculo.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehiculo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnVehiculo.Location = new System.Drawing.Point(0, 332);
             this.btnVehiculo.Name = "btnVehiculo";
+            this.btnVehiculo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnVehiculo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnVehiculo.Size = new System.Drawing.Size(116, 30);
             this.btnVehiculo.TabIndex = 7;
             this.btnVehiculo.Text = "Vehiculos";
+            this.btnVehiculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVehiculo.UseVisualStyleBackColor = true;
             this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
@@ -315,36 +392,55 @@
             // btnEmpleados02
             // 
             this.btnEmpleados02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpleados02.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnEmpleados02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEmpleados02.Location = new System.Drawing.Point(0, 23);
             this.btnEmpleados02.Name = "btnEmpleados02";
+            this.btnEmpleados02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnEmpleados02.Size = new System.Drawing.Size(116, 23);
             this.btnEmpleados02.TabIndex = 1;
             this.btnEmpleados02.Text = "emple 02";
+            this.btnEmpleados02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleados02.UseVisualStyleBackColor = true;
             this.btnEmpleados02.Click += new System.EventHandler(this.btnEmpleados02_Click);
             // 
             // btnEmpleados01
             // 
             this.btnEmpleados01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpleados01.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnEmpleados01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados01.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEmpleados01.Location = new System.Drawing.Point(0, 0);
             this.btnEmpleados01.Name = "btnEmpleados01";
+            this.btnEmpleados01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnEmpleados01.Size = new System.Drawing.Size(116, 23);
             this.btnEmpleados01.TabIndex = 0;
             this.btnEmpleados01.Text = "emple 01";
+            this.btnEmpleados01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleados01.UseVisualStyleBackColor = true;
             this.btnEmpleados01.Click += new System.EventHandler(this.btnEmpleados01_Click);
             // 
             // btnEmpleados
             // 
             this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnEmpleados.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEmpleados.Location = new System.Drawing.Point(0, 252);
             this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnEmpleados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEmpleados.Size = new System.Drawing.Size(116, 30);
             this.btnEmpleados.TabIndex = 5;
             this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
@@ -362,36 +458,55 @@
             // btnInfo02
             // 
             this.btnInfo02.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInfo02.FlatAppearance.BorderSize = 0;
+            this.btnInfo02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnInfo02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInfo02.Location = new System.Drawing.Point(0, 23);
             this.btnInfo02.Name = "btnInfo02";
+            this.btnInfo02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnInfo02.Size = new System.Drawing.Size(116, 23);
             this.btnInfo02.TabIndex = 1;
             this.btnInfo02.Text = "info02";
+            this.btnInfo02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfo02.UseVisualStyleBackColor = true;
             this.btnInfo02.Click += new System.EventHandler(this.btnInfo02_Click);
             // 
             // btnInfo01
             // 
             this.btnInfo01.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInfo01.FlatAppearance.BorderSize = 0;
+            this.btnInfo01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnInfo01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo01.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInfo01.Location = new System.Drawing.Point(0, 0);
             this.btnInfo01.Name = "btnInfo01";
+            this.btnInfo01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnInfo01.Size = new System.Drawing.Size(116, 23);
             this.btnInfo01.TabIndex = 0;
             this.btnInfo01.Text = "info01";
+            this.btnInfo01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfo01.UseVisualStyleBackColor = true;
             this.btnInfo01.Click += new System.EventHandler(this.btnInfo01_Click);
             // 
             // btnInformes
             // 
             this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformes.FlatAppearance.BorderSize = 0;
+            this.btnInformes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnInformes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnInformes.Location = new System.Drawing.Point(0, 172);
             this.btnInformes.Name = "btnInformes";
+            this.btnInformes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnInformes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnInformes.Size = new System.Drawing.Size(116, 30);
             this.btnInformes.TabIndex = 3;
             this.btnInformes.Text = "Informes";
+            this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInformes.UseVisualStyleBackColor = true;
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click_1);
             // 
@@ -413,80 +528,127 @@
             // btmUserConfiguracion
             // 
             this.btmUserConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btmUserConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btmUserConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btmUserConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmUserConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmUserConfiguracion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btmUserConfiguracion.Location = new System.Drawing.Point(0, 115);
             this.btmUserConfiguracion.Name = "btmUserConfiguracion";
+            this.btmUserConfiguracion.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btmUserConfiguracion.Size = new System.Drawing.Size(116, 23);
             this.btmUserConfiguracion.TabIndex = 5;
             this.btmUserConfiguracion.Text = "Configuracion";
+            this.btmUserConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btmUserConfiguracion.UseVisualStyleBackColor = true;
             this.btmUserConfiguracion.Click += new System.EventHandler(this.btmUserConfiguracion_Click);
             // 
             // btnUserPreguntas
             // 
             this.btnUserPreguntas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUserPreguntas.FlatAppearance.BorderSize = 0;
+            this.btnUserPreguntas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnUserPreguntas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserPreguntas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserPreguntas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUserPreguntas.Location = new System.Drawing.Point(0, 92);
             this.btnUserPreguntas.Name = "btnUserPreguntas";
+            this.btnUserPreguntas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnUserPreguntas.Size = new System.Drawing.Size(116, 23);
             this.btnUserPreguntas.TabIndex = 4;
             this.btnUserPreguntas.Text = "Preguntas";
+            this.btnUserPreguntas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserPreguntas.UseVisualStyleBackColor = true;
             this.btnUserPreguntas.Click += new System.EventHandler(this.btnUserPreguntas_Click);
             // 
             // btmUserGrupos
             // 
             this.btmUserGrupos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btmUserGrupos.FlatAppearance.BorderSize = 0;
+            this.btmUserGrupos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btmUserGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmUserGrupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmUserGrupos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btmUserGrupos.Location = new System.Drawing.Point(0, 69);
             this.btmUserGrupos.Name = "btmUserGrupos";
+            this.btmUserGrupos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btmUserGrupos.Size = new System.Drawing.Size(116, 23);
             this.btmUserGrupos.TabIndex = 3;
             this.btmUserGrupos.Text = "Grupos";
+            this.btmUserGrupos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btmUserGrupos.UseVisualStyleBackColor = true;
             this.btmUserGrupos.Click += new System.EventHandler(this.btmUserGrupos_Click);
             // 
             // btmUserBloqueos
             // 
             this.btmUserBloqueos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btmUserBloqueos.FlatAppearance.BorderSize = 0;
+            this.btmUserBloqueos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btmUserBloqueos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmUserBloqueos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmUserBloqueos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btmUserBloqueos.Location = new System.Drawing.Point(0, 46);
             this.btmUserBloqueos.Name = "btmUserBloqueos";
+            this.btmUserBloqueos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btmUserBloqueos.Size = new System.Drawing.Size(116, 23);
             this.btmUserBloqueos.TabIndex = 2;
             this.btmUserBloqueos.Text = "Bloqueos";
+            this.btmUserBloqueos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btmUserBloqueos.UseVisualStyleBackColor = true;
             this.btmUserBloqueos.Click += new System.EventHandler(this.btmUserBloqueos_Click);
             // 
             // btmUserPermisos
             // 
             this.btmUserPermisos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btmUserPermisos.FlatAppearance.BorderSize = 0;
+            this.btmUserPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btmUserPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmUserPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmUserPermisos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btmUserPermisos.Location = new System.Drawing.Point(0, 23);
             this.btmUserPermisos.Name = "btmUserPermisos";
+            this.btmUserPermisos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btmUserPermisos.Size = new System.Drawing.Size(116, 23);
             this.btmUserPermisos.TabIndex = 1;
             this.btmUserPermisos.Text = "Permisos";
+            this.btmUserPermisos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btmUserPermisos.UseVisualStyleBackColor = true;
             this.btmUserPermisos.Click += new System.EventHandler(this.btmUserPermisos_Click);
             // 
             // btmUserAlta
             // 
             this.btmUserAlta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btmUserAlta.FlatAppearance.BorderSize = 0;
+            this.btmUserAlta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btmUserAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmUserAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmUserAlta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btmUserAlta.Location = new System.Drawing.Point(0, 0);
             this.btmUserAlta.Name = "btmUserAlta";
+            this.btmUserAlta.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btmUserAlta.Size = new System.Drawing.Size(116, 23);
             this.btmUserAlta.TabIndex = 0;
             this.btmUserAlta.Text = "Alta";
+            this.btmUserAlta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btmUserAlta.UseVisualStyleBackColor = true;
             this.btmUserAlta.Click += new System.EventHandler(this.btmUserAlta_Click);
             // 
             // btnUsuario
             // 
             this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuario.FlatAppearance.BorderSize = 0;
+            this.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnUsuario.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUsuario.Location = new System.Drawing.Point(0, 0);
             this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnUsuario.Size = new System.Drawing.Size(116, 30);
             this.btnUsuario.TabIndex = 1;
             this.btnUsuario.Text = "Usuario";
+            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuario.UseVisualStyleBackColor = true;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 

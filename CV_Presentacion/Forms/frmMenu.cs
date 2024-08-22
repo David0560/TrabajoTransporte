@@ -68,32 +68,32 @@ namespace CV_Presentacion
         private void btmUserAlta_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_AltaUsuario(), sender);
-
+            ocultarSubMenu();
         }
         private void btmUserPermisos_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_PermisosUsuarios(), sender);
-
+            ocultarSubMenu();
         }
         private void btmUserBloqueos_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Bloqueos(), sender);
-
+            ocultarSubMenu();
         }
         private void btmUserGrupos_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_PermisosGrupos(), sender);
-
+            ocultarSubMenu();
         }
         private void btnUserPreguntas_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_PregunrtasDeSeguridad(), sender);
-
+            ocultarSubMenu();
         }
         private void btmUserConfiguracion_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Configuracion(), sender);
-
+            ocultarSubMenu();
         }
 
 
@@ -106,11 +106,13 @@ namespace CV_Presentacion
         private void btnInfo01_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_informes(), sender);
+            ocultarSubMenu();
         }
 
         private void btnInfo02_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Informes2(), sender);
+            ocultarSubMenu();
         }
 
 
@@ -121,10 +123,12 @@ namespace CV_Presentacion
         private void btnEmpleados01_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Empleados(), sender);
+            ocultarSubMenu();
         }
         private void btnEmpleados02_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Empleados2(), sender);
+            ocultarSubMenu();
         }
 
 
@@ -135,10 +139,12 @@ namespace CV_Presentacion
         private void btnUnidades01_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Vehiculos(), sender);
+            ocultarSubMenu();
         }
         private void btnUnidades02_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Vehiculos2(), sender);
+            ocultarSubMenu();
         }
 
 
@@ -151,10 +157,12 @@ namespace CV_Presentacion
         private void btnRegistros01_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Registros(), sender);
+            ocultarSubMenu();
         }
         private void btnRegistros02_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_registros2(), sender);
+            ocultarSubMenu();
         }
 
 
@@ -168,28 +176,30 @@ namespace CV_Presentacion
         private void btnTaller01_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Almacen(), sender);
+            ocultarSubMenu();
         }
         private void btnTaller02_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Taller2(), sender);
+            ocultarSubMenu();
         }
 
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(pnlConfiguracion);
-
-            //OpenChildForm(new frm_Configuracion(), sender);
         }
 
         private void btnConfig01_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Configuracion(), sender);
+            ocultarSubMenu();
         }
 
         private void btnConfig02_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_configuracion2(), sender);
+            ocultarSubMenu();
         }
 
 
