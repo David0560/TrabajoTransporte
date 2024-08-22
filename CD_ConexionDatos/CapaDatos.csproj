@@ -93,6 +93,7 @@
     <Compile Include="CD_Pregunta.cs" />
     <Compile Include="CD_PreguntaUsuario.cs" />
     <Compile Include="codigoVerificador.cs" />
+    <Compile Include="ConfiguracionPasswordDAL.cs" />
     <Compile Include="connectionDB.cs" />
     <Compile Include="CD_listarTablas.cs" />
     <Compile Include="Entidades\cachePermisosAlta.cs" />

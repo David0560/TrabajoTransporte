@@ -95,12 +95,12 @@ namespace CD_ConexionDatos
         }
 
         /// Obtiene tres preguntas aleatorias de la base de datos.
-        public List<string> ObtenerTresPreguntasAleatorias()
+        public List<Tuple<int, string>> ObtenerTresPreguntasAleatorias()
         {
-            List<string> preguntas = new List<string>();
+            List<Tuple<int, string>> preguntas = new List<Tuple<int, string>>();
             using (con = connectionBD.CreaInstacia().CrearConexion())
             {
-                string query = "SELECT TOP 3 pregunta FROM Pregunta ORDER BY NEWID()";
+                string query = "SELECT TOP 3 id, pregunta FROM Pregunta ORDER BY NEWID()";
                 SqlCommand command = new SqlCommand(query, con);
 
                 try
@@ -109,7 +109,7 @@ namespace CD_ConexionDatos
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        preguntas.Add(reader["pregunta"].ToString());
+                        preguntas.Add(new Tuple<int, string>((int)reader["id"], reader["pregunta"].ToString()));
                     }
                 }
                 catch (Exception ex)
@@ -120,7 +120,7 @@ namespace CD_ConexionDatos
             return preguntas;
         }
 
-        /// Guarda las respuestas de seguridad del usuario en la base de datos.
+        // Guarda las respuestas de seguridad del usuario en la base de datos
         public void GuardarRespuestasUsuario(int idUsuario, List<Tuple<int, string>> preguntasYRespuestas)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion())
@@ -147,9 +147,6 @@ namespace CD_ConexionDatos
                     throw new Exception("Error al guardar las respuestas del usuario", ex);
                 }
             }
-
         }
     }
-
 }
-
