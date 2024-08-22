@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion.Forms
+﻿namespace CV_Presentacion.Frm_Unidades
 {
-    partial class frm_Vehiculos
+    partial class frm_Vehiculos2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // frm_Vehiculos
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(365, 219);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "vehiculos2";
+            // 
+            // frm_Vehiculos2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 362);
-            this.Name = "frm_Vehiculos";
-            this.Text = "frm_Vehiculos";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Name = "frm_Vehiculos2";
+            this.Text = "frm_Vehiculos2";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

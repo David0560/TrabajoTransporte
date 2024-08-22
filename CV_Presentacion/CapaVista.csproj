@@ -94,46 +94,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_Taller\frm_Almacen.cs">
+    <Compile Include="Forms\Frm_Configuracion\frm_configuracion2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Taller\frm_Almacen.Designer.cs">
+    <Compile Include="Forms\Frm_Configuracion\frm_configuracion2.Designer.cs">
+      <DependentUpon>frm_configuracion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Empleados\frm_Empleados2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Empleados\frm_Empleados2.Designer.cs">
+      <DependentUpon>frm_Empleados2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Informes\frm_Informes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Informes\frm_Informes2.Designer.cs">
+      <DependentUpon>frm_Informes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Registros\frm_registros2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Registros\frm_registros2.Designer.cs">
+      <DependentUpon>frm_registros2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Taller\frm_Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Taller\frm_Almacen.Designer.cs">
       <DependentUpon>frm_Almacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Configuracion\frm_Configuracion.cs">
+    <Compile Include="Forms\Frm_Configuracion\frm_Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Configuracion\frm_Configuracion.Designer.cs">
+    <Compile Include="Forms\Frm_Configuracion\frm_Configuracion.Designer.cs">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Empleados\frm_Empleados.cs">
+    <Compile Include="Forms\Frm_Empleados\frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Empleados\frm_Empleados.Designer.cs">
+    <Compile Include="Forms\Frm_Empleados\frm_Empleados.Designer.cs">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Unidades\frm_Vehiculos.cs">
+    <Compile Include="Forms\Frm_Taller\frm_Taller2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Unidades\frm_Vehiculos.Designer.cs">
+    <Compile Include="Forms\Frm_Taller\frm_Taller2.Designer.cs">
+      <DependentUpon>frm_Taller2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos.Designer.cs">
       <DependentUpon>frm_Vehiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGuardarRespuestas.cs">
+    <Compile Include="Forms\Frm_Login\frmGuardarRespuestas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGuardarRespuestas.Designer.cs">
+    <Compile Include="Forms\Frm_Login\frmGuardarRespuestas.Designer.cs">
       <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="Forms\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
+    <Compile Include="Forms\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Forms\Frm_Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Forms\Frm_Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Usuario\frm_Usuario.cs">
@@ -142,28 +172,28 @@
     <Compile Include="Forms\Frm_Usuario\frm_Usuario.Designer.cs">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Informes\frm_Informes.cs">
+    <Compile Include="Forms\Frm_Informes\frm_Informes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Informes\frm_Informes.Designer.cs">
+    <Compile Include="Forms\Frm_Informes\frm_Informes.Designer.cs">
       <DependentUpon>frm_Informes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Registros.cs">
+    <Compile Include="Forms\Frm_Registros\frm_Registros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Registros.Designer.cs">
+    <Compile Include="Forms\Frm_Registros\frm_Registros.Designer.cs">
       <DependentUpon>frm_Registros.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecuperarPassword.cs">
+    <Compile Include="Forms\Frm_Login\frmRecuperarPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecuperarPassword.Designer.cs">
+    <Compile Include="Forms\Frm_Login\frmRecuperarPassword.Designer.cs">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRespuestas.cs">
+    <Compile Include="Forms\Frm_Login\frmRespuestas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRespuestas.Designer.cs">
+    <Compile Include="Forms\Frm_Login\frmRespuestas.Designer.cs">
       <DependentUpon>frmRespuestas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Usuario\frm_AltaUsuario.cs">
@@ -202,42 +232,63 @@
     <Compile Include="Forms\Frm_Usuario\frm_PregunrtasDeSeguridad.Designer.cs">
       <DependentUpon>frm_PregunrtasDeSeguridad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos2.Designer.cs">
+      <DependentUpon>frm_Vehiculos2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frm_Taller\frm_Almacen.resx">
+    <EmbeddedResource Include="Forms\Frm_Configuracion\frm_configuracion2.resx">
+      <DependentUpon>frm_configuracion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Empleados\frm_Empleados2.resx">
+      <DependentUpon>frm_Empleados2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes2.resx">
+      <DependentUpon>frm_Informes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Taller\frm_Almacen.resx">
       <DependentUpon>frm_Almacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Configuracion\frm_Configuracion.resx">
+    <EmbeddedResource Include="Forms\Frm_Configuracion\frm_Configuracion.resx">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Empleados\frm_Empleados.resx">
+    <EmbeddedResource Include="Forms\Frm_Empleados\frm_Empleados.resx">
       <DependentUpon>frm_Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Unidades\frm_Vehiculos.resx">
+    <EmbeddedResource Include="Forms\Frm_Taller\frm_Taller2.resx">
+      <DependentUpon>frm_Taller2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Unidades\frm_Vehiculos.resx">
       <DependentUpon>frm_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGuardarRespuestas.resx">
+    <EmbeddedResource Include="Forms\Frm_Login\frmGuardarRespuestas.resx">
       <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
+    <EmbeddedResource Include="Forms\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Forms\Frm_Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Unidades\frm_Vehiculos2.resx">
+      <DependentUpon>frm_Vehiculos2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Usuario\frm_Usuario.resx">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Informes\frm_Informes.resx">
+    <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes.resx">
       <DependentUpon>frm_Informes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Registros.resx">
+    <EmbeddedResource Include="Forms\Frm_Registros\frm_Registros.resx">
       <DependentUpon>frm_Registros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecuperarPassword.resx">
+    <EmbeddedResource Include="Forms\Frm_Login\frmRecuperarPassword.resx">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRespuestas.resx">
+    <EmbeddedResource Include="Forms\Frm_Login\frmRespuestas.resx">
       <DependentUpon>frmRespuestas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Usuario\frm_AltaUsuario.resx">

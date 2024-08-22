@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion
+﻿namespace CV_Presentacion.Forms.Frm_Taller
 {
-    partial class frm_Registros
+    partial class frm_Taller2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // frm_Registros
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(365, 219);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "taller2";
+            // 
+            // frm_Taller2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 349);
-            this.Name = "frm_Registros";
-            this.Text = "frm_Registros";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Name = "frm_Taller2";
+            this.Text = "frm_Taller2";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion.Forms
+﻿namespace CV_Presentacion
 {
-    partial class frm_Almacen
+    partial class frm_Registros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // frm_Almacen
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(236, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "registros";
+            // 
+            // frm_Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 342);
-            this.Name = "frm_Almacen";
-            this.Text = "frm_Almacen";
+            this.ClientSize = new System.Drawing.Size(543, 349);
+            this.Controls.Add(this.label1);
+            this.Name = "frm_Registros";
+            this.Text = "frm_Registros";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

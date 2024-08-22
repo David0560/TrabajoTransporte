@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion
+﻿namespace CV_Presentacion.Forms.Frm_Registros
 {
-    partial class frm_informes
+    partial class frm_registros2
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frm_informes";
+            this.Text = "frm_registros2";
         }
 
         #endregion
