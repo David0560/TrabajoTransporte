@@ -43,6 +43,7 @@
             this.btnNuevoPassword.TabIndex = 7;
             this.btnNuevoPassword.Text = "Password";
             this.btnNuevoPassword.UseVisualStyleBackColor = true;
+            this.btnNuevoPassword.Click += new System.EventHandler(this.btnNuevoPassword_Click);
             // 
             // btnGuardarBloqueos
             // 
@@ -52,6 +53,7 @@
             this.btnGuardarBloqueos.TabIndex = 6;
             this.btnGuardarBloqueos.Text = "&Actualizar";
             this.btnGuardarBloqueos.UseVisualStyleBackColor = true;
+            this.btnGuardarBloqueos.Click += new System.EventHandler(this.btnGuardarBloqueos_Click);
             // 
             // label8
             // 
@@ -71,7 +73,7 @@
             this.dgvListaUsuarios.Size = new System.Drawing.Size(523, 323);
             this.dgvListaUsuarios.TabIndex = 4;
             // 
-            // Bloqueos
+            // frm_Bloqueos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,8 +82,9 @@
             this.Controls.Add(this.btnGuardarBloqueos);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvListaUsuarios);
-            this.Name = "Bloqueos";
+            this.Name = "frm_Bloqueos";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.frm_Bloqueos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

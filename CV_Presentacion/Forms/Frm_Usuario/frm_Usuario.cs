@@ -29,7 +29,7 @@ namespace CV_Presentacion
             InitializeComponent();
             configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
         }
-                
+        
         private void frm_Usuario_Load_1(object sender, EventArgs e)
 
         {
@@ -54,7 +54,7 @@ namespace CV_Presentacion
             mkdVencePass.Text = null;
             mkdVenceUsuario.Text = null;
 
-            registro.LimpiarControlesEnTabPage(tabBloqueos);
+            //registro.LimpiarControlesEnTabPage(tabBloqueos);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
             
             servicio.parametrosDataGridView(dgvPreguntas);
@@ -97,7 +97,7 @@ namespace CV_Presentacion
                             registro.insertarPermisoPorFamilia(permiso);
                         }
                         
-                        registro.LimpiarControlesEnTabPage(tabCrearUsuario);
+                        //registro.LimpiarControlesEnTabPage(tabCrearUsuario);
                     }
                     else
                     {
@@ -266,7 +266,7 @@ namespace CV_Presentacion
             if (resultado == DialogResult.OK)
             {
                 pre.eliminarPregunta(id);
-                registro.LimpiarControlesEnTabPage(tabPreguntas);
+                //registro.LimpiarControlesEnTabPage(tabPreguntas);
 
             }
         }
@@ -329,7 +329,7 @@ namespace CV_Presentacion
             int id = Convert.ToInt32(this.dgvListaUsuarios.SelectedRows[0].Cells[0].Value);
             string estado = Convert.ToString(Interaction.InputBox($"Realizará cambios en el estado del \nUsuario: \n \n{nombre} \n \nColoque el estado que desee para el usuario \n0 = bloqueado, 1 = activo"));
             registro.bloquearUsuario(id, estado);
-            registro.LimpiarControlesEnTabPage(tabBloqueos);
+            //registro.LimpiarControlesEnTabPage(tabBloqueos);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
         }
 
@@ -346,5 +346,6 @@ namespace CV_Presentacion
             }
             
         }
+
     }
 }

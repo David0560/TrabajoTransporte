@@ -217,24 +217,24 @@ namespace CL_Negocios
             }
 
         }
-        public void LimpiarControlesEnTabPage(TabPage tabPage)
+        public void LimpiarControlesForm(Control control)
         {
-            foreach (Control control in tabPage.Controls)
+            foreach (Control c in control.Controls)
             {
-                if (control is TextBox textBox)
+                if (c is TextBox textBox)
                 {
                     textBox.Text = string.Empty; // Limpiar el contenido del TextBox
                 }
-                if (control is ComboBox comboBox)
+                if (c is ComboBox comboBox)
                 {
                     comboBox.SelectedIndex = -1; // Resetear la selección del ComboBox
                 }
-                if (control is DataGridView dataGridView)
+                if (c is DataGridView dataGridView)
                 {
                     dataGridView.DataSource = null; // Eliminar la fuente de datos del DataGridView
                     dataGridView.Rows.Clear(); // Limpiar las filas en el DataGridView
                 }
-                if (control is MaskedTextBox maskedtextBox)
+                if (c is MaskedTextBox maskedtextBox)
                 {
                     maskedtextBox.Text = string.Empty; // Limpiar el contenido del maskedTextBox
                 }

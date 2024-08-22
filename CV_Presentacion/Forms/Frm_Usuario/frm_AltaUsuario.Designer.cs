@@ -161,6 +161,7 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "Guardar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lblTipoUsuario
             // 
@@ -195,6 +196,7 @@
             this.cboFamilias.Name = "cboFamilias";
             this.cboFamilias.Size = new System.Drawing.Size(150, 21);
             this.cboFamilias.TabIndex = 26;
+            this.cboFamilias.SelectedIndexChanged += new System.EventHandler(this.cboFamilias_SelectedIndexChanged);
             // 
             // cboEmpleados
             // 
@@ -204,7 +206,7 @@
             this.cboEmpleados.Size = new System.Drawing.Size(150, 21);
             this.cboEmpleados.TabIndex = 25;
             // 
-            // Form1
+            // frm_AltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,8 +223,9 @@
             this.Controls.Add(this.dgvPermisoUsuario);
             this.Controls.Add(this.cboFamilias);
             this.Controls.Add(this.cboEmpleados);
-            this.Name = "Form1";
+            this.Name = "frm_AltaUsuario";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frm_AltaUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisoUsuario)).EndInit();

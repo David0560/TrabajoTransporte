@@ -68,6 +68,7 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnCargarNuevoRol = new System.Windows.Forms.Button();
             this.tabBloqueos = new System.Windows.Forms.TabPage();
+            this.btnNuevoPassword = new System.Windows.Forms.Button();
             this.btnGuardarBloqueos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
@@ -104,7 +105,6 @@
             this.dgvPermisoUsuario = new System.Windows.Forms.DataGridView();
             this.cboFamilias = new System.Windows.Forms.ComboBox();
             this.cboEmpleados = new System.Windows.Forms.ComboBox();
-            this.btnNuevoPassword = new System.Windows.Forms.Button();
             this.tabConfigurarPass.SuspendLayout();
             this.tabPreguntas.SuspendLayout();
             this.grbPregunta.SuspendLayout();
@@ -512,6 +512,16 @@
             this.tabBloqueos.Text = "Bloqueos";
             this.tabBloqueos.UseVisualStyleBackColor = true;
             // 
+            // btnNuevoPassword
+            // 
+            this.btnNuevoPassword.Location = new System.Drawing.Point(384, 413);
+            this.btnNuevoPassword.Name = "btnNuevoPassword";
+            this.btnNuevoPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoPassword.TabIndex = 3;
+            this.btnNuevoPassword.Text = "Password";
+            this.btnNuevoPassword.UseVisualStyleBackColor = true;
+            this.btnNuevoPassword.Click += new System.EventHandler(this.btnNuevoPassword_Click);
+            // 
             // btnGuardarBloqueos
             // 
             this.btnGuardarBloqueos.Location = new System.Drawing.Point(465, 413);
@@ -877,16 +887,6 @@
             this.cboEmpleados.Name = "cboEmpleados";
             this.cboEmpleados.Size = new System.Drawing.Size(150, 21);
             this.cboEmpleados.TabIndex = 0;
-            // 
-            // btnNuevoPassword
-            // 
-            this.btnNuevoPassword.Location = new System.Drawing.Point(384, 413);
-            this.btnNuevoPassword.Name = "btnNuevoPassword";
-            this.btnNuevoPassword.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevoPassword.TabIndex = 3;
-            this.btnNuevoPassword.Text = "Password";
-            this.btnNuevoPassword.UseVisualStyleBackColor = true;
-            this.btnNuevoPassword.Click += new System.EventHandler(this.btnNuevoPassword_Click);
             // 
             // frm_Usuario
             // 
