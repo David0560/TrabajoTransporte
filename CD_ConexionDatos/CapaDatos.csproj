@@ -40,6 +40,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.0-preview2-24180-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -86,12 +87,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_cargarComboBox.cs" />
+    <Compile Include="CD_crearRegistros.cs" />
+    <Compile Include="CD_loginUsuario.cs" />
+    <Compile Include="CD_Pregunta.cs" />
+    <Compile Include="CD_PreguntaUsuario.cs" />
+    <Compile Include="codigoVerificador.cs" />
+    <Compile Include="ConfiguracionPasswordDAL.cs" />
     <Compile Include="connectionDB.cs" />
+    <Compile Include="CD_listarTablas.cs" />
+    <Compile Include="Entidades\cachePermisosAlta.cs" />
+    <Compile Include="Entidades\ContrasenaUsuario.cs" />
+    <Compile Include="Entidades\Pregunta.cs" />
+    <Compile Include="operaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaServicios\CapaServicios.csproj">
+      <Project>{047b67c8-e1f0-4908-9ffa-d1276801c536}</Project>
+      <Name>CapaServicios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaSesion\CapaSesion.csproj">
+      <Project>{e0ce412a-466e-4059-b763-54b6ced6939c}</Project>
+      <Name>CapaSesion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

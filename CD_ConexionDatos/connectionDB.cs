@@ -17,27 +17,12 @@ namespace CD_ConexionDatos
         private string Usuario;
         private string Clave;
         private bool Seguridad;
-
-        
-
         // crear un objeto de tipo conecxion es estatica para no perder la informacion
         // es para conpartir y realiza la conexion a la base de datos
         private static connectionBD con = null; //variable de conexion iniciada con un valor nulo
-
         public connectionBD(string nombre_base, string servidor, string usuario, string clave) //constructor de clase, contiene los valores de las variables que va a tener la conexion
         {
             // esto se usa para que la segurida sea mejor ya que las variables se encuentran en el contructor provado
-            //
-
-            //---------------------------------//
-            // ustendes tendrian que cargar    //
-            // los valores que tiene en        //
-            // su maquina, para poder         //
-            // hacer la conexion.             //
-            //--------------------------------//
-            //this.Base = "BD_Trasnporte";
-            //this.Servidor = "DESKTOP-8ROL9DF";
-            //this.Usuario = "DESKTOP-8ROL9DF//Morinigo David";
 
             this.Base = nombre_base;
             this.Servidor= servidor;
@@ -45,7 +30,6 @@ namespace CD_ConexionDatos
             this.Clave = clave;
             this.Seguridad = true;
         }
-
         // metodo para devolver el string de conexion
         public SqlConnection CrearConexion() 
         {
@@ -74,13 +58,12 @@ namespace CD_ConexionDatos
             }
             return Cadena;// va devolver cadena.
         }
-
-
         public static connectionBD CreaInstacia()
         {
             if (con == null)
             {
-                con = new connectionBD("BD_Trasnporte", "DESKTOP-8ROL9DF", "DESKTOP-8ROL9DF//Morinigo David", "");
+                con = new connectionBD("BD_Trasnporte", @"not_CASA\MSSQLSERVER01", "", "");
+            // con = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
             }
             return con;
         }
