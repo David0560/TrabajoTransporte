@@ -11,15 +11,12 @@ namespace CV_Presentacion
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-
-        public static frmLogin login;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(login = new frmLogin());
-            //Application.Run(new FrmMenu());
+            Application.Run(new frmLogin());
         }
     }
 }
