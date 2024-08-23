@@ -42,7 +42,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.0-preview2-24180-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -94,232 +93,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Frm_Configuracion\frm_configuracion2.cs">
+    <Compile Include="Forms\frm_Almacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Configuracion\frm_configuracion2.Designer.cs">
-      <DependentUpon>frm_configuracion2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Empleados\frmConsultaEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Empleados\frmConsultaEmpleados.Designer.cs">
-      <DependentUpon>frmConsultaEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Empleados\frmModificaciónEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Empleados\frmModificaciónEmpleado.Designer.cs">
-      <DependentUpon>frmModificaciónEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_BajaEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_BajaEmpleados.Designer.cs">
-      <DependentUpon>frm_BajaEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Informes\frm_Informes2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Informes\frm_Informes2.Designer.cs">
-      <DependentUpon>frm_Informes2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Registros\frm_registros2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Registros\frm_registros2.Designer.cs">
-      <DependentUpon>frm_registros2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Taller\frm_Almacen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Taller\frm_Almacen.Designer.cs">
+    <Compile Include="Forms\frm_Almacen.Designer.cs">
       <DependentUpon>frm_Almacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Configuracion\frm_Configuracion.cs">
+    <Compile Include="Forms\frm_Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Configuracion\frm_Configuracion.Designer.cs">
+    <Compile Include="Forms\frm_Configuracion.Designer.cs">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_AltaEmpleados.cs">
+    <Compile Include="Forms\frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_AltaEmpleados.Designer.cs">
-      <DependentUpon>frm_AltaEmpleados.cs</DependentUpon>
+    <Compile Include="Forms\frm_Empleados.Designer.cs">
+      <DependentUpon>frm_Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Taller\frm_Taller2.cs">
+    <Compile Include="Forms\frm_Vehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Taller\frm_Taller2.Designer.cs">
-      <DependentUpon>frm_Taller2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos.Designer.cs">
+    <Compile Include="Forms\frm_Vehiculos.Designer.cs">
       <DependentUpon>frm_Vehiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Login\frmGuardarRespuestas.cs">
+    <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Login\frmGuardarRespuestas.Designer.cs">
-      <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmMenu.Designer.cs">
+    <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Login\frmLogin.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Login\frmLogin.Designer.cs">
+    <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Usuario.cs">
+    <Compile Include="Forms\frm_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Usuario.Designer.cs">
+    <Compile Include="Forms\frm_Usuario.Designer.cs">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Informes\frm_Informes.cs">
+    <Compile Include="Forms\frm_Informes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Informes\frm_Informes.Designer.cs">
+    <Compile Include="Forms\frm_Informes.Designer.cs">
       <DependentUpon>frm_Informes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Registros\frm_Registros.cs">
+    <Compile Include="Forms\frm_Registros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Registros\frm_Registros.Designer.cs">
+    <Compile Include="Forms\frm_Registros.Designer.cs">
       <DependentUpon>frm_Registros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Login\frmRecuperarPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Login\frmRecuperarPassword.Designer.cs">
-      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Login\frmRespuestas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Login\frmRespuestas.Designer.cs">
-      <DependentUpon>frmRespuestas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_AltaUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_AltaUsuario.Designer.cs">
-      <DependentUpon>frm_AltaUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Configuracion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Configuracion.Designer.cs">
-      <DependentUpon>frm_Configuracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_PermisosUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_PermisosUsuarios.Designer.cs">
-      <DependentUpon>frm_PermisosUsuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Bloqueos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Bloqueos.Designer.cs">
-      <DependentUpon>frm_Bloqueos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_PermisosGrupos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_PermisosGrupos.Designer.cs">
-      <DependentUpon>frm_PermisosGrupos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_PregunrtasDeSeguridad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_PregunrtasDeSeguridad.Designer.cs">
-      <DependentUpon>frm_PregunrtasDeSeguridad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Unidades\frm_Vehiculos2.Designer.cs">
-      <DependentUpon>frm_Vehiculos2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Frm_Configuracion\frm_configuracion2.resx">
-      <DependentUpon>frm_configuracion2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Empleados\frm_BajaEmpleados.resx">
-      <DependentUpon>frm_BajaEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes2.resx">
-      <DependentUpon>frm_Informes2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Taller\frm_Almacen.resx">
+    <EmbeddedResource Include="Forms\frm_Almacen.resx">
       <DependentUpon>frm_Almacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Configuracion\frm_Configuracion.resx">
+    <EmbeddedResource Include="Forms\frm_Configuracion.resx">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Empleados\frm_AltaEmpleados.resx">
-      <DependentUpon>frm_AltaEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frm_Empleados.resx">
+      <DependentUpon>frm_Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Taller\frm_Taller2.resx">
-      <DependentUpon>frm_Taller2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Unidades\frm_Vehiculos.resx">
+    <EmbeddedResource Include="Forms\frm_Vehiculos.resx">
       <DependentUpon>frm_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Login\frmGuardarRespuestas.resx">
-      <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMenu.resx">
+    <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Login\frmLogin.resx">
+    <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Unidades\frm_Vehiculos2.resx">
-      <DependentUpon>frm_Vehiculos2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_Usuario.resx">
+    <EmbeddedResource Include="Forms\frm_Usuario.resx">
       <DependentUpon>frm_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes.resx">
+    <EmbeddedResource Include="Forms\frm_Informes.resx">
       <DependentUpon>frm_Informes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Registros\frm_Registros.resx">
+    <EmbeddedResource Include="Forms\frm_Registros.resx">
       <DependentUpon>frm_Registros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Login\frmRecuperarPassword.resx">
-      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Login\frmRespuestas.resx">
-      <DependentUpon>frmRespuestas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_AltaUsuario.resx">
-      <DependentUpon>frm_AltaUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_Bloqueos.resx">
-      <DependentUpon>frm_Bloqueos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_Configuracion.resx">
-      <DependentUpon>frm_Configuracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_PermisosGrupos.resx">
-      <DependentUpon>frm_PermisosGrupos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_PermisosUsuarios.resx">
-      <DependentUpon>frm_PermisosUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_PregunrtasDeSeguridad.resx">
-      <DependentUpon>frm_PregunrtasDeSeguridad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -329,7 +184,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -354,21 +208,15 @@
       <Project>{e0ce412a-466e-4059-b763-54b6ced6939c}</Project>
       <Name>CapaSesion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CD_ConexionDatos\CapaDatos.csproj">
+      <Project>{F04CBABA-8F93-4896-BDFE-634C4DB7F8DB}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CL_Negocios\CapaLogica.csproj">
       <Project>{b0c861a2-2319-4758-8b88-8692b664ca4c}</Project>
       <Name>CapaLogica</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pngegg %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-seguridad-641.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\descarga1.png" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
