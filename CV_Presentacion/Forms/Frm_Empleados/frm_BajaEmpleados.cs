@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Frm_Usuario
+namespace CV_Presentacion.Frm_Empleados
 {
-    public partial class Form2 : Form
+    public partial class frm_BajaEmpleados : Form
     {
-        public Form2()
+        public frm_BajaEmpleados()
         {
             InitializeComponent();
-        }
-
-        private void btnGuardarConfiguracion_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

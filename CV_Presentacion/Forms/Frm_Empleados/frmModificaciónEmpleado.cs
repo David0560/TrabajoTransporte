@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Frm_Empleados
+namespace CV_Presentacion.Forms.Frm_Empleados
 {
-    public partial class frm_Empleados2 : Form
+    public partial class frmModificaciónEmpleado : Form
     {
-        public frm_Empleados2()
+        public frmModificaciónEmpleado()
         {
             InitializeComponent();
         }

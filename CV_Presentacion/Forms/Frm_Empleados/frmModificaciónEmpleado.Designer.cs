@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion.Frm_Empleados
+﻿namespace CV_Presentacion.Forms.Frm_Empleados
 {
-    partial class frm_Empleados2
+    partial class frmModificaciónEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(365, 219);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "empleados";
-            // 
-            // frm_Empleados2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Name = "frm_Empleados2";
-            this.Text = "frm_Empleados2";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.Text = "frmModificaciónEmpleado";
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }

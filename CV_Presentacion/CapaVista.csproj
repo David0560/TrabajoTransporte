@@ -100,11 +100,23 @@
     <Compile Include="Forms\Frm_Configuracion\frm_configuracion2.Designer.cs">
       <DependentUpon>frm_configuracion2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_Empleados2.cs">
+    <Compile Include="Forms\Frm_Empleados\frmConsultaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_Empleados2.Designer.cs">
-      <DependentUpon>frm_Empleados2.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Empleados\frmConsultaEmpleados.Designer.cs">
+      <DependentUpon>frmConsultaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Empleados\frmModificaciónEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Empleados\frmModificaciónEmpleado.Designer.cs">
+      <DependentUpon>frmModificaciónEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Empleados\frm_BajaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Empleados\frm_BajaEmpleados.Designer.cs">
+      <DependentUpon>frm_BajaEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Informes\frm_Informes2.cs">
       <SubType>Form</SubType>
@@ -130,11 +142,11 @@
     <Compile Include="Forms\Frm_Configuracion\frm_Configuracion.Designer.cs">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_Empleados.cs">
+    <Compile Include="Forms\Frm_Empleados\frm_AltaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Empleados\frm_Empleados.Designer.cs">
-      <DependentUpon>frm_Empleados.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Empleados\frm_AltaEmpleados.Designer.cs">
+      <DependentUpon>frm_AltaEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Taller\frm_Taller2.cs">
       <SubType>Form</SubType>
@@ -243,8 +255,8 @@
     <EmbeddedResource Include="Forms\Frm_Configuracion\frm_configuracion2.resx">
       <DependentUpon>frm_configuracion2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Empleados\frm_Empleados2.resx">
-      <DependentUpon>frm_Empleados2.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_Empleados\frm_BajaEmpleados.resx">
+      <DependentUpon>frm_BajaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes2.resx">
       <DependentUpon>frm_Informes2.cs</DependentUpon>
@@ -255,8 +267,8 @@
     <EmbeddedResource Include="Forms\Frm_Configuracion\frm_Configuracion.resx">
       <DependentUpon>frm_Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Empleados\frm_Empleados.resx">
-      <DependentUpon>frm_Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_Empleados\frm_AltaEmpleados.resx">
+      <DependentUpon>frm_AltaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Taller\frm_Taller2.resx">
       <DependentUpon>frm_Taller2.cs</DependentUpon>

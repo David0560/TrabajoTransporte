@@ -10,6 +10,7 @@ using CV_Presentacion.Frm_Unidades;
 using CV_Presentacion.Forms.Frm_Registros;
 using CV_Presentacion.Forms.Frm_Taller;
 using CV_Presentacion.Forms.Frm_Configuracion;
+using CV_Presentacion.Forms.Frm_Empleados;
 
 namespace CV_Presentacion
 {
@@ -122,12 +123,12 @@ namespace CV_Presentacion
         }
         private void btnEmpleados01_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Empleados(), sender);
+            OpenChildForm(new frm_AltaEmpleados(), sender);
             ocultarSubMenu();
         }
         private void btnEmpleados02_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Empleados2(), sender);
+            OpenChildForm(new frm_BajaEmpleados(), sender);
             ocultarSubMenu();
         }
 

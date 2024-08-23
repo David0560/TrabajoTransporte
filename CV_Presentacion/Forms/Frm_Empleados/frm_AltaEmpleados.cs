@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace CV_Presentacion.Forms
 {
-    public partial class frm_Empleados : Form
+    public partial class frm_AltaEmpleados : Form
     {
 
-        public frm_Empleados()
+        public frm_AltaEmpleados()
         {
             InitializeComponent();
         }
@@ -28,10 +28,20 @@ namespace CV_Presentacion.Forms
 
             string sha = pass.crearSHA256(nombre, passuser);
 
-            textBox3.Text = sha;
+          //  textBox3.Text = sha;
 
             label3.Text = pass.crearCodigoVerificador(sha).ToString(); ;
 
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }
