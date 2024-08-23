@@ -468,7 +468,7 @@
             this.btnInfo02.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnInfo02.Size = new System.Drawing.Size(116, 23);
             this.btnInfo02.TabIndex = 1;
-            this.btnInfo02.Text = "info02";
+            this.btnInfo02.Text = "Actualizar";
             this.btnInfo02.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfo02.UseVisualStyleBackColor = true;
             this.btnInfo02.Click += new System.EventHandler(this.btnInfo02_Click);
@@ -486,7 +486,7 @@
             this.btnInfo01.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnInfo01.Size = new System.Drawing.Size(116, 23);
             this.btnInfo01.TabIndex = 0;
-            this.btnInfo01.Text = "info01";
+            this.btnInfo01.Text = "Alta";
             this.btnInfo01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfo01.UseVisualStyleBackColor = true;
             this.btnInfo01.Click += new System.EventHandler(this.btnInfo01_Click);
@@ -691,7 +691,7 @@
             // 
             // btnSalirUsuario
             // 
-            this.btnSalirUsuario.Location = new System.Drawing.Point(462, 66);
+            this.btnSalirUsuario.Location = new System.Drawing.Point(692, 66);
             this.btnSalirUsuario.Name = "btnSalirUsuario";
             this.btnSalirUsuario.Size = new System.Drawing.Size(130, 23);
             this.btnSalirUsuario.TabIndex = 5;
@@ -704,7 +704,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblHora.Location = new System.Drawing.Point(525, 40);
+            this.lblHora.Location = new System.Drawing.Point(755, 40);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(34, 16);
             this.lblHora.TabIndex = 4;
@@ -715,7 +715,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblFecha.Location = new System.Drawing.Point(510, 12);
+            this.lblFecha.Location = new System.Drawing.Point(740, 12);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(95, 16);
             this.lblFecha.TabIndex = 3;
