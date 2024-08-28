@@ -166,12 +166,6 @@
     <Compile Include="Forms\Frm_Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Usuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Usuario.Designer.cs">
-      <DependentUpon>frm_Usuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Frm_Informes\frm_Informes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,11 +196,11 @@
     <Compile Include="Forms\Frm_Usuario\frm_AltaUsuario.Designer.cs">
       <DependentUpon>frm_AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Configuracion.cs">
+    <Compile Include="Forms\Frm_Usuario\frm_ConfiguracionPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_Usuario\frm_Configuracion.Designer.cs">
-      <DependentUpon>frm_Configuracion.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Usuario\frm_ConfiguracionPass.Designer.cs">
+      <DependentUpon>frm_ConfiguracionPass.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Usuario\frm_PermisosUsuarios.cs">
       <SubType>Form</SubType>
@@ -276,9 +270,6 @@
     <EmbeddedResource Include="Forms\Frm_Unidades\frm_Vehiculos2.resx">
       <DependentUpon>frm_Vehiculos2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_Usuario.resx">
-      <DependentUpon>frm_Usuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes.resx">
       <DependentUpon>frm_Informes.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,8 +288,8 @@
     <EmbeddedResource Include="Forms\Frm_Usuario\frm_Bloqueos.resx">
       <DependentUpon>frm_Bloqueos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Usuario\frm_Configuracion.resx">
-      <DependentUpon>frm_Configuracion.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_Usuario\frm_ConfiguracionPass.resx">
+      <DependentUpon>frm_ConfiguracionPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Usuario\frm_PermisosGrupos.resx">
       <DependentUpon>frm_PermisosGrupos.cs</DependentUpon>

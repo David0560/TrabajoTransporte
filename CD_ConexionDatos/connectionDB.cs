@@ -11,7 +11,7 @@ namespace CD_ConexionDatos
 {
     public class connectionBD
     {
-        // delclaro variables para crear la conexion.
+        // delclaro propiedades para crear la conexion.
         private string Base;
         private string Servidor;
         private string Usuario;

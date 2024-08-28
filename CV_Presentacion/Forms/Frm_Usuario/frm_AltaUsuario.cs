@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CL_Negocios;
 using CapaServicios;
-using Microsoft.VisualBasic;
 using CL_Negocios.Entidades;
+using CL_Negocios.Usuarios;
 
 
 namespace CV_Presentacion.Frm_Usuario
@@ -18,10 +11,14 @@ namespace CV_Presentacion.Frm_Usuario
     public partial class frm_AltaUsuario : Form
     {
         CL_administrarComboBox combo = new CL_administrarComboBox();
-        CL_administrarTablas tabla = new CL_administrarTablas();
-        CL_administrarRegistros registro = new CL_administrarRegistros();
         CS_servicios servicio = new CS_servicios();
+
+        CL_administrarTablas tabla = new CL_administrarTablas();
+        CL_AdministrarUsuario registro = new CL_AdministrarUsuario();
+
         ConfiguracionPassword configure = new ConfiguracionPassword();
+        
+        
         private ConfiguracionPasswordBLL configuracionPasswordBLL;
         private string connectionString = "Data Source=not_CASA\\MSSQLSERVER01;Initial Catalog=BD_Trasnporte;Integrated Security=True;"; //Cambiar el data Source por tu cadena de conexión
 
@@ -72,7 +69,7 @@ namespace CV_Presentacion.Frm_Usuario
                             registro.insertarPermisoPorFamilia(permiso);
                         }
 
-                        registro.LimpiarControlesForm(this);
+                        servicio.LimpiarControlesForm(this);
                     }
                     else
                     {

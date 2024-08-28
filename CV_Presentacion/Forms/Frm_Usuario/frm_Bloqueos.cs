@@ -1,14 +1,8 @@
 ﻿using CapaServicios;
 using CL_Negocios;
+using CL_Negocios.Usuarios;
 using Microsoft.VisualBasic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CV_Presentacion.Frm_Usuario
@@ -18,7 +12,7 @@ namespace CV_Presentacion.Frm_Usuario
         CL_administrarComboBox combo = new CL_administrarComboBox();
         CL_administrarTablas tabla = new CL_administrarTablas();
         CL_administrarTablas tabla2 = new CL_administrarTablas();
-        CL_administrarRegistros registro = new CL_administrarRegistros();
+        CL_AdministrarUsuario registro = new CL_AdministrarUsuario();
         CS_contraseña conta = new CS_contraseña();
         CS_servicios servicio = new CS_servicios();
         ConfiguracionPassword configure = new ConfiguracionPassword();

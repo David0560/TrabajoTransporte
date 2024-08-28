@@ -88,8 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\ConfiguracionPassword.cs" />
-    <Compile Include="CS_contraseña.cs" />
-    <Compile Include="CS_servicios.cs" />
+    <Compile Include="Password\CS_contraseña.cs" />
+    <Compile Include="Servicios_Objetos\CS_servicios.cs" />
     <Compile Include="Entidades\Permisos.cs" />
     <Compile Include="Entidades\Persona.cs" />
     <Compile Include="Entidades\Usuario.cs" />

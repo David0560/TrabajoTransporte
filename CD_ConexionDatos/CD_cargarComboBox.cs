@@ -5,13 +5,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CD_ConexionDatos;
 
 namespace CD_ConexionDatos
 {
     public class CD_cargarComboBox
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
-        public CD_cargarComboBox() { }
 
         public DataTable ObtenerDatosComboBox(string query)
         {
@@ -28,5 +28,4 @@ namespace CD_ConexionDatos
             }
         }
     }
-
 }

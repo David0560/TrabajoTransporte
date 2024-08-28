@@ -263,7 +263,7 @@
             this.btnRegistros02.FlatAppearance.BorderSize = 0;
             this.btnRegistros02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnRegistros02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistros02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistros02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistros02.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRegistros02.Location = new System.Drawing.Point(0, 23);
             this.btnRegistros02.Name = "btnRegistros02";

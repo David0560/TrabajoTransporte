@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.lblVerValor = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,25 +55,6 @@
             this.label6.Size = new System.Drawing.Size(252, 13);
             this.label6.TabIndex = 36;
             this.label6.Text = "Lista de permisos predefinidos por el tipo de usuario.";
-            // 
-            // lblVerValor
-            // 
-            this.lblVerValor.AutoSize = true;
-            this.lblVerValor.Cursor = System.Windows.Forms.Cursors.NoMoveVert;
-            this.lblVerValor.Location = new System.Drawing.Point(259, 420);
-            this.lblVerValor.Name = "lblVerValor";
-            this.lblVerValor.Size = new System.Drawing.Size(35, 13);
-            this.lblVerValor.TabIndex = 35;
-            this.lblVerValor.Text = "label2";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(9, 420);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(29, 13);
-            this.lblDate.TabIndex = 34;
-            this.lblDate.Text = "Dia: ";
             // 
             // txtNombreUsuario
             // 
@@ -212,8 +191,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 476);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblVerValor);
-            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.groupBox1);
@@ -237,8 +214,6 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblVerValor;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -1,6 +1,6 @@
 ﻿namespace CV_Presentacion.Frm_Usuario
 {
-    partial class Form2
+    partial class frm_ConfiguracionPass
     {
         /// <summary>
         /// Required designer variable.
@@ -11,14 +11,6 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
 
@@ -222,7 +214,7 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Control de requisitos para la creacion de password";
             // 
-            // Form2
+            // frm_ConfiguracionPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,8 +238,8 @@
             this.Controls.Add(this.chkNumLetras);
             this.Controls.Add(this.chkMayusMinus);
             this.Controls.Add(this.label9);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "frm_ConfiguracionPass";
+            this.Text = "configuracion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

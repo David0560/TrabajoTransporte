@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CD_ConexionDatos;
+using CD_ConexionDatos.Password;
 
 namespace CL_Negocios
 {
@@ -12,7 +13,7 @@ namespace CL_Negocios
     {
         private CD_Pregunta pregunta = new CD_Pregunta();
         private CD_PreguntaUsuario preguntaUsuario = new CD_PreguntaUsuario();
-        private CD_crearRegistros crearRegistros = new CD_crearRegistros(); // Instancia de CD_crearRegistros
+        private CD_RegistrosPassword _password = new CD_RegistrosPassword();
 
         // Crea una nueva pregunta en la base de datos si el texto no está vacío
         public bool crearNuevaPregunta(string text)
@@ -44,7 +45,7 @@ namespace CL_Negocios
         // Guarda las respuestas de seguridad del usuario en la base de datos
         public void GuardarRespuestasUsuario(string nombreUsuario, List<Tuple<int, string>> preguntasYRespuestas)
         {
-            int idUsuario = crearRegistros.ObtenerIdUsuarioPorNombre(nombreUsuario); // Obtiene el ID del usuario por su nombre
+            int idUsuario = _password.ObtenerIdUsuarioPorNombre(nombreUsuario); // Obtiene el ID del usuario por su nombre
             preguntaUsuario.GuardarRespuestasUsuario(idUsuario, preguntasYRespuestas); // Guarda las respuestas del usuario
         }
 

@@ -19,11 +19,12 @@ namespace CD_ConexionDatos
                 int cantidad;
                 using (SqlCommand comando = new SqlCommand(query, con))
                 {
+                    con.Open();// abro la conexion.
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Add(new SqlParameter("@xid", con));
                     comando.Parameters["@xid"].Value = str1;
-                    con.Open();// abro la conexion.
-                    cantidad = (int)comando.ExecuteScalar(); //                   
+                    cantidad = (int)comando.ExecuteScalar();
+                    con.Close();          
                 }
                 return cantidad;
             }
@@ -120,7 +121,6 @@ namespace CD_ConexionDatos
                 }
             }
         }
-
         public DataTable tablaPermisoDelUsuario(int id_usuario, string query)
         {
             //utilizo el DataReader que fue instanciado antes como dr"

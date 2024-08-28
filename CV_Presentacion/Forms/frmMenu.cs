@@ -67,7 +67,7 @@ namespace CV_Presentacion
         // abrir los formularios del submenu
         private void btmUserAlta_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_AltaUsuario(), sender);
+            OpenChildForm(new Frm_Usuario.frm_AltaUsuario(), sender);
             ocultarSubMenu();
         }
         private void btmUserPermisos_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace CV_Presentacion
         }
         private void btmUserConfiguracion_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Configuracion(), sender);
+            OpenChildForm(new frm_ConfiguracionPass(), sender);
             ocultarSubMenu();
         }
 

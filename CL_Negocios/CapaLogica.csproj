@@ -88,14 +88,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CL_administrarComboBox.cs" />
-    <Compile Include="CL_administrarLogin.cs" />
-    <Compile Include="CL_administrarPreguntas.cs" />
-    <Compile Include="CL_administrarPreguntasUsuario.cs" />
+    <Compile Include="Login\CL_administrarLogin.cs" />
+    <Compile Include="Login\CL_administrarPreguntas.cs" />
+    <Compile Include="Login\CL_administrarPreguntasUsuario.cs" />
     <Compile Include="CL_administrarRegistros.cs" />
     <Compile Include="CL_administrarTablas.cs" />
     <Compile Include="CL_cacheManager.cs" />
-    <Compile Include="ConfiguracionPasswordBLL.cs" />
+    <Compile Include="Configuracion\ConfiguracionPasswordBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios\CL_AdministrarUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -115,6 +116,7 @@
       <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

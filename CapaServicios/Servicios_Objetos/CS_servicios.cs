@@ -11,7 +11,6 @@ namespace CapaServicios
     public class CS_servicios
     {
         public CS_servicios() { }
-
         public void parametrosDataGridView(Control control)
         {
             if (control is DataGridView dataGridView)
@@ -40,5 +39,31 @@ namespace CapaServicios
 
             }
         }
+        public void LimpiarControlesForm(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox textBox)
+                {
+                    textBox.Text = string.Empty; // Limpiar el contenido del TextBox
+                }
+                if (c is ComboBox comboBox)
+                {
+                    comboBox.SelectedIndex = -1; // Resetear la selección del ComboBox
+                }
+                if (c is DataGridView dataGridView)
+                {
+                    dataGridView.DataSource = null; // Eliminar la fuente de datos del DataGridView
+                    dataGridView.Rows.Clear(); // Limpiar las filas en el DataGridView
+                }
+                if (c is MaskedTextBox maskedtextBox)
+                {
+                    maskedtextBox.Text = string.Empty; // Limpiar el contenido del maskedTextBox
+                }
+
+
+            }
+        }
+
     }
 }
