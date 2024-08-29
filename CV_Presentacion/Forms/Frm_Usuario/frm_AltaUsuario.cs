@@ -25,7 +25,7 @@ namespace CV_Presentacion.Frm_Usuario
         public frm_AltaUsuario()
         {
             InitializeComponent();
-            configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
+          
         }
 
         private void frm_AltaUsuario_Load(object sender, EventArgs e)

@@ -52,8 +52,12 @@ namespace CD_ConexionDatos
                 command.Parameters.AddWithValue("@DiasBloqueo", diasBloqueo);
 
                 connection.Open();
-                command.ExecuteNonQuery();
+              //  command.ExecuteNonQuery();
                 int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected == 0)
+                {
+                    throw new Exception("No se actualizó ningún registro en la base de datos.");
+                }
             }
         }
     }

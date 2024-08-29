@@ -24,7 +24,7 @@ namespace CV_Presentacion.Frm_Usuario
         public frm_Bloqueos()
         {
             InitializeComponent();
-            configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
+         
 
         }
 

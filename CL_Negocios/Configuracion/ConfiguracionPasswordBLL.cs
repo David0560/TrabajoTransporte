@@ -8,13 +8,12 @@ namespace CL_Negocios
 {
     public class ConfiguracionPasswordBLL
     {
-        private ConfiguracionPasswordDAL configuracionPasswordDAL;
+        private readonly ConfiguracionPasswordDAL configuracionPasswordDAL;
 
-        public ConfiguracionPasswordBLL(string connectionString)
+        public ConfiguracionPasswordBLL(ConfiguracionPasswordDAL configuracionPasswordDAL)
         {
-            configuracionPasswordDAL = new ConfiguracionPasswordDAL(connectionString);
+            this.configuracionPasswordDAL = configuracionPasswordDAL;
         }
-
         public void GuardarConfiguracion(int minimo, int maximo, int intentos, bool mayusMinus, bool numerosLetras, bool especial, bool dosPasos, bool repetir, bool datosPersonales, bool preguntaSeguridad, bool nuevasPreguntas, bool bloqueoAuto, int diasBloqueo)
         {
             // Aquí podrías implementar lógica adicional antes de guardar en la base de datos, si es necesario
