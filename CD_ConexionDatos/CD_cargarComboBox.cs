@@ -36,7 +36,7 @@ namespace CD_ConexionDatos
                 SqlCommand comando = new SqlCommand(query, con);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add(new SqlParameter("@xid", con));
-                comando.Parameters["@xid"].Value = 1;
+                comando.Parameters["@xid"].Value = id;
                 DataTable tablaDatos = new DataTable();
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 adaptador.Fill(tablaDatos);
