@@ -31,12 +31,13 @@
             this.btnCargarPermiso = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboPermisos = new System.Windows.Forms.ComboBox();
             this.lblTipoUser = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.cboTUsuarios = new System.Windows.Forms.ComboBox();
+            this.dgvPermisosFamilia = new System.Windows.Forms.DataGridView();
             this.btnCargarNuevoRol = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosFamilia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargarPermiso
@@ -67,13 +68,13 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Nuevo permiso:";
             // 
-            // comboBox4
+            // cboPermisos
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(132, 128);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(139, 21);
-            this.comboBox4.TabIndex = 12;
+            this.cboPermisos.FormattingEnabled = true;
+            this.cboPermisos.Location = new System.Drawing.Point(132, 128);
+            this.cboPermisos.Name = "cboPermisos";
+            this.cboPermisos.Size = new System.Drawing.Size(139, 21);
+            this.cboPermisos.TabIndex = 12;
             // 
             // lblTipoUser
             // 
@@ -84,21 +85,22 @@
             this.lblTipoUser.TabIndex = 11;
             this.lblTipoUser.Text = "Tipo de usuario:";
             // 
-            // comboBox3
+            // cboTUsuarios
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(132, 92);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(139, 21);
-            this.comboBox3.TabIndex = 10;
+            this.cboTUsuarios.FormattingEnabled = true;
+            this.cboTUsuarios.Location = new System.Drawing.Point(132, 92);
+            this.cboTUsuarios.Name = "cboTUsuarios";
+            this.cboTUsuarios.Size = new System.Drawing.Size(139, 21);
+            this.cboTUsuarios.TabIndex = 10;
+            this.cboTUsuarios.SelectedIndexChanged += new System.EventHandler(this.cboTUsuarios_SelectedIndexChanged);
             // 
-            // dataGridView3
+            // dgvPermisosFamilia
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(31, 170);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(508, 268);
-            this.dataGridView3.TabIndex = 9;
+            this.dgvPermisosFamilia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPermisosFamilia.Location = new System.Drawing.Point(31, 170);
+            this.dgvPermisosFamilia.Name = "dgvPermisosFamilia";
+            this.dgvPermisosFamilia.Size = new System.Drawing.Size(508, 268);
+            this.dgvPermisosFamilia.TabIndex = 9;
             // 
             // btnCargarNuevoRol
             // 
@@ -109,22 +111,33 @@
             this.btnCargarNuevoRol.Text = "&Guardar";
             this.btnCargarNuevoRol.UseVisualStyleBackColor = true;
             // 
-            // PermisosGrupos
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(464, 455);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // frm_PermisosGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 476);
+            this.ClientSize = new System.Drawing.Size(569, 499);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCargarPermiso);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cboPermisos);
             this.Controls.Add(this.lblTipoUser);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.cboTUsuarios);
+            this.Controls.Add(this.dgvPermisosFamilia);
             this.Controls.Add(this.btnCargarNuevoRol);
-            this.Name = "PermisosGrupos";
+            this.Name = "frm_PermisosGrupos";
             this.Text = "Form4";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.Load += new System.EventHandler(this.frm_PermisosGrupos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermisosFamilia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,10 +148,11 @@
         private System.Windows.Forms.Button btnCargarPermiso;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboPermisos;
         private System.Windows.Forms.Label lblTipoUser;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ComboBox cboTUsuarios;
+        private System.Windows.Forms.DataGridView dgvPermisosFamilia;
         private System.Windows.Forms.Button btnCargarNuevoRol;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

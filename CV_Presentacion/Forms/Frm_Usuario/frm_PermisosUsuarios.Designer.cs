@@ -71,6 +71,7 @@
             this.cboSeleccionarUsuario.Name = "cboSeleccionarUsuario";
             this.cboSeleccionarUsuario.Size = new System.Drawing.Size(201, 21);
             this.cboSeleccionarUsuario.TabIndex = 31;
+            this.cboSeleccionarUsuario.SelectedIndexChanged += new System.EventHandler(this.cboSeleccionarUsuario_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -131,6 +132,7 @@
             this.cboSeleccionarPermiso.Name = "cboSeleccionarPermiso";
             this.cboSeleccionarPermiso.Size = new System.Drawing.Size(201, 21);
             this.cboSeleccionarPermiso.TabIndex = 17;
+            this.cboSeleccionarPermiso.SelectedIndexChanged += new System.EventHandler(this.cboSeleccionarPermiso_SelectedIndexChanged);
             // 
             // btnCargarPermisos
             // 
@@ -168,7 +170,7 @@
             this.lblFilas.TabIndex = 29;
             this.lblFilas.Text = "cantidad de filas";
             // 
-            // PermisosUsuarios
+            // frm_PermisosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,8 +181,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.lblFilas);
-            this.Name = "PermisosUsuarios";
+            this.Name = "frm_PermisosUsuarios";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.frm_PermisosUsuarios_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();

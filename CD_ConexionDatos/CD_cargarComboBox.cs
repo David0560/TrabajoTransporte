@@ -27,5 +27,22 @@ namespace CD_ConexionDatos
                 return tablaDatos;
             }
         }
+
+        public DataTable ObtenerPermisosComboBox(string query, int id)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand(query, con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new SqlParameter("@xid", con));
+                comando.Parameters["@xid"].Value = 1;
+                DataTable tablaDatos = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(tablaDatos);
+                con.Close();
+                return tablaDatos;
+            }
+        }
     }
 }

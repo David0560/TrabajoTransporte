@@ -51,5 +51,11 @@ namespace CL_Negocios
             DataTable data = _crearTablas.listarQuery("spListarPreguntas");
             return data;
         }
+
+        public DataTable nuevoPermisosParaUsuario(int id_usuario)
+        {
+            DataTable data = _crearTablas.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");
+            return data;
+        }
     }
 }
