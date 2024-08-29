@@ -16,5 +16,15 @@ namespace CV_Presentacion.Frm_Empleados
         {
             InitializeComponent();
         }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

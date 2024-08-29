@@ -33,7 +33,7 @@ namespace CV_Presentacion.Frm_Usuario
             // Comportamiento del DatagridView
             //
             servicio.parametrosDataGridView(dgvPermisoUsuario);
-            combo.seleccionCombo(cboEmpleados, "spVerEmpleados");
+            combo.seleccionCombo(cboEmpleados, "spVerUsuario");
             combo.seleccionCombo(cboFamilias, "spVerFamilias");
             mkdVencePass.Text = null;
             mkdVenceUsuario.Text = null; 
