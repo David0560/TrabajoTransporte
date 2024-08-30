@@ -53,6 +53,26 @@ namespace CL_Negocios
 
 
         }
+        public void seleccionarLocalidad(ComboBox combo, int id)
+        {
+            try
+            {
+                combo.DataSource = cn.ObtenerPermisosComboBox("spVerLocalidadPorCiudad", id);
+                // indicamos las tablas a mostrar  y el valor que va a tomar.
+                combo.DisplayMember = "nombre"; // acá indicamos que es lo que queremos visualizar
+                combo.ValueMember = "id"; // en esta nos dice que valor va a tomar ese combo
+                combo.AutoCompleteSource = AutoCompleteSource.ListItems;
+                combo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                combo.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir durante la ejecución de la consulta. 
+                Console.WriteLine("Ocurrió un error: " + ex.Message);
+            }
+
+
+        }
 
 
 
