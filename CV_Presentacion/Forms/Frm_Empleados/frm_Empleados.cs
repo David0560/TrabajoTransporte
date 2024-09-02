@@ -1,8 +1,11 @@
 ﻿using CapaServicios;
 using CL_Negocios;
+using CL_Negocios.Empleados;
+using CL_Negocios.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -25,14 +28,14 @@ namespace CV_Presentacion.Forms
         {
             CS_contraseña pass = new CS_contraseña();
 
-            string nombre = textBox1.Text.ToString();
-            string passuser = textBox2.Text.ToString();
+            string nombre = txtLegajo.Text.ToString();
+            string passuser = txtNombre.Text.ToString();
 
             string sha = pass.crearSHA256(nombre, passuser);
 
-            textBox3.Text = sha;
+            txtApellido.Text = sha;
 
-            label3.Text = pass.crearCodigoVerificador(sha).ToString(); ;
+            lblApellido.Text = pass.crearCodigoVerificador(sha).ToString(); ;
 
 
         }
@@ -62,13 +65,11 @@ namespace CV_Presentacion.Forms
         }
         private void listaPermiso()
         {
-            // Obtener el valor seleccionado del ComboBox
             if (cboCiudad.SelectedItem != null)
             {
                 int valorSeleccionado;
                 if (int.TryParse(cboCiudad.SelectedValue.ToString(), out valorSeleccionado))
                 {
-                    // Llamar a la función con el valor obtenido del ComboBox
                     int valor = Convert.ToInt32(cboCiudad.SelectedValue);
                     combo.seleccionarLocalidad(cboLocalidad, valor); 
 
@@ -85,10 +86,50 @@ namespace CV_Presentacion.Forms
 
         private void cboCiudad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboCiudad.SelectedValue != null) //reparo la falta de seleccion en el combobox.
+            if (cboCiudad.SelectedValue != null) 
             {
                 listaPermiso();
             }
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Capturamos los valores ingresados por el usuario
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string fechaNacimiento = mskFNacimiento.Text;
+                string numeroDocumento = txtNumeroDoc.Text;
+                string calle = txtCalle.Text;
+                string numeroDomicilio = txtNumero.Text;
+                string email = txtEmail.Text;
+
+                int idDocumentoIdent = Convert.ToInt32(cboDocumento.SelectedValue);
+                int idSexo = Convert.ToInt32(cboSexo.SelectedValue);
+                int idLocalidad = Convert.ToInt32(cboCiudad.SelectedValue);
+                int idTarea = Convert.ToInt32(cboTarea.SelectedValue);
+
+                // Crear una instancia de la clase Persona con los datos capturados
+                Persona nuevaPersona = new Persona(nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea);
+
+                // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
+                CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
+                administradorEmpleados.GuardarEmpleado(nuevaPersona);
+
+                MessageBox.Show("Empleado guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al guardar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
+

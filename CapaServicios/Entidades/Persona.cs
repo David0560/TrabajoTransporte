@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CL_Negocios.Entidades
 {
-    internal class Persona
+    public class Persona
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

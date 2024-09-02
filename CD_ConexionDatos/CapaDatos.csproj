@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="CD_cargarComboBox.cs" />
     <Compile Include="CD_crearRegistros.cs" />
+    <Compile Include="Empleados\CD_RegistrarEmpleado.cs" />
     <Compile Include="Login\CD_loginUsuario.cs" />
     <Compile Include="Password\CD_RegistrosPassword.cs" />
     <Compile Include="CD_Permisos\CD_RegistrosPermisos.cs" />
@@ -125,7 +126,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Empleados\" />
     <Folder Include="Taller\" />
     <Folder Include="Vehiculos\" />
   </ItemGroup>

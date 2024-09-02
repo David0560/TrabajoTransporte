@@ -111,7 +111,7 @@
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 805);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 850);
             this.pnlMenu.TabIndex = 1;
             // 
             // pnlConfiguracion
@@ -722,7 +722,7 @@
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1251, 152);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1268, 152);
             this.pnlBarraTitulo.TabIndex = 2;
             // 
             // btnSalirUsuario
@@ -805,7 +805,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 152);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1251, 805);
+            this.panelMenu.Size = new System.Drawing.Size(1268, 850);
             this.panelMenu.TabIndex = 3;
             // 
             // pictureBox1
@@ -829,7 +829,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1251, 957);
+            this.ClientSize = new System.Drawing.Size(1268, 1002);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlBarraTitulo);
             this.HelpButton = true;
