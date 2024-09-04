@@ -100,7 +100,7 @@ namespace CV_Presentacion
         // submenu
         private void btnInformes_Click_1(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlInformes);
+            mostrarSubMenu(pnlAltas);
 
         }
         private void btnInfo01_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace CV_Presentacion
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlEmpleados);
+            mostrarSubMenu(pnlDocumentacion);
         }
         private void btnEmpleados01_Click(object sender, EventArgs e)
         {
@@ -134,7 +134,7 @@ namespace CV_Presentacion
 
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlVehiculos);
+            mostrarSubMenu(pnlOperaciones);
         }
         private void btnUnidades01_Click(object sender, EventArgs e)
         {
@@ -151,7 +151,7 @@ namespace CV_Presentacion
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlRegistros);
+            mostrarSubMenu(pnlInformes);
         }
 
         private void btnRegistros01_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace CV_Presentacion
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlAlmacen);
+            mostrarSubMenu(pnlTaller);
         }
 
         private void btnTaller01_Click(object sender, EventArgs e)
@@ -217,29 +217,29 @@ namespace CV_Presentacion
         private void diseñoSubMenu()
         {
             pnlUsuario.Visible = false;
-            pnlInformes.Visible = false;
+            pnlAltas.Visible = false;
             pnlConfiguracion.Visible = false;
-            pnlEmpleados.Visible = false;
-            pnlRegistros.Visible = false;
-            pnlAlmacen.Visible = false;
-            pnlVehiculos.Visible = false;
+            pnlDocumentacion.Visible = false;
+            pnlInformes.Visible = false;
+            pnlTaller.Visible = false;
+            pnlOperaciones.Visible = false;
         }
         private void ocultarSubMenu()
         {
             if (pnlUsuario.Visible==true)
                 pnlUsuario.Visible = false;
-            if (pnlInformes.Visible == true)
-                pnlInformes.Visible = false; 
+            if (pnlAltas.Visible == true)
+                pnlAltas.Visible = false; 
             if (pnlConfiguracion.Visible == true)
                 pnlConfiguracion.Visible = false; 
-            if (pnlEmpleados.Visible == true)
-                pnlEmpleados.Visible = false; 
-            if (pnlRegistros.Visible == true)
-                pnlRegistros.Visible = false; 
-            if (pnlAlmacen.Visible == true)
-                pnlAlmacen.Visible = false;
-            if (pnlVehiculos.Visible==true)
-                pnlVehiculos.Visible = false;
+            if (pnlDocumentacion.Visible == true)
+                pnlDocumentacion.Visible = false; 
+            if (pnlInformes.Visible == true)
+                pnlInformes.Visible = false; 
+            if (pnlTaller.Visible == true)
+                pnlTaller.Visible = false;
+            if (pnlOperaciones.Visible==true)
+                pnlOperaciones.Visible = false;
         }
 
         private void mostrarSubMenu( Panel subMenu)
@@ -254,7 +254,6 @@ namespace CV_Presentacion
                 subMenu.Visible = false;
             }
         }
-
     }
 }
 

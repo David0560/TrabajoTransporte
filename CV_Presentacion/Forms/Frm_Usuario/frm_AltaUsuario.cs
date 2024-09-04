@@ -29,11 +29,14 @@ namespace CV_Presentacion.Frm_Usuario
         }
 
         private void frm_AltaUsuario_Load(object sender, EventArgs e)
-        {   //
+        {
+
+            configure.Configuracion(4, 8, true, true, false);
+            //
             // Comportamiento del DatagridView
             //
             servicio.parametrosDataGridView(dgvPermisoUsuario);
-            combo.seleccionCombo(cboEmpleados, "spVerUsuario");
+            combo.seleccionCombo(cboEmpleados, "spVerEmpleados");
             combo.seleccionCombo(cboFamilias, "spVerFamilias");
             mkdVencePass.Text = null;
             mkdVenceUsuario.Text = null; 

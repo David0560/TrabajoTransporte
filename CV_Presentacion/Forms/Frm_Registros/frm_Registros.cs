@@ -16,5 +16,11 @@ namespace CV_Presentacion
         {
             InitializeComponent();
         }
+
+        private void frm_Registros_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

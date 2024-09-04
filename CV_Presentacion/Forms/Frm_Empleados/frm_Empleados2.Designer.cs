@@ -77,16 +77,15 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(434, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(311, 272);
             this.dataGridView1.TabIndex = 46;
             // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(65, 18);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(334, 20);
+            this.textBox10.Size = new System.Drawing.Size(229, 20);
             this.textBox10.TabIndex = 38;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label4
             // 
@@ -101,7 +100,7 @@
             // 
             this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.Usuario;
             this.pictureBox1.Location = new System.Drawing.Point(294, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(99, 72);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,7 +109,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(379, 367);
+            this.button3.Location = new System.Drawing.Point(254, 367);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(69, 27);
             this.button3.TabIndex = 49;
@@ -119,7 +118,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(304, 367);
+            this.button2.Location = new System.Drawing.Point(179, 367);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(69, 27);
             this.button2.TabIndex = 48;
@@ -171,7 +170,7 @@
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Location = new System.Drawing.Point(465, 11);
+            this.groupBox1.Location = new System.Drawing.Point(343, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -310,7 +309,7 @@
             this.grpboxDireccion.Controls.Add(this.label13);
             this.grpboxDireccion.Controls.Add(this.textBox5);
             this.grpboxDireccion.Controls.Add(this.label10);
-            this.grpboxDireccion.Location = new System.Drawing.Point(465, 234);
+            this.grpboxDireccion.Location = new System.Drawing.Point(343, 234);
             this.grpboxDireccion.Name = "grpboxDireccion";
             this.grpboxDireccion.Size = new System.Drawing.Size(422, 160);
             this.grpboxDireccion.TabIndex = 50;
@@ -406,17 +405,16 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(434, 52);
+            this.groupBox2.Size = new System.Drawing.Size(311, 52);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // frm_Empleados2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 410);
+            this.ClientSize = new System.Drawing.Size(782, 410);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpboxDireccion);

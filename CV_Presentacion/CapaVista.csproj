@@ -246,6 +246,9 @@
     <EmbeddedResource Include="Forms\Frm_Informes\frm_Informes2.resx">
       <DependentUpon>frm_Informes2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Registros\frm_registros2.resx">
+      <DependentUpon>frm_registros2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Taller\frm_Almacen.resx">
       <DependentUpon>frm_Almacen.cs</DependentUpon>
     </EmbeddedResource>
