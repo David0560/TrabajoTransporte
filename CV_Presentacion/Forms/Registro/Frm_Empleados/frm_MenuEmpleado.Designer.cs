@@ -28,34 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlFormulario2 = new System.Windows.Forms.Panel();
-            this.pnlPanel1 = new System.Windows.Forms.Panel();
+            this.pnlFormulario02 = new System.Windows.Forms.Panel();
+            this.pnlBoton = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pnlPanel1.SuspendLayout();
+            this.pnlBoton.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlFormulario2
+            // pnlFormulario02
             // 
-            this.pnlFormulario2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormulario2.Location = new System.Drawing.Point(0, 27);
-            this.pnlFormulario2.Name = "pnlFormulario2";
-            this.pnlFormulario2.Size = new System.Drawing.Size(800, 423);
-            this.pnlFormulario2.TabIndex = 3;
-            this.pnlFormulario2.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFormulario2_Paint);
+            this.pnlFormulario02.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFormulario02.Location = new System.Drawing.Point(0, 27);
+            this.pnlFormulario02.Name = "pnlFormulario02";
+            this.pnlFormulario02.Size = new System.Drawing.Size(584, 434);
+            this.pnlFormulario02.TabIndex = 3;
             // 
-            // pnlPanel1
+            // pnlBoton
             // 
-            this.pnlPanel1.Controls.Add(this.button3);
-            this.pnlPanel1.Controls.Add(this.button2);
-            this.pnlPanel1.Controls.Add(this.button1);
-            this.pnlPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPanel1.Location = new System.Drawing.Point(0, 0);
-            this.pnlPanel1.Name = "pnlPanel1";
-            this.pnlPanel1.Size = new System.Drawing.Size(800, 27);
-            this.pnlPanel1.TabIndex = 2;
-            this.pnlPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanel1_Paint);
+            this.pnlBoton.Controls.Add(this.button3);
+            this.pnlBoton.Controls.Add(this.button2);
+            this.pnlBoton.Controls.Add(this.button1);
+            this.pnlBoton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBoton.Location = new System.Drawing.Point(0, 0);
+            this.pnlBoton.Name = "pnlBoton";
+            this.pnlBoton.Size = new System.Drawing.Size(584, 27);
+            this.pnlBoton.TabIndex = 2;
             // 
             // button3
             // 
@@ -91,20 +89,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlFormulario2);
-            this.Controls.Add(this.pnlPanel1);
+            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.pnlFormulario02);
+            this.Controls.Add(this.pnlBoton);
             this.Name = "frm_MenuEmpleados";
             this.Text = "frm_MenuEmpleado";
-            this.pnlPanel1.ResumeLayout(false);
+            this.pnlBoton.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlFormulario2;
-        private System.Windows.Forms.Panel pnlPanel1;
+        private System.Windows.Forms.Panel pnlFormulario02;
+        private System.Windows.Forms.Panel pnlBoton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

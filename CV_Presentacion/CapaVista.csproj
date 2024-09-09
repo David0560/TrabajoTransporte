@@ -384,6 +384,9 @@
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.resx">
       <DependentUpon>frm_MenuCierrePlanilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_PlanillaSalida.resx">
+      <DependentUpon>frm_PlanillaSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.resx">
       <DependentUpon>frm_MenuLicenciaEmpleado.cs</DependentUpon>
     </EmbeddedResource>

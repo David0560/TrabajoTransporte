@@ -38,22 +38,18 @@ namespace CV_Presentacion
             lblFecha.Text = DateTime.Now.ToShortDateString();// coloco la hora actual de la pc en el label
             lblHora.Text = DateTime.Now.ToLongTimeString();
         }
-
         private void btnSalirUsuario_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas por Cerrar la sesion, ¿Estas seguro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
         }
-        //
-        //llamados a formularios a menu
-        //
         private void OpenChildForm(Form childForm, object sender)
         {
             if (activeForm != null)
             {
-                
+
                 activeForm.Close();
-                
+
             }
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -66,7 +62,9 @@ namespace CV_Presentacion
             lblTitulo.Text = childForm.Text;
 
         }
-
+        //
+        //llamados a formularios a menu
+        //
         private void diseñoSubMenu()
         {
             pnlUsuario.Visible = false;
@@ -106,10 +104,6 @@ namespace CV_Presentacion
                 subMenu.Visible = false;
             }
         }
-
-
-
-
         //
         // abrir el submenu correspondiente al boton del mismo.
         //
@@ -151,7 +145,6 @@ namespace CV_Presentacion
         //
 
         // Usuarios
-
         private void btmUserAlta_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Frm_Usuario.frm_AltaUsuario(), sender);
@@ -184,7 +177,6 @@ namespace CV_Presentacion
         }
 
         // Registros
-
         private void btnInfo01_Click(object sender, EventArgs e) //Empleados
         {
             OpenChildForm(new frm_MenuEmpleados(), sender);
@@ -202,7 +194,6 @@ namespace CV_Presentacion
         }
 
         //Documentacion
-
         private void btnEmpleados01_Click(object sender, EventArgs e) //LicenciaEmpleado
         {
             OpenChildForm(new frm_MenuLicenciaEmpleado(), sender);
@@ -242,7 +233,6 @@ namespace CV_Presentacion
         */
 
         //Informes
-
         private void btnRegistros01_Click(object sender, EventArgs e) // Estadisticas
         {
             OpenChildForm(new frm_Estadisticas(), sender);
@@ -255,7 +245,6 @@ namespace CV_Presentacion
         }
 
         //Diarias
-
         private void btnTaller01_Click(object sender, EventArgs e) // Crear Grilla
         {
             OpenChildForm(new frm_EstimarGrilla(), sender);
@@ -273,7 +262,6 @@ namespace CV_Presentacion
         }
 
         // Taller
-
         private void btnTallerCargaInsumos_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_MenuCargarInsumos(), sender);
@@ -291,10 +279,14 @@ namespace CV_Presentacion
         }
 
         // Ajustes
-
         private void btnAjustActPass_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Actualizar(), sender);
+            ocultarSubMenu();
+        }
+        private void btnAjustConfig_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_ConfigPrincipal(), sender);
             ocultarSubMenu();
         }
         /*private void btnAjustConfig_Click(object sender, EventArgs e)
@@ -303,11 +295,7 @@ namespace CV_Presentacion
             ocultarSubMenu();
         }*/
 
-        private void btnAjustConfig_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_ConfigPrincipal(), sender);
-            ocultarSubMenu();
-        }
+
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaSesion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,32 @@ namespace CV_Presentacion.Forms.Registro.Frm_Empleados
 {
     public partial class frm_MenuEmpleados : Form
     {
+
+        private Form activeForm;
+
         public frm_MenuEmpleados()
         {
             InitializeComponent();
         }
-
-        private void pnlFormulario2_Paint(object sender, PaintEventArgs e)
+        private void OpenChildForm(Form childForm, object sender)
         {
+            if (activeForm != null)
+            {
+
+                activeForm.Close();
+
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnlBoton.Controls.Add(childForm);
+            this.pnlBoton.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
 
         }
 
-        private void pnlPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }
