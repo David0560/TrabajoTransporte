@@ -56,7 +56,7 @@ namespace CV_Presentacion
                     break;
 
                 case 3:
-                    MessageBox.Show("Usuario Bolqueado, Comuniquese con su administrador", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Usuario Bloqueado, Comuniquese con su administrador", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtUsuario.Clear();
                     txtPassword.Clear();
                     txtUsuario.Focus();

@@ -9,16 +9,12 @@ namespace CD_ConexionDatos
 {
     public class ConfiguracionPasswordDAL
     {
-        private string connectionString;
+        SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
 
-        public ConfiguracionPasswordDAL(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
 
         public void GuardarConfiguracion(int minimo, int maximo, int intentos, bool mayusMinus, bool numerosLetras, bool especial, bool dosPasos, bool repetir, bool datosPersonales, bool preguntaSeguridad, bool nuevasPreguntas, bool bloqueoAuto, int diasBloqueo)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (con = connectionBD.CreaInstacia().CrearConexion())
             {
                 string query = @"UPDATE Configuracion_password SET 
                                 valor_minimo_caracteres = @Minimo,
@@ -36,24 +32,24 @@ namespace CD_ConexionDatos
                                 dias_para_bloqueo = @DiasBloqueo
                                 WHERE id = 1"; // Suponiendo que hay un único registro en la tabla
 
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Minimo", minimo);
-                command.Parameters.AddWithValue("@Maximo", maximo);
-                command.Parameters.AddWithValue("@Intentos", intentos);
-                command.Parameters.AddWithValue("@MayusMinus", mayusMinus);
-                command.Parameters.AddWithValue("@NumerosLetras", numerosLetras);
-                command.Parameters.AddWithValue("@Especial", especial);
-                command.Parameters.AddWithValue("@DosPasos", dosPasos);
-                command.Parameters.AddWithValue("@Repetir", repetir);
-                command.Parameters.AddWithValue("@DatosPersonales", datosPersonales);
-                command.Parameters.AddWithValue("@PreguntaSeguridad", preguntaSeguridad);
-                command.Parameters.AddWithValue("@NuevasPreguntas", nuevasPreguntas);
-                command.Parameters.AddWithValue("@BloqueoAuto", bloqueoAuto);
-                command.Parameters.AddWithValue("@DiasBloqueo", diasBloqueo);
+                SqlCommand comando = new SqlCommand(query, con);
+                comando.Parameters.AddWithValue("@Minimo", minimo);
+                comando.Parameters.AddWithValue("@Maximo", maximo);
+                comando.Parameters.AddWithValue("@Intentos", intentos);
+                comando.Parameters.AddWithValue("@MayusMinus", mayusMinus);
+                comando.Parameters.AddWithValue("@NumerosLetras", numerosLetras);
+                comando.Parameters.AddWithValue("@Especial", especial);
+                comando.Parameters.AddWithValue("@DosPasos", dosPasos);
+                comando.Parameters.AddWithValue("@Repetir", repetir);
+                comando.Parameters.AddWithValue("@DatosPersonales", datosPersonales);
+                comando.Parameters.AddWithValue("@PreguntaSeguridad", preguntaSeguridad);
+                comando.Parameters.AddWithValue("@NuevasPreguntas", nuevasPreguntas);
+                comando.Parameters.AddWithValue("@BloqueoAuto", bloqueoAuto);
+                comando.Parameters.AddWithValue("@DiasBloqueo", diasBloqueo);
 
-                connection.Open();
-                command.ExecuteNonQuery();
-                int rowsAffected = command.ExecuteNonQuery();
+                con.Open();
+                comando.ExecuteNonQuery();
+                int rowsAffected = comando.ExecuteNonQuery();
             }
         }
     }

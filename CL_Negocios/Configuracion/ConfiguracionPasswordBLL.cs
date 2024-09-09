@@ -10,9 +10,9 @@ namespace CL_Negocios
     {
         private ConfiguracionPasswordDAL configuracionPasswordDAL;
 
-        public ConfiguracionPasswordBLL(string connectionString)
+        public ConfiguracionPasswordBLL()
         {
-            configuracionPasswordDAL = new ConfiguracionPasswordDAL(connectionString);
+            configuracionPasswordDAL = new ConfiguracionPasswordDAL();
         }
 
         public void GuardarConfiguracion(int minimo, int maximo, int intentos, bool mayusMinus, bool numerosLetras, bool especial, bool dosPasos, bool repetir, bool datosPersonales, bool preguntaSeguridad, bool nuevasPreguntas, bool bloqueoAuto, int diasBloqueo)
@@ -23,4 +23,5 @@ namespace CL_Negocios
             configuracionPasswordDAL.GuardarConfiguracion(minimo, maximo, intentos, mayusMinus, numerosLetras, especial, dosPasos, repetir, datosPersonales, preguntaSeguridad, nuevasPreguntas, bloqueoAuto, diasBloqueo);
         }
     }
+    
 }
