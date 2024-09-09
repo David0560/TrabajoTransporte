@@ -130,10 +130,7 @@ namespace CV_Presentacion.Forms
             }
         }
 
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
 
-        }
     }
 }
 
