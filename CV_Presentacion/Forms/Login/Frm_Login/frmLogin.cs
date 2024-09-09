@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,9 +18,19 @@ namespace CV_Presentacion
     public partial class frmLogin : Form
     {
         CL_administrarLogin login = new CL_administrarLogin();
+        #region Movimiento Ventana
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #endregion
         public frmLogin()
         {
             InitializeComponent();
+            #region Mover Panel
+            pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
+            #endregion
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -101,7 +112,11 @@ namespace CV_Presentacion
             this.Show();
             txtUsuario.Focus();
         }
-
+        private void pnlBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void lblRecupero_Click(object sender, EventArgs e)
         {
             Program.login.Hide();
@@ -119,6 +134,16 @@ namespace CV_Presentacion
         {
             pbxMostrarPass.BringToFront();
             txtPassword.PasswordChar = '*';
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
