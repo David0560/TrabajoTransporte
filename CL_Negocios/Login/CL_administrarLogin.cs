@@ -33,9 +33,7 @@ namespace CL_Negocios
             {
                 String ContraseñaUsuario = contraseña.crearSHA256(nombreUsuario, password);
                 int codigo = contraseña.crearCodigoVerificador(ContraseñaUsuario);
-
                 DataTable tablaValores = _revisarLogin.valoresParaLogin(valor);
-
                 if (ContraseñaUsuario == tablaValores.Rows[0][0].ToString()) // valido password
                 {
                     if (codigo == Convert.ToInt32(tablaValores.Rows[0][2])) // valido codigo verificador

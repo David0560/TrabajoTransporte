@@ -2,14 +2,15 @@
 using System;
 using System.Windows.Forms;
 using CapaSesion;
-using System.Runtime.InteropServices.ComTypes;
 using CV_Presentacion.Frm_Usuario;
 using CV_Presentacion.Frm_Informes;
-using CV_Presentacion.Frm_Empleados;
-using CV_Presentacion.Frm_Unidades;
-using CV_Presentacion.Forms.Frm_Registros;
+using CV_Presentacion.Forms.Registro.Frm_Empleados;
 using CV_Presentacion.Forms.Frm_Taller;
-using CV_Presentacion.Forms.Frm_Configuracion;
+using CV_Presentacion.Forms.Registro.Frm_Proveedores;
+using CV_Presentacion.Forms.Registro.Frm_Vehiculos;
+using CV_Presentacion.Forms.Documentacion;
+using CV_Presentacion.Forms.Diaria.Frm_Diaria;
+using CV_Presentacion.Forms.Ajustes.Frm_Ajustes;
 
 namespace CV_Presentacion
 {
@@ -32,13 +33,20 @@ namespace CV_Presentacion
             lblTipoUsuario.Text = UsuarioLoginCache.Familia;
 
         }
+        private void tmrFecha_Tick(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToShortDateString();// coloco la hora actual de la pc en el label
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+        }
 
         private void btnSalirUsuario_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas por Cerrar la sesion, ¿Estas seguro?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
         }
+        //
         //llamados a formularios a menu
+        //
         private void OpenChildForm(Form childForm, object sender)
         {
             if (activeForm != null)
@@ -58,13 +66,92 @@ namespace CV_Presentacion
             lblTitulo.Text = childForm.Text;
 
         }
-        
+
+        private void diseñoSubMenu()
+        {
+            pnlUsuario.Visible = false;
+            pnlRegistros.Visible = false;
+            pnlTaller.Visible = false;
+            pnlDocumentacion.Visible = false;
+            pnlInformes.Visible = false;
+            pnlDiaria.Visible = false;
+            pnlAjuestes.Visible = false;
+        }
+        private void ocultarSubMenu()
+        {
+            if (pnlUsuario.Visible == true)
+                pnlUsuario.Visible = false;
+            if (pnlRegistros.Visible == true)
+                pnlRegistros.Visible = false;
+            if (pnlTaller.Visible == true)
+                pnlTaller.Visible = false;
+            if (pnlDocumentacion.Visible == true)
+                pnlDocumentacion.Visible = false;
+            if (pnlInformes.Visible == true)
+                pnlInformes.Visible = false;
+            if (pnlDiaria.Visible == true)
+                pnlDiaria.Visible = false;
+            if (pnlAjuestes.Visible == true)
+                pnlAjuestes.Visible = false;
+        }
+        private void mostrarSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                ocultarSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
+
+
+
+        //
         // abrir el submenu correspondiente al boton del mismo.
+        //
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            activeForm.Close();
+        }
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             mostrarSubMenu(pnlUsuario);
         }
-        // abrir los formularios del submenu
+        private void btnInformes_Click_1(object sender, EventArgs e)
+        {
+            mostrarSubMenu(pnlRegistros);
+
+        }
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu(pnlDocumentacion);
+        }
+        private void btnRegistro_Click(object sender, EventArgs e) //Boton Informes
+        {
+            mostrarSubMenu(pnlInformes);
+        }
+        private void btnAlmacen_Click(object sender, EventArgs e) // Boton Diaria
+        {
+            mostrarSubMenu(pnlDiaria);
+        }
+        private void btnConfiguracion_Click(object sender, EventArgs e) // boton Taller
+        {
+            mostrarSubMenu(pnlTaller);
+        }
+        private void btnAjustes_Click(object sender, EventArgs e) 
+        {
+            mostrarSubMenu(pnlAjuestes);
+        }
+        //
+        // Submenu - abrir los formularios
+        //
+
+        // Usuarios
+
         private void btmUserAlta_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Frm_Usuario.frm_AltaUsuario(), sender);
@@ -96,163 +183,130 @@ namespace CV_Presentacion
             ocultarSubMenu();
         }
 
+        // Registros
 
-        // submenu
-        private void btnInformes_Click_1(object sender, EventArgs e)
+        private void btnInfo01_Click(object sender, EventArgs e) //Empleados
         {
-            mostrarSubMenu(pnlAltas);
-
+            OpenChildForm(new frm_MenuEmpleados(), sender);
+            ocultarSubMenu();
         }
-        private void btnInfo01_Click(object sender, EventArgs e)
+        private void btnRegProveedores_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_informes(), sender);
+            OpenChildForm(new frm_MenuProveedores(), sender);
+            ocultarSubMenu();
+        } 
+        private void btnRegVehiculos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_MenuVehiculos(), sender);
             ocultarSubMenu();
         }
 
-        private void btnInfo02_Click(object sender, EventArgs e)
+        //Documentacion
+
+        private void btnEmpleados01_Click(object sender, EventArgs e) //LicenciaEmpleado
         {
-            OpenChildForm(new frm_Informes2(), sender);
+            OpenChildForm(new frm_MenuLicenciaEmpleado(), sender);
+            ocultarSubMenu();
+        }
+        private void btnDocTurno_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_MenuTurnosTrabajo(), sender);
+            ocultarSubMenu();
+        }
+        private void btnDocUnidad_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_MenuUnidad(), sender);
+            ocultarSubMenu();
+        }
+        private void btnDocRamales_Click(object sender, EventArgs e)
+        {
+
+            OpenChildForm(new frm_MenuRamales(), sender);
+            ocultarSubMenu();
+        }
+        private void btnDocVtv_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_ActualizarVtv(), sender);
+            ocultarSubMenu();
+        }
+        private void btnDocRegistro_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_ActualizarRegistro(), sender);
+            ocultarSubMenu();
+        }
+        /*private void btnDocRegistro_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_ActualizarRegistro(), sender);
+            ocultarSubMenu();
+
+        */
+
+        //Informes
+
+        private void btnRegistros01_Click(object sender, EventArgs e) // Estadisticas
+        {
+            OpenChildForm(new frm_Estadisticas(), sender);
+            ocultarSubMenu();
+        }
+        private void btnRegistros02_Click(object sender, EventArgs e) // informer
+        {
+            OpenChildForm(new frm_Informes(), sender);
             ocultarSubMenu();
         }
 
+        //Diarias
 
-        private void btnEmpleados_Click(object sender, EventArgs e)
+        private void btnTaller01_Click(object sender, EventArgs e) // Crear Grilla
         {
-            mostrarSubMenu(pnlDocumentacion);
-        }
-        private void btnEmpleados01_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Empleados(), sender);
+            OpenChildForm(new frm_EstimarGrilla(), sender);
             ocultarSubMenu();
         }
-        private void btnEmpleados02_Click(object sender, EventArgs e)
+        private void btnTaller02_Click(object sender, EventArgs e) // Planilla Salida
         {
-            OpenChildForm(new frm_Empleados2(), sender);
+            OpenChildForm(new frm_PlanillaSalida(), sender);
             ocultarSubMenu();
         }
-
-
-        private void btnVehiculo_Click(object sender, EventArgs e)
+        private void btnDiaPlanillaC_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlOperaciones);
-        }
-        private void btnUnidades01_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Vehiculos(), sender);
-            ocultarSubMenu();
-        }
-        private void btnUnidades02_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Vehiculos2(), sender);
+            OpenChildForm(new frm_MenuCierrePlanilla(), sender);
             ocultarSubMenu();
         }
 
+        // Taller
 
-
-        private void btnRegistro_Click(object sender, EventArgs e)
+        private void btnTallerCargaInsumos_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlInformes);
-        }
-
-        private void btnRegistros01_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Registros(), sender);
+            OpenChildForm(new frm_MenuCargarInsumos(), sender);
             ocultarSubMenu();
         }
-        private void btnRegistros02_Click(object sender, EventArgs e)
+        private void btnConfig02_Click(object sender, EventArgs e) // Stock
         {
-            OpenChildForm(new frm_registros2(), sender);
+            OpenChildForm(new frm_Stock(), sender);
             ocultarSubMenu();
         }
-
-
-
-
-        private void btnAlmacen_Click(object sender, EventArgs e)
+        private void btnTallerMecanica_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlTaller);
-        }
-
-        private void btnTaller01_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Almacen(), sender);
-            ocultarSubMenu();
-        }
-        private void btnTaller02_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Taller2(), sender);
+            OpenChildForm(new frm_MenuMecanica(), sender);
             ocultarSubMenu();
         }
 
+        // Ajustes
 
-        private void btnConfiguracion_Click(object sender, EventArgs e)
+        private void btnAjustActPass_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu(pnlConfiguracion);
-        }
-
-        private void btnConfig01_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Configuracion(), sender);
+            OpenChildForm(new frm_Actualizar(), sender);
             ocultarSubMenu();
         }
-
-        private void btnConfig02_Click(object sender, EventArgs e)
+        /*private void btnAjustConfig_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_configuracion2(), sender);
+            OpenChildForm(new frm_ConfigPrincipal(), sender);
             ocultarSubMenu();
-        }
+        }*/
 
-
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void btnAjustConfig_Click_1(object sender, EventArgs e)
         {
-            activeForm.Close();
-        }
-
-        private void tmrFecha_Tick(object sender, EventArgs e)
-        {
-            lblFecha.Text = DateTime.Now.ToShortDateString();// coloco la hora actual de la pc en el label
-            lblHora.Text = DateTime.Now.ToLongTimeString();
-        }
-
-        private void diseñoSubMenu()
-        {
-            pnlUsuario.Visible = false;
-            pnlAltas.Visible = false;
-            pnlConfiguracion.Visible = false;
-            pnlDocumentacion.Visible = false;
-            pnlInformes.Visible = false;
-            pnlTaller.Visible = false;
-            pnlOperaciones.Visible = false;
-        }
-        private void ocultarSubMenu()
-        {
-            if (pnlUsuario.Visible==true)
-                pnlUsuario.Visible = false;
-            if (pnlAltas.Visible == true)
-                pnlAltas.Visible = false; 
-            if (pnlConfiguracion.Visible == true)
-                pnlConfiguracion.Visible = false; 
-            if (pnlDocumentacion.Visible == true)
-                pnlDocumentacion.Visible = false; 
-            if (pnlInformes.Visible == true)
-                pnlInformes.Visible = false; 
-            if (pnlTaller.Visible == true)
-                pnlTaller.Visible = false;
-            if (pnlOperaciones.Visible==true)
-                pnlOperaciones.Visible = false;
-        }
-
-        private void mostrarSubMenu( Panel subMenu)
-        {
-            if(subMenu.Visible == false)
-            {
-                ocultarSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
+            OpenChildForm(new frm_ConfigPrincipal(), sender);
+            ocultarSubMenu();
         }
     }
 }
