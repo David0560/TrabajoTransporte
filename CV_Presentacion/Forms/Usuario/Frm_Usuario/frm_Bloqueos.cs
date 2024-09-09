@@ -18,13 +18,12 @@ namespace CV_Presentacion.Frm_Usuario
         ConfiguracionPassword configure = new ConfiguracionPassword();
         CL_administrarPreguntas pre = new CL_administrarPreguntas();
         private ConfiguracionPasswordBLL configuracionPasswordBLL;
-        private string connectionString = "Data Source=not_CASA\\MSSQLSERVER01;Initial Catalog=BD_Trasnporte;Integrated Security=True;"; //Cambiar el data Source por tu cadena de conexión
-
+        
 
         public frm_Bloqueos()
         {
             InitializeComponent();
-            configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
+          
 
         }
 

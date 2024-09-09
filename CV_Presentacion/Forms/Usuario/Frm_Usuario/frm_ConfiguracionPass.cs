@@ -6,18 +6,26 @@ namespace CV_Presentacion.Frm_Usuario
 {
     public partial class frm_ConfiguracionPass : Form
     {
-        private ConfiguracionPasswordBLL configuracionPasswordBLL;
+        ConfiguracionPasswordBLL configuracionPasswordBLL = new ConfiguracionPasswordBLL();
         public frm_ConfiguracionPass()
         {
             InitializeComponent();
+    
+
         }
         private void btnGuardarConfiguracion_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnGuardarConfiguracion_Click_1(object sender, EventArgs e)
         {
 
             try
             {
                 // Obtener valores de los controles del formulario
-                int id = 1;
+             
                 int minimo = Convert.ToInt32(txtMinCaracter.Text);
                 int maximo = Convert.ToInt32(txtMaxCaracter.Text);
                 int intentos = Convert.ToInt32(txtCantIntentos.Text);
@@ -54,8 +62,6 @@ namespace CV_Presentacion.Frm_Usuario
             {
                 MessageBox.Show($"Error al guardar la configuración: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
     }
 }

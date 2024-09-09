@@ -99,6 +99,7 @@
     <Compile Include="CL_administrarTablas.cs" />
     <Compile Include="CL_cacheManager.cs" />
     <Compile Include="Configuracion\ConfiguracionPasswordBLL.cs" />
+    <Compile Include="Login\CL_datospasserroneo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios\CL_AdministrarUsuario.cs" />
   </ItemGroup>
