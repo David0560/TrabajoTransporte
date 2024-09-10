@@ -30,9 +30,9 @@
         {
             this.pnlFormulario2 = new System.Windows.Forms.Panel();
             this.pnlPanel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarMecanica = new System.Windows.Forms.Button();
+            this.btnModificarMecanica = new System.Windows.Forms.Button();
+            this.btnAltaMecanica = new System.Windows.Forms.Button();
             this.pnlPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,44 +46,47 @@
             // 
             // pnlPanel1
             // 
-            this.pnlPanel1.Controls.Add(this.button3);
-            this.pnlPanel1.Controls.Add(this.button2);
-            this.pnlPanel1.Controls.Add(this.button1);
+            this.pnlPanel1.Controls.Add(this.btnBuscarMecanica);
+            this.pnlPanel1.Controls.Add(this.btnModificarMecanica);
+            this.pnlPanel1.Controls.Add(this.btnAltaMecanica);
             this.pnlPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPanel1.Location = new System.Drawing.Point(0, 0);
             this.pnlPanel1.Name = "pnlPanel1";
             this.pnlPanel1.Size = new System.Drawing.Size(800, 27);
             this.pnlPanel1.TabIndex = 2;
             // 
-            // button3
+            // btnBuscarMecanica
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Location = new System.Drawing.Point(150, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBuscarMecanica.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBuscarMecanica.Location = new System.Drawing.Point(150, 0);
+            this.btnBuscarMecanica.Name = "btnBuscarMecanica";
+            this.btnBuscarMecanica.Size = new System.Drawing.Size(75, 27);
+            this.btnBuscarMecanica.TabIndex = 2;
+            this.btnBuscarMecanica.Text = "Buscar";
+            this.btnBuscarMecanica.UseVisualStyleBackColor = true;
+            this.btnBuscarMecanica.Click += new System.EventHandler(this.btnBuscarMecanica_Click);
             // 
-            // button2
+            // btnModificarMecanica
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(75, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificarMecanica.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnModificarMecanica.Location = new System.Drawing.Point(75, 0);
+            this.btnModificarMecanica.Name = "btnModificarMecanica";
+            this.btnModificarMecanica.Size = new System.Drawing.Size(75, 27);
+            this.btnModificarMecanica.TabIndex = 1;
+            this.btnModificarMecanica.Text = "Modificar";
+            this.btnModificarMecanica.UseVisualStyleBackColor = true;
+            this.btnModificarMecanica.Click += new System.EventHandler(this.btnModificarMecanica_Click);
             // 
-            // button1
+            // btnAltaMecanica
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAltaMecanica.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAltaMecanica.Location = new System.Drawing.Point(0, 0);
+            this.btnAltaMecanica.Name = "btnAltaMecanica";
+            this.btnAltaMecanica.Size = new System.Drawing.Size(75, 27);
+            this.btnAltaMecanica.TabIndex = 0;
+            this.btnAltaMecanica.Text = "Alta";
+            this.btnAltaMecanica.UseVisualStyleBackColor = true;
+            this.btnAltaMecanica.Click += new System.EventHandler(this.btnAltaMecanica_Click);
             // 
             // frm_MenuMecanica
             // 
@@ -94,6 +97,7 @@
             this.Controls.Add(this.pnlPanel1);
             this.Name = "frm_MenuMecanica";
             this.Text = "frm_MenuMecanica";
+            this.Load += new System.EventHandler(this.frm_MenuMecanica_Load);
             this.pnlPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -103,8 +107,8 @@
 
         private System.Windows.Forms.Panel pnlFormulario2;
         private System.Windows.Forms.Panel pnlPanel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarMecanica;
+        private System.Windows.Forms.Button btnModificarMecanica;
+        private System.Windows.Forms.Button btnAltaMecanica;
     }
 }

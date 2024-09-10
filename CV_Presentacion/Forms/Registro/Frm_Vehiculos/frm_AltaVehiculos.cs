@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Forms
+namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
 {
-    public partial class frm_AltaProveedor : Form
+    public partial class frm_AltaVehiculos : Form
     {
-        public frm_AltaProveedor()
+        public frm_AltaVehiculos()
         {
             InitializeComponent();
         }

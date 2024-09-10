@@ -121,6 +121,12 @@
     <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Cortes.Designer.cs">
       <DependentUpon>frm_Cortes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.Designer.cs">
+      <DependentUpon>frm_EstimalGrilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Lesionados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,12 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Informes\Frm_Informes\frm_Estadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Informes\Frm_Informes\frm_Estadisticas.Designer.cs">
+      <DependentUpon>frm_Estadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Registro\Frm_Empleados\frm_MenuEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,11 +211,23 @@
     <Compile Include="Forms\Registro\Frm_Proveedores\frm_MenuProveedores.Designer.cs">
       <DependentUpon>frm_MenuProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.Designer.cs">
+      <DependentUpon>frm_AltaVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Registro\Frm_Vehiculos\frm_MenuVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Registro\Frm_Vehiculos\frm_MenuVehiculos.Designer.cs">
       <DependentUpon>frm_MenuVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.Designer.cs">
+      <DependentUpon>frm_CargarInsumos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Taller\Frm_Insumos\frm_MenuCargarInsumos.cs">
       <SubType>Form</SubType>
@@ -253,12 +277,6 @@
     <Compile Include="Forms\Registro\Frm_Proveedores\frm_ModificarProveedor.Designer.cs">
       <DependentUpon>frm_ModificarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.Designer.cs">
-      <DependentUpon>frm_CargarInsumos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Ajustes\Frm_Ajustes\frm_Actualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,12 +295,6 @@
     <Compile Include="Forms\Taller\Frm_Mecanica\frm_Mecanica.Designer.cs">
       <DependentUpon>frm_Mecanica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.Designer.cs">
-      <DependentUpon>frm_AltaVehiculos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Login\Frm_Login\frmGuardarRespuestas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,18 +312,6 @@
     </Compile>
     <Compile Include="Forms\Login\Frm_Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Informes\Frm_Informes\frm_Estadisticas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Informes\Frm_Informes\frm_Estadisticas.Designer.cs">
-      <DependentUpon>frm_Estadisticas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimarGrilla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimarGrilla.Designer.cs">
-      <DependentUpon>frm_EstimarGrilla.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\Frm_Login\frmRecuperarPassword.cs">
       <SubType>Form</SubType>
@@ -384,6 +384,9 @@
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.resx">
       <DependentUpon>frm_MenuCierrePlanilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.resx">
+      <DependentUpon>frm_EstimalGrilla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_PlanillaSalida.resx">
       <DependentUpon>frm_PlanillaSalida.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,14 +417,20 @@
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_CierrePlanilla.resx">
       <DependentUpon>frm_CierrePlanilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registro\Frm_Proveedores\frm_AltaProveedor.resx">
+      <DependentUpon>frm_AltaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registro\Frm_Proveedores\frm_MenuProveedores.resx">
       <DependentUpon>frm_MenuProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registro\Frm_Proveedores\frm_ModificarProveedor.resx">
+      <DependentUpon>frm_ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.resx">
+      <DependentUpon>frm_AltaVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_MenuVehiculos.resx">
       <DependentUpon>frm_MenuVehiculos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.resx">
-      <DependentUpon>frm_CargarInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ajustes\Frm_Ajustes\frm_Actualizar.resx">
       <DependentUpon>frm_Actualizar.cs</DependentUpon>
@@ -435,9 +444,6 @@
     <EmbeddedResource Include="Forms\Taller\Frm_Mecanica\frm_Mecanica.resx">
       <DependentUpon>frm_Mecanica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.resx">
-      <DependentUpon>frm_AltaVehiculos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Frm_Login\frmGuardarRespuestas.resx">
       <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,12 +456,6 @@
     <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_ModificarVehiculos.resx">
       <DependentUpon>frm_ModificarVehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Informes\Frm_Informes\frm_Estadisticas.resx">
-      <DependentUpon>frm_Estadisticas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_EstimarGrilla.resx">
-      <DependentUpon>frm_EstimarGrilla.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Frm_Login\frmRecuperarPassword.resx">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Taller\Frm_Mecanica\frm_MenuMecanica.resx">
       <DependentUpon>frm_MenuMecanica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Taller\frm_Stock.resx">
+      <DependentUpon>frm_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuario\Frm_Usuario\frm_AltaUsuario.resx">
       <DependentUpon>frm_AltaUsuario.cs</DependentUpon>

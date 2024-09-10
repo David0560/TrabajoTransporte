@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CV_Presentacion.Forms.Registro.Frm_Vehiculos;
+using CV_Presentacion.Forms.Taller.Frm_Insumos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,44 @@ namespace CV_Presentacion.Forms.Frm_Taller
         public frm_MenuCargarInsumos()
         {
             InitializeComponent();
+        }
+        private Form activeForm;
+        private void OpenChildForm(Form childForm, object sender)
+        {
+            if (activeForm != null)
+            {
+
+                activeForm.Close();
+
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnlFormulario2.Controls.Add(childForm);
+            this.pnlFormulario2.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+        private void frm_MenuCargarInsumos_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_CargarInsumos(), sender);
+        }
+
+        private void btnAltaInsumo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_CargarInsumos(), sender);
+        }
+
+        private void btnModicifarInsumo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarInsumo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

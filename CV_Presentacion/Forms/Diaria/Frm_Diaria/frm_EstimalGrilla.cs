@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion
+namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
 {
-    public partial class frm_Estadisticas : Form
+    public partial class frm_EstimalGrilla : Form
     {
-        public frm_Estadisticas()
+        public frm_EstimalGrilla()
         {
             InitializeComponent();
         }
-
-        private void frm_Registros_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

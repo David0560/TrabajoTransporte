@@ -104,7 +104,7 @@ namespace CV_Presentacion.Forms
                 string calle = txtCalle.Text;
                 string numeroDomicilio = txtNumero.Text;
                 string email = txtEmail.Text;
-
+                
                 int idDocumentoIdent = Convert.ToInt32(cboDocumento.SelectedValue);
                 int idSexo = Convert.ToInt32(cboSexo.SelectedValue);
                 int idLocalidad = Convert.ToInt32(cboCiudad.SelectedValue);

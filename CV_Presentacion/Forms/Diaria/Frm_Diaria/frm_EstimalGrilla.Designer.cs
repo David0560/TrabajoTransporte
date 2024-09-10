@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion
+﻿namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
 {
-    partial class frm_Estadisticas
+    partial class frm_EstimalGrilla
     {
         /// <summary>
         /// Required designer variable.
@@ -59,10 +59,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(391, 374);
+            this.button4.Location = new System.Drawing.Point(400, 394);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 80;
+            this.button4.TabIndex = 89;
             this.button4.Text = "Modificar";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -73,10 +73,10 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(491, 25);
+            this.groupBox2.Location = new System.Drawing.Point(500, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(282, 135);
-            this.groupBox2.TabIndex = 79;
+            this.groupBox2.TabIndex = 88;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Cambio";
             // 
@@ -137,10 +137,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Location = new System.Drawing.Point(491, 166);
+            this.groupBox1.Location = new System.Drawing.Point(500, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(282, 231);
-            this.groupBox1.TabIndex = 78;
+            this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Variantes";
             // 
@@ -232,61 +232,61 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(391, 14);
+            this.button1.Location = new System.Drawing.Point(400, 34);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 77;
+            this.button1.TabIndex = 86;
             this.button1.Text = "Cargar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 16);
+            this.label2.Location = new System.Drawing.Point(167, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 76;
+            this.label2.TabIndex = 85;
             this.label2.Text = "Ramal:";
             // 
             // cboEmpleados
             // 
             this.cboEmpleados.FormattingEnabled = true;
-            this.cboEmpleados.Location = new System.Drawing.Point(204, 13);
+            this.cboEmpleados.Location = new System.Drawing.Point(213, 33);
             this.cboEmpleados.Name = "cboEmpleados";
             this.cboEmpleados.Size = new System.Drawing.Size(168, 21);
-            this.cboEmpleados.TabIndex = 75;
+            this.cboEmpleados.TabIndex = 84;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 57);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(457, 304);
-            this.dataGridView1.TabIndex = 74;
+            this.dataGridView1.TabIndex = 83;
             // 
             // mkdVencePass
             // 
-            this.mkdVencePass.Location = new System.Drawing.Point(58, 14);
+            this.mkdVencePass.Location = new System.Drawing.Point(67, 34);
             this.mkdVencePass.Mask = "00/00/0000";
             this.mkdVencePass.Name = "mkdVencePass";
             this.mkdVencePass.Size = new System.Drawing.Size(79, 20);
-            this.mkdVencePass.TabIndex = 73;
+            this.mkdVencePass.TabIndex = 82;
             this.mkdVencePass.ValidatingType = typeof(System.DateTime);
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(12, 17);
+            this.lblFecha.Location = new System.Drawing.Point(21, 37);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(40, 13);
-            this.lblFecha.TabIndex = 72;
+            this.lblFecha.TabIndex = 81;
             this.lblFecha.Text = "Fecha:";
             // 
-            // frm_Estadisticas
+            // frm_EstimalGrilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 410);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -296,9 +296,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.mkdVencePass);
             this.Controls.Add(this.lblFecha);
-            this.Name = "frm_Estadisticas";
-            this.Text = "frm_Registros";
-            this.Load += new System.EventHandler(this.frm_Registros_Load);
+            this.Name = "frm_EstimalGrilla";
+            this.Text = "frm_EstimalGrilla";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

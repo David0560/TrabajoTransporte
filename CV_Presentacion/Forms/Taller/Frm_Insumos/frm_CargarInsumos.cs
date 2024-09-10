@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Forms
+namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 {
-    public partial class frm_EstimarGrilla : Form
+    public partial class frm_CargarInsumos : Form
     {
-        public frm_EstimarGrilla()
+        public frm_CargarInsumos()
         {
             InitializeComponent();
         }

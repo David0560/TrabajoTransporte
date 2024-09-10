@@ -1,4 +1,5 @@
 ﻿using CapaSesion;
+using CV_Presentacion.Frm_Empleados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,13 +33,31 @@ namespace CV_Presentacion.Forms.Registro.Frm_Empleados
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.pnlBoton.Controls.Add(childForm);
-            this.pnlBoton.Tag = childForm;
+            this.pnlFormulario02.Controls.Add(childForm);
+            this.pnlFormulario02.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
 
         }
 
-        
+        private void frm_MenuEmpleados_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_AltaEmpleados(), sender);
+        }
+
+        private void btnAltaËmpleado_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_AltaEmpleados(), sender);
+        }
+
+        private void btnModificarEmpleado_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_ModificarEmpleados(), sender);
+        }
+
+        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

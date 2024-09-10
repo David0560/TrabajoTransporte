@@ -11,6 +11,8 @@ using CV_Presentacion.Forms.Registro.Frm_Vehiculos;
 using CV_Presentacion.Forms.Documentacion;
 using CV_Presentacion.Forms.Diaria.Frm_Diaria;
 using CV_Presentacion.Forms.Ajustes.Frm_Ajustes;
+using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla;
+using CV_Presentacion.Forms.Informes.Frm_Informes;
 
 namespace CV_Presentacion
 {
@@ -247,7 +249,7 @@ namespace CV_Presentacion
         //Diarias
         private void btnTaller01_Click(object sender, EventArgs e) // Crear Grilla
         {
-            OpenChildForm(new frm_EstimarGrilla(), sender);
+            OpenChildForm(new frm_EstimalGrilla(), sender);
             ocultarSubMenu();
         }
         private void btnTaller02_Click(object sender, EventArgs e) // Planilla Salida
