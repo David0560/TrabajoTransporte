@@ -74,7 +74,25 @@ namespace CL_Negocios
 
         }
 
+        //private CD_cargarComboBox cn = new CD_cargarComboBox();
 
+        public void CargarCombustibles(ComboBox combo)
+        {
+            try
+            {
+                combo.DataSource = cn.ObtenerCombustible("spVerCombustible");
+                combo.DisplayMember = "Nombre"; // Muestra el nombre del combustible en el ComboBox
+                combo.ValueMember = "id"; // El valor asociado es el ID
+                combo.AutoCompleteSource = AutoCompleteSource.ListItems;
+                combo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                combo.SelectedIndex = -1; // Desmarcar selección por defecto
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir durante la ejecución de la consulta.
+                Console.WriteLine("Ocurrió un error: " + ex.Message);
+            }
 
+        }
     }
 }

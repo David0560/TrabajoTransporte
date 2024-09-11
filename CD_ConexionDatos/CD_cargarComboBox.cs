@@ -44,5 +44,20 @@ namespace CD_ConexionDatos
                 return tablaDatos;
             }
         }
+
+        public DataTable ObtenerCombustible(string query)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand(query, con);
+                comando.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                DataTable tablaDatos = new DataTable();
+                adaptador.Fill(tablaDatos);
+                con.Close();
+                return tablaDatos;
+            }
+        }
     }
 }

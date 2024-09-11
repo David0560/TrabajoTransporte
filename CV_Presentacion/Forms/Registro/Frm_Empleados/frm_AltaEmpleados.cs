@@ -59,9 +59,18 @@ namespace CV_Presentacion.Forms
             combo.seleccionCombo(cboTarea, "spVerTareas");
             combo.seleccionCombo(cboDocumento, "spVerDocumentoIdent");
             combo.seleccionCombo(cboSexo, "spVerSexo");
-
             combo.seleccionCombo(cboCiudad, "spVerCiudad");
             mskFIngreso.Text = DateTime.Now.ToShortDateString();
+
+            // Deshabilitar los GroupBoxes al iniciar el formulario
+            gpbDatos.Enabled = false;
+            gpbGrupoTrabajo.Enabled = false;
+
+            // Inicializar el estado del CheckBox como no marcado
+            chkRegistro.Checked = false;
+
+            // Asociar el evento al ComboBox de Tarea
+            cboTarea.SelectedIndexChanged += cboTarea_SelectedIndexChanged;
         }
         private void listaPermiso()
         {
@@ -130,7 +139,42 @@ namespace CV_Presentacion.Forms
             }
         }
 
+        private void chkRegistro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRegistro.Checked)
+            {
+                // Habilitar los GroupBoxes si el checkbox está marcado
+                gpbDatos.Enabled = true;
+                gpbGrupoTrabajo.Enabled = true;
+            }
+            else
+            {
+                // Deshabilitar los GroupBoxes si el checkbox no está marcado
+                gpbDatos.Enabled = false;
+                gpbGrupoTrabajo.Enabled = false;
+            }
+        }
+
+        private void cboTarea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Comprobar si el valor seleccionado en el ComboBox es "2" (Conductor)
+            if (cboTarea.SelectedValue != null && cboTarea.SelectedValue.ToString() == "2")
+            {
+                // Habilitar los GroupBoxes si la tarea seleccionada es "Conductor"
+                gpbDatos.Enabled = true;
+                gpbGrupoTrabajo.Enabled = true;
+            }
+            else
+            {
+                // Verificar si el checkbox está marcado, en ese caso mantener los GroupBoxes habilitados
+                if (!chkRegistro.Checked)
+                {
+                    // Deshabilitar los GroupBoxes si no es conductor y no está marcado el checkbox
+                    gpbDatos.Enabled = false;
+                    gpbGrupoTrabajo.Enabled = false;
+                }
+            }
+        }
 
     }
 }
-

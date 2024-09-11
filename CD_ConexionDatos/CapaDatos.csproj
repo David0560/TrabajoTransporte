@@ -110,6 +110,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLServerConexion.cs" />
     <Compile Include="Usuarios\CD_RegistrosUsuarios.cs" />
+    <Compile Include="Vehiculos\CD_Vehiculos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -127,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Taller\" />
-    <Folder Include="Vehiculos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
