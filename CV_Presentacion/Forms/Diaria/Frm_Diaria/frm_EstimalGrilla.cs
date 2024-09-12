@@ -1,7 +1,5 @@
-﻿using CapaServicios;
-using CD_ConexionDatos.Entidades;
+﻿
 using CL_Negocios;
-using CL_Negocios.Entidades;
 using CL_Negocios.GrillaLaboral;
 using Microsoft.Win32;
 using System;
@@ -16,7 +14,6 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
     public partial class frm_EstimalGrilla : Form
     {
         CL_administrarComboBox combo = new CL_administrarComboBox();
-        CS_servicios servicio = new CS_servicios();
         CL_AdministrarGrilla grilla = new CL_AdministrarGrilla();
         public frm_EstimalGrilla()
         {
