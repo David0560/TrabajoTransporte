@@ -60,6 +60,7 @@ namespace CD_ConexionDatos
              }
         }
 
+
         public DataTable listarQuery(string query)
         {
             try

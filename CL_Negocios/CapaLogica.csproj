@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="CL_administrarComboBox.cs" />
     <Compile Include="Empleados\CL_AdministrarEmpleados.cs" />
+    <Compile Include="GrillaLaboral\CL_AdministrarGrilla.cs" />
     <Compile Include="Login\CL_administrarLogin.cs" />
     <Compile Include="Login\CL_administrarPreguntas.cs" />
     <Compile Include="Login\CL_administrarPreguntasUsuario.cs" />
