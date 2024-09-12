@@ -13,13 +13,13 @@ namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
         public frm_AltaVehiculos()
         {
             InitializeComponent();
-            administradorVehiculos = new CL_Vehiculos(); // Instanciar la clase de la capa lógica
+            administradorVehiculos = new CL_Vehiculos();
         }
 
         private void frm_AltaVehiculos_Load(object sender, EventArgs e)
         {
-            mskIngreso.Text = DateTime.Now.ToShortDateString(); // Establecer la fecha actual en mskIngreso
-            administradorCombo.CargarCombustibles(cboCombustible); // Cargar los datos de combustible en cboCombustible
+            mskIngreso.Text = DateTime.Now.ToShortDateString();
+            administradorCombo.CargarCombustibles(cboCombustible);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
                     IdCombustible = (int)cboCombustible.SelectedValue
                 };
 
-                var clVehiculos = new CL_Vehiculos(); // Asegúrate de que esta instancia sea correcta
+                var clVehiculos = new CL_Vehiculos();
                 clVehiculos.GuardarVehiculo(vehiculo);
 
                 MessageBox.Show("Vehículo guardado exitosamente.");

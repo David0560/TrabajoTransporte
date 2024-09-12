@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CL_Negocios.Entidades;
 using CD_ConexionDatos.Entidades;
-using CapaServicios;
+//using CapaServicios;
 
 namespace CD_ConexionDatos
 {

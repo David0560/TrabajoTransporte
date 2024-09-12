@@ -109,6 +109,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaServicios\CapaServicios.csproj">
+      <Project>{047B67C8-E1F0-4908-9FFA-D1276801C536}</Project>
+      <Name>CapaServicios</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaSesion\CapaSesion.csproj">
       <Project>{e0ce412a-466e-4059-b763-54b6ced6939c}</Project>
       <Name>CapaSesion</Name>
