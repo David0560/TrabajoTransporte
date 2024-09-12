@@ -13,13 +13,13 @@ namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
         public frm_AltaVehiculos()
         {
             InitializeComponent();
-            administradorVehiculos = new CL_Vehiculos();
+            administradorVehiculos = new CL_Vehiculos(); // Instanciar la clase de la capa lógica
         }
 
         private void frm_AltaVehiculos_Load(object sender, EventArgs e)
         {
-            mskIngreso.Text = DateTime.Now.ToShortDateString();
-            administradorCombo.CargarCombustibles(cboCombustible);
+            mskIngreso.Text = DateTime.Now.ToShortDateString(); // Establecer la fecha actual en mskIngreso
+            administradorCombo.CargarCombustibles(cboCombustible); // Cargar los datos de combustible en cboCombustible
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -40,11 +40,14 @@ namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
                     Estado = txtEstado.Text,
                     CantidadPlazas = (int)numericUpDownPlaza.Value,
                     Km = decimal.Parse(txtKms.Text),
-                    IdCombustible = (int)cboCombustible.SelectedValue
+                    IdCombustible = (int)cboCombustible.SelectedValue,
+
+                    // Agregar la información de la verificación (VTV)
+                    FechaOtorgadoVTV = DateTime.Parse(mskFechaOtorgada.Text),
+                    FechaVencimientoVTV = DateTime.Parse(mskFechaVencimiento.Text)
                 };
 
-                var clVehiculos = new CL_Vehiculos();
-                clVehiculos.GuardarVehiculo(vehiculo);
+                administradorVehiculos.GuardarVehiculo(vehiculo, vehiculo.FechaOtorgadoVTV, vehiculo.FechaVencimientoVTV);
 
                 MessageBox.Show("Vehículo guardado exitosamente.");
             }

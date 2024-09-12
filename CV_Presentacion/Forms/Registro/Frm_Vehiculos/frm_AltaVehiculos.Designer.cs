@@ -35,7 +35,7 @@
             this.lblMarcaChasis = new System.Windows.Forms.Label();
             this.cboCombustible = new System.Windows.Forms.ComboBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
-            this.mskVTV = new System.Windows.Forms.MaskedTextBox();
+            this.mskFechaOtorgada = new System.Windows.Forms.MaskedTextBox();
             this.mskIngreso = new System.Windows.Forms.MaskedTextBox();
             this.numericUpDownPlaza = new System.Windows.Forms.NumericUpDown();
             this.txtTipo = new System.Windows.Forms.TextBox();
@@ -59,20 +59,24 @@
             this.txtDominio = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mskFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlaza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtMarcaChasis);
             this.groupBox1.Controls.Add(this.txtNroChasis);
             this.groupBox1.Controls.Add(this.lblMarcaMotor);
             this.groupBox1.Controls.Add(this.lblMarcaChasis);
             this.groupBox1.Controls.Add(this.cboCombustible);
             this.groupBox1.Controls.Add(this.txtEstado);
-            this.groupBox1.Controls.Add(this.mskVTV);
             this.groupBox1.Controls.Add(this.mskIngreso);
             this.groupBox1.Controls.Add(this.numericUpDownPlaza);
             this.groupBox1.Controls.Add(this.txtTipo);
@@ -82,7 +86,6 @@
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.lblCantidadPlaza);
             this.groupBox1.Controls.Add(this.lblCombustible);
-            this.groupBox1.Controls.Add(this.lblVTV);
             this.groupBox1.Controls.Add(this.lblKms);
             this.groupBox1.Controls.Add(this.txtMarcaMotor);
             this.groupBox1.Controls.Add(this.lblTipo);
@@ -147,7 +150,7 @@
             // 
             this.cboCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCombustible.FormattingEnabled = true;
-            this.cboCombustible.Location = new System.Drawing.Point(589, 419);
+            this.cboCombustible.Location = new System.Drawing.Point(473, 412);
             this.cboCombustible.Name = "cboCombustible";
             this.cboCombustible.Size = new System.Drawing.Size(161, 33);
             this.cboCombustible.TabIndex = 31;
@@ -155,22 +158,22 @@
             // txtEstado
             // 
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(288, 473);
+            this.txtEstado.Location = new System.Drawing.Point(172, 466);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(141, 30);
             this.txtEstado.TabIndex = 30;
             // 
-            // mskVTV
+            // mskFechaOtorgada
             // 
-            this.mskVTV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskVTV.Location = new System.Drawing.Point(632, 370);
-            this.mskVTV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.mskVTV.Mask = "00/00/0000";
-            this.mskVTV.Name = "mskVTV";
-            this.mskVTV.Size = new System.Drawing.Size(118, 30);
-            this.mskVTV.TabIndex = 29;
-            this.mskVTV.ValidatingType = typeof(System.DateTime);
+            this.mskFechaOtorgada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskFechaOtorgada.Location = new System.Drawing.Point(130, 34);
+            this.mskFechaOtorgada.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskFechaOtorgada.Mask = "00/00/0000";
+            this.mskFechaOtorgada.Name = "mskFechaOtorgada";
+            this.mskFechaOtorgada.Size = new System.Drawing.Size(118, 30);
+            this.mskFechaOtorgada.TabIndex = 29;
+            this.mskFechaOtorgada.ValidatingType = typeof(System.DateTime);
             // 
             // mskIngreso
             // 
@@ -187,7 +190,7 @@
             // numericUpDownPlaza
             // 
             this.numericUpDownPlaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownPlaza.Location = new System.Drawing.Point(572, 530);
+            this.numericUpDownPlaza.Location = new System.Drawing.Point(775, 307);
             this.numericUpDownPlaza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownPlaza.Name = "numericUpDownPlaza";
             this.numericUpDownPlaza.Size = new System.Drawing.Size(60, 30);
@@ -196,7 +199,7 @@
             // txtTipo
             // 
             this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(589, 471);
+            this.txtTipo.Location = new System.Drawing.Point(473, 464);
             this.txtTipo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(161, 30);
@@ -239,7 +242,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(171, 475);
+            this.lblEstado.Location = new System.Drawing.Point(55, 468);
             this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(79, 25);
@@ -250,7 +253,7 @@
             // 
             this.lblCantidadPlaza.AutoSize = true;
             this.lblCantidadPlaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadPlaza.Location = new System.Drawing.Point(370, 532);
+            this.lblCantidadPlaza.Location = new System.Drawing.Point(483, 309);
             this.lblCantidadPlaza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadPlaza.Name = "lblCantidadPlaza";
             this.lblCantidadPlaza.Size = new System.Drawing.Size(180, 25);
@@ -261,7 +264,7 @@
             // 
             this.lblCombustible.AutoSize = true;
             this.lblCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCombustible.Location = new System.Drawing.Point(450, 424);
+            this.lblCombustible.Location = new System.Drawing.Point(334, 417);
             this.lblCombustible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCombustible.Name = "lblCombustible";
             this.lblCombustible.Size = new System.Drawing.Size(132, 25);
@@ -272,18 +275,18 @@
             // 
             this.lblVTV.AutoSize = true;
             this.lblVTV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVTV.Location = new System.Drawing.Point(450, 373);
+            this.lblVTV.Location = new System.Drawing.Point(7, 83);
             this.lblVTV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVTV.Name = "lblVTV";
-            this.lblVTV.Size = new System.Drawing.Size(166, 25);
+            this.lblVTV.Size = new System.Drawing.Size(115, 25);
             this.lblVTV.TabIndex = 22;
-            this.lblVTV.Text = "Vecimiento VTV: ";
+            this.lblVTV.Text = "Vecimiento:";
             // 
             // lblKms
             // 
             this.lblKms.AutoSize = true;
             this.lblKms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKms.Location = new System.Drawing.Point(171, 424);
+            this.lblKms.Location = new System.Drawing.Point(55, 417);
             this.lblKms.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKms.Name = "lblKms";
             this.lblKms.Size = new System.Drawing.Size(58, 25);
@@ -303,7 +306,7 @@
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(450, 475);
+            this.lblTipo.Location = new System.Drawing.Point(334, 468);
             this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(51, 25);
@@ -344,7 +347,7 @@
             // txtKms
             // 
             this.txtKms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKms.Location = new System.Drawing.Point(288, 422);
+            this.txtKms.Location = new System.Drawing.Point(172, 415);
             this.txtKms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtKms.Name = "txtKms";
             this.txtKms.Size = new System.Drawing.Size(141, 30);
@@ -354,7 +357,7 @@
             // 
             this.lblDominio.AutoSize = true;
             this.lblDominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDominio.Location = new System.Drawing.Point(171, 373);
+            this.lblDominio.Location = new System.Drawing.Point(103, 308);
             this.lblDominio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDominio.Name = "lblDominio";
             this.lblDominio.Size = new System.Drawing.Size(79, 25);
@@ -382,10 +385,10 @@
             // txtDominio
             // 
             this.txtDominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDominio.Location = new System.Drawing.Point(288, 371);
+            this.txtDominio.Location = new System.Drawing.Point(256, 305);
             this.txtDominio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDominio.Name = "txtDominio";
-            this.txtDominio.Size = new System.Drawing.Size(141, 30);
+            this.txtDominio.Size = new System.Drawing.Size(213, 30);
             this.txtDominio.TabIndex = 15;
             // 
             // pictureBox1
@@ -409,6 +412,41 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.mskFechaVencimiento);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblVTV);
+            this.groupBox2.Controls.Add(this.mskFechaOtorgada);
+            this.groupBox2.Location = new System.Drawing.Point(649, 364);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(258, 158);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "VTV";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Otorgada:";
+            // 
+            // mskFechaVencimiento
+            // 
+            this.mskFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskFechaVencimiento.Location = new System.Drawing.Point(130, 80);
+            this.mskFechaVencimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskFechaVencimiento.Mask = "00/00/0000";
+            this.mskFechaVencimiento.Name = "mskFechaVencimiento";
+            this.mskFechaVencimiento.Size = new System.Drawing.Size(118, 30);
+            this.mskFechaVencimiento.TabIndex = 38;
+            this.mskFechaVencimiento.ValidatingType = typeof(System.DateTime);
+            // 
             // frm_AltaVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -425,6 +463,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlaza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -433,7 +473,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MaskedTextBox mskVTV;
+        private System.Windows.Forms.MaskedTextBox mskFechaOtorgada;
         private System.Windows.Forms.MaskedTextBox mskIngreso;
         private System.Windows.Forms.NumericUpDown numericUpDownPlaza;
         private System.Windows.Forms.TextBox txtTipo;
@@ -462,5 +502,8 @@
         private System.Windows.Forms.Label lblMarcaMotor;
         private System.Windows.Forms.Label lblMarcaChasis;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.MaskedTextBox mskFechaVencimiento;
+        private System.Windows.Forms.Label label1;
     }
 }

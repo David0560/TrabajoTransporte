@@ -62,13 +62,13 @@ namespace CD_ConexionDatos
         {
             if (con == null)
             {
-                //con = new connectionBD("BD_Trasnporte", "MARKKUS\\MSSQLSERVER01", "MARKKUS\\aleri", "");
-                // con = new connectionBD("BD_Trasnporte", "DESKTOP-MO2SFQ6\\SQLEXPRESS", "DESKTOP-MO2SFQ6\\Markkus", "");
+                con = new connectionBD("BD_Trasnporte", "MARKKUS\\MSSQLSERVER01", "MARKKUS\\aleri", "");
+                //con = new connectionBD("BD_Trasnporte", "DESKTOP-MO2SFQ6\\SQLEXPRESS", "DESKTOP-MO2SFQ6\\Markkus", "");
                 //con = new connectionBD("BD_Trasnporte", @"not_CASA\MSSQLSERVER01", "", "");
                 //con = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
                 //con = new connectionBD("BD_Trasnporte", "DESKTOP-MO2SFQ6\\SQLEXPRESS", "DESKTOP-MO2SFQ6\\Markkus", "");
                 //con = new connectionBD("BD_Trasnporte", @"not_CASA\MSSQLSERVER01", "", "");
-                con = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
+                //con = new connectionBD("BD_Trasnporte", "DESKTOP-MN8P3IJ\\SQLEXPRESSS", "DESKTOP-MN8P3IJ\\david", "");
             }
             return con;
         }

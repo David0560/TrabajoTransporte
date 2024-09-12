@@ -18,5 +18,7 @@ namespace CL_Servicios.Entidades
         public int CantidadPlazas { get; set; }
         public decimal Km { get; set; }
         public int IdCombustible { get; set; }
+        public DateTime FechaOtorgadoVTV { get; set; }
+        public DateTime FechaVencimientoVTV { get; set; }
     }
 }

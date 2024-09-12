@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Data.SqlClient;
+using System;
 
 namespace CD_ConexionDatos
 {
@@ -16,7 +16,8 @@ namespace CD_ConexionDatos
         public void GuardarNuevoVehiculo(DateTime fechaAlta, string dominio, string tipo, string marca,
                                    string modelo, string marcaMotor, string numeroMotor,
                                    string marcaChasis, string numeroChasis, string estado,
-                                   int cantidadPlazas, decimal km, int idCombustible)
+                                   int cantidadPlazas, decimal km, int idCombustible,
+                                   DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
         {
             try
             {
@@ -37,6 +38,8 @@ namespace CD_ConexionDatos
                     comando.Parameters.AddWithValue("@xcantidad_plazas", cantidadPlazas);
                     comando.Parameters.AddWithValue("@xkm", km);
                     comando.Parameters.AddWithValue("@xid_combustible", idCombustible);
+                    comando.Parameters.AddWithValue("@xfecha_otorgado", fechaOtorgadoVTV);
+                    comando.Parameters.AddWithValue("@xfecha_vencimiento", fechaVencimientoVTV);
 
                     con.Open();
                     int rowsAffected = comando.ExecuteNonQuery();
@@ -49,5 +52,5 @@ namespace CD_ConexionDatos
                 throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
             }
         }
-    }    
+    }
 }

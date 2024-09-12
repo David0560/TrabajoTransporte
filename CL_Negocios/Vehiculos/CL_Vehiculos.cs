@@ -1,7 +1,7 @@
 ﻿using System;
 using CD_ConexionDatos;
 using CL_Servicios.Entidades;
-using CL_Negocios.Entidades; 
+using CL_Negocios.Entidades;
 
 namespace CL_Negocios
 {
@@ -9,14 +9,13 @@ namespace CL_Negocios
     {
         private CD_Vehiculos cdVehiculos;
 
-        // Constructor que inicializa la clase de datos
         public CL_Vehiculos()
         {
             cdVehiculos = new CD_Vehiculos();
         }
 
         // Método para guardar un nuevo vehículo
-        public void GuardarVehiculo(Vehiculo vehiculo)
+        public void GuardarVehiculo(Vehiculo vehiculo, DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
         {
             try
             {
@@ -33,7 +32,9 @@ namespace CL_Negocios
                     vehiculo.Estado,
                     vehiculo.CantidadPlazas,
                     vehiculo.Km,
-                    vehiculo.IdCombustible
+                    vehiculo.IdCombustible,
+                    fechaOtorgadoVTV,
+                    fechaVencimientoVTV
                 );
             }
             catch (Exception ex)
