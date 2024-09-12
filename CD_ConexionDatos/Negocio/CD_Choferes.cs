@@ -76,5 +76,23 @@ namespace CD_ConexionDatos.Empleados
             }
 
         }
+
+        public DataTable obteneUnidadesConVTV(DateTime vence)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("sp_obtenerTablaChoferesConLicencia", con);
+                comando.Parameters.Add(new SqlParameter("@xvence", con));
+                comando.Parameters["@xvence"].Value = vence;
+                comando.CommandType = CommandType.StoredProcedure;
+                DataTable tablaDatos = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(tablaDatos);
+                con.Close();
+                return tablaDatos;
+            }
+
+        }
     }
 }

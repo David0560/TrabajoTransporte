@@ -29,13 +29,13 @@ namespace CL_Negocios.GrillaLaboral
            return true;
         }
          
-        public DataTable GrillaPorRamal(int id, DateTime fecha)
+        public DataTable GrillaPorRamal(int id)
         {
             return chofer.GrillaPorRamal(id);
-            return (chofer.obtenerTablaChoferesConLicencia(fecha)); // 
+            //return (chofer.obtenerTablaChoferesConLicencia(fecha)); // 
         }
 
-        public DataTable ChoferesQueTrabajan(DataTable chof, DateTime fechaLicencia)
+        public DataTable ChoferesQueTrabajan( DateTime fechaLicencia)
         {
             DataTable TablaTrabajan = new DataTable();
             TablaTrabajan.Columns.Add("legajo", typeof(int));
@@ -73,5 +73,9 @@ namespace CL_Negocios.GrillaLaboral
 
             
         }
+
+
+
+
     }
 }
