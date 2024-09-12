@@ -67,24 +67,24 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkRegistro = new System.Windows.Forms.CheckBox();
+            this.gpbDatos = new System.Windows.Forms.GroupBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.gpbGrupoTrabajo = new System.Windows.Forms.GroupBox();
+            this.cboTurno = new System.Windows.Forms.ComboBox();
+            this.cboGrupo = new System.Windows.Forms.ComboBox();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.lblGrupo = new System.Windows.Forms.Label();
             this.grpboxDireccion.SuspendLayout();
             this.lblTipoDoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gpbDatos.SuspendLayout();
+            this.gpbGrupoTrabajo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -492,31 +492,32 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Teléfono:";
             // 
-            // checkBox1
+            // chkRegistro
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(423, 326);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(184, 24);
-            this.checkBox1.TabIndex = 42;
-            this.checkBox1.Text = "Registro de Conducir";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkRegistro.AutoSize = true;
+            this.chkRegistro.Location = new System.Drawing.Point(423, 326);
+            this.chkRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkRegistro.Name = "chkRegistro";
+            this.chkRegistro.Size = new System.Drawing.Size(184, 24);
+            this.chkRegistro.TabIndex = 42;
+            this.chkRegistro.Text = "Registro de Conducir";
+            this.chkRegistro.UseVisualStyleBackColor = true;
+            this.chkRegistro.CheckedChanged += new System.EventHandler(this.chkRegistro_CheckedChanged);
             // 
-            // groupBox3
+            // gpbDatos
             // 
-            this.groupBox3.Controls.Add(this.maskedTextBox2);
-            this.groupBox3.Controls.Add(this.maskedTextBox1);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(417, 366);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(258, 158);
-            this.groupBox3.TabIndex = 43;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos";
+            this.gpbDatos.Controls.Add(this.maskedTextBox2);
+            this.gpbDatos.Controls.Add(this.maskedTextBox1);
+            this.gpbDatos.Controls.Add(this.label2);
+            this.gpbDatos.Controls.Add(this.label3);
+            this.gpbDatos.Location = new System.Drawing.Point(417, 366);
+            this.gpbDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gpbDatos.Name = "gpbDatos";
+            this.gpbDatos.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gpbDatos.Size = new System.Drawing.Size(258, 158);
+            this.gpbDatos.TabIndex = 43;
+            this.gpbDatos.TabStop = false;
+            this.gpbDatos.Text = "Datos";
             // 
             // maskedTextBox2
             // 
@@ -552,71 +553,71 @@
             this.label3.Location = new System.Drawing.Point(21, 38);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Otorgador:";
+            this.label3.Text = "Otorgado:";
             // 
-            // groupBox4
+            // gpbGrupoTrabajo
             // 
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Location = new System.Drawing.Point(687, 366);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Size = new System.Drawing.Size(218, 158);
-            this.groupBox4.TabIndex = 44;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Grupo de Trabajo";
+            this.gpbGrupoTrabajo.Controls.Add(this.cboTurno);
+            this.gpbGrupoTrabajo.Controls.Add(this.cboGrupo);
+            this.gpbGrupoTrabajo.Controls.Add(this.lblTurno);
+            this.gpbGrupoTrabajo.Controls.Add(this.lblGrupo);
+            this.gpbGrupoTrabajo.Location = new System.Drawing.Point(687, 366);
+            this.gpbGrupoTrabajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gpbGrupoTrabajo.Name = "gpbGrupoTrabajo";
+            this.gpbGrupoTrabajo.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gpbGrupoTrabajo.Size = new System.Drawing.Size(218, 158);
+            this.gpbGrupoTrabajo.TabIndex = 44;
+            this.gpbGrupoTrabajo.TabStop = false;
+            this.gpbGrupoTrabajo.Text = "Grupo de Trabajo";
             // 
-            // comboBox1
+            // cboTurno
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(92, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 28);
-            this.comboBox1.TabIndex = 49;
+            this.cboTurno.FormattingEnabled = true;
+            this.cboTurno.Location = new System.Drawing.Point(92, 40);
+            this.cboTurno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboTurno.Name = "cboTurno";
+            this.cboTurno.Size = new System.Drawing.Size(109, 28);
+            this.cboTurno.TabIndex = 49;
             // 
-            // comboBox2
+            // cboGrupo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(92, 82);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(109, 28);
-            this.comboBox2.TabIndex = 46;
+            this.cboGrupo.FormattingEnabled = true;
+            this.cboGrupo.Location = new System.Drawing.Point(92, 82);
+            this.cboGrupo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboGrupo.Name = "cboGrupo";
+            this.cboGrupo.Size = new System.Drawing.Size(109, 28);
+            this.cboGrupo.TabIndex = 46;
             // 
-            // label4
+            // lblTurno
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 46);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Turno:";
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Location = new System.Drawing.Point(24, 46);
+            this.lblTurno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(54, 20);
+            this.lblTurno.TabIndex = 48;
+            this.lblTurno.Text = "Turno:";
             // 
-            // label6
+            // lblGrupo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 88);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 20);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "Grupo:";
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Location = new System.Drawing.Point(24, 88);
+            this.lblGrupo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(58, 20);
+            this.lblGrupo.TabIndex = 47;
+            this.lblGrupo.Text = "Grupo:";
             // 
             // frm_AltaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 701);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.gpbGrupoTrabajo);
+            this.Controls.Add(this.gpbDatos);
+            this.Controls.Add(this.chkRegistro);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblTipoDoc);
@@ -636,10 +637,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gpbDatos.ResumeLayout(false);
+            this.gpbDatos.PerformLayout();
+            this.gpbGrupoTrabajo.ResumeLayout(false);
+            this.gpbGrupoTrabajo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -686,16 +687,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox chkRegistro;
+        private System.Windows.Forms.GroupBox gpbDatos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox gpbGrupoTrabajo;
+        private System.Windows.Forms.ComboBox cboTurno;
+        private System.Windows.Forms.ComboBox cboGrupo;
+        private System.Windows.Forms.Label lblTurno;
+        private System.Windows.Forms.Label lblGrupo;
     }
 }
