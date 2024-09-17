@@ -127,11 +127,11 @@
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.Designer.cs">
       <DependentUpon>frm_EstimalGrilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Lesionados.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_LesionadosTestigos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Lesionados.Designer.cs">
-      <DependentUpon>frm_Lesionados.cs</DependentUpon>
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_LesionadosTestigos.Designer.cs">
+      <DependentUpon>frm_LesionadosTestigos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.cs">
       <SubType>Form</SubType>
@@ -381,6 +381,12 @@
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Accidentes.resx">
+      <DependentUpon>frm_Accidentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_LesionadosTestigos.resx">
+      <DependentUpon>frm_LesionadosTestigos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.resx">
       <DependentUpon>frm_MenuCierrePlanilla.cs</DependentUpon>
     </EmbeddedResource>

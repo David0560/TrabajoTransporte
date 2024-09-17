@@ -77,7 +77,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblTipoUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmrFecha = new System.Windows.Forms.Timer(this.components);
@@ -821,7 +820,6 @@
             this.pnlBarraTitulo.Controls.Add(this.lblFecha);
             this.pnlBarraTitulo.Controls.Add(this.lblTipoUsuario);
             this.pnlBarraTitulo.Controls.Add(this.lblNombreUsuario);
-            this.pnlBarraTitulo.Controls.Add(this.lblTitulo);
             this.pnlBarraTitulo.Controls.Add(this.pnlLogo);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
@@ -882,18 +880,6 @@
             this.lblNombreUsuario.Size = new System.Drawing.Size(132, 18);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "nombre de usuario";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(88)))));
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(177, 74);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(42, 18);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Inicio";
             // 
             // panelMenu
             // 
@@ -957,7 +943,6 @@
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Panel pnlBarraTitulo;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnSalirUsuario;
         private System.Windows.Forms.Label lblHora;

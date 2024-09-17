@@ -16,5 +16,7 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
         {
             InitializeComponent();
         }
+
+
     }
 }

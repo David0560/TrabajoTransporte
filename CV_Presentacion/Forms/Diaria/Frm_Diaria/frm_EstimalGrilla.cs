@@ -74,5 +74,10 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
             //dgvGrillaDelDia.DataSource = grilla.GrillaPorRamal(id, fecha)// devuelve todos los choferes
         }
 
+        private void btnGuardarGrilla_Click(object sender, EventArgs e)
+        {
+            Servicio.LimpiarControlesForm(this);
+            MessageBox.Show("Los Registros fueron creados con exito.");
+        }
     }
 }

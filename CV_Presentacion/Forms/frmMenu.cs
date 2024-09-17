@@ -61,7 +61,7 @@ namespace CV_Presentacion
             this.panelMenu.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitulo.Text = childForm.Text;
+            //lblTitulo.Text = childForm.Text;
 
         }
         //

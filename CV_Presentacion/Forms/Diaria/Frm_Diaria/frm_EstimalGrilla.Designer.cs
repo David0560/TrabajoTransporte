@@ -52,7 +52,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(551, 23);
+            this.button4.Location = new System.Drawing.Point(515, 23);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 89;
@@ -61,7 +61,7 @@
             // 
             // btnCargarGrilla
             // 
-            this.btnCargarGrilla.Location = new System.Drawing.Point(473, 23);
+            this.btnCargarGrilla.Location = new System.Drawing.Point(437, 23);
             this.btnCargarGrilla.Name = "btnCargarGrilla";
             this.btnCargarGrilla.Size = new System.Drawing.Size(75, 23);
             this.btnCargarGrilla.TabIndex = 86;
@@ -83,7 +83,7 @@
             this.cboRamales.FormattingEnabled = true;
             this.cboRamales.Location = new System.Drawing.Point(328, 23);
             this.cboRamales.Name = "cboRamales";
-            this.cboRamales.Size = new System.Drawing.Size(128, 21);
+            this.cboRamales.Size = new System.Drawing.Size(85, 21);
             this.cboRamales.TabIndex = 84;
             // 
             // dgvGrillaDelDia
@@ -91,7 +91,7 @@
             this.dgvGrillaDelDia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrillaDelDia.Location = new System.Drawing.Point(18, 70);
             this.dgvGrillaDelDia.Name = "dgvGrillaDelDia";
-            this.dgvGrillaDelDia.Size = new System.Drawing.Size(608, 262);
+            this.dgvGrillaDelDia.Size = new System.Drawing.Size(580, 262);
             this.dgvGrillaDelDia.TabIndex = 83;
             // 
             // lblFecha
@@ -207,18 +207,19 @@
             // 
             // btnGuardarGrilla
             // 
-            this.btnGuardarGrilla.Location = new System.Drawing.Point(537, 374);
+            this.btnGuardarGrilla.Location = new System.Drawing.Point(505, 374);
             this.btnGuardarGrilla.Name = "btnGuardarGrilla";
             this.btnGuardarGrilla.Size = new System.Drawing.Size(75, 50);
             this.btnGuardarGrilla.TabIndex = 92;
             this.btnGuardarGrilla.Text = "Guardar";
             this.btnGuardarGrilla.UseVisualStyleBackColor = true;
+            this.btnGuardarGrilla.Click += new System.EventHandler(this.btnGuardarGrilla_Click);
             // 
             // frm_EstimalGrilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 451);
+            this.ClientSize = new System.Drawing.Size(627, 451);
             this.Controls.Add(this.btnGuardarGrilla);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
