@@ -45,7 +45,6 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.btnGuardarGrilla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaDelDia)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +55,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 89;
-            this.button4.Text = "Modificar";
+            this.button4.Text = "Guardar";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // btnCargarGrilla
@@ -205,22 +204,11 @@
             this.comboBox4.Size = new System.Drawing.Size(105, 21);
             this.comboBox4.TabIndex = 61;
             // 
-            // btnGuardarGrilla
-            // 
-            this.btnGuardarGrilla.Location = new System.Drawing.Point(505, 374);
-            this.btnGuardarGrilla.Name = "btnGuardarGrilla";
-            this.btnGuardarGrilla.Size = new System.Drawing.Size(75, 50);
-            this.btnGuardarGrilla.TabIndex = 92;
-            this.btnGuardarGrilla.Text = "Guardar";
-            this.btnGuardarGrilla.UseVisualStyleBackColor = true;
-            this.btnGuardarGrilla.Click += new System.EventHandler(this.btnGuardarGrilla_Click);
-            // 
             // frm_EstimalGrilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 451);
-            this.Controls.Add(this.btnGuardarGrilla);
+            this.ClientSize = new System.Drawing.Size(650, 484);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button4);
@@ -259,6 +247,5 @@
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button btnGuardarGrilla;
     }
 }

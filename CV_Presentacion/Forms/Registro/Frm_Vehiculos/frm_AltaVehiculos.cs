@@ -56,5 +56,6 @@ namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
                 MessageBox.Show("Error al guardar el vehículo: " + ex.Message);
             }
         }
+
     }
 }

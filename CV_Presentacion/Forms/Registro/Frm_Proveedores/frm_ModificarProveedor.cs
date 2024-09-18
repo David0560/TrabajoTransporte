@@ -16,5 +16,7 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
         {
             InitializeComponent();
         }
+
+
     }
 }

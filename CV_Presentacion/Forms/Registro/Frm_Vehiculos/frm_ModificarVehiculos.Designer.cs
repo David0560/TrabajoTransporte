@@ -28,424 +28,543 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.mskFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.lblVTV = new System.Windows.Forms.Label();
+            this.mskFechaOtorgada = new System.Windows.Forms.MaskedTextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtMarcaChasis = new System.Windows.Forms.TextBox();
+            this.txtNroChasis = new System.Windows.Forms.TextBox();
+            this.lblMarcaMotor = new System.Windows.Forms.Label();
+            this.lblMarcaChasis = new System.Windows.Forms.Label();
+            this.cboCombustible = new System.Windows.Forms.ComboBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.mskIngreso = new System.Windows.Forms.MaskedTextBox();
+            this.numericUpDownPlaza = new System.Windows.Forms.NumericUpDown();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblModelo = new System.Windows.Forms.Label();
+            this.lblIngreso = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblCantidadPlaza = new System.Windows.Forms.Label();
+            this.lblCombustible = new System.Windows.Forms.Label();
+            this.lblKms = new System.Windows.Forms.Label();
+            this.txtMarcaMotor = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.txtNroMotor = new System.Windows.Forms.TextBox();
+            this.lblNroMotor = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtKms = new System.Windows.Forms.TextBox();
+            this.lblDominio = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.txtDominio = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlaza)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(172, 331);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 42);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(18, 331);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 42);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 35);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(794, 275);
-            this.dataGridView1.TabIndex = 33;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.maskedTextBox3);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox17);
-            this.groupBox2.Controls.Add(this.textBox16);
-            this.groupBox2.Controls.Add(this.textBox18);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.mskFechaVencimiento);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox15);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Location = new System.Drawing.Point(18, 383);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Controls.Add(this.lblVTV);
+            this.groupBox2.Controls.Add(this.mskFechaOtorgada);
+            this.groupBox2.Location = new System.Drawing.Point(25, 395);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(826, 244);
-            this.groupBox2.TabIndex = 32;
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(395, 75);
+            this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vehiculo";
+            this.groupBox2.Text = "VTV";
             // 
-            // comboBox2
+            // mskFechaVencimiento
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(676, 71);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(141, 28);
-            this.comboBox2.TabIndex = 30;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(461, 140);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.maskedTextBox3.Mask = "00/00/0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(98, 26);
-            this.maskedTextBox3.TabIndex = 29;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(769, 39);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 26);
-            this.numericUpDown2.TabIndex = 27;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(676, 107);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 26);
-            this.textBox3.TabIndex = 19;
+            this.mskFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskFechaVencimiento.Location = new System.Drawing.Point(301, 34);
+            this.mskFechaVencimiento.Mask = "00/00/0000";
+            this.mskFechaVencimiento.Name = "mskFechaVencimiento";
+            this.mskFechaVencimiento.Size = new System.Drawing.Size(80, 23);
+            this.mskFechaVencimiento.TabIndex = 38;
+            this.mskFechaVencimiento.ValidatingType = typeof(System.DateTime);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(33, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Marca:";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Otorgada:";
             // 
-            // button4
+            // lblVTV
             // 
-            this.button4.Location = new System.Drawing.Point(807, 637);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 50);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Guardar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblVTV.AutoSize = true;
+            this.lblVTV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblVTV.Location = new System.Drawing.Point(219, 36);
+            this.lblVTV.Name = "lblVTV";
+            this.lblVTV.Size = new System.Drawing.Size(62, 13);
+            this.lblVTV.TabIndex = 22;
+            this.lblVTV.Text = "Vecimiento:";
             // 
-            // label14
+            // mskFechaOtorgada
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(293, 38);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 20);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Modelo:";
+            this.mskFechaOtorgada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskFechaOtorgada.Location = new System.Drawing.Point(115, 32);
+            this.mskFechaOtorgada.Mask = "00/00/0000";
+            this.mskFechaOtorgada.Name = "mskFechaOtorgada";
+            this.mskFechaOtorgada.Size = new System.Drawing.Size(80, 23);
+            this.mskFechaOtorgada.TabIndex = 29;
+            this.mskFechaOtorgada.ValidatingType = typeof(System.DateTime);
             // 
-            // label16
+            // btnAceptar
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(150, 195);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 20);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Estado:";
+            this.btnAceptar.Location = new System.Drawing.Point(540, 443);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(72, 27);
+            this.btnAceptar.TabIndex = 40;
+            this.btnAceptar.Text = "Guardar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // groupBox1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(567, 41);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(145, 20);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Cantidad de plazas";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(293, 143);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(131, 20);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "Vecimiento VTV: ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(246, 191);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(141, 26);
-            this.textBox5.TabIndex = 21;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(567, 110);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 20);
-            this.label21.TabIndex = 8;
-            this.label21.Text = "Kms";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(567, 77);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(101, 20);
-            this.label22.TabIndex = 9;
-            this.label22.Text = "Combustible:";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(144, 35);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(141, 26);
-            this.textBox14.TabIndex = 12;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(418, 35);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(141, 26);
-            this.textBox15.TabIndex = 13;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(144, 139);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(141, 26);
-            this.textBox16.TabIndex = 15;
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.txtMarcaChasis);
+            this.groupBox1.Controls.Add(this.txtNroChasis);
+            this.groupBox1.Controls.Add(this.lblMarcaMotor);
+            this.groupBox1.Controls.Add(this.lblMarcaChasis);
+            this.groupBox1.Controls.Add(this.cboCombustible);
+            this.groupBox1.Controls.Add(this.txtEstado);
+            this.groupBox1.Controls.Add(this.mskIngreso);
+            this.groupBox1.Controls.Add(this.numericUpDownPlaza);
+            this.groupBox1.Controls.Add(this.txtTipo);
+            this.groupBox1.Controls.Add(this.lblMarca);
+            this.groupBox1.Controls.Add(this.lblModelo);
+            this.groupBox1.Controls.Add(this.lblIngreso);
+            this.groupBox1.Controls.Add(this.lblEstado);
+            this.groupBox1.Controls.Add(this.lblCantidadPlaza);
+            this.groupBox1.Controls.Add(this.lblCombustible);
+            this.groupBox1.Controls.Add(this.lblKms);
+            this.groupBox1.Controls.Add(this.txtMarcaMotor);
+            this.groupBox1.Controls.Add(this.lblTipo);
+            this.groupBox1.Controls.Add(this.txtNroMotor);
+            this.groupBox1.Controls.Add(this.lblNroMotor);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtKms);
+            this.groupBox1.Controls.Add(this.lblDominio);
+            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.txtModelo);
+            this.groupBox1.Controls.Add(this.txtDominio);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(25, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(587, 298);
+            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Vehiculo";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.addbuss__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(837, 35);
+            this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.addbuss__3_;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(95, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtMarcaChasis
+            // 
+            this.txtMarcaChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarcaChasis.Location = new System.Drawing.Point(116, 175);
+            this.txtMarcaChasis.Name = "txtMarcaChasis";
+            this.txtMarcaChasis.Size = new System.Drawing.Size(166, 23);
+            this.txtMarcaChasis.TabIndex = 35;
+            // 
+            // txtNroChasis
+            // 
+            this.txtNroChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroChasis.Location = new System.Drawing.Point(116, 203);
+            this.txtNroChasis.Name = "txtNroChasis";
+            this.txtNroChasis.Size = new System.Drawing.Size(159, 23);
+            this.txtNroChasis.TabIndex = 34;
+            // 
+            // lblMarcaMotor
+            // 
+            this.lblMarcaMotor.AutoSize = true;
+            this.lblMarcaMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblMarcaMotor.Location = new System.Drawing.Point(33, 122);
+            this.lblMarcaMotor.Name = "lblMarcaMotor";
+            this.lblMarcaMotor.Size = new System.Drawing.Size(70, 13);
+            this.lblMarcaMotor.TabIndex = 32;
+            this.lblMarcaMotor.Text = "Marca Motor:";
+            // 
+            // lblMarcaChasis
+            // 
+            this.lblMarcaChasis.AutoSize = true;
+            this.lblMarcaChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblMarcaChasis.Location = new System.Drawing.Point(33, 180);
+            this.lblMarcaChasis.Name = "lblMarcaChasis";
+            this.lblMarcaChasis.Size = new System.Drawing.Size(74, 13);
+            this.lblMarcaChasis.TabIndex = 33;
+            this.lblMarcaChasis.Text = "Marca Chasis:";
+            // 
+            // cboCombustible
+            // 
+            this.cboCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCombustible.FormattingEnabled = true;
+            this.cboCombustible.Location = new System.Drawing.Point(411, 179);
+            this.cboCombustible.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCombustible.Name = "cboCombustible";
+            this.cboCombustible.Size = new System.Drawing.Size(143, 24);
+            this.cboCombustible.TabIndex = 31;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(411, 151);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(129, 23);
+            this.txtEstado.TabIndex = 30;
+            // 
+            // mskIngreso
+            // 
+            this.mskIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskIngreso.Location = new System.Drawing.Point(206, 18);
+            this.mskIngreso.Mask = "00/00/0000";
+            this.mskIngreso.Name = "mskIngreso";
+            this.mskIngreso.ReadOnly = true;
+            this.mskIngreso.Size = new System.Drawing.Size(80, 23);
+            this.mskIngreso.TabIndex = 28;
+            this.mskIngreso.ValidatingType = typeof(System.DateTime);
+            // 
+            // numericUpDownPlaza
+            // 
+            this.numericUpDownPlaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownPlaza.Location = new System.Drawing.Point(144, 265);
+            this.numericUpDownPlaza.Name = "numericUpDownPlaza";
+            this.numericUpDownPlaza.Size = new System.Drawing.Size(40, 23);
+            this.numericUpDownPlaza.TabIndex = 27;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.Location = new System.Drawing.Point(411, 208);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(143, 23);
+            this.txtTipo.TabIndex = 19;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblMarca.Location = new System.Drawing.Point(146, 53);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(40, 13);
+            this.lblMarca.TabIndex = 2;
+            this.lblMarca.Text = "Marca:";
+            // 
+            // lblModelo
+            // 
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblModelo.Location = new System.Drawing.Point(147, 82);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(45, 13);
+            this.lblModelo.TabIndex = 3;
+            this.lblModelo.Text = "Modelo:";
+            // 
+            // lblIngreso
+            // 
+            this.lblIngreso.AutoSize = true;
+            this.lblIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblIngreso.Location = new System.Drawing.Point(145, 24);
+            this.lblIngreso.Name = "lblIngreso";
+            this.lblIngreso.Size = new System.Drawing.Size(42, 13);
+            this.lblIngreso.TabIndex = 4;
+            this.lblIngreso.Text = "Ingreso";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblEstado.Location = new System.Drawing.Point(338, 156);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.TabIndex = 24;
+            this.lblEstado.Text = "Estado:";
+            // 
+            // lblCantidadPlaza
+            // 
+            this.lblCantidadPlaza.AutoSize = true;
+            this.lblCantidadPlaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblCantidadPlaza.Location = new System.Drawing.Point(33, 270);
+            this.lblCantidadPlaza.Name = "lblCantidadPlaza";
+            this.lblCantidadPlaza.Size = new System.Drawing.Size(97, 13);
+            this.lblCantidadPlaza.TabIndex = 5;
+            this.lblCantidadPlaza.Text = "Cantidad de plazas";
+            // 
+            // lblCombustible
+            // 
+            this.lblCombustible.AutoSize = true;
+            this.lblCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblCombustible.Location = new System.Drawing.Point(338, 185);
+            this.lblCombustible.Name = "lblCombustible";
+            this.lblCombustible.Size = new System.Drawing.Size(70, 13);
+            this.lblCombustible.TabIndex = 6;
+            this.lblCombustible.Text = "Combustible: ";
+            // 
+            // lblKms
+            // 
+            this.lblKms.AutoSize = true;
+            this.lblKms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblKms.Location = new System.Drawing.Point(338, 127);
+            this.lblKms.Name = "lblKms";
+            this.lblKms.Size = new System.Drawing.Size(30, 13);
+            this.lblKms.TabIndex = 7;
+            this.lblKms.Text = "Kms:";
+            // 
+            // txtMarcaMotor
+            // 
+            this.txtMarcaMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarcaMotor.Location = new System.Drawing.Point(116, 119);
+            this.txtMarcaMotor.Name = "txtMarcaMotor";
+            this.txtMarcaMotor.Size = new System.Drawing.Size(183, 23);
+            this.txtMarcaMotor.TabIndex = 21;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblTipo.Location = new System.Drawing.Point(338, 214);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(31, 13);
+            this.lblTipo.TabIndex = 8;
+            this.lblTipo.Text = "Tipo:";
+            // 
+            // txtNroMotor
+            // 
+            this.txtNroMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroMotor.Location = new System.Drawing.Point(116, 147);
+            this.txtNroMotor.Name = "txtNroMotor";
+            this.txtNroMotor.Size = new System.Drawing.Size(183, 23);
+            this.txtNroMotor.TabIndex = 20;
+            // 
+            // lblNroMotor
+            // 
+            this.lblNroMotor.AutoSize = true;
+            this.lblNroMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblNroMotor.Location = new System.Drawing.Point(33, 151);
+            this.lblNroMotor.Name = "lblNroMotor";
+            this.lblNroMotor.Size = new System.Drawing.Size(57, 13);
+            this.lblNroMotor.TabIndex = 9;
+            this.lblNroMotor.Text = "Nro Motor:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.Location = new System.Drawing.Point(33, 209);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Nro Chasis:";
+            // 
+            // txtKms
+            // 
+            this.txtKms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKms.Location = new System.Drawing.Point(411, 123);
+            this.txtKms.Name = "txtKms";
+            this.txtKms.Size = new System.Drawing.Size(129, 23);
+            this.txtKms.TabIndex = 18;
+            // 
+            // lblDominio
+            // 
+            this.lblDominio.AutoSize = true;
+            this.lblDominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblDominio.Location = new System.Drawing.Point(33, 239);
+            this.lblDominio.Name = "lblDominio";
+            this.lblDominio.Size = new System.Drawing.Size(47, 13);
+            this.lblDominio.TabIndex = 11;
+            this.lblDominio.Text = "Patente:";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.Location = new System.Drawing.Point(206, 47);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(155, 23);
+            this.txtMarca.TabIndex = 12;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Location = new System.Drawing.Point(206, 75);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(189, 23);
+            this.txtModelo.TabIndex = 13;
+            // 
+            // txtDominio
+            // 
+            this.txtDominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDominio.Location = new System.Drawing.Point(116, 234);
+            this.txtDominio.Name = "txtDominio";
+            this.txtDominio.Size = new System.Drawing.Size(147, 23);
+            this.txtDominio.TabIndex = 15;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Location = new System.Drawing.Point(25, 6);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(587, 80);
+            this.groupBox3.TabIndex = 53;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Buscar";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(388, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 27);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(153, 51);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(62, 17);
+            this.radioButton2.TabIndex = 51;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Patente";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(67, 51);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(55, 17);
+            this.radioButton1.TabIndex = 50;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Marca";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(65, 20);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(293, 20);
+            this.textBox10.TabIndex = 38;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 74);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(27, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 20);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Marca Motor:";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "por:";
             // 
-            // label5
+            // button2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(293, 72);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Nro Motor:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(144, 69);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(141, 26);
-            this.textBox4.TabIndex = 31;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(418, 71);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(141, 26);
-            this.textBox7.TabIndex = 32;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 110);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Marca Chasis:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(293, 106);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 20);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Nro Chasis:";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(144, 103);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(141, 26);
-            this.textBox17.TabIndex = 35;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(418, 107);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(141, 26);
-            this.textBox18.TabIndex = 36;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(34, 142);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(65, 20);
-            this.label24.TabIndex = 11;
-            this.label24.Text = "Patente";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(395, 194);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Tipo:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(446, 189);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 26);
-            this.textBox1.TabIndex = 37;
+            this.button2.Location = new System.Drawing.Point(462, 443);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(72, 27);
+            this.button2.TabIndex = 54;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frm_ModificarVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 701);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(636, 486);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frm_ModificarVehiculos";
             this.Text = "Modificar Unidades";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPlaza)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.MaskedTextBox mskFechaVencimiento;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Label lblVTV;
+        private System.Windows.Forms.MaskedTextBox mskFechaOtorgada;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtMarcaChasis;
+        private System.Windows.Forms.TextBox txtNroChasis;
+        private System.Windows.Forms.Label lblMarcaMotor;
+        private System.Windows.Forms.Label lblMarcaChasis;
+        private System.Windows.Forms.ComboBox cboCombustible;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.MaskedTextBox mskIngreso;
+        private System.Windows.Forms.NumericUpDown numericUpDownPlaza;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblModelo;
+        private System.Windows.Forms.Label lblIngreso;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblCantidadPlaza;
+        private System.Windows.Forms.Label lblCombustible;
+        private System.Windows.Forms.Label lblKms;
+        private System.Windows.Forms.TextBox txtMarcaMotor;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.TextBox txtNroMotor;
+        private System.Windows.Forms.Label lblNroMotor;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtKms;
+        private System.Windows.Forms.Label lblDominio;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.TextBox txtDominio;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

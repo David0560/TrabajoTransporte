@@ -19,6 +19,7 @@ namespace CV_Presentacion.Forms
     public partial class frm_AltaEmpleados : Form
     {
         private CL_administrarComboBox combo = new CL_administrarComboBox();
+        private CS_servicios servicios = new CS_servicios();
         public frm_AltaEmpleados()
         {
             InitializeComponent();
