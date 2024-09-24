@@ -157,11 +157,11 @@
     <Compile Include="Forms\Documentacion\frm_ActualizarRegistro.Designer.cs">
       <DependentUpon>frm_ActualizarRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_ActualizarVtv.cs">
+    <Compile Include="Forms\Documentacion\frm_Actualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_ActualizarVtv.Designer.cs">
-      <DependentUpon>frm_ActualizarVtv.cs</DependentUpon>
+    <Compile Include="Forms\Documentacion\frm_Actualizar.Designer.cs">
+      <DependentUpon>frm_Actualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.cs">
       <SubType>Form</SubType>

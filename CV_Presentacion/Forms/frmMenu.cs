@@ -219,20 +219,9 @@ namespace CV_Presentacion
         }
         private void btnDocVtv_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_ActualizarVtv(), sender);
-            ocultarSubMenu();
-        }
-        private void btnDocRegistro_Click(object sender, EventArgs e)
-        {
             OpenChildForm(new frm_ActualizarRegistro(), sender);
             ocultarSubMenu();
         }
-        /*private void btnDocRegistro_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_ActualizarRegistro(), sender);
-            ocultarSubMenu();
-
-        */
 
         //Informes
         private void btnRegistros01_Click(object sender, EventArgs e) // Estadisticas
@@ -283,7 +272,7 @@ namespace CV_Presentacion
         // Ajustes
         private void btnAjustActPass_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Actualizar(), sender);
+            OpenChildForm(new Forms.frm_Actualizar(), sender);
             ocultarSubMenu();
         }
         private void btnAjustConfig_Click_1(object sender, EventArgs e)

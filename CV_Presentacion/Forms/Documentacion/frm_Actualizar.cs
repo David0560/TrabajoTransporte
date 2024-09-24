@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CV_Presentacion.Forms.Documentacion
 {
-    public partial class frm_ActualizarVtv : Form
+    public partial class frm_Actualizar : Form
     {
-        public frm_ActualizarVtv()
+        public frm_Actualizar()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace CV_Presentacion.Forms.Documentacion
 {
-    partial class frm_ActualizarVtv
+    partial class frm_Actualizar
     {
         /// <summary>
         /// Required designer variable.

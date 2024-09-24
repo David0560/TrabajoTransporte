@@ -49,7 +49,6 @@
             this.btnInfoEstadisticas = new System.Windows.Forms.Button();
             this.btnInformes = new System.Windows.Forms.Button();
             this.pnlDocumentacion = new System.Windows.Forms.Panel();
-            this.btnDocRegistro = new System.Windows.Forms.Button();
             this.btnDocVtv = new System.Windows.Forms.Button();
             this.btnDocRamales = new System.Windows.Forms.Button();
             this.btnDocUnidad = new System.Windows.Forms.Button();
@@ -125,7 +124,7 @@
             this.pnlAjuestes.Controls.Add(this.btnAjustConfig);
             this.pnlAjuestes.Controls.Add(this.btnAjustActPass);
             this.pnlAjuestes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAjuestes.Location = new System.Drawing.Point(0, 765);
+            this.pnlAjuestes.Location = new System.Drawing.Point(0, 742);
             this.pnlAjuestes.Name = "pnlAjuestes";
             this.pnlAjuestes.Size = new System.Drawing.Size(130, 49);
             this.pnlAjuestes.TabIndex = 16;
@@ -174,7 +173,7 @@
             this.btnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAjustes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjustes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAjustes.Location = new System.Drawing.Point(0, 735);
+            this.btnAjustes.Location = new System.Drawing.Point(0, 712);
             this.btnAjustes.Name = "btnAjustes";
             this.btnAjustes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAjustes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -192,7 +191,7 @@
             this.pnlTaller.Controls.Add(this.btnTallerStock);
             this.pnlTaller.Controls.Add(this.btnTallerCargaInsumos);
             this.pnlTaller.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTaller.Location = new System.Drawing.Point(0, 661);
+            this.pnlTaller.Location = new System.Drawing.Point(0, 638);
             this.pnlTaller.Name = "pnlTaller";
             this.pnlTaller.Size = new System.Drawing.Size(130, 74);
             this.pnlTaller.TabIndex = 14;
@@ -259,7 +258,7 @@
             this.btnTaller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaller.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaller.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTaller.Location = new System.Drawing.Point(0, 631);
+            this.btnTaller.Location = new System.Drawing.Point(0, 608);
             this.btnTaller.Name = "btnTaller";
             this.btnTaller.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnTaller.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -277,7 +276,7 @@
             this.pnlDiaria.Controls.Add(this.btnDiaPlanillaS);
             this.pnlDiaria.Controls.Add(this.btnDiaGrillaLaboral);
             this.pnlDiaria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDiaria.Location = new System.Drawing.Point(0, 557);
+            this.pnlDiaria.Location = new System.Drawing.Point(0, 534);
             this.pnlDiaria.Name = "pnlDiaria";
             this.pnlDiaria.Size = new System.Drawing.Size(130, 74);
             this.pnlDiaria.TabIndex = 12;
@@ -344,7 +343,7 @@
             this.btnDiaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiaria.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiaria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDiaria.Location = new System.Drawing.Point(0, 527);
+            this.btnDiaria.Location = new System.Drawing.Point(0, 504);
             this.btnDiaria.Name = "btnDiaria";
             this.btnDiaria.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnDiaria.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -362,7 +361,7 @@
             this.pnlInformes.Controls.Add(this.btnInfoEstadisticas);
             this.pnlInformes.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInformes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlInformes.Location = new System.Drawing.Point(0, 478);
+            this.pnlInformes.Location = new System.Drawing.Point(0, 455);
             this.pnlInformes.Name = "pnlInformes";
             this.pnlInformes.Size = new System.Drawing.Size(130, 49);
             this.pnlInformes.TabIndex = 10;
@@ -411,7 +410,7 @@
             this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInformes.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInformes.Location = new System.Drawing.Point(0, 448);
+            this.btnInformes.Location = new System.Drawing.Point(0, 425);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnInformes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -425,7 +424,6 @@
             // pnlDocumentacion
             // 
             this.pnlDocumentacion.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pnlDocumentacion.Controls.Add(this.btnDocRegistro);
             this.pnlDocumentacion.Controls.Add(this.btnDocVtv);
             this.pnlDocumentacion.Controls.Add(this.btnDocRamales);
             this.pnlDocumentacion.Controls.Add(this.btnDocUnidad);
@@ -434,26 +432,8 @@
             this.pnlDocumentacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDocumentacion.Location = new System.Drawing.Point(0, 303);
             this.pnlDocumentacion.Name = "pnlDocumentacion";
-            this.pnlDocumentacion.Size = new System.Drawing.Size(130, 145);
+            this.pnlDocumentacion.Size = new System.Drawing.Size(130, 122);
             this.pnlDocumentacion.TabIndex = 6;
-            // 
-            // btnDocRegistro
-            // 
-            this.btnDocRegistro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDocRegistro.FlatAppearance.BorderSize = 0;
-            this.btnDocRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnDocRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDocRegistro.Location = new System.Drawing.Point(0, 115);
-            this.btnDocRegistro.Name = "btnDocRegistro";
-            this.btnDocRegistro.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDocRegistro.Size = new System.Drawing.Size(130, 23);
-            this.btnDocRegistro.TabIndex = 6;
-            this.btnDocRegistro.Text = "Actualizar Registros";
-            this.btnDocRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocRegistro.UseVisualStyleBackColor = true;
-            this.btnDocRegistro.Click += new System.EventHandler(this.btnDocRegistro_Click);
             // 
             // btnDocVtv
             // 
@@ -468,7 +448,7 @@
             this.btnDocVtv.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnDocVtv.Size = new System.Drawing.Size(130, 23);
             this.btnDocVtv.TabIndex = 5;
-            this.btnDocVtv.Text = "Actualizar VTV";
+            this.btnDocVtv.Text = "Actualizar";
             this.btnDocVtv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDocVtv.UseVisualStyleBackColor = true;
             this.btnDocVtv.Click += new System.EventHandler(this.btnDocVtv_Click);
@@ -798,7 +778,7 @@
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(161, 99);
+            this.pnlLogo.Size = new System.Drawing.Size(147, 99);
             this.pnlLogo.TabIndex = 0;
             // 
             // btnMenu
@@ -824,12 +804,12 @@
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(773, 99);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(862, 99);
             this.pnlBarraTitulo.TabIndex = 2;
             // 
             // btnSalirUsuario
             // 
-            this.btnSalirUsuario.Location = new System.Drawing.Point(583, 66);
+            this.btnSalirUsuario.Location = new System.Drawing.Point(709, 66);
             this.btnSalirUsuario.Name = "btnSalirUsuario";
             this.btnSalirUsuario.Size = new System.Drawing.Size(130, 23);
             this.btnSalirUsuario.TabIndex = 5;
@@ -842,7 +822,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblHora.Location = new System.Drawing.Point(646, 40);
+            this.lblHora.Location = new System.Drawing.Point(772, 40);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(34, 16);
             this.lblHora.TabIndex = 4;
@@ -853,7 +833,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblFecha.Location = new System.Drawing.Point(631, 12);
+            this.lblFecha.Location = new System.Drawing.Point(757, 12);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(95, 16);
             this.lblFecha.TabIndex = 3;
@@ -888,13 +868,13 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(0, 99);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(773, 514);
+            this.panelMenu.Size = new System.Drawing.Size(862, 514);
             this.panelMenu.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.pngegg__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(304, 102);
+            this.pictureBox1.Location = new System.Drawing.Point(351, 122);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(290, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -911,7 +891,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(773, 613);
+            this.ClientSize = new System.Drawing.Size(862, 613);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlBarraTitulo);
             this.HelpButton = true;
@@ -978,7 +958,6 @@
         private System.Windows.Forms.Button btnUserPreguntas;
         private System.Windows.Forms.Button btnRegVehiculos;
         private System.Windows.Forms.Button btnRegProveedores;
-        private System.Windows.Forms.Button btnDocRegistro;
         private System.Windows.Forms.Button btnDocVtv;
         private System.Windows.Forms.Button btnDocRamales;
         private System.Windows.Forms.Button btnDocUnidad;
