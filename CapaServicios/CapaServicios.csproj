@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Entidades\ConfiguracionPassword.cs" />
     <Compile Include="Entidades\GrillaDiaria.cs" />
+    <Compile Include="Entidades\Proveedores.cs" />
     <Compile Include="Entidades\Vehiculo.cs" />
     <Compile Include="Password\CS_contraseña.cs" />
     <Compile Include="Servicios_Objetos\CS_servicios.cs" />

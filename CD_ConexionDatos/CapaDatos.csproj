@@ -90,6 +90,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\CLASES PROOVEDORES\CAPA DATOS\Proveedores\CD_Proveedores.cs">
+      <Link>Proveedores\CD_Proveedores.cs</Link>
+    </Compile>
     <Compile Include="CD_cargarComboBox.cs" />
     <Compile Include="CD_crearRegistros.cs" />
     <Compile Include="Empleados\CD_RegistrarEmpleado.cs" />
@@ -132,7 +135,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Proveedores\" />
     <Folder Include="Taller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
