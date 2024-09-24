@@ -22,17 +22,14 @@ namespace CD_ConexionDatos.Negocio
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@xfecha", grilla.Fecha);
                 comando.Parameters.AddWithValue("@xhora_alta", DateTime.Now);
-
                 comando.ExecuteNonQuery();
                 con.Close();
             }
         }
         public int obtenerUltimoRegistroGrilla()
         {
-
             using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
-
                 using (SqlCommand comando = new SqlCommand("spVerUltimoRegistroGrilla", con))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
@@ -47,7 +44,6 @@ namespace CD_ConexionDatos.Negocio
                     }
                     con.Close();
                 }
-
             }
             return cantidad;
         }
