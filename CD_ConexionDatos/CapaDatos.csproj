@@ -90,11 +90,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CLASES PROOVEDORES\CAPA DATOS\Proveedores\CD_Proveedores.cs">
-      <Link>Proveedores\CD_Proveedores.cs</Link>
-    </Compile>
+    <Compile Include="ActualizarRegistros\CD_ActualizarRegistros.cs" />
     <Compile Include="CD_cargarComboBox.cs" />
-    <Compile Include="CD_crearRegistros.cs" />
     <Compile Include="Empleados\CD_RegistrarEmpleado.cs" />
     <Compile Include="Entidades\CD_Ramal.cs" />
     <Compile Include="Negocio\CD_Choferes.cs" />
@@ -105,18 +102,19 @@
     <Compile Include="Password\CD_RegistrosPassword.cs" />
     <Compile Include="CD_Permisos\CD_RegistrosPermisos.cs" />
     <Compile Include="Pregunta de seguridad\CD_Pregunta.cs" />
+    <Compile Include="Proveedores\CD_Proveedores.cs" />
     <Compile Include="Usuarios\CD_PreguntaUsuario.cs" />
     <Compile Include="Entidades\codigoVerificador.cs" />
-    <Compile Include="conexionDB.cs" />
-    <Compile Include="ConfiguracionPasswordDAL.cs" />
-    <Compile Include="connectionDB.cs" />
+    <Compile Include="Conexion\conexionDB.cs" />
+    <Compile Include="Password\ConfiguracionPasswordDAL.cs" />
+    <Compile Include="Conexion\connectionDB.cs" />
     <Compile Include="CD_listarTablas.cs" />
     <Compile Include="Entidades\cachePermisosAlta.cs" />
     <Compile Include="Entidades\ContrasenaUsuario.cs" />
     <Compile Include="Entidades\Pregunta.cs" />
-    <Compile Include="operaciones.cs" />
+    <Compile Include="Usuarios\operaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLServerConexion.cs" />
+    <Compile Include="Conexion\SQLServerConexion.cs" />
     <Compile Include="Usuarios\CD_RegistrosUsuarios.cs" />
     <Compile Include="Vehiculos\CD_Vehiculos.cs" />
   </ItemGroup>

@@ -64,10 +64,8 @@ namespace CD_ConexionDatos.Usuarios
         }
         public int obtenerUltimoUsuario()
         {
-
             using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
-
                 using (SqlCommand comando = new SqlCommand("spVerUltimoUsuairo", con))
                 {
                     comando.CommandType = CommandType.StoredProcedure;

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CL_Servicios.Entidades;
-using CL_Negocios.Entidades;
-using CD_ConexionDatos;
 using CapaServicios.Entidades;
 using System.Data;
+using CD_ConexionDatos.Proveedores;
 using System.Security.Cryptography.X509Certificates;
 namespace CL_Negocios
 {

@@ -19,7 +19,6 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
         public frm_EstimalGrilla()
         {
             InitializeComponent();
-
         }
        
         private void frm_EstimalGrilla_Load(object sender, EventArgs e)

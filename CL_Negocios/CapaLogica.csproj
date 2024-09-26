@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarRegistros\CL_AdministrarRegistros.cs" />
     <Compile Include="CL_administrarComboBox.cs" />
     <Compile Include="Proveedores\CL_Proveedores.cs" />
     <Compile Include="Empleados\CL_AdministrarEmpleados.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="Login\CL_administrarLogin.cs" />
     <Compile Include="Login\CL_administrarPreguntas.cs" />
     <Compile Include="Login\CL_administrarPreguntasUsuario.cs" />
-    <Compile Include="CL_administrarRegistros.cs" />
     <Compile Include="CL_administrarTablas.cs" />
     <Compile Include="CL_cacheManager.cs" />
     <Compile Include="Configuracion\ConfiguracionPasswordBLL.cs" />

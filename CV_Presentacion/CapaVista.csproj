@@ -151,17 +151,23 @@
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_PlanillaSalida.Designer.cs">
       <DependentUpon>frm_PlanillaSalida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_ActualizarRegistro.cs">
+    <Compile Include="Forms\Documentacion\Actualizar\frm_ActualizarVtv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_ActualizarRegistro.Designer.cs">
-      <DependentUpon>frm_ActualizarRegistro.cs</DependentUpon>
+    <Compile Include="Forms\Documentacion\Actualizar\frm_ActualizarVtv.Designer.cs">
+      <DependentUpon>frm_ActualizarVtv.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_Actualizar.cs">
+    <Compile Include="Forms\Documentacion\Actualizar\frm_ActualizarRegistroCond.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_Actualizar.Designer.cs">
-      <DependentUpon>frm_Actualizar.cs</DependentUpon>
+    <Compile Include="Forms\Documentacion\Actualizar\frm_ActualizarRegistroCond.Designer.cs">
+      <DependentUpon>frm_ActualizarRegistroCond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Actualizar\frm_MenuActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Actualizar\frm_MenuActualizar.Designer.cs">
+      <DependentUpon>frm_MenuActualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.cs">
       <SubType>Form</SubType>
@@ -396,8 +402,14 @@
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_PlanillaSalida.resx">
       <DependentUpon>frm_PlanillaSalida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\frm_ActualizarRegistro.resx">
-      <DependentUpon>frm_ActualizarRegistro.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Documentacion\Actualizar\frm_ActualizarRegistroCond.resx">
+      <DependentUpon>frm_ActualizarRegistroCond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Actualizar\frm_ActualizarVtv.resx">
+      <DependentUpon>frm_ActualizarVtv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Actualizar\frm_MenuActualizar.resx">
+      <DependentUpon>frm_MenuActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.resx">
       <DependentUpon>frm_MenuLicenciaEmpleado.cs</DependentUpon>
@@ -582,6 +594,7 @@
   <ItemGroup>
     <None Include="Resources\seguridad.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -13,11 +13,16 @@ using CV_Presentacion.Forms.Diaria.Frm_Diaria;
 using CV_Presentacion.Forms.Ajustes.Frm_Ajustes;
 using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla;
 using CV_Presentacion.Forms.Informes.Frm_Informes;
+using CL_Negocios.ActualizarRegistros;
+using Microsoft.Win32;
 
 namespace CV_Presentacion
 {
     public partial class FrmMenu : Form
     {
+        public CL_AdministrarRegistros registro = new CL_AdministrarRegistros();
+
+
 
         private Form activeForm;
         public FrmMenu()
@@ -28,6 +33,11 @@ namespace CV_Presentacion
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
+            if (registro.valores())
+            {
+                MessageBox.Show("Damos Aviso que contiene registros a punto de vencer");
+            }
+
         }
         private void CargarDatosUsuario()
         {
@@ -219,7 +229,7 @@ namespace CV_Presentacion
         }
         private void btnDocVtv_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_ActualizarRegistro(), sender);
+            OpenChildForm(new frm_MenuActualizar(), sender);
             ocultarSubMenu();
         }
 
