@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CapaServicios.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
