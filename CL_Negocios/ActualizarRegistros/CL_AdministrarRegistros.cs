@@ -21,9 +21,9 @@ namespace CL_Negocios.ActualizarRegistros
         }
 
         //metodos VTV
-        public DataTable CargarRegistrosVehiculos()
+        public DataTable CargarRegistroVehiculos()
         {
-            return _ActualizarRegistro.ObtenerTablaVtvVenciada();
+            return _ActualizarRegistro.ObtenerTablaVtvVencida();
         }
         public bool ActualizarVtv(int id, DateTime fechaO, DateTime fechaV)
         {
@@ -39,7 +39,6 @@ namespace CL_Negocios.ActualizarRegistros
             }
 
         }
-
         // metodo RegistroCond
         public DataTable CargarRegistrosCond()
         {
@@ -59,7 +58,6 @@ namespace CL_Negocios.ActualizarRegistros
             }
 
         }
-
         public bool valores()
         {
             int coches = _ActualizarRegistro.CantVehiculosActualizar();

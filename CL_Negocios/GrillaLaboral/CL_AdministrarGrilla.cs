@@ -1,5 +1,7 @@
 ﻿using CapaServicios;
+using CapaServicios.Entidades.Diaria;
 using CD_ConexionDatos;
+using CD_ConexionDatos.ActualizarRegistros;
 using CD_ConexionDatos.Empleados;
 using CD_ConexionDatos.Entidades;
 using CD_ConexionDatos.Negocio;
@@ -8,9 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CL_Negocios.GrillaLaboral
@@ -24,17 +28,9 @@ namespace CL_Negocios.GrillaLaboral
         CD_listarTablas tabla = new CD_listarTablas();
         CD_Choferes chofer = new CD_Choferes();
         CD_Ramal Ramal = new CD_Ramal();
+        CD_CrearGrilla g = new CD_CrearGrilla();
 
-
-        public CL_AdministrarGrilla() { }
-
-        public bool CrearNuevaRegistro(GrillaDiaria grilla)
-        {
-           cargar.guardarNuevaGrilla(grilla);
-           return true;
-        }
-         
-        public DataTable Frecunacia(int ramal)
+        private DataTable Frecunacia(int ramal)
         {
             return Ramal.FrecuenciaPorRamal(ramal);// devuelve la frecuencia del ramal seleccionado
         }
@@ -76,18 +72,25 @@ namespace CL_Negocios.GrillaLaboral
             {
                 return true;
             }
-
-            
+        }
+        public bool CrearNuevaRegistro(GrillaDiaria grilla)
+        {
+            cargar.guardarNuevaGrilla(grilla);
+            return true;
         }
 
+        //
+        // generador de grilla diarias
         public DataTable GenerarGrilla(int ramal, DateTime fecha)
         {
             DataTable total = new DataTable();
 
+            total.Columns.Add("IdFrecuencia", typeof(int));// id frecuencia ------
             total.Columns.Add("Nombre", typeof(string));//frecuencia
+            total.Columns.Add("IdUnidad", typeof(int));// id unidad ------
             total.Columns.Add("Unidad", typeof(string));//unidad
-            total.Columns.Add("HoraInicio", typeof(TimeSpan)); //frecuencia
-            total.Columns.Add("legajo", typeof(int));//chofer
+            total.Columns.Add("HoraInicio", typeof(TimeSpan)); //frecuencia ------
+            total.Columns.Add("legajo", typeof(int));//chofer id ------
             total.Columns.Add("Chofer", typeof(string)); //chofer
             total.Columns.Add("HoraEntrada", typeof(TimeSpan));
             total.Columns.Add("HoraFinTurno", typeof(TimeSpan));
@@ -108,9 +111,12 @@ namespace CL_Negocios.GrillaLaboral
 
 
                 DataRow filaDestino = total.NewRow();
+
+                filaDestino["IdFrecuencia"] = fila["Id"];
                 filaDestino["Nombre"] = fila["Nombre"];
                 filaDestino["HoraInicio"]= fila["HoraInicio"];
                 TimeSpan entrada = (TimeSpan)filaDestino["HoraInicio"];
+                filaDestino["IdUnidad"] = fila2["IdUnidad"];
                 filaDestino["Unidad"] = fila2["Nombre"];
                 filaDestino["legajo"] = fila3["legajo"];
                 filaDestino["Chofer"] = fila3["Chofer"];
@@ -129,9 +135,12 @@ namespace CL_Negocios.GrillaLaboral
 
 
                 DataRow filaDestino = total.NewRow();
+
+                filaDestino["IdFrecuencia"] = fila["Id"];
                 filaDestino["Nombre"] = fila["Nombre"];
                 filaDestino["HoraInicio"] = fila["HoraInicio"];
                 TimeSpan entrada = (TimeSpan)filaDestino["HoraInicio"];
+                filaDestino["IdUnidad"] = fila2["IdUnidad"];
                 filaDestino["Unidad"] = fila2["Nombre"];
                 filaDestino["legajo"] = fila3["legajo"];
                 filaDestino["Chofer"] = fila3["Chofer"];
@@ -145,8 +154,89 @@ namespace CL_Negocios.GrillaLaboral
 
             return total;
         }
+        public DataTable GrillaDia(DataTable tabla)
+        {
+            DataTable total = new DataTable();
+
+            total.Columns.Add("Nombre", typeof(string));//frecuencia
+            total.Columns.Add("HoraInicio", typeof(TimeSpan)); //frecuencia ------
+            total.Columns.Add("Unidad", typeof(string));//unidad
+            total.Columns.Add("legajo", typeof(int));//chofer id ------
+            total.Columns.Add("Chofer", typeof(string)); //chofer
+            total.Columns.Add("HoraEntrada", typeof(TimeSpan));
+            total.Columns.Add("HoraFinTurno", typeof(TimeSpan));
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+
+                DataRow filaDestino = total.NewRow();
+
+                filaDestino["Nombre"] = fila["Nombre"];
+                filaDestino["HoraInicio"] = fila["HoraInicio"];
+                TimeSpan entrada = (TimeSpan)filaDestino["HoraInicio"];
+                filaDestino["Unidad"] = fila["Unidad"];
+                filaDestino["legajo"] = fila["legajo"];
+                filaDestino["Chofer"] = fila["Chofer"];
+                filaDestino["HoraEntrada"] = entrada - (TimeSpan.FromMinutes(20));
+                TimeSpan salida = (TimeSpan)filaDestino["HoraEntrada"];
+                filaDestino["HoraFinTurno"] = salida + (TimeSpan.FromHours(8));
+
+                total.Rows.Add(filaDestino);
+            }
+            return total;
+        }
+
+        //
+        // tabla para guardar
+        public DataTable GrillaParaGuardar(DataTable tabla)
+        {
+            DataTable total = new DataTable();
+
+            total.Columns.Add("IdFrecuencia", typeof(int));// id frecuencia ------
+            total.Columns.Add("legajo", typeof(int));//chofer id ------
+            total.Columns.Add("IdUnidad", typeof(int));// id unidad ------
+            total.Columns.Add("HoraInicio", typeof(TimeSpan)); //frecuencia ------
+            total.Columns.Add("HoraEntrada", typeof(TimeSpan));
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                DataRow fila = tabla.Rows[i];
 
 
+                DataRow filaDestino = total.NewRow();
+
+                filaDestino["IdFrecuencia"] = fila["IdFrecuencia"];
+                filaDestino["HoraInicio"] = fila["HoraInicio"];
+                filaDestino["IdUnidad"] = fila["IdUnidad"];
+                filaDestino["legajo"] = fila["legajo"];
+                filaDestino["HoraEntrada"] = fila["HoraEntrada"];
+
+                total.Rows.Add(filaDestino);
+            }
+            return total;
+        }
+
+        // Lista de prueba.
+        /*public List<PlanillaLab> ListaLaboral(DataTable tabla) //crear una lista de objetos de una tabla 
+        {
+            List<PlanillaLab> listaLaboral = new List<PlanillaLab>();
+
+            foreach (DataRow row in tabla.Rows)
+            {
+                PlanillaLab registro = new PlanillaLab(
+                
+                    Convert.ToInt32(row["Id"]),
+                    Convert.ToInt32(row["IdFrecuencia"]),
+                    Convert.ToInt32(row["IdEmpleado"]),
+                    Convert.ToInt32(row["IdUnidad"])
+
+
+                );
+
+                listaLaboral.Add(registro);
+            }
+            return listaLaboral;
+        }*/
     }
 }
-

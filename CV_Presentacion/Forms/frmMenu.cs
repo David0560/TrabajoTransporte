@@ -33,6 +33,8 @@ namespace CV_Presentacion
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
+
+            // revisar mejor opcion para avisos.
             if (registro.valores())
             {
                 MessageBox.Show("Damos Aviso que contiene registros a punto de vencer");

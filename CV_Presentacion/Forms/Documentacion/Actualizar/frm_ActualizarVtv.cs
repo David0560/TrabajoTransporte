@@ -38,7 +38,7 @@ namespace CV_Presentacion.Forms.Documentacion
         private void frm_ActualizarVtv_Load(object sender, EventArgs e)
         {
             servicio.estiloDataGrid(dgvVerificacionVtv);
-            dgvVerificacionVtv.DataSource = Registros.CargarRegistrosVehiculos();
+            dgvVerificacionVtv.DataSource = Registros.CargarRegistroVehiculos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace CV_Presentacion.Forms.Documentacion
                 {
                     MessageBox.Show("Registro Actualizado Correctamente");
                     servicio.LimpiarControlesForm(this);
-                    dgvVerificacionVtv.DataSource = Registros.CargarRegistrosVehiculos();
+                    dgvVerificacionVtv.DataSource = Registros.CargarRegistroVehiculos();
                 }
                 else
                 {

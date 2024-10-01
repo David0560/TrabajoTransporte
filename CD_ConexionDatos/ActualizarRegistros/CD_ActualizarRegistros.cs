@@ -16,7 +16,6 @@ namespace CD_ConexionDatos.ActualizarRegistros
         SqlDataReader dr; // permite lee la secuencia de filas en una tabla "dr es una variable"
         DataTable dt = new DataTable(); // instancia un objeto tipo tabla
         int cantidad;
-        //
         //Metodos
         //
         //**** VTV 
@@ -47,40 +46,7 @@ namespace CD_ConexionDatos.ActualizarRegistros
                 throw;
             }
         }
-        public List<VerificacionVtv> ObtenerListaVtvVencida() // forma para cargar una lista desde la base de datos 
-        {
-            List<VerificacionVtv> listaVtv = new List<VerificacionVtv>();
-
-            using (con = connectionBD.CreaInstacia().CrearConexion())
-            {
-                con.Open();
-
-                using (SqlCommand command = new SqlCommand("sp_RegistrosCochePorVencer", con))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader()) //obtengo la tabla con los registros de la query
-                    {
-                        while (reader.Read())// leo la tabla y los cargo un variables
-                        {
-                            // las propiedades son las que se encuentran en la entidad del objeto (propiedades)
-
-                            int Id = Convert.ToInt32(reader["Id"]);
-                            string Nombre = Convert.ToString(reader["Nombre"]);
-                            string Dominio = Convert.ToString(reader["Dominio"]);
-                            string Modelo = Convert.ToString(reader["Modelo"]);
-                            DateTime FechaV = Convert.ToDateTime(reader["FechaVencimiento"]);
-
-
-                            VerificacionVtv VtvVence = new VerificacionVtv(Id, Nombre, Dominio, Modelo, FechaV); //cargo las variables usando el constructor
-
-                            listaVtv.Add(VtvVence); // guardo los objetos en la lista
-                        }
-                        return listaVtv;// devuelve la lista con los objetos
-                    }
-                }
-            }
-
-        }
-        public DataTable ObtenerTablaVtvVenciada()
+        public DataTable ObtenerTablaVtvVencida()
         {
             try
             {
@@ -203,6 +169,49 @@ namespace CD_ConexionDatos.ActualizarRegistros
             }
             return cantidad;
         }
+
+
+        //codigo de prueba
+        /* List<VerificacionVtv> ObtenerListaVtvVencida() // forma para cargar una lista desde la base de datos 
+        {
+            List<VerificacionVtv> listaVtv = new List<VerificacionVtv>();
+
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+
+                using (SqlCommand command = new SqlCommand("sp_RegistrosCochePorVencer", con))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader()) //obtengo la tabla con los registros de la query
+                    {
+                        while (reader.Read())// leo la tabla y los cargo un variables
+                        {
+                            // las propiedades son las que se encuentran en la entidad del objeto (propiedades)
+
+                            int Id = Convert.ToInt32(reader["Id"]);
+                            string Nombre = Convert.ToString(reader["Nombre"]);
+                            string Dominio = Convert.ToString(reader["Dominio"]);
+                            string Modelo = Convert.ToString(reader["Modelo"]);
+                            DateTime FechaV = Convert.ToDateTime(reader["FechaVencimiento"]);
+
+
+                            VerificacionVtv VtvVence = new VerificacionVtv(Id, Nombre, Dominio, Modelo, FechaV); //cargo las variables usando el constructor
+
+                            listaVtv.Add(VtvVence); // guardo los objetos en la lista
+                        }
+                        return listaVtv;// devuelve la lista con los objetos
+                    }
+                }
+            }
+
+        }*/
+
+
+
+
+
+
+
     }
 
 

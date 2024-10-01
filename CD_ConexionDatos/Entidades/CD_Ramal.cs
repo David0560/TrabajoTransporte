@@ -39,12 +39,10 @@ namespace CD_ConexionDatos.Entidades
         int cantidad;
         public DataTable FrecuenciaPorRamal(int id)
         {
-            List<CD_Ramal> Ramal = new List<CD_Ramal>();
-
             using (con = connectionBD.CreaInstacia().CrearConexion())
             {
                 con.Open();
-                SqlCommand comando = new SqlCommand("spFrecuenciaPorRamal", con);
+                SqlCommand comando = new SqlCommand("spObtenetFrecuenciaPorRamal", con);
                 comando.Parameters.Add(new SqlParameter("@xid", con));
                 comando.Parameters["@xid"].Value = id;
                 comando.CommandType = CommandType.StoredProcedure;

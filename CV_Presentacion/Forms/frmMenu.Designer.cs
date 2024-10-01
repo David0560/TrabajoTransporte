@@ -520,7 +520,7 @@
             this.btnDocLicencia.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnDocLicencia.Size = new System.Drawing.Size(130, 23);
             this.btnDocLicencia.TabIndex = 0;
-            this.btnDocLicencia.Text = "Licencia Empleado";
+            this.btnDocLicencia.Text = "Licencias";
             this.btnDocLicencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDocLicencia.UseVisualStyleBackColor = true;
             this.btnDocLicencia.Click += new System.EventHandler(this.btnEmpleados01_Click);

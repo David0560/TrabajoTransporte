@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaServicios.Entidades.Diaria;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,10 @@ namespace CD_ConexionDatos.Entidades
             this.id_Frecuencias = id_frec;
             this.HoraSalida = hora;
         }
-            
 
-
-
+        public static implicit operator PlanillaLaboral(PlanillaLab v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

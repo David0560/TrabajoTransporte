@@ -16,6 +16,8 @@ namespace CD_ConexionDatos
             this.connectionString = connectionString;
         }
 
+
+        // tenemos que creer una clase Configucacion y pasar como parametro un objeto a este metodo.
         public void GuardarConfiguracion(int minimo, int maximo, int intentos, bool mayusMinus, bool numerosLetras, bool especial, bool dosPasos, bool repetir, bool datosPersonales, bool preguntaSeguridad, bool nuevasPreguntas, bool bloqueoAuto, int diasBloqueo)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -57,4 +59,4 @@ namespace CD_ConexionDatos
             }
         }
     }
-    }
+}

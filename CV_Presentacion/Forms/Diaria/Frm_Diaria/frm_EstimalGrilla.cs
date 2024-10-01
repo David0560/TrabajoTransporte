@@ -38,9 +38,10 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
             //dgvGrillaDelDia.DataSource = grilla.ChoferesQueTrabajan(fecha);
             //dgvGrillaDelDia.DataSource = grilla.UnidadesActivas(fecha);
 
-            dgvGrillaDelDia.DataSource = grilla.GenerarGrilla(ramal,fecha);
+            dgvGrillaDelDia.DataSource = grilla.GrillaDia(grilla.GenerarGrilla(ramal, fecha));
+            //grilla.GenerarGrilla(ramal,fecha);
 
-            
+
         }
 
         private void btnGuardarGrilla_Click(object sender, EventArgs e)

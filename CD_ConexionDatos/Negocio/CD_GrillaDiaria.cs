@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CD_ConexionDatos.Entidades;
+using CL_Negocios.Entidades;
+using CapaServicios.Entidades.Diaria;
 
 namespace CD_ConexionDatos.Negocio
 {
@@ -47,5 +49,39 @@ namespace CD_ConexionDatos.Negocio
             }
             return cantidad;
         }
+
+
+        /*public void guardarDiaria(int id, List<PlanillaLab> planilla)// guarda toda la lista de registros que se crearon para el dia X.
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                try
+                {
+                    foreach (var objetos in planilla)
+                    {
+                        using (SqlCommand command = new SqlCommand("sp", con))
+                        {
+                            command.Parameters.AddWithValue("@xidGrilla", id);
+                            command.Parameters.AddWithValue("@xidFrecuencia", planilla.Id_Frecuencias);
+                            command.Parameters.AddWithValue("@xidEmpleado", planilla.Id_Empleados);
+                            command.Parameters.AddWithValue("@xidUnidad", planilla.Id_Unidad);
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al guardar las respuestas del usuario", ex);
+                }
+            }
+        }
+
+
+
+
+        // ***** metodos con listas y LINQ *******
+        */
     }
 }

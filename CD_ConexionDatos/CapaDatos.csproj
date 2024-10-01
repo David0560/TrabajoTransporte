@@ -91,9 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActualizarRegistros\CD_ActualizarRegistros.cs" />
+    <Compile Include="ActualizarRegistros\CD_CrearGrilla.cs" />
     <Compile Include="CD_cargarComboBox.cs" />
     <Compile Include="Empleados\CD_RegistrarEmpleado.cs" />
     <Compile Include="Entidades\CD_Ramal.cs" />
+    <Compile Include="Entidades\PlanillaDiaria\Ramal.cs" />
+    <Compile Include="Entidades\PlanillaDiaria\Unidad.cs" />
     <Compile Include="Negocio\CD_Choferes.cs" />
     <Compile Include="Entidades\PlanillaLaboral.cs" />
     <Compile Include="Login\CD_loginUsuario.cs" />
