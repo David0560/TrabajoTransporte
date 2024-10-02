@@ -408,11 +408,17 @@
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Accidentes.resx">
       <DependentUpon>frm_Accidentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_ControlUnidad.resx">
+      <DependentUpon>frm_ControlUnidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Cortes.resx">
       <DependentUpon>frm_Cortes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Lesionados.resx">
       <DependentUpon>frm_Lesionados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Recambio.resx">
+      <DependentUpon>frm_Recambio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.resx">
       <DependentUpon>frm_MenuCierrePlanilla.cs</DependentUpon>

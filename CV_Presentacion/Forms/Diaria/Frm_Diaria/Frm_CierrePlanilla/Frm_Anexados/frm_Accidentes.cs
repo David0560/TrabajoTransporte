@@ -17,5 +17,9 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
             InitializeComponent();
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

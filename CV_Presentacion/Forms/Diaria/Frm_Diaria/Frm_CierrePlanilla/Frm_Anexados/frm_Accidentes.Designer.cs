@@ -65,6 +65,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.grbUbicacion.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -404,11 +405,22 @@
             this.label15.TabIndex = 18;
             this.label15.Text = "Observación:";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(482, 318);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 19;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frm_Accidentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 424);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.button2);
@@ -417,6 +429,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grbUbicacion);
             this.Name = "frm_Accidentes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Accidentes";
             this.grbUbicacion.ResumeLayout(false);
             this.grbUbicacion.PerformLayout();
@@ -468,5 +481,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

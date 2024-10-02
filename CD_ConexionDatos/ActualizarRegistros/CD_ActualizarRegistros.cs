@@ -48,6 +48,7 @@ namespace CD_ConexionDatos.ActualizarRegistros
         }
         public DataTable ObtenerTablaVtvVencida()
         {
+            DataTable data01 = new DataTable();
             try
             {
                 // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
@@ -57,8 +58,8 @@ namespace CD_ConexionDatos.ActualizarRegistros
                     {
                         con.Open();// abro la conexion.
                         dr = comando.ExecuteReader(); // comando va a tener los resultados de la consulta y los lleva atraves del executereade estos los voy a cargar en la lista.
-                        dt.Load(dr); // la variable tabla (dataTable) va a cargar lo que tiene lista
-                        return dt; // devuelvo tabla que lo contiene en memora depues lo mando al grid
+                        data01.Load(dr); // la variable tabla (dataTable) va a cargar lo que tiene lista
+                        return data01; // devuelvo tabla que lo contiene en memora depues lo mando al grid
                     }; // preparo la BD para que reciva la consulta (consulta, conexion)
                 }
             }
@@ -97,6 +98,7 @@ namespace CD_ConexionDatos.ActualizarRegistros
         //**** RegistroCond
         public DataTable ObtenerTablaRegConducirPorVencer()
         {
+            DataTable data01 = new DataTable();
             try
             {
                 // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
@@ -106,8 +108,8 @@ namespace CD_ConexionDatos.ActualizarRegistros
                     {
                         con.Open();// abro la conexion.
                         dr = comando.ExecuteReader(); // comando va a tener los resultados de la consulta y los lleva atraves del executereade estos los voy a cargar en la lista.
-                        dt.Load(dr); // la variable tabla (dataTable) va a cargar lo que tiene lista
-                        return dt; // devuelvo tabla que lo contiene en memora depues lo mando al grid
+                        data01.Load(dr); // la variable tabla (dataTable) va a cargar lo que tiene lista
+                        return data01; // devuelvo tabla que lo contiene en memora depues lo mando al grid
                     }; // preparo la BD para que reciva la consulta (consulta, conexion)
                 }
             }

@@ -22,32 +22,32 @@ namespace CV_Presentacion.Forms.Frm_Registros
         private void btnControlUnidad_Click(object sender, EventArgs e)
         {
             Form corte = new frm_ControlUnidad();
-            corte.Show();
+            corte.ShowDialog();
         }
         private void btnCorte_Click(object sender, EventArgs e)
         {
             Form corte = new frm_Cortes();
-            corte.Show();
+            corte.ShowDialog();
         }
         private void btnRecambio_Click(object sender, EventArgs e)
         {
             Form corte = new frm_Recambio();
-            corte.Show();
+            corte.ShowDialog();
         }
         private void btnAccidente_Click(object sender, EventArgs e)
         {
             Form corte = new frm_Accidentes();
-            corte.Show();
+            corte.ShowDialog();
         }
         private void btnLesionados_Click(object sender, EventArgs e)
         {
             Form corte = new frm_Lesionados();
-            corte.Show();
+            corte.ShowDialog();
         }
         private void btnTestigo_Click(object sender, EventArgs e)
         {
             Form corte = new frm_Testigo();
-            corte.Show();
+            corte.ShowDialog();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

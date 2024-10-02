@@ -16,5 +16,6 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexado
         {
             InitializeComponent();
         }
+
     }
 }

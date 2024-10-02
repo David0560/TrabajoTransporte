@@ -46,9 +46,9 @@ namespace CV_Presentacion.Forms.Documentacion
 
             // captura los datos del registro
             var Nombre = dgvVerificacionVtv.SelectedRows[0].Cells["Nombre"].Value;
-            var Apellido = dgvVerificacionVtv.SelectedRows[0].Cells["Apellido"].Value;
+            var Dominio = dgvVerificacionVtv.SelectedRows[0].Cells["Dominio"].Value;
 
-            DialogResult resultado = MessageBox.Show($"Se encuetra a punto de cambiar el registro de\n \n {Nombre}  {Apellido} \n \n ¿Está seguro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            DialogResult resultado = MessageBox.Show($"Se encuetra a punto de cambiar el registro de\n \n {Nombre}  {Dominio} \n \n ¿Está seguro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (resultado == DialogResult.OK)
             {
                 int id = Convert.ToInt32(this.dgvVerificacionVtv.SelectedRows[0].Cells[0].Value);
