@@ -40,7 +40,7 @@
             // 
             // btnGuardarGrilla
             // 
-            this.btnGuardarGrilla.Location = new System.Drawing.Point(515, 23);
+            this.btnGuardarGrilla.Location = new System.Drawing.Point(532, 23);
             this.btnGuardarGrilla.Name = "btnGuardarGrilla";
             this.btnGuardarGrilla.Size = new System.Drawing.Size(75, 23);
             this.btnGuardarGrilla.TabIndex = 89;
@@ -50,7 +50,7 @@
             // 
             // btnCargarGrilla
             // 
-            this.btnCargarGrilla.Location = new System.Drawing.Point(437, 23);
+            this.btnCargarGrilla.Location = new System.Drawing.Point(449, 23);
             this.btnCargarGrilla.Name = "btnCargarGrilla";
             this.btnCargarGrilla.Size = new System.Drawing.Size(75, 23);
             this.btnCargarGrilla.TabIndex = 86;
@@ -80,7 +80,7 @@
             this.dgvGrillaDelDia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrillaDelDia.Location = new System.Drawing.Point(18, 70);
             this.dgvGrillaDelDia.Name = "dgvGrillaDelDia";
-            this.dgvGrillaDelDia.Size = new System.Drawing.Size(580, 366);
+            this.dgvGrillaDelDia.Size = new System.Drawing.Size(598, 372);
             this.dgvGrillaDelDia.TabIndex = 83;
             // 
             // lblFecha
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 484);
+            this.ClientSize = new System.Drawing.Size(636, 464);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnGuardarGrilla);
             this.Controls.Add(this.btnCargarGrilla);

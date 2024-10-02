@@ -136,11 +136,11 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Actualizacion de Contraseña";
             // 
-            // frm_Configuracion
+            // frm_Actualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 340);
+            this.ClientSize = new System.Drawing.Size(636, 464);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtRepetir);
@@ -152,7 +152,7 @@
             this.Controls.Add(this.lblContraseñaActual);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtContraseñaActual);
-            this.Name = "frm_Configuracion";
+            this.Name = "frm_Actualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Configuracion";
             this.ResumeLayout(false);

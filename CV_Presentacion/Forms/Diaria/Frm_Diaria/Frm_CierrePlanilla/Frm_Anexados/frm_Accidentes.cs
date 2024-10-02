@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
 {
-    public partial class frm_PlanillaSalida : Form
+    public partial class frm_Accidentes : Form
     {
-        public frm_PlanillaSalida()
+        public frm_Accidentes()
         {
             InitializeComponent();
         }
+
     }
 }

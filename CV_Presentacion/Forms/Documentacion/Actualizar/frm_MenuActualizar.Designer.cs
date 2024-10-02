@@ -40,7 +40,7 @@
             this.pnlFormulario2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormulario2.Location = new System.Drawing.Point(0, 27);
             this.pnlFormulario2.Name = "pnlFormulario2";
-            this.pnlFormulario2.Size = new System.Drawing.Size(800, 423);
+            this.pnlFormulario2.Size = new System.Drawing.Size(636, 437);
             this.pnlFormulario2.TabIndex = 5;
             // 
             // pnlPanel1
@@ -50,7 +50,7 @@
             this.pnlPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPanel1.Location = new System.Drawing.Point(0, 0);
             this.pnlPanel1.Name = "pnlPanel1";
-            this.pnlPanel1.Size = new System.Drawing.Size(800, 27);
+            this.pnlPanel1.Size = new System.Drawing.Size(636, 27);
             this.pnlPanel1.TabIndex = 4;
             // 
             // btnRegistroConducir
@@ -79,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(636, 464);
             this.Controls.Add(this.pnlFormulario2);
             this.Controls.Add(this.pnlPanel1);
             this.Name = "frm_MenuActualizar";

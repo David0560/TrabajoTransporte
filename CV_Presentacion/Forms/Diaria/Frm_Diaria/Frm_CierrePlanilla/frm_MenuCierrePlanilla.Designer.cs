@@ -31,8 +31,8 @@
             this.pnlFormulario2 = new System.Windows.Forms.Panel();
             this.pnlPanel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAlta = new System.Windows.Forms.Button();
             this.pnlPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,8 +47,8 @@
             // pnlPanel1
             // 
             this.pnlPanel1.Controls.Add(this.button3);
-            this.pnlPanel1.Controls.Add(this.button2);
-            this.pnlPanel1.Controls.Add(this.button1);
+            this.pnlPanel1.Controls.Add(this.btnModificar);
+            this.pnlPanel1.Controls.Add(this.btnAlta);
             this.pnlPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPanel1.Location = new System.Drawing.Point(0, 0);
             this.pnlPanel1.Name = "pnlPanel1";
@@ -65,25 +65,27 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnModificar
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(75, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnModificar.Location = new System.Drawing.Point(75, 0);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 27);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // button1
+            // btnAlta
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAlta.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAlta.Location = new System.Drawing.Point(0, 0);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(75, 27);
+            this.btnAlta.TabIndex = 0;
+            this.btnAlta.Text = "ALta";
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // frm_MenuCierrePlanilla
             // 
@@ -94,6 +96,7 @@
             this.Controls.Add(this.pnlPanel1);
             this.Name = "frm_MenuCierrePlanilla";
             this.Text = "frm_MenuCierrePlanilla";
+            this.Load += new System.EventHandler(this.frm_MenuCierrePlanilla_Load);
             this.pnlPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -104,7 +107,7 @@
         private System.Windows.Forms.Panel pnlFormulario2;
         private System.Windows.Forms.Panel pnlPanel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnAlta;
     }
 }

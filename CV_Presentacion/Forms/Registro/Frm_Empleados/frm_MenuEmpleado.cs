@@ -1,4 +1,5 @@
 ﻿using CapaSesion;
+using CV_Presentacion.Forms.Frm_Registros;
 using CV_Presentacion.Frm_Empleados;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace CV_Presentacion.Forms.Registro.Frm_Empleados
         {
             OpenChildForm(new frm_AltaEmpleados(), sender);
         }
-
+         
         private void btnAltaËmpleado_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_AltaEmpleados(), sender);

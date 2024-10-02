@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
+namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados
 {
-    public partial class frm_PlanillaSalida : Form
+    public partial class frm_ControlUnidad : Form
     {
-        public frm_PlanillaSalida()
+        public frm_ControlUnidad()
         {
             InitializeComponent();
         }

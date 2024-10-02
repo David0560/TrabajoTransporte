@@ -103,10 +103,10 @@
     <Compile Include="Forms\Ajustes\Frm_Ajustes\frm_ConfigPrincipal.Designer.cs">
       <DependentUpon>frm_ConfigPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Accidentes.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Accidentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Accidentes.Designer.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Accidentes.Designer.cs">
       <DependentUpon>frm_Accidentes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_Busqueda.cs">
@@ -115,11 +115,23 @@
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_Busqueda.Designer.cs">
       <DependentUpon>frm_Busqueda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Cortes.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_ControlUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Cortes.Designer.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_ControlUnidad.Designer.cs">
+      <DependentUpon>frm_ControlUnidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Cortes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Cortes.Designer.cs">
       <DependentUpon>frm_Cortes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Recambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Recambio.Designer.cs">
+      <DependentUpon>frm_Recambio.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,11 @@
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.Designer.cs">
       <DependentUpon>frm_EstimalGrilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_LesionadosTestigos.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Lesionados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_LesionadosTestigos.Designer.cs">
-      <DependentUpon>frm_LesionadosTestigos.cs</DependentUpon>
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Lesionados.Designer.cs">
+      <DependentUpon>frm_Lesionados.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.cs">
       <SubType>Form</SubType>
@@ -139,10 +151,10 @@
     <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.Designer.cs">
       <DependentUpon>frm_MenuCierrePlanilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Testigo.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Testigo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Testigo.Designer.cs">
+    <Compile Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Testigo.Designer.cs">
       <DependentUpon>frm_Testigo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Diaria\Frm_Diaria\frm_PlanillaSalida.cs">
@@ -387,14 +399,26 @@
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_Accidentes.resx">
+    <EmbeddedResource Include="Forms\Ajustes\Frm_Ajustes\frm_ConfigPrincipal.resx">
+      <DependentUpon>frm_ConfigPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_Busqueda.resx">
+      <DependentUpon>frm_Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Accidentes.resx">
       <DependentUpon>frm_Accidentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_LesionadosTestigos.resx">
-      <DependentUpon>frm_LesionadosTestigos.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Cortes.resx">
+      <DependentUpon>frm_Cortes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Lesionados.resx">
+      <DependentUpon>frm_Lesionados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\frm_MenuCierrePlanilla.resx">
       <DependentUpon>frm_MenuCierrePlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\Frm_CierrePlanilla\Frm_Anexados\frm_Testigo.resx">
+      <DependentUpon>frm_Testigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diaria\Frm_Diaria\frm_EstimalGrilla.resx">
       <DependentUpon>frm_EstimalGrilla.cs</DependentUpon>
@@ -426,6 +450,9 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Informes\Frm_Informes\frm_Estadisticas.resx">
+      <DependentUpon>frm_Estadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registro\Frm_Empleados\frm_MenuEmpleado.resx">
       <DependentUpon>frm_MenuEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_AltaVehiculos.resx">
       <DependentUpon>frm_AltaVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_BuscarVehiculos.resx">
+      <DependentUpon>frm_BuscarVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registro\Frm_Vehiculos\frm_MenuVehiculos.resx">
       <DependentUpon>frm_MenuVehiculos.cs</DependentUpon>

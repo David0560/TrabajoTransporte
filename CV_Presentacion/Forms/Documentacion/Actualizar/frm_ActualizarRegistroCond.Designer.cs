@@ -54,7 +54,7 @@
             this.dgvRegistroCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroCond.Location = new System.Drawing.Point(18, 17);
             this.dgvRegistroCond.Name = "dgvRegistroCond";
-            this.dgvRegistroCond.Size = new System.Drawing.Size(508, 213);
+            this.dgvRegistroCond.Size = new System.Drawing.Size(606, 213);
             this.dgvRegistroCond.TabIndex = 5;
             this.dgvRegistroCond.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroCond_CellDoubleClick);
             this.dgvRegistroCond.SelectionChanged += new System.EventHandler(this.dgvRegistroCond_SelectionChanged);
@@ -72,7 +72,7 @@
             this.groupBox1.Controls.Add(this.lblApellido);
             this.groupBox1.Location = new System.Drawing.Point(20, 244);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(508, 176);
+            this.groupBox1.Size = new System.Drawing.Size(604, 196);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Conducir";
@@ -101,7 +101,7 @@
             this.grbActualizar.Controls.Add(this.mskVence);
             this.grbActualizar.Controls.Add(this.btnGuardar);
             this.grbActualizar.Controls.Add(this.label2);
-            this.grbActualizar.Location = new System.Drawing.Point(290, 16);
+            this.grbActualizar.Location = new System.Drawing.Point(388, 27);
             this.grbActualizar.Name = "grbActualizar";
             this.grbActualizar.Size = new System.Drawing.Size(201, 141);
             this.grbActualizar.TabIndex = 47;
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 429);
+            this.ClientSize = new System.Drawing.Size(636, 464);
             this.Controls.Add(this.dgvRegistroCond);
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_ActualizarRegistroCond";

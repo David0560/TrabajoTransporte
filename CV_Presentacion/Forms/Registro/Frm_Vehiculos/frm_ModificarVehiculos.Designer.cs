@@ -86,7 +86,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(395, 75);
+            this.groupBox2.Size = new System.Drawing.Size(395, 58);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VTV";
@@ -94,7 +94,7 @@
             // mskFechaVencimiento
             // 
             this.mskFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskFechaVencimiento.Location = new System.Drawing.Point(301, 34);
+            this.mskFechaVencimiento.Location = new System.Drawing.Point(301, 28);
             this.mskFechaVencimiento.Mask = "00/00/0000";
             this.mskFechaVencimiento.Name = "mskFechaVencimiento";
             this.mskFechaVencimiento.Size = new System.Drawing.Size(80, 23);
@@ -105,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(33, 34);
+            this.label1.Location = new System.Drawing.Point(33, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 37;
@@ -115,7 +115,7 @@
             // 
             this.lblVTV.AutoSize = true;
             this.lblVTV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblVTV.Location = new System.Drawing.Point(219, 36);
+            this.lblVTV.Location = new System.Drawing.Point(219, 30);
             this.lblVTV.Name = "lblVTV";
             this.lblVTV.Size = new System.Drawing.Size(62, 13);
             this.lblVTV.TabIndex = 22;
@@ -124,7 +124,7 @@
             // mskFechaOtorgada
             // 
             this.mskFechaOtorgada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskFechaOtorgada.Location = new System.Drawing.Point(115, 32);
+            this.mskFechaOtorgada.Location = new System.Drawing.Point(115, 26);
             this.mskFechaOtorgada.Mask = "00/00/0000";
             this.mskFechaOtorgada.Name = "mskFechaOtorgada";
             this.mskFechaOtorgada.Size = new System.Drawing.Size(80, 23);
@@ -133,7 +133,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(540, 443);
+            this.btnAceptar.Location = new System.Drawing.Point(529, 422);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(72, 27);
             this.btnAceptar.TabIndex = 40;
@@ -492,7 +492,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(462, 443);
+            this.button2.Location = new System.Drawing.Point(451, 422);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 27);
             this.button2.TabIndex = 54;
@@ -503,7 +503,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 486);
+            this.ClientSize = new System.Drawing.Size(636, 464);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
+namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados
 {
-    public partial class frm_LesionadosTestigos : Form
+    public partial class frm_Recambio : Form
     {
-        public frm_LesionadosTestigos()
+        public frm_Recambio()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
+﻿namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados
 {
-    partial class frm_Cortes
+    partial class frm_ControlUnidad
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frm_Cortes";
+            this.Text = "frm_ControlUnidad";
         }
 
         #endregion
