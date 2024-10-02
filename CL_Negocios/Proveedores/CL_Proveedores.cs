@@ -1,19 +1,19 @@
 ﻿using System;
 using CapaServicios.Entidades;
 using System.Data;
-using CD_ConexionDatos.Proveedores;
+using CD_ConexionDatos;
 using System.Security.Cryptography.X509Certificates;
 namespace CL_Negocios
 {
     public class CL_Proveedores
     {
-        
-        private CD_Proveedores cdProveedores;
-        private Proveedores proveedores;
+
+        private CD_Proveedores cdProveedores = new CD_Proveedores();
+      
 
         public CL_Proveedores()
         {
-            cdProveedores = new CD_Proveedores();
+
         }
         public DataTable ObtenerProveedores()
         {
@@ -41,16 +41,8 @@ namespace CL_Negocios
             try
             {
 
-                cdProveedores.GuardarProveedor(
-                proveedores.NombreEmpresa,
-                    proveedores.Contacto,
-                    proveedores.Telefono,
-                    proveedores.Email,
-                    proveedores.Ciudad,
-                    proveedores.Pais,
-                    proveedores.Calle,
-                    proveedores.Numero,
-                    proveedores.CP);
+                cdProveedores.GuardarProveedor(proveedores);
+           
             }
             catch (Exception ex)
             {

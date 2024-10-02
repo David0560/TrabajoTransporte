@@ -7,8 +7,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CL_Servicios.Entidades;
 
-namespace CD_ConexionDatos.Proveedores
+namespace CD_ConexionDatos
 {
     public class CD_Proveedores
     {
@@ -89,41 +90,43 @@ namespace CD_ConexionDatos.Proveedores
             return TablaDeProveedores;
         }
 
-        public void GuardarProveedor(string nombreEmpresa, string contacto, string telefono,
-                                  string email, string ciudad, string pais,
-                                  string calle, string numero, int CP) //ALTA 
+        public void GuardarProveedor(Proveedores proveedores) // ALTA
         {
-            try
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
             {
-                string query = @"
-                INSERT INTO Proveedor 
-                (Empresa, Contacto, Calle, Numero , Ciudad, País, CódigoPostal, Teléfono, Email ) 
-                VALUES 
-                (@Empresa, @Contacto, @Calle , @Numero , @Ciudad, @País, @CódigoPostal, @Teléfono, @Email )";
-
-                using (SqlCommand command = new SqlCommand(query, con))
+                try
                 {
-                    command.Parameters.AddWithValue("@Empresa", nombreEmpresa);
-                    command.Parameters.AddWithValue("@Contacto", contacto);
-                    command.Parameters.AddWithValue("@Calle", calle);
-                    command.Parameters.AddWithValue("@Numero", numero);
-                    command.Parameters.AddWithValue("@Ciudad", ciudad);
-                    command.Parameters.AddWithValue("@País", pais);
-                    command.Parameters.AddWithValue("@CódigoPostal", CP);
-                    command.Parameters.AddWithValue("@Teléfono", telefono);
-                    command.Parameters.AddWithValue("@Email", email);
-
                     con.Open();
+
+                    SqlCommand command = new SqlCommand("spGuardarNuevoProveedor", con) // Puedes usar un procedimiento almacenado si lo prefieres
+                    {
+                        CommandType = CommandType.StoredProcedure // Cambiar a CommandType.Text si no usas SP
+                    };
+
+                    command.Parameters.AddWithValue("@Empresa", proveedores.NombreEmpresa);
+                    command.Parameters.AddWithValue("@Contacto", proveedores.Contacto);
+                    command.Parameters.AddWithValue("@Calle", proveedores.Calle);
+                    command.Parameters.AddWithValue("@Numero", proveedores.Numero);
+                    command.Parameters.AddWithValue("@Ciudad", proveedores.Ciudad);
+                    command.Parameters.AddWithValue("@País", proveedores.Pais);
+                    command.Parameters.AddWithValue("@CódigoPostal", proveedores.CP);
+                    command.Parameters.AddWithValue("@Teléfono", proveedores.Telefono);
+                    command.Parameters.AddWithValue("@Email", proveedores.Email);
+
                     command.ExecuteNonQuery();
                 }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                // Manejo de excepción
-                throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
+                catch (Exception ex)
+                {
+                    // Manejo de excepción
+                    throw new ApplicationException("Error al guardar el proveedor: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
+
         public void ModificoProveedor(int id, string nombreEmpresa, string contacto, string telefono,
                                   string email, string ciudad, string pais,
                                   string calle, string numero, int CP) //MODIFICACIÓN 
