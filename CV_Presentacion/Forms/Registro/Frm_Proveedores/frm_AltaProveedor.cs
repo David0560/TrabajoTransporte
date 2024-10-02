@@ -17,11 +17,11 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
 {
     public partial class frm_AltaProveedor : Form
     {
-        private CL_Proveedores guardoproveedores;
+       
         public frm_AltaProveedor()
         {
             InitializeComponent();
-            guardoproveedores = new CL_Proveedores();
+     
 
         }
 
@@ -29,21 +29,19 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
         {
             try
             {
-                var proveedores = new Proveedores
 
-                {
-
-                    NombreEmpresa = txtNombreEmpresa.Text,
-                    Contacto = txtContacto.Text,
-                    Telefono = txtTelefono.Text,
-                    Email = txtEmail.Text,
-                    Ciudad = txtCiudad.Text,
-                    Pais = txtPais.Text,
-                    Calle = txtCalle.Text,
-                    Numero = txtNumero.Text,
-                    CP = int.Parse(txtCP.Text)
-                };
-                guardoproveedores.GuardarProveedores(proveedores);
+                string NombreEmpresa = txtNombreEmpresa.Text;
+                   string  Contacto = txtContacto.Text;
+                int Telefono = int.Parse(txtTelefono.Text);
+                string Email = txtEmail.Text;
+                string Ciudad = txtCiudad.Text;
+                string Pais = txtPais.Text;
+                string  Calle = txtCalle.Text;
+                string Numero = txtNumero.Text;
+                int CP = int.Parse(txtCP.Text);
+            Proveedores nuevoProveedor = new Proveedores(NombreEmpresa, Contacto, Telefono, Email, Ciudad, Pais, Calle, Numero, CP);
+                CL_Proveedores guardoproveedor = new CL_Proveedores();
+                guardoproveedor.GuardarProveedores(nuevoProveedor);
                 MessageBox.Show("Proveedor guardado exitosamente.");
                 txtNombreEmpresa.Text = "";
                 txtContacto.Text = "";
