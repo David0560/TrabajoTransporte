@@ -126,52 +126,57 @@ namespace CD_ConexionDatos
                 }
             }
         }
-
-        public void ModificoProveedor(int id, string nombreEmpresa, string contacto, string telefono,
-                                  string email, string ciudad, string pais,
-                                  string calle, string numero, int CP) //MODIFICACIÓN 
+        public DataTable ObtenerProveedoresPorEmpresa(string nombreEmpresa)
         {
-            try
+            DataTable dt = new DataTable();
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
             {
-                string query = @"
-            UPDATE Proveedor
-            SET 
-                Empresa = @Empresa,
-                Contacto = @Contacto,
-                Teléfono = @Teléfono,
-                Email = @Email,
-                Ciudad = @Ciudad,
-                País = @País,
-                Calle = @Calle,
-                Numero = @Numero,
-                CódigoPostal = @CódigoPostal
-            WHERE Id = @id";
-                using (SqlCommand command = new SqlCommand(query, con))
+                try
                 {
-                    command.Parameters.AddWithValue("@id", id);
-                    command.Parameters.AddWithValue("@Empresa", nombreEmpresa);
-                    command.Parameters.AddWithValue("@Contacto", contacto);
-                    command.Parameters.AddWithValue("@Calle", calle);
-                    command.Parameters.AddWithValue("@Numero", numero);
-                    command.Parameters.AddWithValue("@Ciudad", ciudad);
-                    command.Parameters.AddWithValue("@País", pais);
-                    command.Parameters.AddWithValue("@CódigoPostal", CP);
-                    command.Parameters.AddWithValue("@Teléfono", telefono);
-                    command.Parameters.AddWithValue("@Email", email);
-
                     con.Open();
-                    command.ExecuteNonQuery();
+                    SqlCommand command = new SqlCommand("spObtenerProveedoresPorEmpresa", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    command.Parameters.AddWithValue("@Empresa", nombreEmpresa);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dt);
                 }
-                con.Close();
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por empresa: " + ex.Message);
+                }
             }
-
-            catch (Exception ex)
-            {
-                // Manejo de excepción
-                throw new ApplicationException("Error al guardar el Proveedor: " + ex.Message);
-            }
+            return dt;
         }
 
+        public DataTable ObtenerProveedoresPorContacto(string contacto)
+        {
+            DataTable dt = new DataTable();
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand command = new SqlCommand("spObtenerProveedoresPorContacto", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    command.Parameters.AddWithValue("@Contacto", contacto);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por contacto: " + ex.Message);
+                }
+            }
+            return dt;
+        }
+
+
     }
-}
+
+    }
+
 

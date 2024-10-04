@@ -46,34 +46,21 @@ namespace CL_Negocios
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+             
+              Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
             }
         }
-          public void  ModificarProveedores (int id, string nombreempresa, string Contacto,string telefono, string Email, string Ciudad, string Pais, string Calle, string Numero, int CP)
-        { 
-                try
-                {
+        public DataTable ObtenerProveedoresPorEmpresa(string nombreEmpresa)
+        {
+            return cdProveedores.ObtenerProveedoresPorEmpresa(nombreEmpresa);
+        }
 
-                    cdProveedores.ModificoProveedor(
-                        id,
-                    nombreempresa,
-                        Contacto,
-                        telefono,
-                        Email,
-                       Ciudad,
-                        Pais,
-                      Calle,
-                       Numero,
-                        CP);
-                }
-                catch (Exception ex)
-                {
-                throw new ApplicationException("Ocurrió un error al guardar el proveedor: " + ex.Message);
-                }
-            }
-        //public List<Proveedores> BuscarProveedores(string nombreEmpresa, string contacto, string telefono, string email, string ciudad, string pais, string calle, string numero, int cp)
-        //{
-        //    return proveedores.BuscarProveedores(nombreEmpresa, contacto, telefono, email, ciudad, pais, calle, numero, cp);
-        //}
+        public DataTable ObtenerProveedoresPorContacto(string contacto)
+        {
+            return cdProveedores.ObtenerProveedoresPorContacto(contacto);
+        }
+
     }
-}
+      
+    }
+
