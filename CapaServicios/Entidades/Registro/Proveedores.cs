@@ -33,6 +33,19 @@ namespace CapaServicios.Entidades
             this.Numero = numero;
             this.CP = cp; 
         }
+        public Proveedores(int id, string nombreempresa, string contacto, int telefono, string email, string ciudad, string pais, string calle, string numero, int cp)
+        {
+            this.Id = id;
+            this.NombreEmpresa = nombreempresa;
+            this.Contacto = contacto;
+            this.Telefono = telefono;
+            this.Email = email;
+            this.Ciudad = ciudad;
+            this.Pais = pais;
+            this.Calle = calle;
+            this.Numero = numero;
+            this.CP = cp;
+        }
     }
 
 }

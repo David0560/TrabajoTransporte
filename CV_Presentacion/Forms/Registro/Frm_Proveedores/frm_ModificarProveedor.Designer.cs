@@ -37,8 +37,8 @@
             this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtContacto = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.rbContacto = new System.Windows.Forms.RadioButton();
@@ -58,7 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dataGridViewProveedores = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.labelId = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,6 +127,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(148, 104);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Name = "txtTelefono";
@@ -134,6 +136,7 @@
             // 
             // txtNombreEmpresa
             // 
+            this.txtNombreEmpresa.Enabled = false;
             this.txtNombreEmpresa.Location = new System.Drawing.Point(148, 28);
             this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
@@ -142,6 +145,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(148, 138);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
@@ -150,31 +154,35 @@
             // 
             // txtContacto
             // 
+            this.txtContacto.Enabled = false;
             this.txtContacto.Location = new System.Drawing.Point(148, 64);
             this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(159, 22);
             this.txtContacto.TabIndex = 13;
             // 
-            // button2
+            // btnEliminar
             // 
-            this.button2.Location = new System.Drawing.Point(764, 436);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 36);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(764, 436);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 36);
+            this.btnEliminar.TabIndex = 24;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(764, 484);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 36);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.Location = new System.Drawing.Point(764, 484);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(94, 36);
+            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox1
             // 
@@ -199,6 +207,7 @@
             // 
             // txtPais
             // 
+            this.txtPais.Enabled = false;
             this.txtPais.Location = new System.Drawing.Point(87, 55);
             this.txtPais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPais.Name = "txtPais";
@@ -247,6 +256,7 @@
             // 
             // txtCalle
             // 
+            this.txtCalle.Enabled = false;
             this.txtCalle.Location = new System.Drawing.Point(87, 91);
             this.txtCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCalle.Name = "txtCalle";
@@ -255,6 +265,7 @@
             // 
             // txtCiudad
             // 
+            this.txtCiudad.Enabled = false;
             this.txtCiudad.Location = new System.Drawing.Point(90, 20);
             this.txtCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCiudad.Name = "txtCiudad";
@@ -263,6 +274,7 @@
             // 
             // txtCP
             // 
+            this.txtCP.Enabled = false;
             this.txtCP.Location = new System.Drawing.Point(226, 131);
             this.txtCP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCP.Name = "txtCP";
@@ -281,6 +293,7 @@
             // 
             // txtNumero
             // 
+            this.txtNumero.Enabled = false;
             this.txtNumero.Location = new System.Drawing.Point(86, 132);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumero.Name = "txtNumero";
@@ -303,6 +316,14 @@
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(256, 40);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(327, 22);
+            this.txtBuscar.TabIndex = 27;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // lblId
             // 
@@ -362,6 +383,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Enabled = false;
             this.btnModificar.Location = new System.Drawing.Point(764, 387);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
@@ -369,6 +391,7 @@
             this.btnModificar.TabIndex = 36;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // dataGridViewProveedores
             // 
@@ -379,26 +402,29 @@
             this.dataGridViewProveedores.RowTemplate.Height = 24;
             this.dataGridViewProveedores.Size = new System.Drawing.Size(847, 198);
             this.dataGridViewProveedores.TabIndex = 37;
+            this.dataGridViewProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProveedores_CellContentClick);
             // 
-            // txtBuscar
+            // labelId
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(256, 40);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(327, 22);
-            this.txtBuscar.TabIndex = 27;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.labelId.AutoSize = true;
+            this.labelId.Location = new System.Drawing.Point(878, 398);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(0, 16);
+            this.labelId.TabIndex = 38;
+            this.labelId.Visible = false;
             // 
             // frm_ModificarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 552);
+            this.Controls.Add(this.labelId);
             this.Controls.Add(this.dataGridViewProveedores);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ModificarProveedor";
@@ -412,6 +438,7 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProveedores)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -426,8 +453,8 @@
         private System.Windows.Forms.TextBox txtNombreEmpresa;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtContacto;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label label2;
@@ -448,5 +475,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dataGridViewProveedores;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label labelId;
     }
 }

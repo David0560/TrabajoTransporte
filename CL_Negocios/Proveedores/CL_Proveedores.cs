@@ -15,27 +15,22 @@ namespace CL_Negocios
         {
 
         }
-        public DataTable ObtenerProveedores()
+        public void ModificarProveedor(Proveedores proveedores) //EDITAR
         {
-            return cdProveedores.ObtenerProveedores();
+
+            try
+            {
+
+                cdProveedores.ModificoProveedor(proveedores);
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+            }
         }
-        public DataTable ObtenerProveedoresPorEmpresa()
-        {
-            return cdProveedores.ObtenerProveedoresPorEmpresa();
-        }
-        public DataTable ObtenerProveedoresPorNombre()
-        {
-            return cdProveedores.ObtenerProveedoresPorNombre();
-        }
-        public  DataTable TraerProovedoresIdEmpresa(int id)
-        {
-            return cdProveedores.ObtenerProveedoresPorIdEmpresa(id);
-        }
-        public DataTable TraerProovedoresIdContacto(int id)
-        {
-            return cdProveedores.ObtenerProveedoresPorIdContacto(id);
-        }
-        public void GuardarProveedores(Proveedores proveedores)
+            public void GuardarProveedores(Proveedores proveedores) // ALTA
         {
 
             try

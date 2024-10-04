@@ -19,77 +19,42 @@ namespace CD_ConexionDatos
         {
             con = connectionBD.CreaInstacia().CrearConexion();
         }
-        public DataTable ObtenerProveedores() // BUSQUEDA TOTAL
+        public void ModificoProveedor(Proveedores proveedores) // ALTA
         {
-            DataTable TablaDeProveedores = new DataTable();
-            string query = "SELECT * FROM Proveedor";
-            using (SqlCommand command = new SqlCommand(query, con))
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
             {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                try
                 {
-                    adapter.Fill(TablaDeProveedores);
-                }
-            }
-            return TablaDeProveedores;
-        }
-        public DataTable ObtenerProveedoresPorEmpresa() // BUSQUEDA POR EMPRESA
-        {
-            DataTable TablaDeProveedores = new DataTable();
-            string query = "SELECT Id, Empresa FROM Proveedor";
-            using (SqlCommand command = new SqlCommand(query, con))
-            {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    adapter.Fill(TablaDeProveedores);
-                }
-            }
-            return TablaDeProveedores;
-        }
-        public DataTable ObtenerProveedoresPorNombre() // BUSQUEDA POR NOMBRE
-        {
-            DataTable TablaDeProveedores = new DataTable();
-            string query = "SELECT Id, Contacto FROM Proveedor";
-            using (SqlCommand command = new SqlCommand(query, con))
-            {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    adapter.Fill(TablaDeProveedores);
-                }
-            }
-            return TablaDeProveedores;
-        }
+                    con.Open();
 
-        public DataTable ObtenerProveedoresPorIdEmpresa(int id) // BUSQUEDA DEL NOMBRE DE LA EMPRESA POR ID
-        {
-            DataTable TablaDeProveedores = new DataTable();
-            string query = "SELECT * FROM Proveedor WHERE Id =@id";
-            using (SqlCommand command = new SqlCommand(query, con))
-            {
-                command.Parameters.AddWithValue("@id", id);
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
+                    SqlCommand command = new SqlCommand("spModificarProveedor", con) // Puedes usar un procedimiento almacenado si lo prefieres
+                    {
+                        CommandType = CommandType.StoredProcedure // Cambiar a CommandType.Text si no usas SP
+                    };
+                    command.Parameters.AddWithValue("@Id", proveedores.Id);
+                    command.Parameters.AddWithValue("@Empresa", proveedores.NombreEmpresa);
+                    command.Parameters.AddWithValue("@Contacto", proveedores.Contacto);
+                    command.Parameters.AddWithValue("@Calle", proveedores.Calle);
+                    command.Parameters.AddWithValue("@Numero", proveedores.Numero);
+                    command.Parameters.AddWithValue("@Ciudad", proveedores.Ciudad);
+                    command.Parameters.AddWithValue("@País", proveedores.Pais);
+                    command.Parameters.AddWithValue("@CódigoPostal", proveedores.CP);
+                    command.Parameters.AddWithValue("@Teléfono", proveedores.Telefono);
+                    command.Parameters.AddWithValue("@Email", proveedores.Email);
 
-                    adapter.Fill(TablaDeProveedores);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepción
+                    throw new ApplicationException("Error al guardar el proveedor: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
                 }
             }
-            return TablaDeProveedores;
         }
-        public DataTable ObtenerProveedoresPorIdContacto(int id) // BUSQUEDA DEL CONTACTO DE LA EMPRESA POR ID
-        {
-            DataTable TablaDeProveedores = new DataTable();
-            string query = "SELECT * FROM Proveedor WHERE Id =@id";
-            using (SqlCommand command = new SqlCommand(query, con))
-            {
-                command.Parameters.AddWithValue("@id", id);
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-
-                    adapter.Fill(TablaDeProveedores);
-                }
-            }
-            return TablaDeProveedores;
-        }
-
         public void GuardarProveedor(Proveedores proveedores) // ALTA
         {
             using (var con = connectionBD.CreaInstacia().CrearConexion())
