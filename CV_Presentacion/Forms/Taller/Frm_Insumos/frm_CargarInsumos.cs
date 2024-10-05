@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
         public frm_CargarInsumos()
         {
             InitializeComponent();
+        }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            Form corte = new frm_Insumos();
+            corte.ShowDialog();
         }
     }
 }

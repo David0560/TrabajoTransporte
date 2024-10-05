@@ -247,6 +247,12 @@
     <Compile Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.Designer.cs">
       <DependentUpon>frm_CargarInsumos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Taller\Frm_Insumos\frm_Insumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Taller\Frm_Insumos\frm_Insumos.Designer.cs">
+      <DependentUpon>frm_Insumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Taller\Frm_Insumos\frm_MenuCargarInsumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +500,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registro\Frm_Empleados\frm_AltaEmpleados.resx">
       <DependentUpon>frm_AltaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Taller\Frm_Insumos\frm_CargarInsumos.resx">
+      <DependentUpon>frm_CargarInsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Taller\Frm_Insumos\frm_Insumos.resx">
+      <DependentUpon>frm_Insumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Taller\Frm_Insumos\frm_MenuCargarInsumos.resx">
       <DependentUpon>frm_MenuCargarInsumos.cs</DependentUpon>

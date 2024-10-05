@@ -78,9 +78,9 @@
             // dgvGrillaDelDia
             // 
             this.dgvGrillaDelDia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrillaDelDia.Location = new System.Drawing.Point(18, 70);
+            this.dgvGrillaDelDia.Location = new System.Drawing.Point(18, 62);
             this.dgvGrillaDelDia.Name = "dgvGrillaDelDia";
-            this.dgvGrillaDelDia.Size = new System.Drawing.Size(598, 372);
+            this.dgvGrillaDelDia.Size = new System.Drawing.Size(598, 390);
             this.dgvGrillaDelDia.TabIndex = 83;
             // 
             // lblFecha

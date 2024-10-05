@@ -20,7 +20,8 @@ namespace CapaServicios.Entidades
         public string Numero { get; set; }
         public int CP { get; set; }
 
-        public Proveedores(string nombreempresa, string contacto, int telefono, string email, string ciudad, string pais, string calle, string numero, int cp)
+        public Proveedores(string nombreempresa, string contacto, int telefono, string email, 
+            string ciudad, string pais, string calle, string numero, int cp)
         {
             //No sé si pasar este o no, pero se genera en la DB   this.Id = id;
             this.NombreEmpresa = nombreempresa;
