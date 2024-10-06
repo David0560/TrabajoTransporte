@@ -167,7 +167,7 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al modificar Proovedor: " + ex.Message);
+                MessageBox.Show("Error al modificar el Proovedor: " + ex.Message);
             }
         }
     }
