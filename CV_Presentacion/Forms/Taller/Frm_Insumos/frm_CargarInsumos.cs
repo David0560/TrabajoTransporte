@@ -23,5 +23,10 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
             Form corte = new frm_Insumos();
             corte.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
