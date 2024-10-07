@@ -83,10 +83,73 @@ namespace CapaServicios
                 {
                     maskedtextBox.Text = string.Empty; // Limpiar el contenido del maskedTextBox
                 }
+                if (c is GroupBox groupBox)
+                {
+                    foreach (Control hijo in groupBox.Controls)
+                    {
+                        LimpiarControlesForm(hijo);
+                    }
+                }
 
 
             }
         }
 
+        public void LimpiarFormulario(Control control)
+        {
+            foreach (Control hijo in control.Controls)
+            {
+                LimpiarControl(hijo);
+            }
+        }
+
+        private void LimpiarControl(Control control)
+        {
+            if (control is TextBox)
+            {
+                ((TextBox)control).Clear();
+            }
+            else if (control is ComboBox)
+            {
+                ((ComboBox)control).SelectedIndex = -1;
+            }
+            else if (control is CheckBox)
+            {
+                ((CheckBox)control).Checked = false;
+            }
+            else if (control is RadioButton)
+            {
+                ((RadioButton)control).Checked = false;
+            }
+            else if (control is MaskedTextBox)
+            {
+                ((MaskedTextBox)control).Clear();
+            }
+            else if (control is DateTimePicker)
+            {
+                ((DateTimePicker)control).Value = DateTime.Now;
+            }
+            else if (control is GroupBox)
+            {
+                foreach (Control hijo in ((GroupBox)control).Controls)
+                {
+                    LimpiarControl(hijo);
+                }
+            }
+            else if (control is Panel)
+            {
+                foreach (Control hijo in ((Panel)control).Controls)
+                {
+                    LimpiarControl(hijo);
+                }
+            }
+            else if (control is TableLayoutPanel)
+            {
+                foreach (Control hijo in ((TableLayoutPanel)control).Controls)
+                {
+                    LimpiarControl(hijo);
+                }
+            }
+        }
     }
 }

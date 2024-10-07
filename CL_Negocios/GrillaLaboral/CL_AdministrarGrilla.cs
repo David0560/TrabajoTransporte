@@ -29,7 +29,8 @@ namespace CL_Negocios.GrillaLaboral
         CD_Choferes chofer = new CD_Choferes();
         CD_Ramal Ramal = new CD_Ramal();
         CD_CrearGrilla g = new CD_CrearGrilla();
-
+        CD_PlanillaLaboral planillaLaboral = new CD_PlanillaLaboral();
+ 
         private DataTable Frecunacia(int ramal)
         {
             return Ramal.FrecuenciaPorRamal(ramal);// devuelve la frecuencia del ramal seleccionado
@@ -73,7 +74,7 @@ namespace CL_Negocios.GrillaLaboral
                 return true;
             }
         }
-        public bool CrearNuevaRegistro(GrillaDiaria grilla)
+        public bool CrearNuevaRegistro(DateTime grilla)
         {
             cargar.guardarNuevaGrilla(grilla);
             return true;
@@ -97,8 +98,9 @@ namespace CL_Negocios.GrillaLaboral
 
             DataTable Frec = Frecunacia(ramal);
             DataTable Unidades = UnidadesActivas(fecha);
-            DataTable ChoferesM = ChoferesQueTrabajan(fecha,1);
-            DataTable ChoferesT = ChoferesQueTrabajan(fecha, 2);
+            DataTable ChoferesM = ChoferesQueTrabajan(fecha,1); // turno mañana
+            DataTable ChoferesT = ChoferesQueTrabajan(fecha, 2); // turno Tarde
+
 
             int CantidadU = Ramal.CantidadUnidadesRequeridas(ramal);
             int totalTurno = Ramal.CantidadUnidadesRequeridas(ramal) * 2;
@@ -150,8 +152,6 @@ namespace CL_Negocios.GrillaLaboral
 
                 total.Rows.Add(filaDestino);
             }
-
-
             return total;
         }
         public DataTable GrillaDia(DataTable tabla)
@@ -185,11 +185,10 @@ namespace CL_Negocios.GrillaLaboral
                 total.Rows.Add(filaDestino);
             }
             return total;
-        }
-
+        } // tabla que se ve en el DGV
         //
         // tabla para guardar
-        public DataTable GrillaParaGuardar(DataTable tabla)
+        private List<PlanillaLab> ListaParaGuardar(DataTable tabla)
         {
             DataTable total = new DataTable();
 
@@ -203,40 +202,54 @@ namespace CL_Negocios.GrillaLaboral
             {
                 DataRow fila = tabla.Rows[i];
 
-
                 DataRow filaDestino = total.NewRow();
 
                 filaDestino["IdFrecuencia"] = fila["IdFrecuencia"];
-                filaDestino["HoraInicio"] = fila["HoraInicio"];
-                filaDestino["IdUnidad"] = fila["IdUnidad"];
                 filaDestino["legajo"] = fila["legajo"];
+                filaDestino["IdUnidad"] = fila["IdUnidad"];
+                filaDestino["HoraInicio"] = fila["HoraInicio"];
                 filaDestino["HoraEntrada"] = fila["HoraEntrada"];
+                
 
                 total.Rows.Add(filaDestino);
             }
-            return total;
-        }
 
-        // Lista de prueba.
-        /*public List<PlanillaLab> ListaLaboral(DataTable tabla) //crear una lista de objetos de una tabla 
-        {
+
             List<PlanillaLab> listaLaboral = new List<PlanillaLab>();
 
             foreach (DataRow row in tabla.Rows)
             {
                 PlanillaLab registro = new PlanillaLab(
-                
-                    Convert.ToInt32(row["Id"]),
+
                     Convert.ToInt32(row["IdFrecuencia"]),
-                    Convert.ToInt32(row["IdEmpleado"]),
-                    Convert.ToInt32(row["IdUnidad"])
-
-
+                    Convert.ToInt32(row["legajo"]),
+                    Convert.ToInt32(row["IdUnidad"]),
+                    (TimeSpan)row["HoraInicio"],
+                    (TimeSpan)(row["HoraEntrada"])
                 );
 
                 listaLaboral.Add(registro);
             }
             return listaLaboral;
-        }*/
+
+
+        }
+        //
+        // Guardar grilla
+        public int GuardarGrilla(DateTime fecha)
+        {
+            cargar.guardarNuevaGrilla(fecha);
+            int datoGrilla = cargar.obtenerUltimoRegistroGrilla();
+            return datoGrilla;
+        }
+        public bool guardarPlanillasLaboral(int idGrilla, int ramal, DateTime fecha)
+        {
+            if (planillaLaboral.GuardarPlanillas(idGrilla, ListaParaGuardar(GenerarGrilla(ramal, fecha))))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

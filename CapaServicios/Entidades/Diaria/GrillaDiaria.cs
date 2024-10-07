@@ -18,13 +18,6 @@ namespace CD_ConexionDatos.Entidades
             this.Fecha = fecha;
             this.horaEmision = horaE;
         }
-        public GrillaDiaria(DateTime fecha, DateTime horaE)
-        {
-            this.Fecha = fecha;
-            this.horaEmision = horaE;
-        }
-
-
     }
 
 

@@ -34,7 +34,7 @@
             this.cboRamales = new System.Windows.Forms.ComboBox();
             this.dgvGrillaDelDia = new System.Windows.Forms.DataGridView();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaDelDia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,19 +92,19 @@
             this.lblFecha.TabIndex = 81;
             this.lblFecha.Text = "Fecha:";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(70, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 90;
+            this.dtpFecha.Location = new System.Drawing.Point(70, 23);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 90;
             // 
             // frm_EstimalGrilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 464);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnGuardarGrilla);
             this.Controls.Add(this.btnCargarGrilla);
             this.Controls.Add(this.label2);
@@ -128,6 +128,6 @@
         private System.Windows.Forms.ComboBox cboRamales;
         private System.Windows.Forms.DataGridView dgvGrillaDelDia;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

@@ -14,40 +14,42 @@ namespace CD_ConexionDatos.Negocio
     public class CD_GrillaDiaria
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
-        int cantidad;
-        public void guardarNuevaGrilla(GrillaDiaria grilla)
+        int idUltimo;
+        public void guardarNuevaGrilla(DateTime fecha)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion())
             {
                 con.Open();
                 SqlCommand comando = new SqlCommand("spGuardarNuevaGrilla", con);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@xfecha", grilla.Fecha);
-                comando.Parameters.AddWithValue("@xhora_alta", DateTime.Now);
+                comando.Parameters.AddWithValue("@xFecha", fecha);
+                comando.Parameters.AddWithValue("@xHoraEmision", DateTime.Now);
                 comando.ExecuteNonQuery();
                 con.Close();
             }
         }
         public int obtenerUltimoRegistroGrilla()
         {
+           
             using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
             {
                 using (SqlCommand comando = new SqlCommand("spVerUltimoRegistroGrilla", con))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
                     con.Open();// abro la conexion.
+                    idUltimo = 0;
                     using (SqlDataReader leer = comando.ExecuteReader())
                     {
                         while (leer.Read())
                         {
-                            cantidad = Convert.ToInt32(leer["id"]);
+                            idUltimo = Convert.ToInt32(leer["id"]);
                         }
 
                     }
                     con.Close();
                 }
             }
-            return cantidad;
+            return idUltimo;
         }
 
 

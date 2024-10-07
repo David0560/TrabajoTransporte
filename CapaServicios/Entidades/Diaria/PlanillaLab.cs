@@ -45,12 +45,13 @@ namespace CapaServicios.Entidades.Diaria
             this.CombustibleSalida = CombuSalida;
         }
 
-        public PlanillaLab(int idFrecuencia, int idEmpleado, int idUnidad, TimeSpan horaSalida)
+        public PlanillaLab(int idFrecuencia, int idEmpleado, int idUnidad, TimeSpan horaSalida, TimeSpan horaEntrada)
         {
             this.Id_Frecuencias = idFrecuencia;
             this.Id_Empleados = idEmpleado;
             this.Id_Unidad = idUnidad;
             this.HoraSalida = horaSalida;
+            this.HoraEntrada = horaEntrada;
         }
 
         public PlanillaLab() { }

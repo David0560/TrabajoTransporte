@@ -95,7 +95,7 @@
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtLegajo
             // 
@@ -218,7 +218,6 @@
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "Email:";
-            this.lblEmail.Click += new System.EventHandler(this.label11_Click);
             // 
             // txtEmail
             // 
@@ -242,7 +241,6 @@
             this.cboDocumento.Name = "cboDocumento";
             this.cboDocumento.Size = new System.Drawing.Size(114, 21);
             this.cboDocumento.TabIndex = 32;
-            this.cboDocumento.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // lblNumeroDoc
             // 
@@ -364,7 +362,7 @@
             // mskFIngreso
             // 
             this.mskFIngreso.Location = new System.Drawing.Point(150, 38);
-            this.mskFIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mskFIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.mskFIngreso.Mask = "00/00/0000";
             this.mskFIngreso.Name = "mskFIngreso";
             this.mskFIngreso.ReadOnly = true;
@@ -375,7 +373,7 @@
             // mskFNacimiento
             // 
             this.mskFNacimiento.Location = new System.Drawing.Point(111, 79);
-            this.mskFNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mskFNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.mskFNacimiento.Mask = "00/00/0000";
             this.mskFNacimiento.Name = "mskFNacimiento";
             this.mskFNacimiento.Size = new System.Drawing.Size(68, 20);
@@ -397,20 +395,19 @@
             this.lblTipoDoc.Controls.Add(this.lblFNacimiento);
             this.lblTipoDoc.Controls.Add(this.cboDocumento);
             this.lblTipoDoc.Location = new System.Drawing.Point(13, 115);
-            this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.lblTipoDoc.Name = "lblTipoDoc";
-            this.lblTipoDoc.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblTipoDoc.Padding = new System.Windows.Forms.Padding(2);
             this.lblTipoDoc.Size = new System.Drawing.Size(252, 187);
             this.lblTipoDoc.TabIndex = 39;
             this.lblTipoDoc.TabStop = false;
             this.lblTipoDoc.Text = "Datos Empleado";
-            this.lblTipoDoc.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.Add1;
             this.pictureBox1.Location = new System.Drawing.Point(18, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(69, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -427,9 +424,9 @@
             this.groupBox2.Controls.Add(this.lblTarea);
             this.groupBox2.Controls.Add(this.cboTarea);
             this.groupBox2.Location = new System.Drawing.Point(13, 11);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(593, 100);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
@@ -490,7 +487,7 @@
             // maskedTextBox2
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(84, 51);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox2.Mask = "00/00/0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(68, 20);
@@ -500,7 +497,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(76, 21);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(68, 20);

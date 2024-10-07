@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace CD_ConexionDatos.Negocio
 {
-    internal class CD_PlanillaLaboral
+    public class CD_PlanillaLaboral
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
 
-        /*public bool GuardarPlanillas(List<PlanillaLab> lista, int idGrilla)
+        public bool GuardarPlanillas(int idGrilla, List<PlanillaLab> lista)
         {
             if (lista != null)
             {
@@ -30,13 +30,15 @@ namespace CD_ConexionDatos.Negocio
                             SqlCommand comando = new SqlCommand("spGuardarPlanillaDia", con);
                             comando.CommandType = CommandType.StoredProcedure;
                             comando.Parameters.AddWithValue("@xidGrillaDelDia", idGrilla);
-                            comando.Parameters.AddWithValue("@xidEmpleado", lista.Id_Empleados);
-                            comando.Parameters.AddWithValue("@xidUnidad", lista.Id_Unidad);
-                            comando.Parameters.AddWithValue("@xidFrecuencia", lista.Id_Frecuencias);
-                            comando.Parameters.AddWithValue("@xhoraSalida", lista.HoraSalida);
+                            comando.Parameters.AddWithValue("@xidFrecuencia", l.Id_Frecuencias);
+                            comando.Parameters.AddWithValue("@xidEmpleado", l.Id_Empleados);
+                            comando.Parameters.AddWithValue("@xidUnidad", l.Id_Unidad);
+                            comando.Parameters.AddWithValue("@xhoraSalida", l.HoraSalida);
+                            comando.Parameters.AddWithValue("@xhoraEntrada", l.HoraEntrada);
                             comando.ExecuteNonQuery();
-                            con.Close();
+                            
                         }
+                        con.Close();
                     }
                     return true;
                 }
@@ -45,7 +47,7 @@ namespace CD_ConexionDatos.Negocio
             {
                 return false;
             }
-        }*/
+        }
    
     }
 }
