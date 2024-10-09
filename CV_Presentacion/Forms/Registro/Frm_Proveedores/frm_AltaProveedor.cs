@@ -29,27 +29,32 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
 
                 string NombreEmpresa = txtNombreEmpresa.Text;
-                   string  Contacto = txtContacto.Text;
+                string Contacto = txtContacto.Text;
                 int Telefono = int.Parse(txtTelefono.Text);
                 string Email = txtEmail.Text;
                 string Ciudad = txtCiudad.Text;
                 string Pais = txtPais.Text;
-                string  Calle = txtCalle.Text;
+                string Calle = txtCalle.Text;
                 string Numero = txtNumero.Text;
                 int CP = int.Parse(txtCP.Text);
-
                 Proveedores nuevoProveedor = new Proveedores(NombreEmpresa, Contacto, Telefono, Email, Ciudad, Pais, Calle, Numero, CP);
-                
                 CL_Proveedores guardoproveedor = new CL_Proveedores();
                 guardoproveedor.GuardarProveedores(nuevoProveedor);
                 MessageBox.Show("Proveedor guardado exitosamente.");
-
-                servicio.LimpiarControlesForm(this);
-                
+                txtNombreEmpresa.Text = "";
+                txtContacto.Text = "";
+                txtTelefono.Text = "";
+                txtEmail.Text = "";
+                txtCiudad.Text = "";
+                txtPais.Text = "";
+                txtCalle.Text = "";
+                txtNumero.Text = "";
+                txtCP.Text = "";
 
             }
             catch (Exception ex)
