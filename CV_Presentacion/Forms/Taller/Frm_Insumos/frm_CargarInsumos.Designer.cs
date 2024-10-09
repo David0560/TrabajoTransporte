@@ -43,12 +43,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtProveedor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.gbInformacion = new System.Windows.Forms.GroupBox();
+            this.lblCiudad = new System.Windows.Forms.Label();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.lblContacto = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.lsbProveedor = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbInformacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNuevo
@@ -216,76 +216,76 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Proveedor:";
             // 
-            // groupBox1
+            // gbInformacion
             // 
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(512, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(408, 318);
-            this.groupBox1.TabIndex = 34;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Informacion";
+            this.gbInformacion.Controls.Add(this.lblCiudad);
+            this.gbInformacion.Controls.Add(this.lblEmpresa);
+            this.gbInformacion.Controls.Add(this.lblContacto);
+            this.gbInformacion.Controls.Add(this.lblTelefono);
+            this.gbInformacion.Controls.Add(this.lblEmail);
+            this.gbInformacion.Controls.Add(this.label9);
+            this.gbInformacion.Controls.Add(this.label1);
+            this.gbInformacion.Controls.Add(this.label2);
+            this.gbInformacion.Controls.Add(this.label5);
+            this.gbInformacion.Controls.Add(this.label6);
+            this.gbInformacion.Location = new System.Drawing.Point(512, 38);
+            this.gbInformacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbInformacion.Name = "gbInformacion";
+            this.gbInformacion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbInformacion.Size = new System.Drawing.Size(408, 318);
+            this.gbInformacion.TabIndex = 34;
+            this.gbInformacion.TabStop = false;
+            this.gbInformacion.Text = "Informacion";
             // 
-            // label10
+            // lblCiudad
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(188, 241);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 20);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Nombre";
+            this.lblCiudad.AutoSize = true;
+            this.lblCiudad.Location = new System.Drawing.Point(188, 241);
+            this.lblCiudad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCiudad.Name = "lblCiudad";
+            this.lblCiudad.Size = new System.Drawing.Size(65, 20);
+            this.lblCiudad.TabIndex = 17;
+            this.lblCiudad.Text = "Nombre";
             // 
-            // label11
+            // lblEmpresa
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(188, 46);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Nombre";
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Location = new System.Drawing.Point(188, 46);
+            this.lblEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(65, 20);
+            this.lblEmpresa.TabIndex = 13;
+            this.lblEmpresa.Text = "Nombre";
             // 
-            // label12
+            // lblContacto
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(188, 95);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 20);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Persona";
+            this.lblContacto.AutoSize = true;
+            this.lblContacto.Location = new System.Drawing.Point(188, 95);
+            this.lblContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContacto.Name = "lblContacto";
+            this.lblContacto.Size = new System.Drawing.Size(68, 20);
+            this.lblContacto.TabIndex = 14;
+            this.lblContacto.Text = "Persona";
             // 
-            // label13
+            // lblTelefono
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(188, 145);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 20);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Numero";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(188, 145);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(65, 20);
+            this.lblTelefono.TabIndex = 15;
+            this.lblTelefono.Text = "Numero";
             // 
-            // label14
+            // lblEmail
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(188, 194);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 20);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Correo@Electronico";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(188, 194);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(152, 20);
+            this.lblEmail.TabIndex = 16;
+            this.lblEmail.Text = "Correo@Electronico";
             // 
             // label9
             // 
@@ -345,6 +345,7 @@
             this.lsbProveedor.Name = "lsbProveedor";
             this.lsbProveedor.Size = new System.Drawing.Size(320, 84);
             this.lsbProveedor.TabIndex = 35;
+            this.lsbProveedor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsbProveedor_MouseClick);
             // 
             // frm_CargarInsumos
             // 
@@ -352,7 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 714);
             this.Controls.Add(this.lsbProveedor);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbInformacion);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregar);
@@ -367,8 +368,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbInformacion.ResumeLayout(false);
+            this.gbInformacion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,12 +392,12 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox gbInformacion;
+        private System.Windows.Forms.Label lblCiudad;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.Label lblContacto;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

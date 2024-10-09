@@ -179,9 +179,8 @@ namespace CD_ConexionDatos
 
             using (SqlCommand command = new SqlCommand("spObtenerProveedoresPorEmpresa", con))
             {
-                command.CommandType = CommandType.StoredProcedure; // Especificamos que es un Stored Procedure
+                command.CommandType = CommandType.StoredProcedure;
 
-                // Asegúrate de que el parámetro @Empresa esté definido en tu SP
                 command.Parameters.AddWithValue("@Empresa", empresa);
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(command))
