@@ -29,19 +29,19 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 
             if (!string.IsNullOrEmpty(textoBuscado))
             {
-                // Llamar al método en la capa de lógica para obtener proveedores
+                // Llamo al método en la capa de lógica para obtener proveedores
                 DataTable proveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscado);
 
-                // Limpiar el ListBox antes de agregar nuevos resultados
+                // se limpia el ListBox antes de agregar nuevos resultados
                 lsbProveedor.Items.Clear();
 
-                // Llenar el ListBox con los nombres de los proveedores encontrados
+                // se llena el ListBox con los nombres de los proveedores encontrados
                 foreach (DataRow fila in proveedores.Rows)
                 {
-                    lsbProveedor.Items.Add(fila["Empresa"].ToString()); // Cambia "Empresa" por el nombre correcto de la columna
+                    lsbProveedor.Items.Add(fila["Empresa"].ToString());
                 }
 
-                // Mostrar el ListBox si hay resultados
+                // Muestro el ListBox si hay resultados
                 lsbProveedor.Visible = lsbProveedor.Items.Count > 0;
             }
             else
