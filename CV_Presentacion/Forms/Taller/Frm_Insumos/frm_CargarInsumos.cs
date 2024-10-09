@@ -1,4 +1,5 @@
-﻿using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados;
+﻿using CL_Negocios;
+using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,51 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 {
     public partial class frm_CargarInsumos : Form
     {
+        private CL_Proveedores clProveedores;
+
         public frm_CargarInsumos()
         {
             InitializeComponent();
+            clProveedores = new CL_Proveedores();
+            lsbProveedor.Visible = false; // Ocultar el ListBox por defecto
+        }
+
+        private void txtProveedor_TextChanged(object sender, EventArgs e)
+        {
+            string textoBuscado = txtProveedor.Text.Trim();
+
+            if (!string.IsNullOrEmpty(textoBuscado))
+            {
+                // Llamar al método en la capa de lógica para obtener proveedores
+                DataTable proveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscado);
+
+                // Limpiar el ListBox antes de agregar nuevos resultados
+                lsbProveedor.Items.Clear();
+
+                // Llenar el ListBox con los nombres de los proveedores encontrados
+                foreach (DataRow fila in proveedores.Rows)
+                {
+                    lsbProveedor.Items.Add(fila["Empresa"].ToString()); // Cambia "Empresa" por el nombre correcto de la columna
+                }
+
+                // Mostrar el ListBox si hay resultados
+                lsbProveedor.Visible = lsbProveedor.Items.Count > 0;
+            }
+            else
+            {
+                // Limpiar el ListBox y ocultarlo si el texto está vacío
+                lsbProveedor.Items.Clear();
+                lsbProveedor.Visible = false;
+            }
+        }
+
+        private void lsbProveedor_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (lsbProveedor.SelectedItem != null)
+            {
+                txtProveedor.Text = lsbProveedor.SelectedItem.ToString(); // Copia el texto seleccionado al TextBox
+                lsbProveedor.Visible = false; // Ocultar el ListBox después de seleccionar
+            }
         }
 
         private void btnArticulos_Click(object sender, EventArgs e)
@@ -26,7 +69,7 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close(); // Cerrar el formulario
         }
     }
 }

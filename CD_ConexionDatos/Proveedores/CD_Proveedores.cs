@@ -172,6 +172,26 @@ namespace CD_ConexionDatos
             }
         }
 
+        // Método para obtener proveedores filtrados por nombre de empresa
+        public DataTable ObtenerProveedoresPorEmpresa(string empresa) // BUSQUEDA POR EMPRESA
+        {
+            DataTable TablaDeProveedores = new DataTable();
+
+            using (SqlCommand command = new SqlCommand("spObtenerProveedoresPorEmpresa", con))
+            {
+                command.CommandType = CommandType.StoredProcedure; // Especificamos que es un Stored Procedure
+
+                // Asegúrate de que el parámetro @Empresa esté definido en tu SP
+                command.Parameters.AddWithValue("@Empresa", empresa);
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                {
+                    adapter.Fill(TablaDeProveedores);
+                }
+            }
+            return TablaDeProveedores;
+        }
     }
+
 }
 

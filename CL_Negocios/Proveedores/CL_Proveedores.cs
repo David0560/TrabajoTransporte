@@ -9,7 +9,13 @@ namespace CL_Negocios
     {
 
         private CD_Proveedores cdProveedores = new CD_Proveedores();
-      
+
+        // Método para obtener proveedores filtrados por nombre de empresa
+        public DataTable ObtenerProveedoresPorEmpresa(string empresa)
+        {
+            return cdProveedores.ObtenerProveedoresPorEmpresa(empresa); // Llama al método de la capa de datos
+        }
+
 
         public CL_Proveedores()
         {
