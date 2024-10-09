@@ -32,16 +32,16 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
                 // Llamo al método en la capa de lógica para obtener proveedores
                 DataTable proveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscado);
 
-                // se limpia el ListBox antes de agregar nuevos resultados
+                // Se limpia el ListBox antes de agregar nuevos resultados
                 lsbProveedor.Items.Clear();
 
-                // se llena el ListBox con los nombres de los proveedores encontrados
+                // Se llena el ListBox con los nombres de los proveedores encontrados
                 foreach (DataRow fila in proveedores.Rows)
                 {
                     lsbProveedor.Items.Add(fila["Empresa"].ToString());
                 }
 
-                // Muestro el ListBox si hay resultados
+                // Mostrar el ListBox si hay resultados
                 lsbProveedor.Visible = lsbProveedor.Items.Count > 0;
             }
             else
@@ -49,6 +49,13 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
                 // Limpiar el ListBox y ocultarlo si el texto está vacío
                 lsbProveedor.Items.Clear();
                 lsbProveedor.Visible = false;
+
+                // Limpiar los labels cuando el texto está vacío
+                lblEmpresa.Text = "";
+                lblContacto.Text = "";
+                lblTelefono.Text = "";
+                lblEmail.Text = "";
+                lblCiudad.Text = "";
             }
         }
 
@@ -56,8 +63,34 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
         {
             if (lsbProveedor.SelectedItem != null)
             {
-                txtProveedor.Text = lsbProveedor.SelectedItem.ToString(); // Copia el texto seleccionado al TextBox
+                txtProveedor.Text = lsbProveedor.SelectedItem.ToString();
                 lsbProveedor.Visible = false; // Ocultar el ListBox después de seleccionar
+
+                // Obtener los detalles del proveedor seleccionado
+                DataTable detallesProveedor = clProveedores.ObtenerProveedoresPorEmpresa(txtProveedor.Text);
+
+                // Verificar que se encontró un proveedor
+                if (detallesProveedor.Rows.Count > 0)
+                {
+                    DataRow filaProveedor = detallesProveedor.Rows[0];
+
+                    // Actualizar los labels con la información del proveedor
+                    lblEmpresa.Text = filaProveedor["Empresa"].ToString();
+                    lblContacto.Text = filaProveedor["Contacto"].ToString();
+                    lblTelefono.Text = filaProveedor["Teléfono"].ToString();
+                    lblEmail.Text = filaProveedor["Email"].ToString();
+                    lblCiudad.Text = filaProveedor["Ciudad"].ToString();
+                }
+                else
+                {
+                    // Si no se encuentra el proveedor, limpiar los labels
+                    lblEmpresa.Text = "";
+                    lblContacto.Text = "";
+                    lblTelefono.Text = "";
+                    lblEmail.Text = "";
+                    lblCiudad.Text = "";
+                    MessageBox.Show("Proveedor no encontrado.");
+                }
             }
         }
 
