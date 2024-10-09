@@ -53,7 +53,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.rbContacto = new System.Windows.Forms.RadioButton();
             this.rbEmpresa = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -305,7 +304,6 @@
             // 
             this.groupBox3.Controls.Add(this.txtBuscar);
             this.groupBox3.Controls.Add(this.lblId);
-            this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.rbContacto);
             this.groupBox3.Controls.Add(this.rbEmpresa);
             this.groupBox3.Controls.Add(this.label1);
@@ -329,22 +327,13 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(682, 74);
+            this.lblId.Location = new System.Drawing.Point(643, 70);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(44, 16);
+            this.lblId.Size = new System.Drawing.Size(164, 16);
             this.lblId.TabIndex = 26;
-            this.lblId.Text = "label4";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(650, 31);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 26);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Cargar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lblId.Text = "LABEL PARA CARGAR ID";
+            this.lblId.Visible = false;
+            this.lblId.Click += new System.EventHandler(this.lblId_Click);
             // 
             // rbContacto
             // 
@@ -471,7 +460,6 @@
         private System.Windows.Forms.RadioButton rbContacto;
         private System.Windows.Forms.RadioButton rbEmpresa;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dataGridViewProveedores;

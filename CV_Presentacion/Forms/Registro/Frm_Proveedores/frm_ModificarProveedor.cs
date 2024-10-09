@@ -215,6 +215,11 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
 
 ;
         }
+
+        private void lblId_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
