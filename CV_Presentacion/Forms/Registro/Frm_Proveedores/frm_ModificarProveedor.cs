@@ -5,158 +5,175 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CV_Presentacion.Forms.Frm_Proveedores
 {
     public partial class frm_ModificarProveedor : Form
     {
-        private CL_Proveedores cL_Proveedores;
+
         public frm_ModificarProveedor()
         {
             InitializeComponent();
-            cL_Proveedores = new CL_Proveedores();
-            CargarProveedoresPorEmpresa();
-            CargarProveedoresPorNombre();
-
-
+            txtBuscar.TextChanged += new EventHandler(txtBuscar_TextChanged);
+            rbEmpresa.Checked = true;
         }
 
+        private void CargarProveedores()
+        {
+            CL_Proveedores clProveedores = new CL_Proveedores();
+            DataTable dtProveedores;
+             
+
+            string textoBuscar = txtBuscar.Text;
+
+            if (rbEmpresa.Checked) // Si el RadioButton de empresa está seleccionado
+            {
+                dtProveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscar);
+            }
+            else if (rbContacto.Checked) // Si el RadioButton de contacto está seleccionado
+            {
+                dtProveedores = clProveedores.ObtenerProveedoresPorContacto(textoBuscar);
+            }
+            else
+            {
+                dtProveedores = new DataTable(); // Si no hay selección, no se muestra nada
+
+            }
+         
+
+            dataGridViewProveedores.DataSource = dtProveedores;
+        }
         private void frm_ModificarProveedor_Load(object sender, EventArgs e)
         {
-            rb1.Checked = true;
-            CargarProveedoresPorEmpresa();
 
 
 
         }
-        private void CargarProveedoresPorEmpresa()
-        {
-            // Crear una instancia de la capa lógica
 
 
-            // Obtener el DataTable
-            DataTable proveedores = cL_Proveedores.ObtenerProveedoresPorEmpresa();
-            // Asignar el DataTable al ComboBox
-            comboBox1.DataSource = proveedores;
-            comboBox1.DisplayMember = "Empresa"; //ColumnaEmpresa
-            /*  foreach (DataRow fila in proveedores.Rows)
-              {
-                  int idPorEmpresa = Convert.ToInt32(fila["Id"]);
-                  lblId.Text = idPorEmpresa.ToString();
-              }
-              */
-        }
-        private void CargarProveedoresPorNombre()
-        {
-            // Crear una instancia de la capa lógica
-
-
-            // Obtener el DataTable
-            DataTable proveedores = cL_Proveedores.ObtenerProveedoresPorNombre();
-            // Asignar el DataTable al ComboBox
-            comboBox1.DataSource = proveedores;
-            comboBox1.DisplayMember = "Contacto"; //ColumnaEmpresa
-            /*     foreach (DataRow fila in proveedores.Rows)
-                 {
-                     int idPorNombre = Convert.ToInt32(fila["Id"]);
-                     lblId.Text = idPorNombre.ToString();
-                 }
-            */
-
-
-        }
 
         private void rb2_CheckedChanged(object sender, EventArgs e)
         {
 
-            CargarProveedoresPorNombre();
+
 
         }
 
         private void rb1_CheckedChanged(object sender, EventArgs e)
         {
-            CargarProveedoresPorEmpresa();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (rb1.Checked == true)
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarProveedores();
+        }
+
+        private void dataGridViewProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
             {
-                int idEmpresa = int.Parse(lblId.Text);
-                DataTable proveedores = cL_Proveedores.TraerProovedoresIdEmpresa(idEmpresa);
-                if (proveedores.Rows.Count > 0)
-                {
-                    // Suponiendo que las columnas en el DataTable son "Nombre", "Contacto", etc.
-                    DataRow fila = proveedores.Rows[0];
-                    txtNombreEmpresa.Text = fila["Empresa"].ToString();
-                    txtContacto.Text = fila["Contacto"].ToString();
-                    txtTelefono.Text = fila["Teléfono"].ToString();
-                    txtEmail.Text = fila["Email"].ToString();
-                    txtCiudad.Text = fila["Ciudad"].ToString();
-                    txtCalle.Text = fila["Calle"].ToString();
-                    txtCP.Text = fila["CódigoPostal"].ToString();
-                    txtPais.Text = fila["País"].ToString();
-                    txtNumero.Text = fila["Numero"].ToString();
-                }
-            }
-            if (rb2.Checked == true)
-            {
-                int idContacto = int.Parse(lblId.Text);
-                DataTable proveedores = cL_Proveedores.TraerProovedoresIdContacto(idContacto);
-                if (proveedores.Rows.Count > 0)
-                {
-                    // Suponiendo que las columnas en el DataTable son "Nombre", "Contacto", etc.
-                    DataRow fila = proveedores.Rows[0];
-                    txtNombreEmpresa.Text = fila["Empresa"].ToString();
-                    txtContacto.Text = fila["Contacto"].ToString();
-                    txtTelefono.Text = fila["Teléfono"].ToString();
-                    txtEmail.Text = fila["Email"].ToString();
-                    txtCiudad.Text = fila["Ciudad"].ToString();
-                    txtCalle.Text = fila["Calle"].ToString();
-                    txtCP.Text = fila["CódigoPostal"].ToString();
-                    txtPais.Text = fila["País"].ToString();
-                    txtNumero.Text = fila["Numero"].ToString();
-                }
+                // Obtener la fila seleccionada
+                DataGridViewRow row = dataGridViewProveedores.Rows[e.RowIndex];
+                // Asignar los valores de las celdas a los TextBox
+                labelId.Text = (row.Cells["Id"].Value.ToString());
+                txtNombreEmpresa.Text = row.Cells["Empresa"].Value.ToString();
+                txtContacto.Text = row.Cells["Contacto"].Value.ToString();
+                txtTelefono.Text = row.Cells["Teléfono"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtCiudad.Text = row.Cells["Ciudad"].Value.ToString();
+                txtPais.Text = row.Cells["País"].Value.ToString();
+                txtCalle.Text = row.Cells["Calle"].Value.ToString();
+                txtNumero.Text = row.Cells["Numero"].Value.ToString();
+                txtCP.Text = row.Cells["CódigoPostal"].Value.ToString();
+                
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
             }
 
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem != null)
-            {
-                DataRowView selectedRow = (DataRowView)comboBox1.SelectedItem;
-                int idPorNombre = Convert.ToInt32(selectedRow["Id"]); // Obtiene el ID
-                lblId.Text = idPorNombre.ToString(); // Asigna el ID al label
-            }
+            btnEliminar.Enabled=false;
+           txtNombreEmpresa.Enabled = true;
+            txtContacto.Enabled = true;
+           txtTelefono.Enabled = true;
+            txtEmail.Enabled = true;
+            txtCiudad.Enabled = true;
+            txtPais.Enabled = true;
+            txtCalle.Enabled = true;
+            txtNumero.Enabled = true;
+            txtCP.Enabled = true;
+                txtTelefono.Enabled = true;
+            btnGuardar.Enabled = true;
+                
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
- 
-                int id = Convert.ToInt32(lblId.Text);
+            //  V<
+            try
+            {
+                int Id;
+                Id = Convert.ToInt32(labelId.Text);
+                string NombreEmpresa = txtNombreEmpresa.Text;
+                string Contacto = txtContacto.Text;
+                int Telefono = int.Parse(txtTelefono.Text);
+                string Email = txtEmail.Text;
+                string Ciudad = txtCiudad.Text;
+                string Pais = txtPais.Text;
+                string Calle = txtCalle.Text;
+                string Numero = txtNumero.Text;
+                int CP = int.Parse(txtCP.Text);
+                Proveedores modificoproveeedor = new Proveedores(Id, NombreEmpresa, Contacto, Telefono, Email, Ciudad, Pais, Calle, Numero, CP);
+                CL_Proveedores guardoproveedor = new CL_Proveedores();
+                guardoproveedor.ModificarProveedor(modificoproveeedor);
+                MessageBox.Show("Provedor modificado");
+                btnGuardar.Enabled = false;
+                btnModificar.Enabled = false;
+
+                CargarProveedores();
+
+           
+
+                txtNombreEmpresa.Enabled = false;
+                txtContacto.Enabled = false;
+                txtTelefono.Enabled = false;
+                txtEmail.Enabled = false;
+                txtCiudad.Enabled = false;
+                txtPais.Enabled = false;
+                txtCalle.Enabled = false;
+                txtNumero.Enabled = false;
+                txtCP.Enabled = false; 
+                txtTelefono.Enabled = false;
+            
+
                
 
-                cL_Proveedores.ModificarProveedores(id, txtNombreEmpresa.Text, txtContacto.Text, txtTelefono.Text, txtEmail.Text, txtCiudad.Text, txtPais.Text, txtCalle.Text, txtNumero.Text, int.Parse(txtCP.Text));
-                MessageBox.Show("Proveedor modificado exitosamente.");
-                txtNombreEmpresa.Text = "";
-                txtContacto.Text = "";
-                txtTelefono.Text = "";
-                txtEmail.Text = "";
-                txtCiudad.Text = "";
-                txtPais.Text = "";
-                txtCalle.Text = "";
-                txtNumero.Text = "";
-                txtCP.Text = "";
-            CargarProveedoresPorEmpresa();
 
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar el Proovedor: " + ex.Message);
+            }
         }
     }
 }
+
     
 
 
