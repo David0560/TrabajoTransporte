@@ -171,6 +171,50 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
                 MessageBox.Show("Error al modificar el Proovedor: " + ex.Message);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show(
+         "¿Estás seguro de que deseas eliminar este proveedor?",
+         "Confirmar Eliminación",
+         MessageBoxButtons.YesNo,
+         MessageBoxIcon.Warning);
+
+            // Verificar la respuesta del usuario
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    if (int.TryParse(labelId.Text, out int id))
+                    {
+                        CL_Proveedores eliminarProveedor = new CL_Proveedores();
+                        eliminarProveedor.ELiminarProveedores(id);
+                        MessageBox.Show("Proveedor eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Actualizar el DataGridView
+                        // Aquí deberías recargar los datos para que reflejen la eliminación
+                        CargarProveedores(); // Suponiendo que tienes un método para cargar los datos
+                        btnGuardar.Enabled = false;
+                        btnModificar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ID de proveedor no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Eliminación cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+;
+        }
     }
 }
 

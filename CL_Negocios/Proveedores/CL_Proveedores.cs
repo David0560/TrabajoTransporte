@@ -54,7 +54,21 @@ namespace CL_Negocios
         {
             return cdProveedores.ObtenerProveedoresPorContacto(contacto);
         }
+        public void ELiminarProveedores(int proveedoresid) //ELIMINAR
+        {
 
+            try
+            {
+
+                cdProveedores.EliminarProveedor(proveedoresid);
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocurrió un error al eliminar el proveedor: " + ex.Message);
+            }
+        }
     }
       
     }

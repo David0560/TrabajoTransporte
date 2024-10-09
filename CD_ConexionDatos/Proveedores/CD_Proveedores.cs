@@ -63,9 +63,9 @@ namespace CD_ConexionDatos
                 {
                     con.Open();
 
-                    SqlCommand command = new SqlCommand("spGuardarNuevoProveedor", con) // Puedes usar un procedimiento almacenado si lo prefieres
+                    SqlCommand command = new SqlCommand("spGuardarNuevoProveedor", con) // 
                     {
-                        CommandType = CommandType.StoredProcedure // Cambiar a CommandType.Text si no usas SP
+                        CommandType = CommandType.StoredProcedure // 
                     };
 
                     command.Parameters.AddWithValue("@Empresa", proveedores.NombreEmpresa);
@@ -137,6 +137,30 @@ namespace CD_ConexionDatos
                 }
             }
             return dt;
+        }
+        public void EliminarProveedor(int proveedorId) // ELIMINAR
+        {
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand command = new SqlCommand("spEliminarProveedor", con) // 
+                    {
+                        CommandType = CommandType.StoredProcedure //
+                    };
+                    command.Parameters.AddWithValue("@Id", proveedorId);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepción
+                    throw new ApplicationException("Error al eliminar el proveedor: " + ex.Message);
+                }
+             
+            }
         }
 
 
