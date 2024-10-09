@@ -1,6 +1,7 @@
 ﻿
 using CapaServicios;
 using CapaServicios.Entidades.Frecuencia;
+using CD_ConexionDatos.Empleados;
 using CD_ConexionDatos.Entidades;
 using CL_Negocios;
 using CL_Negocios.Entidades;
@@ -34,7 +35,15 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
             DateTime fecha = dtpFecha.Value;
             int ramal = Convert.ToInt32(cboRamales.SelectedValue);
 
-            dgvGrillaDelDia.DataSource = grilla.GrillaDia(grilla.GenerarGrilla(ramal, fecha));
+            if (grilla.revisarCargaRamal(ramal, fecha))
+            {
+                dgvGrillaDelDia.DataSource = grilla.GrillaDia(grilla.GenerarGrilla(ramal, fecha));
+            }
+            else
+            {
+                MessageBox.Show("El dia seleccionado ya contiene los registros con este ramal.");
+            }
+                     
         }
 
         private void btnGuardarGrilla_Click(object sender, EventArgs e)
@@ -56,8 +65,8 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
             int IdGrilla = 1;  //grilla.GuardarGrilla(fecha);
 
             if (IdGrilla!=0)
-            {
-               bool resultado= grilla.guardarPlanillasLaboral(IdGrilla, ramal,fecha);
+            { 
+                bool resultado= grilla.guardarPlanillasLaboral(IdGrilla, ramal,fecha);
                 if (resultado == true)
                 {
                     MessageBox.Show("registros Guardados exitozamente");

@@ -9,13 +9,7 @@ using CL_Negocios.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Net;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.LinkLabel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Net.Http;
 
 namespace CL_Negocios.GrillaLaboral
 {
@@ -45,7 +39,9 @@ namespace CL_Negocios.GrillaLaboral
             TablaTrabajan.Columns.Add("legajo", typeof(int));
             TablaTrabajan.Columns.Add("Chofer", typeof(string));
 
-            foreach (DataRow fila in chofer.obtenerTablaChoferesConLicenciaTurno(fechaLicencia, turno).Rows)
+            DataTable tabla1 = chofer.obtenerTablaChoferesConLicenciaTurno(fechaLicencia, turno);
+
+            foreach (DataRow fila in tabla1.Rows)   
             {
                 int id = Convert.ToInt32(fila["id"]);
                 DateTime fechainicia = chofer.TrabajaEsteDia(id);
@@ -64,7 +60,7 @@ namespace CL_Negocios.GrillaLaboral
 
             TimeSpan dife = fecha-fechai;
             int diferencia = dife.Days;
-            int Resto = diferencia & (Dt + Df);
+            int Resto = diferencia % (Dt + Df);
             if (Resto >= 4)
             {
                 return false;
@@ -84,8 +80,9 @@ namespace CL_Negocios.GrillaLaboral
         // generador de grilla diarias
         public DataTable GenerarGrilla(int ramal, DateTime fecha)
         {
+            //Creo la tabla de destino
             DataTable total = new DataTable();
-
+            //creo sus columnas
             total.Columns.Add("IdFrecuencia", typeof(int));// id frecuencia ------
             total.Columns.Add("Nombre", typeof(string));//frecuencia
             total.Columns.Add("IdUnidad", typeof(int));// id unidad ------
@@ -96,17 +93,24 @@ namespace CL_Negocios.GrillaLaboral
             total.Columns.Add("HoraEntrada", typeof(TimeSpan));
             total.Columns.Add("HoraFinTurno", typeof(TimeSpan));
 
-            DataTable Frec = Frecunacia(ramal);
-            DataTable Unidades = UnidadesActivas(fecha);
-            DataTable ChoferesM = ChoferesQueTrabajan(fecha,1); // turno mañana
-            DataTable ChoferesT = ChoferesQueTrabajan(fecha, 2); // turno Tarde
+            //creo las tablas a convinar
+            DataTable Frec = Frecunacia(ramal); // Ramales
+            DataTable Unidades = UnidadesLibres(UnidadesActivas(fecha), fecha); // unidades
 
 
+            // crear metodo que filtre los choferes que ya fueron asignados en el dia seleccionado.
+
+            DataTable ChoferesM = filtradoDeChoferes(ChoferesQueTrabajan(fecha, 1),fecha); // turno mañana
+            DataTable ChoferesT = filtradoDeChoferes(ChoferesQueTrabajan(fecha, 2), fecha); // turno Tarde
+
+            //cantidad de unidades me dice la la cantidad tambien por chofer por turno TM
             int CantidadU = Ramal.CantidadUnidadesRequeridas(ramal);
+            // segunda tanda de choferes TT
             int totalTurno = Ramal.CantidadUnidadesRequeridas(ramal) * 2;
 
             for (int i = 0; i< CantidadU; i++)
             {
+                
                 DataRow fila = Frec.Rows[i];
                 DataRow fila2 = Unidades.Rows[i];
                 DataRow fila3 = ChoferesM.Rows[i];  
@@ -250,6 +254,51 @@ namespace CL_Negocios.GrillaLaboral
             }
             return false;
         }
+        //
+        //validar choferes
+        public DataTable filtradoDeChoferes(DataTable tabla, DateTime fecha)
+        {
+            int valor = tabla.Rows.Count;
+            // Eliminar registros del DataTable que existen en Salidas
+            for (int i =0; i< valor; i++)
+            {
+                int id = Convert.ToInt32(tabla.Rows[i]["legajo"]);
+
+                if (planillaLaboral.ExiteRegistroId(id, fecha))
+                {
+                    tabla.Rows[i].Delete();
+                    tabla.AcceptChanges();
+                    valor =tabla.Rows.Count;
+                    i--;
+                }
+            }
+            return tabla;
+        }
+
+        public DataTable UnidadesLibres(DataTable tabla, DateTime fecha)
+        {
+            int valor = tabla.Rows.Count;
+            // Eliminar registros del DataTable que existen en Salidas
+            for (int i = 0; i < valor; i++)
+            {
+                int id = Convert.ToInt32(tabla.Rows[i]["IdUnidad"]);
+
+                if (planillaLaboral.ExisteRegistroUnidadId(id, fecha))
+                {
+                    tabla.Rows[i].Delete();
+                    tabla.AcceptChanges();
+                    valor = tabla.Rows.Count;
+                    i--;
+                }
+            }
+            return tabla;
+        }
+
+        public bool revisarCargaRamal(int id, DateTime fecha)
+        {
+            return cargar.revisarRemalCargado(id, fecha);
+        }
+
 
     }
 }

@@ -52,38 +52,36 @@ namespace CD_ConexionDatos.Negocio
             return idUltimo;
         }
 
-
-        /*public void guardarDiaria(int id, List<PlanillaLab> planilla)// guarda toda la lista de registros que se crearon para el dia X.
+        public bool revisarRemalCargado(int id, DateTime fecha)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion())
             {
+                int valor = 0;
                 con.Open();
-                try
+                SqlCommand comando = new SqlCommand("spRevisarRamalExistente", con);
+            
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xid", id);
+                comando.Parameters.AddWithValue("@xfecha", fecha);
+           
+                using (SqlDataReader reader = comando.ExecuteReader())
                 {
-                    foreach (var objetos in planilla)
+                    if (reader.Read())
                     {
-                        using (SqlCommand command = new SqlCommand("sp", con))
-                        {
-                            command.Parameters.AddWithValue("@xidGrilla", id);
-                            command.Parameters.AddWithValue("@xidFrecuencia", planilla.Id_Frecuencias);
-                            command.Parameters.AddWithValue("@xidEmpleado", planilla.Id_Empleados);
-                            command.Parameters.AddWithValue("@xidUnidad", planilla.Id_Unidad);
-
-                            command.ExecuteNonQuery();
-                        }
+                        valor = Convert.ToInt32(reader["id"]);
                     }
                 }
-                catch (Exception ex)
+                con.Close();
+            
+                if (valor > 0)
                 {
-                    throw new Exception("Error al guardar las respuestas del usuario", ex);
+                    return false;
+                }
+                else
+                {
+                    return true;
                 }
             }
         }
-
-
-
-
-        // ***** metodos con listas y LINQ *******
-        */
     }
 }
