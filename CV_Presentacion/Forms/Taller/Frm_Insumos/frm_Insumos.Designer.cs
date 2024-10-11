@@ -31,85 +31,94 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtNvoArticulo = new System.Windows.Forms.TextBox();
+            this.lblNvoArticulo = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(255, 183);
+            this.btnSalir.Location = new System.Drawing.Point(382, 282);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 24);
+            this.btnSalir.Size = new System.Drawing.Size(112, 37);
             this.btnSalir.TabIndex = 37;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(174, 183);
+            this.btnAgregar.Location = new System.Drawing.Point(261, 282);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 24);
+            this.btnAgregar.Size = new System.Drawing.Size(112, 37);
             this.btnAgregar.TabIndex = 34;
             this.btnAgregar.Text = "Guardar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Controls.Add(this.txtDescripcion);
+            this.groupBox2.Controls.Add(this.txtNvoArticulo);
+            this.groupBox2.Controls.Add(this.lblNvoArticulo);
+            this.groupBox2.Controls.Add(this.lblDescripcion);
+            this.groupBox2.Location = new System.Drawing.Point(18, 18);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 163);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(480, 251);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Carga";
             // 
-            // textBox6
+            // txtDescripcion
             // 
-            this.textBox6.Location = new System.Drawing.Point(76, 64);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(221, 87);
-            this.textBox6.TabIndex = 3;
+            this.txtDescripcion.Location = new System.Drawing.Point(114, 98);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(330, 132);
+            this.txtDescripcion.TabIndex = 3;
             // 
-            // textBox4
+            // txtNvoArticulo
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 20);
-            this.textBox4.TabIndex = 1;
+            this.txtNvoArticulo.Location = new System.Drawing.Point(159, 45);
+            this.txtNvoArticulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNvoArticulo.Name = "txtNvoArticulo";
+            this.txtNvoArticulo.Size = new System.Drawing.Size(284, 26);
+            this.txtNvoArticulo.TabIndex = 1;
             // 
-            // label3
+            // lblNvoArticulo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nuevo Articulo:";
+            this.lblNvoArticulo.AutoSize = true;
+            this.lblNvoArticulo.Location = new System.Drawing.Point(30, 49);
+            this.lblNvoArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNvoArticulo.Name = "lblNvoArticulo";
+            this.lblNvoArticulo.Size = new System.Drawing.Size(115, 20);
+            this.lblNvoArticulo.TabIndex = 2;
+            this.lblNvoArticulo.Text = "Nuevo Articulo:";
             // 
-            // label7
+            // lblDescripcion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Cantidad:";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(14, 105);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(96, 20);
+            this.lblDescripcion.TabIndex = 6;
+            this.lblDescripcion.Text = "Descripción:";
             // 
             // frm_Insumos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 224);
+            this.ClientSize = new System.Drawing.Size(516, 345);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox2);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_Insumos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Insumos";
@@ -123,9 +132,9 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtNvoArticulo;
+        private System.Windows.Forms.Label lblNvoArticulo;
+        private System.Windows.Forms.Label lblDescripcion;
     }
 }
