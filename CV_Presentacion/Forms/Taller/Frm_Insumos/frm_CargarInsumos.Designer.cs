@@ -34,9 +34,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnElimiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lsbArticulo = new System.Windows.Forms.ListBox();
+            this.txtArticulo = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.btnArticulos = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -113,9 +114,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lsbArticulo);
+            this.groupBox2.Controls.Add(this.txtArticulo);
             this.groupBox2.Controls.Add(this.maskedTextBox1);
             this.groupBox2.Controls.Add(this.btnArticulos);
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label7);
@@ -128,6 +130,25 @@
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Carga";
+            // 
+            // lsbArticulo
+            // 
+            this.lsbArticulo.FormattingEnabled = true;
+            this.lsbArticulo.ItemHeight = 20;
+            this.lsbArticulo.Location = new System.Drawing.Point(115, 65);
+            this.lsbArticulo.Name = "lsbArticulo";
+            this.lsbArticulo.Size = new System.Drawing.Size(198, 84);
+            this.lsbArticulo.TabIndex = 38;
+            this.lsbArticulo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsbArticulo_MouseClick);
+            // 
+            // txtArticulo
+            // 
+            this.txtArticulo.Location = new System.Drawing.Point(115, 38);
+            this.txtArticulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(198, 26);
+            this.txtArticulo.TabIndex = 37;
+            this.txtArticulo.TextChanged += new System.EventHandler(this.txtArticulo_TextChanged);
             // 
             // maskedTextBox1
             // 
@@ -149,15 +170,6 @@
             this.btnArticulos.Text = "+";
             this.btnArticulos.UseVisualStyleBackColor = true;
             this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 39);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 28);
-            this.comboBox1.TabIndex = 2;
             // 
             // textBox6
             // 
@@ -391,7 +403,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Button btnArticulos;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox gbInformacion;
         private System.Windows.Forms.Label lblCiudad;
         private System.Windows.Forms.Label lblEmpresa;
@@ -404,5 +415,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lsbProveedor;
+        private System.Windows.Forms.ListBox lsbArticulo;
+        private System.Windows.Forms.TextBox txtArticulo;
     }
 }
