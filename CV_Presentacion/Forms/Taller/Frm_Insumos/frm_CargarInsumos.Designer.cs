@@ -32,6 +32,10 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dtListaArticulos = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVenc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnElimiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lsbArticulo = new System.Windows.Forms.ListBox();
@@ -56,10 +60,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lsbProveedor = new System.Windows.Forms.ListBox();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVenc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtListaArticulos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gbInformacion.SuspendLayout();
@@ -111,6 +111,38 @@
             this.dtListaArticulos.RowHeadersWidth = 51;
             this.dtListaArticulos.Size = new System.Drawing.Size(892, 331);
             this.dtListaArticulos.TabIndex = 33;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 8;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 8;
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 150;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 150;
+            // 
+            // FechaVenc
+            // 
+            this.FechaVenc.HeaderText = "Fecha Vencimiento";
+            this.FechaVenc.MinimumWidth = 8;
+            this.FechaVenc.Name = "FechaVenc";
+            this.FechaVenc.ReadOnly = true;
+            this.FechaVenc.Width = 150;
             // 
             // btnElimiar
             // 
@@ -250,11 +282,11 @@
             this.gbInformacion.Controls.Add(this.label2);
             this.gbInformacion.Controls.Add(this.label5);
             this.gbInformacion.Controls.Add(this.label6);
-            this.gbInformacion.Location = new System.Drawing.Point(512, 38);
+            this.gbInformacion.Location = new System.Drawing.Point(490, 39);
             this.gbInformacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbInformacion.Name = "gbInformacion";
             this.gbInformacion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbInformacion.Size = new System.Drawing.Size(408, 318);
+            this.gbInformacion.Size = new System.Drawing.Size(430, 318);
             this.gbInformacion.TabIndex = 34;
             this.gbInformacion.TabStop = false;
             this.gbInformacion.Text = "Informacion";
@@ -262,7 +294,7 @@
             // lblCiudad
             // 
             this.lblCiudad.AutoSize = true;
-            this.lblCiudad.Location = new System.Drawing.Point(188, 241);
+            this.lblCiudad.Location = new System.Drawing.Point(174, 241);
             this.lblCiudad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(65, 20);
@@ -272,7 +304,7 @@
             // lblEmpresa
             // 
             this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(188, 46);
+            this.lblEmpresa.Location = new System.Drawing.Point(174, 46);
             this.lblEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(65, 20);
@@ -282,7 +314,7 @@
             // lblContacto
             // 
             this.lblContacto.AutoSize = true;
-            this.lblContacto.Location = new System.Drawing.Point(188, 95);
+            this.lblContacto.Location = new System.Drawing.Point(174, 95);
             this.lblContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContacto.Name = "lblContacto";
             this.lblContacto.Size = new System.Drawing.Size(68, 20);
@@ -292,7 +324,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(188, 145);
+            this.lblTelefono.Location = new System.Drawing.Point(174, 145);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(65, 20);
@@ -302,7 +334,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(188, 194);
+            this.lblEmail.Location = new System.Drawing.Point(174, 194);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(152, 20);
@@ -312,7 +344,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(114, 241);
+            this.label9.Location = new System.Drawing.Point(100, 241);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 20);
@@ -322,7 +354,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 46);
+            this.label1.Location = new System.Drawing.Point(88, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
@@ -332,7 +364,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 95);
+            this.label2.Location = new System.Drawing.Point(85, 95);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
@@ -342,7 +374,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(100, 145);
+            this.label5.Location = new System.Drawing.Point(86, 145);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
@@ -352,7 +384,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 194);
+            this.label6.Location = new System.Drawing.Point(19, 194);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 20);
@@ -368,38 +400,6 @@
             this.lsbProveedor.Size = new System.Drawing.Size(320, 84);
             this.lsbProveedor.TabIndex = 35;
             this.lsbProveedor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsbProveedor_MouseClick);
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 8;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 8;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 150;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 8;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 150;
-            // 
-            // FechaVenc
-            // 
-            this.FechaVenc.HeaderText = "Fecha Vencimiento";
-            this.FechaVenc.MinimumWidth = 8;
-            this.FechaVenc.Name = "FechaVenc";
-            this.FechaVenc.ReadOnly = true;
-            this.FechaVenc.Width = 150;
             // 
             // frm_CargarInsumos
             // 
