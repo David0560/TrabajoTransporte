@@ -29,18 +29,23 @@
         private void InitializeComponent()
         {
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtListaArticulos = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVenc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnElimiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lsbArticulo = new System.Windows.Forms.ListBox();
+            this.txtArticulo = new System.Windows.Forms.TextBox();
+            this.mskFechaVenc = new System.Windows.Forms.MaskedTextBox();
             this.btnArticulos = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblFechaVenc = new System.Windows.Forms.Label();
             this.txtProveedor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbInformacion = new System.Windows.Forms.GroupBox();
@@ -55,7 +60,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lsbProveedor = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtListaArticulos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gbInformacion.SuspendLayout();
             this.SuspendLayout();
@@ -70,16 +75,16 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // btnGuardar
             // 
-            this.btnSalir.Location = new System.Drawing.Point(370, 319);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(112, 38);
-            this.btnSalir.TabIndex = 8;
-            this.btnSalir.Text = "Guardar";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(370, 319);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(112, 38);
+            this.btnGuardar.TabIndex = 8;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregar
             // 
@@ -90,16 +95,54 @@
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dataGridView1
+            // dtListaArticulos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 365);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 331);
-            this.dataGridView1.TabIndex = 33;
+            this.dtListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtListaArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Descripción,
+            this.Cantidad,
+            this.FechaVenc});
+            this.dtListaArticulos.Location = new System.Drawing.Point(28, 365);
+            this.dtListaArticulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtListaArticulos.Name = "dtListaArticulos";
+            this.dtListaArticulos.RowHeadersWidth = 51;
+            this.dtListaArticulos.Size = new System.Drawing.Size(892, 331);
+            this.dtListaArticulos.TabIndex = 33;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 8;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 8;
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 150;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 8;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 150;
+            // 
+            // FechaVenc
+            // 
+            this.FechaVenc.HeaderText = "Fecha Vencimiento";
+            this.FechaVenc.MinimumWidth = 8;
+            this.FechaVenc.Name = "FechaVenc";
+            this.FechaVenc.ReadOnly = true;
+            this.FechaVenc.Width = 150;
             // 
             // btnElimiar
             // 
@@ -113,13 +156,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.lsbArticulo);
+            this.groupBox2.Controls.Add(this.txtArticulo);
+            this.groupBox2.Controls.Add(this.mskFechaVenc);
             this.groupBox2.Controls.Add(this.btnArticulos);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtCantidad);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.lblCantidad);
+            this.groupBox2.Controls.Add(this.lblFechaVenc);
             this.groupBox2.Location = new System.Drawing.Point(28, 112);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
@@ -129,15 +173,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Carga";
             // 
-            // maskedTextBox1
+            // lsbArticulo
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(207, 139);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.maskedTextBox1.TabIndex = 4;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.lsbArticulo.FormattingEnabled = true;
+            this.lsbArticulo.ItemHeight = 20;
+            this.lsbArticulo.Location = new System.Drawing.Point(115, 65);
+            this.lsbArticulo.Name = "lsbArticulo";
+            this.lsbArticulo.Size = new System.Drawing.Size(198, 84);
+            this.lsbArticulo.TabIndex = 38;
+            this.lsbArticulo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsbArticulo_MouseClick);
+            // 
+            // txtArticulo
+            // 
+            this.txtArticulo.Location = new System.Drawing.Point(115, 38);
+            this.txtArticulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(198, 26);
+            this.txtArticulo.TabIndex = 37;
+            this.txtArticulo.TextChanged += new System.EventHandler(this.txtArticulo_TextChanged);
+            // 
+            // mskFechaVenc
+            // 
+            this.mskFechaVenc.Location = new System.Drawing.Point(207, 139);
+            this.mskFechaVenc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskFechaVenc.Mask = "00/00/0000";
+            this.mskFechaVenc.Name = "mskFechaVenc";
+            this.mskFechaVenc.Size = new System.Drawing.Size(100, 26);
+            this.mskFechaVenc.TabIndex = 4;
+            this.mskFechaVenc.ValidatingType = typeof(System.DateTime);
             // 
             // btnArticulos
             // 
@@ -150,22 +213,13 @@
             this.btnArticulos.UseVisualStyleBackColor = true;
             this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
-            // comboBox1
+            // txtCantidad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 39);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 28);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(129, 89);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(91, 26);
-            this.textBox6.TabIndex = 3;
+            this.txtCantidad.Location = new System.Drawing.Point(129, 89);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(91, 26);
+            this.txtCantidad.TabIndex = 3;
             // 
             // label4
             // 
@@ -177,25 +231,25 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Articulo:";
             // 
-            // label7
+            // lblCantidad
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 95);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Cantidad:";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(45, 95);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(77, 20);
+            this.lblCantidad.TabIndex = 6;
+            this.lblCantidad.Text = "Cantidad:";
             // 
-            // label8
+            // lblFechaVenc
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(45, 145);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Fecha Vencimiento:";
+            this.lblFechaVenc.AutoSize = true;
+            this.lblFechaVenc.Location = new System.Drawing.Point(45, 145);
+            this.lblFechaVenc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaVenc.Name = "lblFechaVenc";
+            this.lblFechaVenc.Size = new System.Drawing.Size(150, 20);
+            this.lblFechaVenc.TabIndex = 7;
+            this.lblFechaVenc.Text = "Fecha Vencimiento:";
             // 
             // txtProveedor
             // 
@@ -228,11 +282,11 @@
             this.gbInformacion.Controls.Add(this.label2);
             this.gbInformacion.Controls.Add(this.label5);
             this.gbInformacion.Controls.Add(this.label6);
-            this.gbInformacion.Location = new System.Drawing.Point(512, 38);
+            this.gbInformacion.Location = new System.Drawing.Point(490, 39);
             this.gbInformacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbInformacion.Name = "gbInformacion";
             this.gbInformacion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbInformacion.Size = new System.Drawing.Size(408, 318);
+            this.gbInformacion.Size = new System.Drawing.Size(430, 318);
             this.gbInformacion.TabIndex = 34;
             this.gbInformacion.TabStop = false;
             this.gbInformacion.Text = "Informacion";
@@ -240,7 +294,7 @@
             // lblCiudad
             // 
             this.lblCiudad.AutoSize = true;
-            this.lblCiudad.Location = new System.Drawing.Point(188, 241);
+            this.lblCiudad.Location = new System.Drawing.Point(174, 241);
             this.lblCiudad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(65, 20);
@@ -250,7 +304,7 @@
             // lblEmpresa
             // 
             this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(188, 46);
+            this.lblEmpresa.Location = new System.Drawing.Point(174, 46);
             this.lblEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(65, 20);
@@ -260,7 +314,7 @@
             // lblContacto
             // 
             this.lblContacto.AutoSize = true;
-            this.lblContacto.Location = new System.Drawing.Point(188, 95);
+            this.lblContacto.Location = new System.Drawing.Point(174, 95);
             this.lblContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContacto.Name = "lblContacto";
             this.lblContacto.Size = new System.Drawing.Size(68, 20);
@@ -270,7 +324,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(188, 145);
+            this.lblTelefono.Location = new System.Drawing.Point(174, 145);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(65, 20);
@@ -280,7 +334,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(188, 194);
+            this.lblEmail.Location = new System.Drawing.Point(174, 194);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(152, 20);
@@ -290,7 +344,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(114, 241);
+            this.label9.Location = new System.Drawing.Point(100, 241);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 20);
@@ -300,7 +354,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 46);
+            this.label1.Location = new System.Drawing.Point(88, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
@@ -310,7 +364,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 95);
+            this.label2.Location = new System.Drawing.Point(85, 95);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
@@ -320,7 +374,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(100, 145);
+            this.label5.Location = new System.Drawing.Point(86, 145);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
@@ -330,7 +384,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 194);
+            this.label6.Location = new System.Drawing.Point(19, 194);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 20);
@@ -355,9 +409,9 @@
             this.Controls.Add(this.lsbProveedor);
             this.Controls.Add(this.gbInformacion);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtListaArticulos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnElimiar);
             this.Controls.Add(this.groupBox2);
@@ -365,7 +419,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_CargarInsumos";
             this.Text = "frm_CargarInsumos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtListaArticulos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gbInformacion.ResumeLayout(false);
@@ -378,20 +432,19 @@
         #endregion
 
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtListaArticulos;
         private System.Windows.Forms.Button btnElimiar;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Label lblFechaVenc;
+        private System.Windows.Forms.MaskedTextBox mskFechaVenc;
         private System.Windows.Forms.Button btnArticulos;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox gbInformacion;
         private System.Windows.Forms.Label lblCiudad;
         private System.Windows.Forms.Label lblEmpresa;
@@ -404,5 +457,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lsbProveedor;
+        private System.Windows.Forms.ListBox lsbArticulo;
+        private System.Windows.Forms.TextBox txtArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVenc;
     }
 }

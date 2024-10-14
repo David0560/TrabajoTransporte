@@ -9,39 +9,28 @@ namespace CL_Negocios
     {
 
         private CD_Proveedores cdProveedores = new CD_Proveedores();
-
-        // Método para obtener proveedores filtrados por nombre de empresa
-        public DataTable ObtenerProveedoresPorEmpresa(string empresa)
-        {
-            return cdProveedores.ObtenerProveedoresPorEmpresa(empresa); // Llama al método de la capa de datos
-        }
-
+      
 
         public CL_Proveedores()
         {
 
         }
-        public DataTable ObtenerProveedores()
+        public void ModificarProveedor(Proveedores proveedores) //EDITAR
         {
-            return cdProveedores.ObtenerProveedores();
+
+            try
+            {
+
+                cdProveedores.ModificoProveedor(proveedores);
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+            }
         }
-        public DataTable ObtenerProveedoresPorEmpresa()
-        {
-            return cdProveedores.ObtenerProveedoresPorEmpresa();
-        }
-        public DataTable ObtenerProveedoresPorNombre()
-        {
-            return cdProveedores.ObtenerProveedoresPorNombre();
-        }
-        public  DataTable TraerProovedoresIdEmpresa(int id)
-        {
-            return cdProveedores.ObtenerProveedoresPorIdEmpresa(id);
-        }
-        public DataTable TraerProovedoresIdContacto(int id)
-        {
-            return cdProveedores.ObtenerProveedoresPorIdContacto(id);
-        }
-        public void GuardarProveedores(Proveedores proveedores)
+            public void GuardarProveedores(Proveedores proveedores) // ALTA
         {
 
             try
@@ -52,34 +41,35 @@ namespace CL_Negocios
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+             
+              Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
             }
         }
-          public void  ModificarProveedores (int id, string nombreempresa, string Contacto,string telefono, string Email, string Ciudad, string Pais, string Calle, string Numero, int CP)
-        { 
-                try
-                {
+        public DataTable ObtenerProveedoresPorEmpresa(string nombreEmpresa)
+        {
+            return cdProveedores.ObtenerProveedoresPorEmpresa(nombreEmpresa);
+        }
 
-                    cdProveedores.ModificoProveedor(
-                        id,
-                    nombreempresa,
-                        Contacto,
-                        telefono,
-                        Email,
-                       Ciudad,
-                        Pais,
-                      Calle,
-                       Numero,
-                        CP);
-                }
-                catch (Exception ex)
-                {
-                throw new ApplicationException("Ocurrió un error al guardar el proveedor: " + ex.Message);
-                }
+        public DataTable ObtenerProveedoresPorContacto(string contacto)
+        {
+            return cdProveedores.ObtenerProveedoresPorContacto(contacto);
+        }
+        public void ELiminarProveedores(int proveedoresid) //ELIMINAR
+        {
+
+            try
+            {
+
+                cdProveedores.EliminarProveedor(proveedoresid);
+
             }
-        //public List<Proveedores> BuscarProveedores(string nombreEmpresa, string contacto, string telefono, string email, string ciudad, string pais, string calle, string numero, int cp)
-        //{
-        //    return proveedores.BuscarProveedores(nombreEmpresa, contacto, telefono, email, ciudad, pais, calle, numero, cp);
-        //}
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocurrió un error al eliminar el proveedor: " + ex.Message);
+            }
+        }
     }
-}
+      
+    }
+

@@ -103,6 +103,7 @@
     <Compile Include="CL_cacheManager.cs" />
     <Compile Include="Configuracion\ConfiguracionPasswordBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Taller\CL_Articulo.cs" />
     <Compile Include="Usuarios\CL_AdministrarUsuario.cs" />
     <Compile Include="Vehiculos\CL_Vehiculos.cs" />
   </ItemGroup>
