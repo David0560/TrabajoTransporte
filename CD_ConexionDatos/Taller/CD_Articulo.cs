@@ -10,15 +10,15 @@ namespace CD_ConexionDatos.Taller
 
         public DataTable ObtenerArticulosPorNombre(string nombreArticulo)
         {
-            DataTable dtArticulos = new DataTable(); 
+            DataTable dtArticulos = new DataTable();
             using (SqlConnection connection = connectionBD.CreaInstacia().CrearConexion())
             {
                 try
                 {
                     using (SqlCommand cmd = new SqlCommand("spObtenerArticulosPorNombre", connection))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure; 
-                        cmd.Parameters.AddWithValue("@NombreArticulo", nombreArticulo); 
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@NombreArticulo", nombreArticulo);
                         connection.Open();
 
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -32,7 +32,6 @@ namespace CD_ConexionDatos.Taller
                     throw new Exception("Error al obtener los artículos: " + ex.Message);
                 }
             }
-
             return dtArticulos;
         }
     }
