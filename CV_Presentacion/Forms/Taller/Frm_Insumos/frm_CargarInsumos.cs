@@ -147,17 +147,15 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // Validar que se haya seleccionado un artículo y que la cantidad sea válida
+            //Se valida que hay seleccionado un artículo y que la cantidad sea valida
             if (!string.IsNullOrEmpty(txtArticulo.Text) && !string.IsNullOrEmpty(txtCantidad.Text) && int.TryParse(txtCantidad.Text, out int cantidad))
             {
-                // Recuperar los datos del artículo seleccionado
                 DataTable articulos = clArticulo.ObtenerArticulosPorNombre(txtArticulo.Text);
 
                 if (articulos.Rows.Count > 0)
                 {
                     DataRow filaArticulo = articulos.Rows[0];
 
-                    // Crear una nueva fila para el DataGridView
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(dtListaArticulos);
 
@@ -166,10 +164,8 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
                     row.Cells[2].Value = cantidad.ToString();
                     row.Cells[3].Value = !string.IsNullOrEmpty(mskFechaVenc.Text) ? mskFechaVenc.Text : "N/A";
 
-                    // Añadir la fila al DataGridView
                     dtListaArticulos.Rows.Add(row);
 
-                    // Limpiar los campos después de agregar
                     txtArticulo.Clear();
                     txtCantidad.Clear();
                     mskFechaVenc.Clear();
