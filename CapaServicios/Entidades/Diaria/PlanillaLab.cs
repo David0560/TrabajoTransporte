@@ -17,6 +17,7 @@ namespace CapaServicios.Entidades.Diaria
         public TimeSpan HoraSalida { get; set; }
         public int KmSalida {  get; set; }
         public int CombustibleSalida { get; set; }
+        public TimeSpan HoraLaboral { get; set; }
 
 
         public PlanillaLab(int id, int idGrilla, int idFrecuencia, int idEmpleado, int idUnidad, TimeSpan horaEntrada,
@@ -54,6 +55,11 @@ namespace CapaServicios.Entidades.Diaria
             this.HoraEntrada = horaEntrada;
         }
 
-        public PlanillaLab() { }
+        public PlanillaLab(int kmSalida, int CombuSalida, TimeSpan horaLabo)
+        {
+            this.HoraLaboral = horaLabo;
+            this.KmSalida = kmSalida;
+            this.CombustibleSalida = CombuSalida;
+        }
     }
 }

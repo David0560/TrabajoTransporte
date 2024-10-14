@@ -62,7 +62,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 27);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // btnModificar

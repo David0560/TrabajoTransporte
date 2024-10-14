@@ -62,7 +62,7 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
             DateTime fecha = dtpFecha.Value;
             int ramal = Convert.ToInt32(cboRamales.SelectedValue);
 
-            int IdGrilla = 1;  //grilla.GuardarGrilla(fecha);
+            int IdGrilla = grilla.GuardarGrilla(fecha);
 
             if (IdGrilla!=0)
             { 
@@ -70,11 +70,12 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla
                 if (resultado == true)
                 {
                     MessageBox.Show("registros Guardados exitozamente");
-
+                    Servicio.LimpiarFormulario(this);
                 }
                 else
                 {
                     MessageBox.Show("registros Guardados exitozamente");
+                    Servicio.LimpiarFormulario(this);
                 }
             }
             Servicio.LimpiarFormulario(this);

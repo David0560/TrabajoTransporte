@@ -43,6 +43,7 @@ namespace CapaServicios
         {
             if (control is DataGridView dataGridView)
             {
+                dataGridView.DataSource = null; // Eliminar la fuente de datos del DataGridView
                 dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect; //seleccionar solo la fila
                 dataGridView.RowHeadersVisible = false; // columna de indice "Flecha" 
                 dataGridView.MultiSelect = false; // Que no pueda seleccionar multiples filas
