@@ -25,5 +25,11 @@ namespace CL_Negocios.Empleados
             return registrarEmpleado.BuscarEmpleadosPorApellido(apellido);
         }
 
+        public DataTable ObtenerEmpleadoPorDNI(string dni)
+        {
+            return registrarEmpleado.BuscarEmpleadosPorDNI(dni);
+        }
+
     }
+
 }

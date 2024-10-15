@@ -29,15 +29,16 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
-
-            string textoBusqueda = txtApellido.Text.Trim().ToLower();
-            lsbEmpleado.Items.Clear(); // Limpiar resultados anteriores
-
-            if (string.IsNullOrEmpty(textoBusqueda))
+            if (rbNomAp.Checked)
             {
-                lsbEmpleado.Visible = false; // Ocultar el ListBox si no hay texto
-                return; // No hacer nada si el textbox está vacío
-            }
+                string textoBusqueda = txtApellido.Text.Trim().ToLower();
+                lsbEmpleado.Items.Clear(); // Limpiar resultados anteriores
+
+                if (string.IsNullOrEmpty(textoBusqueda))
+                {
+                    lsbEmpleado.Visible = false; // Ocultar el ListBox si no hay texto
+                    return; // No hacer nada si el textbox está vacío
+                }
 
                 dtEmpleados = cl_AdministrarEmpleados.ObtenerEmpleadoPorApellido(textoBusqueda);
 
@@ -46,7 +47,9 @@ namespace CV_Presentacion.Frm_Empleados
                     lsbEmpleado.Visible = true; // Mostrar el ListBox
                     foreach (DataRow fila in dtEmpleados.Rows)
                     {
-                        lsbEmpleado.Items.Add(fila["apellido"].ToString());
+                        string nombreCompleto = fila["nombre"].ToString() + " " + fila["apellido"].ToString();
+                        lsbEmpleado.Items.Add(nombreCompleto);
+
                     }
                 }
                 else
@@ -54,9 +57,45 @@ namespace CV_Presentacion.Frm_Empleados
                     lsbEmpleado.Visible = false; // Ocultar si no hay resultados
                 }
             }
-         
-             
+            else if (rbDni.Checked)
+            {
+                string dni = txtApellido.Text.Trim().ToLower();
+                lsbEmpleado.Items.Clear(); // Limpiar resultados anteriores
+
+                if (string.IsNullOrEmpty(dni))
+                {
+                    lsbEmpleado.Visible = false; // Ocultar el ListBox si no hay texto
+                    return; // No hacer nada si el textbox está vacío
+                }
+
+                dtEmpleados = cl_AdministrarEmpleados.ObtenerEmpleadoPorDNI(dni);
+                if (dtEmpleados != null && dtEmpleados.Rows.Count > 0)
+                {
+                    lsbEmpleado.Visible = true; // Mostrar el ListBox
+                    foreach (DataRow fila in dtEmpleados.Rows)
+                    {
+                        string apedni = fila["apellido"].ToString() + " " + fila["numero_ident"].ToString();
+                        lsbEmpleado.Items.Add(apedni);
+
+                    }
+                }
+                else
+                {
+                    lsbEmpleado.Visible = false; // Ocultar si no hay resultados
+                }
             }
+            }
+
+        private void rbNomAp_CheckedChanged(object sender, EventArgs e)
+        {
+            txtApellido.Text = "";
+        }
+
+        private void rbDni_CheckedChanged(object sender, EventArgs e)
+        {
+            txtApellido.Text = "";
+        }
+    }
         }
     
 

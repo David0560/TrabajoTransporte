@@ -64,6 +64,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lsbEmpleado = new System.Windows.Forms.ListBox();
+            this.rbNomAp = new System.Windows.Forms.RadioButton();
+            this.rbDni = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpboxDireccion.SuspendLayout();
@@ -72,7 +74,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(87, 25);
+            this.txtApellido.Location = new System.Drawing.Point(215, 30);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(389, 22);
@@ -82,12 +84,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 31);
+            this.label4.Location = new System.Drawing.Point(15, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 16);
+            this.label4.Size = new System.Drawing.Size(31, 16);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Apellido:";
+            this.label4.Text = "Por:";
             // 
             // pictureBox1
             // 
@@ -303,6 +305,7 @@
             this.grpboxDireccion.Controls.Add(this.textBox8);
             this.grpboxDireccion.Controls.Add(this.label16);
             this.grpboxDireccion.Controls.Add(this.comboBox4);
+            this.grpboxDireccion.Controls.Add(this.button1);
             this.grpboxDireccion.Controls.Add(this.button3);
             this.grpboxDireccion.Controls.Add(this.button2);
             this.grpboxDireccion.Controls.Add(this.label14);
@@ -414,8 +417,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rbDni);
+            this.groupBox2.Controls.Add(this.rbNomAp);
             this.groupBox2.Controls.Add(this.lsbEmpleado);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(16, 14);
@@ -429,7 +433,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(517, 21);
+            this.button1.Location = new System.Drawing.Point(316, 105);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
@@ -441,10 +445,34 @@
             // 
             this.lsbEmpleado.FormattingEnabled = true;
             this.lsbEmpleado.ItemHeight = 16;
-            this.lsbEmpleado.Location = new System.Drawing.Point(87, 49);
+            this.lsbEmpleado.Location = new System.Drawing.Point(215, 54);
             this.lsbEmpleado.Name = "lsbEmpleado";
             this.lsbEmpleado.Size = new System.Drawing.Size(389, 36);
             this.lsbEmpleado.TabIndex = 53;
+            // 
+            // rbNomAp
+            // 
+            this.rbNomAp.AutoSize = true;
+            this.rbNomAp.Location = new System.Drawing.Point(53, 31);
+            this.rbNomAp.Name = "rbNomAp";
+            this.rbNomAp.Size = new System.Drawing.Size(78, 20);
+            this.rbNomAp.TabIndex = 54;
+            this.rbNomAp.TabStop = true;
+            this.rbNomAp.Text = "Apellido";
+            this.rbNomAp.UseVisualStyleBackColor = true;
+            this.rbNomAp.CheckedChanged += new System.EventHandler(this.rbNomAp_CheckedChanged);
+            // 
+            // rbDni
+            // 
+            this.rbDni.AutoSize = true;
+            this.rbDni.Location = new System.Drawing.Point(53, 54);
+            this.rbDni.Name = "rbDni";
+            this.rbDni.Size = new System.Drawing.Size(51, 20);
+            this.rbDni.TabIndex = 55;
+            this.rbDni.TabStop = true;
+            this.rbDni.Text = "DNI";
+            this.rbDni.UseVisualStyleBackColor = true;
+            this.rbDni.CheckedChanged += new System.EventHandler(this.rbDni_CheckedChanged);
             // 
             // frm_ModificarEmpleados
             // 
@@ -506,5 +534,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lsbEmpleado;
+        private System.Windows.Forms.RadioButton rbDni;
+        private System.Windows.Forms.RadioButton rbNomAp;
     }
 }

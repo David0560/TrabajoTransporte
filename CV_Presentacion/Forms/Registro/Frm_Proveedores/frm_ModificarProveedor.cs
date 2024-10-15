@@ -43,13 +43,14 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
         private void rb2_CheckedChanged(object sender, EventArgs e)
         {
 
-
-
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void rb1_CheckedChanged(object sender, EventArgs e)
         {
-
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -231,8 +232,22 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             {
                 string proveedorSeleccionado = lsbProveedores.SelectedItem.ToString();
 
-                // Busca el proveedor en el DataTable
-                DataRow[] filasEncontradas = dtProveedores.Select($"Empresa = '{proveedorSeleccionado}'");
+                DataRow[] filasEncontradas;
+
+                if (rbEmpresa.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorEmpresa
+                {
+                    // Busca el proveedor en el DataTable por Empresa
+                    filasEncontradas = dtProveedores.Select($"Empresa = '{proveedorSeleccionado}'");
+                }
+                else if (rbContacto.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorContacto
+                {
+                    // Busca el proveedor en el DataTable por Contacto
+                    filasEncontradas = dtProveedores.Select($"Contacto = '{proveedorSeleccionado}'");
+                }
+                else
+                {
+                    return; // Si no está seleccionado ninguno, salimos
+                }
 
                 if (filasEncontradas.Length > 0)
                 {
@@ -252,10 +267,9 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
                     btnEliminar.Enabled = true;
                     lsbProveedores.Items.Clear();
                     txtBuscar.Text = "";
-                    }
+                }
             }
-        
-    }
+        }
 
         private void txtCP_TextChanged(object sender, EventArgs e)
         {

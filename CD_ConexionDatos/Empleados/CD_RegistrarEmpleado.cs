@@ -38,6 +38,36 @@ namespace CD_ConexionDatos.Empleados
                 con.Close();
             }
         }
+        public DataTable BuscarEmpleadosPorDNI(string DNI)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand command = new SqlCommand("spBuscarEmpleadosPorDNI", con);
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                    };
+                    command.Parameters.AddWithValue("@numero_ident", DNI);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+
+                    adapter.Fill(dataTable);
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por contacto: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+
         public DataTable BuscarEmpleadosPorApellido(string apellido)
         {
             DataTable dataTable = new DataTable();
