@@ -34,26 +34,27 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtDepartamento = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.mtbFecha = new System.Windows.Forms.MaskedTextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellid = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtSexo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNumeroDNI = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTipoDNI = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.grpboxDireccion = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -62,10 +63,9 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lsbEmpleado = new System.Windows.Forms.ListBox();
-            this.rbNomAp = new System.Windows.Forms.RadioButton();
             this.rbDni = new System.Windows.Forms.RadioButton();
+            this.rbNomAp = new System.Windows.Forms.RadioButton();
+            this.lsbEmpleado = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpboxDireccion.SuspendLayout();
@@ -133,34 +133,34 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Departamento";
             // 
-            // comboBox1
+            // txtDepartamento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 218);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 24);
-            this.comboBox1.TabIndex = 31;
+            this.txtDepartamento.FormattingEnabled = true;
+            this.txtDepartamento.Location = new System.Drawing.Point(144, 218);
+            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Size = new System.Drawing.Size(164, 24);
+            this.txtDepartamento.TabIndex = 31;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.txtDepartamento);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.mtbFecha);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtApellid);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.txtSexo);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtNumeroDNI);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbTipoDNI);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Location = new System.Drawing.Point(16, 127);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -180,31 +180,31 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Nombre";
             // 
-            // maskedTextBox2
+            // mtbFecha
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(169, 98);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(89, 22);
-            this.maskedTextBox2.TabIndex = 38;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.mtbFecha.Location = new System.Drawing.Point(169, 98);
+            this.mtbFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mtbFecha.Mask = "00/00/0000";
+            this.mtbFecha.Name = "mtbFecha";
+            this.mtbFecha.Size = new System.Drawing.Size(89, 22);
+            this.mtbFecha.TabIndex = 38;
+            this.mtbFecha.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 31);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtNombre.Location = new System.Drawing.Point(132, 31);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(203, 22);
+            this.txtNombre.TabIndex = 2;
             // 
-            // textBox3
+            // txtApellid
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 63);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 22);
-            this.textBox3.TabIndex = 3;
+            this.txtApellid.Location = new System.Drawing.Point(132, 63);
+            this.txtApellid.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellid.Name = "txtApellid";
+            this.txtApellid.Size = new System.Drawing.Size(203, 22);
+            this.txtApellid.TabIndex = 3;
             // 
             // label3
             // 
@@ -216,14 +216,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Apellido";
             // 
-            // comboBox3
+            // txtSexo
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(104, 175);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 35;
+            this.txtSexo.FormattingEnabled = true;
+            this.txtSexo.Location = new System.Drawing.Point(104, 175);
+            this.txtSexo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(121, 24);
+            this.txtSexo.TabIndex = 35;
             // 
             // label5
             // 
@@ -235,13 +235,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Tipo de Documento";
             // 
-            // textBox6
+            // txtNumeroDNI
             // 
-            this.textBox6.Location = new System.Drawing.Point(425, 133);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 22);
-            this.textBox6.TabIndex = 34;
+            this.txtNumeroDNI.Location = new System.Drawing.Point(425, 133);
+            this.txtNumeroDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroDNI.Name = "txtNumeroDNI";
+            this.txtNumeroDNI.Size = new System.Drawing.Size(140, 22);
+            this.txtNumeroDNI.TabIndex = 34;
             // 
             // label7
             // 
@@ -273,14 +273,14 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Email";
             // 
-            // comboBox2
+            // cbTipoDNI
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(184, 133);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 24);
-            this.comboBox2.TabIndex = 32;
+            this.cbTipoDNI.FormattingEnabled = true;
+            this.cbTipoDNI.Location = new System.Drawing.Point(184, 133);
+            this.cbTipoDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.cbTipoDNI.Name = "cbTipoDNI";
+            this.cbTipoDNI.Size = new System.Drawing.Size(151, 24);
+            this.cbTipoDNI.TabIndex = 32;
             // 
             // label9
             // 
@@ -292,13 +292,13 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Sexo";
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(308, 176);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(260, 22);
-            this.textBox4.TabIndex = 16;
+            this.txtEmail.Location = new System.Drawing.Point(308, 176);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(260, 22);
+            this.txtEmail.TabIndex = 16;
             // 
             // grpboxDireccion
             // 
@@ -350,6 +350,16 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(191, 24);
             this.comboBox4.TabIndex = 37;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(316, 105);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 33);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -431,24 +441,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar";
             // 
-            // button1
+            // rbDni
             // 
-            this.button1.Location = new System.Drawing.Point(316, 105);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 33);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lsbEmpleado
-            // 
-            this.lsbEmpleado.FormattingEnabled = true;
-            this.lsbEmpleado.ItemHeight = 16;
-            this.lsbEmpleado.Location = new System.Drawing.Point(215, 54);
-            this.lsbEmpleado.Name = "lsbEmpleado";
-            this.lsbEmpleado.Size = new System.Drawing.Size(389, 36);
-            this.lsbEmpleado.TabIndex = 53;
+            this.rbDni.AutoSize = true;
+            this.rbDni.Location = new System.Drawing.Point(53, 54);
+            this.rbDni.Name = "rbDni";
+            this.rbDni.Size = new System.Drawing.Size(51, 20);
+            this.rbDni.TabIndex = 55;
+            this.rbDni.TabStop = true;
+            this.rbDni.Text = "DNI";
+            this.rbDni.UseVisualStyleBackColor = true;
+            this.rbDni.CheckedChanged += new System.EventHandler(this.rbDni_CheckedChanged);
             // 
             // rbNomAp
             // 
@@ -462,17 +465,15 @@
             this.rbNomAp.UseVisualStyleBackColor = true;
             this.rbNomAp.CheckedChanged += new System.EventHandler(this.rbNomAp_CheckedChanged);
             // 
-            // rbDni
+            // lsbEmpleado
             // 
-            this.rbDni.AutoSize = true;
-            this.rbDni.Location = new System.Drawing.Point(53, 54);
-            this.rbDni.Name = "rbDni";
-            this.rbDni.Size = new System.Drawing.Size(51, 20);
-            this.rbDni.TabIndex = 55;
-            this.rbDni.TabStop = true;
-            this.rbDni.Text = "DNI";
-            this.rbDni.UseVisualStyleBackColor = true;
-            this.rbDni.CheckedChanged += new System.EventHandler(this.rbDni_CheckedChanged);
+            this.lsbEmpleado.FormattingEnabled = true;
+            this.lsbEmpleado.ItemHeight = 16;
+            this.lsbEmpleado.Location = new System.Drawing.Point(215, 54);
+            this.lsbEmpleado.Name = "lsbEmpleado";
+            this.lsbEmpleado.Size = new System.Drawing.Size(389, 36);
+            this.lsbEmpleado.TabIndex = 53;
+            this.lsbEmpleado.SelectedIndexChanged += new System.EventHandler(this.lsbEmpleado_SelectedIndexChanged);
             // 
             // frm_ModificarEmpleados
             // 
@@ -504,22 +505,22 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txtDepartamento;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.MaskedTextBox mtbFecha;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellid;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox txtSexo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNumeroDNI;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbTipoDNI;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.GroupBox grpboxDireccion;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label16;

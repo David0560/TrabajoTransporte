@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -94,6 +95,51 @@ namespace CV_Presentacion.Frm_Empleados
         private void rbDni_CheckedChanged(object sender, EventArgs e)
         {
             txtApellido.Text = "";
+        }
+
+        private void lsbEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsbEmpleado.SelectedItem != null)
+            {
+                string empleadoSeleccionado = lsbEmpleado.SelectedItem.ToString();
+
+                DataRow[] filasEncontradas;
+
+                if (rbNomAp.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorEmpresa
+                {
+                    // Busca el proveedor en el DataTable por Empresa
+                    filasEncontradas = dtEmpleados.Select($"apellido = '{empleadoSeleccionado}'");
+                }
+                else if (rbDni.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorContacto
+                {
+                    // Busca el proveedor en el DataTable por Contacto
+                    filasEncontradas = dtEmpleados.Select($"numero_ident = '{empleadoSeleccionado}'");
+                }
+                else
+                {
+                    return; // Si no está seleccionado ninguno, salimos
+                }
+
+              /*  if (filasEncontradas.Length > 0)
+                {
+                    DataRow fila = filasEncontradas[0]; // Tomamos el primer resultado
+
+                   
+                    .Text = fila["Empresa"].ToString();
+                    txtContacto.Text = fila["Contacto"].ToString();
+                    txtTelefono.Text = fila["Teléfono"].ToString();
+                    txtEmail.Text = fila["Email"].ToString();
+                    txtCiudad.Text = fila["Ciudad"].ToString();
+                    txtPais.Text = fila["País"].ToString();
+                    txtCalle.Text = fila["Calle"].ToString();
+                    txtNumero.Text = fila["Numero"].ToString();
+                    txtCP.Text = fila["CódigoPostal"].ToString();
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    lsbProveedores.Items.Clear();
+                    txtBuscar.Text = "";
+                }*/
+            }
         }
     }
         }
