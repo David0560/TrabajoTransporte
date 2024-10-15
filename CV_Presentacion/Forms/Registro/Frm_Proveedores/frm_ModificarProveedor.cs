@@ -256,6 +256,11 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             }
         
     }
+
+        private void txtCP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

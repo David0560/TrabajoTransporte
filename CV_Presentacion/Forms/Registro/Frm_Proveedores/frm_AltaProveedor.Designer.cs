@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AltaProveedor));
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,14 +51,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmpresa
             // 
             this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(41, 46);
+            this.lblEmpresa.Location = new System.Drawing.Point(197, 46);
             this.lblEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(117, 16);
@@ -67,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 108);
+            this.label2.Location = new System.Drawing.Point(44, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
@@ -87,7 +90,7 @@
             // lblContacto
             // 
             this.lblContacto.AutoSize = true;
-            this.lblContacto.Location = new System.Drawing.Point(41, 85);
+            this.lblContacto.Location = new System.Drawing.Point(197, 85);
             this.lblContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContacto.Name = "lblContacto";
             this.lblContacto.Size = new System.Drawing.Size(63, 16);
@@ -97,7 +100,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 185);
+            this.label5.Location = new System.Drawing.Point(387, 74);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 16);
@@ -107,7 +110,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 146);
+            this.label6.Location = new System.Drawing.Point(387, 32);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 16);
@@ -117,7 +120,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 70);
+            this.label7.Location = new System.Drawing.Point(48, 76);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 16);
@@ -127,7 +130,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 164);
+            this.label8.Location = new System.Drawing.Point(197, 164);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 16);
@@ -137,7 +140,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(41, 124);
+            this.label9.Location = new System.Drawing.Point(197, 124);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 16);
@@ -146,7 +149,7 @@
             // 
             // txtNombreEmpresa
             // 
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(176, 43);
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(332, 43);
             this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
             this.txtNombreEmpresa.Size = new System.Drawing.Size(261, 22);
@@ -157,12 +160,12 @@
             this.txtCiudad.Location = new System.Drawing.Point(117, 28);
             this.txtCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(221, 22);
+            this.txtCiudad.Size = new System.Drawing.Size(157, 22);
             this.txtCiudad.TabIndex = 10;
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(117, 181);
+            this.txtCP.Location = new System.Drawing.Point(460, 74);
             this.txtCP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(95, 22);
@@ -170,7 +173,7 @@
             // 
             // txtPais
             // 
-            this.txtPais.Location = new System.Drawing.Point(117, 66);
+            this.txtPais.Location = new System.Drawing.Point(121, 72);
             this.txtPais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(157, 22);
@@ -178,7 +181,7 @@
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(176, 82);
+            this.txtContacto.Location = new System.Drawing.Point(332, 82);
             this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(261, 22);
@@ -186,7 +189,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(117, 143);
+            this.txtNumero.Location = new System.Drawing.Point(460, 29);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(123, 22);
@@ -194,23 +197,23 @@
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(117, 105);
+            this.txtCalle.Location = new System.Drawing.Point(117, 137);
             this.txtCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(300, 22);
+            this.txtCalle.Size = new System.Drawing.Size(157, 22);
             this.txtCalle.TabIndex = 15;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(176, 161);
+            this.txtEmail.Location = new System.Drawing.Point(332, 161);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(300, 22);
+            this.txtEmail.Size = new System.Drawing.Size(261, 22);
             this.txtEmail.TabIndex = 16;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(176, 122);
+            this.txtTelefono.Location = new System.Drawing.Point(332, 122);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(113, 22);
@@ -219,6 +222,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtPais);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
@@ -228,18 +233,18 @@
             this.groupBox1.Controls.Add(this.txtCP);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtNumero);
-            this.groupBox1.Location = new System.Drawing.Point(36, 265);
+            this.groupBox1.Location = new System.Drawing.Point(21, 309);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(529, 225);
+            this.groupBox1.Size = new System.Drawing.Size(636, 172);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Direccion:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(441, 521);
+            this.button1.Location = new System.Drawing.Point(354, 128);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 41);
@@ -250,7 +255,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(307, 521);
+            this.button2.Location = new System.Drawing.Point(497, 128);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 41);
@@ -260,6 +265,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.lblEmpresa);
             this.groupBox2.Controls.Add(this.lblContacto);
             this.groupBox2.Controls.Add(this.label8);
@@ -272,27 +278,36 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(529, 214);
+            this.groupBox2.Size = new System.Drawing.Size(621, 214);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del proveedor:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(19, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_AltaProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 571);
+            this.ClientSize = new System.Drawing.Size(654, 509);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_AltaProveedor";
             this.Text = "Alta Proveedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +336,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
