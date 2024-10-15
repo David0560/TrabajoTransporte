@@ -107,30 +107,7 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
         }
 
 
-        private void dataGridViewProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (e.RowIndex >= 0)
-            {
-                // Obtener la fila seleccionada
-                DataGridViewRow row = dataGridViewProveedores.Rows[e.RowIndex];
-                // Asignar los valores de las celdas a los TextBox
-                labelId.Text = (row.Cells["Id"].Value.ToString());
-                txtNombreEmpresa.Text = row.Cells["Empresa"].Value.ToString();
-                txtContacto.Text = row.Cells["Contacto"].Value.ToString();
-                txtTelefono.Text = row.Cells["Teléfono"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtCiudad.Text = row.Cells["Ciudad"].Value.ToString();
-                txtPais.Text = row.Cells["País"].Value.ToString();
-                txtCalle.Text = row.Cells["Calle"].Value.ToString();
-                txtNumero.Text = row.Cells["Numero"].Value.ToString();
-                txtCP.Text = row.Cells["CódigoPostal"].Value.ToString();
-                
-                btnModificar.Enabled = true;
-                btnEliminar.Enabled = true;
-            }
-
-        }
+        
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
