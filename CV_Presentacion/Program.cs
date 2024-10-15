@@ -13,12 +13,13 @@ namespace CV_Presentacion
         /// </summary>
 
         public static frmLogin login;
+        public static FrmMenu frmMenu;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(login = new frmLogin());
+            Application.Run(frmMenu = new FrmMenu());
             //Application.Run(new frm_Empleado());
             //Application.Run(new FrmMenu());
         }
