@@ -1,4 +1,5 @@
 ﻿using CapaServicios.Entidades;
+using CD_ConexionDatos;
 using CL_Negocios;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             InitializeComponent();
             txtBuscar.TextChanged += new EventHandler(txtBuscar_TextChanged);
             rbEmpresa.Checked = true;
+            lsbProveedores.Visible = false;
         }
 
         private void CargarProveedores()
@@ -31,13 +33,28 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             DataTable dtProveedores;
              
 
-            string textoBuscar = txtBuscar.Text;
+            string textoBuscar = txtBuscar.Text.Trim(); ;
 
             if (rbEmpresa.Checked) // Si el RadioButton de empresa está seleccionado
             {
                 dtProveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscar);
+                foreach (DataRow fila in dtProveedores.Rows)
+                {
+                    lsbProveedores.Items.Add(fila["Empresa"].ToString());
+                }
+
+                //Muestra el ListBox si hay resultados
+                lsbProveedores.Visible = lsbProveedores.Items.Count > 0;
             }
-            else if (rbContacto.Checked) // Si el RadioButton de contacto está seleccionado
+            else
+            {
+                //Limpia el ListBox y ocultarlo si el texto está vacío
+                lsbProveedores.Items.Clear();
+                lsbProveedores.Visible = false;
+            }
+        
+   }/*
+         }   else if (rbContacto.Checked) // Si el RadioButton de contacto está seleccionado
             {
                 dtProveedores = clProveedores.ObtenerProveedoresPorContacto(textoBuscar);
             }
@@ -49,7 +66,8 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
          
 
             dataGridViewProveedores.DataSource = dtProveedores;
-        }
+        }¨*/
+
         private void frm_ModificarProveedor_Load(object sender, EventArgs e)
         {
 
@@ -78,10 +96,36 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            CargarProveedores();
-        }
+            // CargarProveedores();
+            DataTable dtProveedores;
+            CL_Proveedores clProveedores = new CL_Proveedores();
 
-        private void dataGridViewProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            string textoBuscar = txtBuscar.Text.Trim(); ;
+
+            if (rbEmpresa.Checked) // Si el RadioButton de empresa está seleccionado
+            {
+                if (!string.IsNullOrEmpty(textoBuscar))
+                {
+                dtProveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscar);
+                foreach (DataRow fila in dtProveedores.Rows)
+                {
+                    lsbProveedores.Items.Add(fila["Empresa"].ToString());
+                }
+
+                //Muestra el ListBox si hay resultados
+                lsbProveedores.Visible = lsbProveedores.Items.Count > 0;
+            }
+            else
+            {
+                //Limpia el ListBox y ocultarlo si el texto está vacío
+                lsbProveedores.Items.Clear();
+                lsbProveedores.Visible = false;
+            }
+
+        }
+        }
+    
+    private void dataGridViewProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
             if (e.RowIndex >= 0)
@@ -217,6 +261,11 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
         }
 
         private void lblId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsbProveedores_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

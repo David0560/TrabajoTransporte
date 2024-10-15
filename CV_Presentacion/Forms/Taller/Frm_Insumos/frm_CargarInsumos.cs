@@ -181,6 +181,14 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
             }
         }
 
+        private void lsbProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void frm_CargarInsumos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
