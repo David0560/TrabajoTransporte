@@ -358,7 +358,7 @@
             // rbContacto
             // 
             this.rbContacto.AutoSize = true;
-            this.rbContacto.Location = new System.Drawing.Point(539, 32);
+            this.rbContacto.Location = new System.Drawing.Point(529, 32);
             this.rbContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbContacto.Name = "rbContacto";
             this.rbContacto.Size = new System.Drawing.Size(81, 20);

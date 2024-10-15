@@ -59,5 +59,10 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
                 MessageBox.Show("Error al guardar Proovedor: " + ex.Message);
             }
         }
+
+        private void frm_AltaProveedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

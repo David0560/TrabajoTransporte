@@ -38,6 +38,34 @@ namespace CD_ConexionDatos.Empleados
                 con.Close();
             }
         }
+        public DataTable BuscarEmpleadosPorApellido(string apellido)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try { 
+                con.Open();
+                    SqlCommand command = new SqlCommand("spBuscarEmpleadosPorApellido", con);
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                    };
+                    command.Parameters.AddWithValue("@apellido", apellido);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    
+              
+                        adapter.Fill(dataTable);
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por contacto: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
 
     }
 }

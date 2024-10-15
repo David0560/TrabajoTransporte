@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using CD_ConexionDatos.Empleados; 
 using CL_Negocios.Entidades;
 
@@ -18,6 +19,10 @@ namespace CL_Negocios.Empleados
             }
 
             registrarEmpleado.GuardarNuevoEmpleado(persona);
+        }
+        public DataTable ObtenerEmpleadoPorApellido(string apellido)
+        {
+            return registrarEmpleado.BuscarEmpleadosPorApellido(apellido);
         }
 
     }

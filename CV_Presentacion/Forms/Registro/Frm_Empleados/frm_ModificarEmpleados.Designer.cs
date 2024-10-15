@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -63,19 +63,21 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.lsbEmpleado = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpboxDireccion.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox10
+            // txtApellido
             // 
-            this.textBox10.Location = new System.Drawing.Point(87, 25);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(389, 22);
-            this.textBox10.TabIndex = 38;
+            this.txtApellido.Location = new System.Drawing.Point(87, 25);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(389, 22);
+            this.txtApellido.TabIndex = 38;
+            this.txtApellido.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label4
             // 
@@ -412,8 +414,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lsbEmpleado);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(16, 14);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -433,6 +436,15 @@
             this.button1.TabIndex = 52;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lsbEmpleado
+            // 
+            this.lsbEmpleado.FormattingEnabled = true;
+            this.lsbEmpleado.ItemHeight = 16;
+            this.lsbEmpleado.Location = new System.Drawing.Point(87, 49);
+            this.lsbEmpleado.Name = "lsbEmpleado";
+            this.lsbEmpleado.Size = new System.Drawing.Size(389, 36);
+            this.lsbEmpleado.TabIndex = 53;
             // 
             // frm_ModificarEmpleados
             // 
@@ -459,7 +471,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -493,5 +505,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lsbEmpleado;
     }
 }

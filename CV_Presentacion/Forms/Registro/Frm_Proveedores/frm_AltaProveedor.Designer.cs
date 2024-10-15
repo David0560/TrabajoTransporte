@@ -303,6 +303,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_AltaProveedor";
             this.Text = "Alta Proveedor";
+            this.Load += new System.EventHandler(this.frm_AltaProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
