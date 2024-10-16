@@ -15,12 +15,13 @@ namespace CV_Presentacion.Frm_Empleados
     public partial class frm_ModificarEmpleados : Form
     {
         private CL_AdministrarEmpleados cl_AdministrarEmpleados;
-        DataTable dtEmpleados;
+        private DataTable dtEmpleados;
         public frm_ModificarEmpleados()
         {
             InitializeComponent();
             lsbEmpleado.Visible = false;
             cl_AdministrarEmpleados = new CL_AdministrarEmpleados();
+            lsbEmpleado.SelectedIndexChanged += lsbEmpleado_SelectedIndexChanged;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace CV_Presentacion.Frm_Empleados
                     lsbEmpleado.Visible = true; // Mostrar el ListBox
                     foreach (DataRow fila in dtEmpleados.Rows)
                     {
-                        string nombreCompleto = fila["nombre"].ToString() + " " + fila["apellido"].ToString();
+                        string nombreCompleto = fila["apellido"].ToString();
                         lsbEmpleado.Items.Add(nombreCompleto);
 
                     }
@@ -75,7 +76,7 @@ namespace CV_Presentacion.Frm_Empleados
                     lsbEmpleado.Visible = true; // Mostrar el ListBox
                     foreach (DataRow fila in dtEmpleados.Rows)
                     {
-                        string apedni = fila["apellido"].ToString() + " " + fila["numero_ident"].ToString();
+                        string apedni = fila["numero_ident"].ToString();
                         lsbEmpleado.Items.Add(apedni);
 
                     }
@@ -107,12 +108,12 @@ namespace CV_Presentacion.Frm_Empleados
 
                 if (rbNomAp.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorEmpresa
                 {
-                    // Busca el proveedor en el DataTable por Empresa
+                    // Busca el empleado en el DataTable por Apellido
                     filasEncontradas = dtEmpleados.Select($"apellido = '{empleadoSeleccionado}'");
                 }
                 else if (rbDni.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorContacto
                 {
-                    // Busca el proveedor en el DataTable por Contacto
+                    // Busca el empleado en el DataTable por número documento
                     filasEncontradas = dtEmpleados.Select($"numero_ident = '{empleadoSeleccionado}'");
                 }
                 else
@@ -120,26 +121,32 @@ namespace CV_Presentacion.Frm_Empleados
                     return; // Si no está seleccionado ninguno, salimos
                 }
 
-              /*  if (filasEncontradas.Length > 0)
+                if (filasEncontradas.Length > 0)
                 {
                     DataRow fila = filasEncontradas[0]; // Tomamos el primer resultado
 
                    
-                    .Text = fila["Empresa"].ToString();
-                    txtContacto.Text = fila["Contacto"].ToString();
-                    txtTelefono.Text = fila["Teléfono"].ToString();
-                    txtEmail.Text = fila["Email"].ToString();
-                    txtCiudad.Text = fila["Ciudad"].ToString();
-                    txtPais.Text = fila["País"].ToString();
-                    txtCalle.Text = fila["Calle"].ToString();
-                    txtNumero.Text = fila["Numero"].ToString();
-                    txtCP.Text = fila["CódigoPostal"].ToString();
-                    btnModificar.Enabled = true;
-                    btnEliminar.Enabled = true;
-                    lsbProveedores.Items.Clear();
-                    txtBuscar.Text = "";
-                }*/
+                    txtNombre.Text = fila["nombre"].ToString();
+                    txtApellid.Text = fila["apellido"].ToString();
+                    mtbFecha.Text = fila["fecha_nacimiento"].ToString();
+                    txtNumeroDNI.Text = fila["numero_ident"].ToString();
+                 //   cbSexo.Text = fila["sexo"].ToString();
+                    txtEmail.Text = fila["email"].ToString();
+                    txtDireccion.Text = fila["calle"].ToString();
+                    txtNumeroDomicilio.Text = fila["numero_domicilo"].ToString();
+               
+                }
             }
+        }
+
+        private void frm_ModificarEmpleados_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
         }
