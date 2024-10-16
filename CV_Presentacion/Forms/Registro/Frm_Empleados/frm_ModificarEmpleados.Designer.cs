@@ -49,7 +49,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.grpboxDireccion = new System.Windows.Forms.GroupBox();
-            this.txtPartido = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cbLocalidad = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -64,6 +63,7 @@
             this.rbDni = new System.Windows.Forms.RadioButton();
             this.rbNomAp = new System.Windows.Forms.RadioButton();
             this.lsbEmpleado = new System.Windows.Forms.ListBox();
+            this.cbCiudad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpboxDireccion.SuspendLayout();
@@ -282,7 +282,7 @@
             // 
             // grpboxDireccion
             // 
-            this.grpboxDireccion.Controls.Add(this.txtPartido);
+            this.grpboxDireccion.Controls.Add(this.cbCiudad);
             this.grpboxDireccion.Controls.Add(this.label16);
             this.grpboxDireccion.Controls.Add(this.cbLocalidad);
             this.grpboxDireccion.Controls.Add(this.button1);
@@ -304,14 +304,6 @@
             this.grpboxDireccion.TabStop = false;
             this.grpboxDireccion.Text = "Domicilio";
             // 
-            // txtPartido
-            // 
-            this.txtPartido.Location = new System.Drawing.Point(392, 64);
-            this.txtPartido.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPartido.Name = "txtPartido";
-            this.txtPartido.Size = new System.Drawing.Size(176, 22);
-            this.txtPartido.TabIndex = 45;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -325,7 +317,7 @@
             // cbLocalidad
             // 
             this.cbLocalidad.FormattingEnabled = true;
-            this.cbLocalidad.Location = new System.Drawing.Point(392, 30);
+            this.cbLocalidad.Location = new System.Drawing.Point(392, 66);
             this.cbLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.cbLocalidad.Name = "cbLocalidad";
             this.cbLocalidad.Size = new System.Drawing.Size(191, 24);
@@ -347,9 +339,9 @@
             this.label14.Location = new System.Drawing.Point(317, 70);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 16);
+            this.label14.Size = new System.Drawing.Size(67, 16);
             this.label14.TabIndex = 42;
-            this.label14.Text = "Partido";
+            this.label14.Text = "Localidad";
             // 
             // txtCP
             // 
@@ -365,9 +357,9 @@
             this.label15.Location = new System.Drawing.Point(317, 34);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 16);
+            this.label15.Size = new System.Drawing.Size(50, 16);
             this.label15.TabIndex = 40;
-            this.label15.Text = "Localidad";
+            this.label15.Text = "Ciudad";
             // 
             // txtNumeroDomicilio
             // 
@@ -455,6 +447,16 @@
             this.lsbEmpleado.TabIndex = 53;
             this.lsbEmpleado.SelectedIndexChanged += new System.EventHandler(this.lsbEmpleado_SelectedIndexChanged);
             // 
+            // cbCiudad
+            // 
+            this.cbCiudad.FormattingEnabled = true;
+            this.cbCiudad.Location = new System.Drawing.Point(392, 26);
+            this.cbCiudad.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCiudad.Name = "cbCiudad";
+            this.cbCiudad.Size = new System.Drawing.Size(191, 24);
+            this.cbCiudad.TabIndex = 53;
+            this.cbCiudad.SelectedIndexChanged += new System.EventHandler(this.cbCiudad_SelectedIndexChanged);
+            // 
             // frm_ModificarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -501,7 +503,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.GroupBox grpboxDireccion;
-        private System.Windows.Forms.TextBox txtPartido;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cbLocalidad;
         private System.Windows.Forms.Label label14;
@@ -516,5 +517,6 @@
         private System.Windows.Forms.ListBox lsbEmpleado;
         private System.Windows.Forms.RadioButton rbDni;
         private System.Windows.Forms.RadioButton rbNomAp;
+        private System.Windows.Forms.ComboBox cbCiudad;
     }
 }

@@ -1,4 +1,7 @@
-﻿using CL_Negocios.Empleados;
+﻿using CapaServicios;
+using CL_Negocios;
+using CL_Negocios.Empleados;
+using CV_Presentacion.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +19,8 @@ namespace CV_Presentacion.Frm_Empleados
     {
         private CL_AdministrarEmpleados cl_AdministrarEmpleados;
         private DataTable dtEmpleados;
+        private CL_administrarComboBox combo = new CL_administrarComboBox();
+        private CS_servicios servicios = new CS_servicios();
         public frm_ModificarEmpleados()
         {
             InitializeComponent();
@@ -86,7 +91,7 @@ namespace CV_Presentacion.Frm_Empleados
                     lsbEmpleado.Visible = false; // Ocultar si no hay resultados
                 }
             }
-            }
+        }
 
         private void rbNomAp_CheckedChanged(object sender, EventArgs e)
         {
@@ -125,31 +130,60 @@ namespace CV_Presentacion.Frm_Empleados
                 {
                     DataRow fila = filasEncontradas[0]; // Tomamos el primer resultado
 
-                   
+
                     txtNombre.Text = fila["nombre"].ToString();
                     txtApellid.Text = fila["apellido"].ToString();
                     mtbFecha.Text = fila["fecha_nacimiento"].ToString();
                     txtNumeroDNI.Text = fila["numero_ident"].ToString();
-                 //   cbSexo.Text = fila["sexo"].ToString();
+                    //   cbSexo.Text = fila["sexo"].ToString();
                     txtEmail.Text = fila["email"].ToString();
                     txtDireccion.Text = fila["calle"].ToString();
                     txtNumeroDomicilio.Text = fila["numero_domicilo"].ToString();
-               
+
                 }
             }
         }
 
         private void frm_ModificarEmpleados_Load(object sender, EventArgs e)
         {
-
+            //combo.seleccionCombo(c, "spVerTareas");
+            combo.seleccionCombo(cbTipoDNI, "spVerDocumentoIdent");
+            combo.seleccionCombo(cbSexo, "spVerSexo");
+            combo.seleccionCombo(cbCiudad, "spVerCiudad");
         }
 
         private void txtDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-    }
+
+        private void cbCiudad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCiudad.SelectedValue != null)
+            {
+                listaPermiso();
+            }
         }
-    
+        void listaPermiso()
+        {
+            if (cbCiudad.SelectedItem != null)
+            {
+                int valorSeleccionado;
+                if (int.TryParse(cbCiudad.SelectedValue.ToString(), out valorSeleccionado))
+                {
+                    int valor = Convert.ToInt32(cbCiudad.SelectedValue);
+                    combo.seleccionarLocalidad(cbLocalidad, valor);
 
-
+                }
+                else
+                {
+                    // Manejar el caso en que no se pueda convertir el valor a entero
+                    //MessageBox.Show("El valor seleccionado no es válido");
+                }
+            }
+        }
+    }
+}
+            
+       
+        
