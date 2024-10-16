@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using CapaServicios.Entidades;
 using CD_ConexionDatos.Empleados; 
 using CL_Negocios.Entidades;
 
@@ -29,6 +30,21 @@ namespace CL_Negocios.Empleados
         {
             return registrarEmpleado.BuscarEmpleadosPorDNI(dni);
         }
+            public void ModificarPersona(Persona persona) //EDITAR
+             {
+
+                 try
+                 {
+
+                     registrarEmpleado.ModificoPersona(persona);
+
+                 }
+                 catch (Exception ex)
+                 {
+
+                     Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+                 }
+             }
 
     }
 

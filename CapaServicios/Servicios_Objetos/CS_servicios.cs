@@ -104,7 +104,7 @@ namespace CapaServicios
             }
         }
 
-        public void LimpiarControl(Control control)
+        private void LimpiarControl(Control control)
         {
             if (control is TextBox)
             {

@@ -57,5 +57,20 @@ namespace CL_Negocios.Entidades
             this.Email = email;
             this.Id_tarea = id_tarea;
         }
+           public Persona(int id, string nombre, string apellido, DateTime fecha_nac, int id_documento_iden, string numero_identidad, int id_sexo, int id_localidad, string calle, int numero_domicilio, string email, int id_tarea)
+        {
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Fecha_nacimiento = fecha_nac;
+            this.Id_documento_iden = id_documento_iden;
+            this.Numero_identidad = numero_identidad;
+            this.Id_sexo = id_sexo;
+            this.Id_localidad = id_localidad;
+            this.Calle = calle;
+            this.Numero_domicilio = numero_domicilio;
+            this.Email = email;
+            this.Id_tarea = id_tarea;
+        }
     }
 }

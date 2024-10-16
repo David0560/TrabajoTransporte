@@ -43,7 +43,7 @@ namespace CV_Presentacion.Forms
             // Asociar el evento al ComboBox de Tarea
             cboTarea.SelectedIndexChanged += cboTarea_SelectedIndexChanged;
         }
-        private void listaPermiso()
+         void listaPermiso()
         {
             if (cboCiudad.SelectedItem != null)
             {
@@ -145,6 +145,16 @@ namespace CV_Presentacion.Forms
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             servicios.LimpiarFormulario(this);
-        }        
+        }
+
+        private void cboTarea_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
