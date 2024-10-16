@@ -1,14 +1,10 @@
-﻿using CL_Negocios;
+﻿using CD_ConexionDatos.Taller;
+using CL_Negocios;
+using CL_Negocios.Entidades;
 using CL_Negocios.Taller;
 using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla.Frm_Anexados;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CV_Presentacion.Forms.Taller.Frm_Insumos
@@ -17,6 +13,10 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
     {
         private CL_Proveedores clProveedores;
         private CL_Articulo clArticulo;
+
+        // Variables para almacenar los IDs
+        private int selectedProveedorId;
+        private int selectedArticuloId;
 
         public frm_CargarInsumos()
         {
@@ -33,33 +33,21 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 
             if (!string.IsNullOrEmpty(textoBuscado))
             {
-                //Metodo para obtener proveedores
                 DataTable proveedores = clProveedores.ObtenerProveedoresPorEmpresa(textoBuscado);
-
-                //Limpio el ListBox antes de agregar nuevos resultados
                 lsbProveedor.Items.Clear();
 
-                //Lleno el ListBox con los nombres de los proveedores encontrados
                 foreach (DataRow fila in proveedores.Rows)
                 {
                     lsbProveedor.Items.Add(fila["Empresa"].ToString());
                 }
 
-                //Muestra el ListBox si hay resultados
                 lsbProveedor.Visible = lsbProveedor.Items.Count > 0;
             }
             else
             {
-                //Limpia el ListBox y ocultarlo si el texto está vacío
                 lsbProveedor.Items.Clear();
                 lsbProveedor.Visible = false;
-
-                //Limpia los labels cuando el texto está vacío
-                lblEmpresa.Text = "";
-                lblContacto.Text = "";
-                lblTelefono.Text = "";
-                lblEmail.Text = "";
-                lblCiudad.Text = "";
+                LimpiarLabelsProveedor();
             }
         }
 
@@ -67,33 +55,42 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
         {
             if (lsbProveedor.SelectedItem != null)
             {
-                txtProveedor.Text = lsbProveedor.SelectedItem.ToString();
-                lsbProveedor.Visible = false; 
+                string proveedorSeleccionado = lsbProveedor.SelectedItem.ToString();
+                txtProveedor.Text = proveedorSeleccionado;
+                lsbProveedor.Visible = false;
 
+                // Obtener detalles del proveedor
                 DataTable detallesProveedor = clProveedores.ObtenerProveedoresPorEmpresa(txtProveedor.Text);
 
                 if (detallesProveedor.Rows.Count > 0)
                 {
                     DataRow filaProveedor = detallesProveedor.Rows[0];
 
-                    //Actualizo los labels con la información del proveedor
+                    // Actualizar los labels con la información del proveedor
                     lblEmpresa.Text = filaProveedor["Empresa"].ToString();
                     lblContacto.Text = filaProveedor["Contacto"].ToString();
                     lblTelefono.Text = filaProveedor["Teléfono"].ToString();
                     lblEmail.Text = filaProveedor["Email"].ToString();
                     lblCiudad.Text = filaProveedor["Ciudad"].ToString();
+
+                    // Guardar el ID del proveedor seleccionado
+                    selectedProveedorId = Convert.ToInt32(filaProveedor["Id"]);
                 }
                 else
                 {
-                    //Si no hay proveedor, limpiar los labels
-                    lblEmpresa.Text = "";
-                    lblContacto.Text = "";
-                    lblTelefono.Text = "";
-                    lblEmail.Text = "";
-                    lblCiudad.Text = "";
+                    LimpiarLabelsProveedor();
                     MessageBox.Show("Proveedor no encontrado.");
                 }
             }
+        }
+
+        private void LimpiarLabelsProveedor()
+        {
+            lblEmpresa.Text = "";
+            lblContacto.Text = "";
+            lblTelefono.Text = "";
+            lblEmail.Text = "";
+            lblCiudad.Text = "";
         }
 
         private void txtArticulo_TextChanged(object sender, EventArgs e)
@@ -102,24 +99,18 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 
             if (!string.IsNullOrEmpty(textoBuscado))
             {
-                //Metodo para obtener artículos
                 DataTable articulos = clArticulo.ObtenerArticulosPorNombre(textoBuscado);
-
-                //Limpio el ListBox antes de agregar nuevos resultados
                 lsbArticulo.Items.Clear();
 
-                //Lleno el ListBox con los nombres de los artículos encontrados
                 foreach (DataRow fila in articulos.Rows)
                 {
                     lsbArticulo.Items.Add(fila["Nombre"].ToString());
                 }
 
-                //Muestro el ListBox si hay resultados
                 lsbArticulo.Visible = lsbArticulo.Items.Count > 0;
             }
             else
             {
-                //Limpio el ListBox y ocultarlo si el texto está vacío
                 lsbArticulo.Items.Clear();
                 lsbArticulo.Visible = false;
             }
@@ -129,8 +120,20 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
         {
             if (lsbArticulo.SelectedItem != null)
             {
-                txtArticulo.Text = lsbArticulo.SelectedItem.ToString();
-                lsbArticulo.Visible = false; //Se Oculta el ListBox después de seleccionar
+                string articuloSeleccionado = lsbArticulo.SelectedItem.ToString();
+                txtArticulo.Text = articuloSeleccionado;
+                lsbArticulo.Visible = false;
+
+                // Obtener detalles del artículo
+                DataTable detallesArticulo = clArticulo.ObtenerArticulosPorNombre(txtArticulo.Text);
+
+                if (detallesArticulo.Rows.Count > 0)
+                {
+                    DataRow filaArticulo = detallesArticulo.Rows[0];
+
+                    // Guardar el ID del artículo seleccionado
+                    selectedArticuloId = Convert.ToInt32(filaArticulo["Id"]);
+                }
             }
         }
 
@@ -145,9 +148,31 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
             this.Close();
         }
 
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CL_RInsumos clRInsumos = new CL_RInsumos();
+                int idUsuario = 2; // ID del administrador
+                int idProveedor = selectedProveedorId; // Usar la variable que ya contiene el ID
+                DateTime fechaEntrada = DateTime.Now;
+
+                clRInsumos.GuardarRegistroInsumos(idUsuario, idProveedor, dtListaArticulos, fechaEntrada);
+
+                MessageBox.Show("Registro guardado correctamente.");
+                dtListaArticulos.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //Se valida que hay seleccionado un artículo y que la cantidad sea valida
+            //Valido que hay seleccionado un artículo y que la cantidad sea valida
             if (!string.IsNullOrEmpty(txtArticulo.Text) && !string.IsNullOrEmpty(txtCantidad.Text) && int.TryParse(txtCantidad.Text, out int cantidad))
             {
                 DataTable articulos = clArticulo.ObtenerArticulosPorNombre(txtArticulo.Text);
@@ -158,11 +183,11 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
 
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(dtListaArticulos);
-
-                    row.Cells[0].Value = filaArticulo["Nombre"].ToString();
-                    row.Cells[1].Value = filaArticulo["Descripcion"].ToString();
-                    row.Cells[2].Value = cantidad.ToString();
-                    row.Cells[3].Value = !string.IsNullOrEmpty(mskFechaVenc.Text) ? mskFechaVenc.Text : "N/A";
+                    row.Cells[0].Value = filaArticulo["Id"].ToString();
+                    row.Cells[1].Value = filaArticulo["Nombre"].ToString();
+                    row.Cells[2].Value = filaArticulo["Descripcion"].ToString();
+                    row.Cells[3].Value = cantidad.ToString();
+                    row.Cells[4].Value = !string.IsNullOrEmpty(mskFechaVenc.Text) ? mskFechaVenc.Text : "N/A";
 
                     dtListaArticulos.Rows.Add(row);
 
@@ -181,14 +206,34 @@ namespace CV_Presentacion.Forms.Taller.Frm_Insumos
             }
         }
 
-        private void lsbProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnElimiar_Click(object sender, EventArgs e)
         {
+                // Verificar si hay una fila seleccionada
+                if (dtListaArticulos.CurrentRow != null)
+                {
+                    // Obtener el índice de la fila seleccionada
+                    int rowIndex = dtListaArticulos.CurrentRow.Index;
 
+                    // Confirmar la eliminación
+                    DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?",
+                                                           "Confirmar eliminación",
+                                                           MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        dtListaArticulos.Rows.RemoveAt(rowIndex);
+                        dtListaArticulos.Refresh();
+                    }
+                }
+                else          
+                {
+                    MessageBox.Show("Selecciona un artículo para eliminar.",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
         }
 
-        private void frm_CargarInsumos_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
