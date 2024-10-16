@@ -19,12 +19,10 @@ namespace CL_Negocios.GrillaLaboral
         {
             return planilla.ListaDeRegistros(fecha);
         }
-
         public DataTable VerRegistro(int id)
         {
             return planilla.ObtenerRegistro(id);
         }
-
         public DataTable SelecinarChoferes(DateTime fecha, int turno)
         {
             DataTable ChoferesM = grilla.filtradoDeChoferes(grilla.ChoferesQueTrabajan(fecha, turno), fecha); // turno mañana
@@ -36,7 +34,6 @@ namespace CL_Negocios.GrillaLaboral
             DataTable Unidades = grilla.UnidadesLibres(grilla.UnidadesActivas(fecha), fecha);
             return Unidades;
         }
-
         public bool CambiarRegistro(int id, int idE, int idU)
         {
             // puedo tener idE y idU para cambiar
@@ -62,6 +59,18 @@ namespace CL_Negocios.GrillaLaboral
                 return false;
             }
         }
-        
+
+        // guardar
+        public bool guardarPlanilla(PlanillaLab pla)
+        {
+            if (planilla.CompletarPlanilla(pla))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

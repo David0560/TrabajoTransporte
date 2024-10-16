@@ -55,8 +55,9 @@ namespace CapaServicios.Entidades.Diaria
             this.HoraEntrada = horaEntrada;
         }
 
-        public PlanillaLab(int kmSalida, int CombuSalida, TimeSpan horaLabo)
+        public PlanillaLab(int id, int kmSalida, int CombuSalida, TimeSpan horaLabo)
         {
+            this.Id = id;
             this.HoraLaboral = horaLabo;
             this.KmSalida = kmSalida;
             this.CombustibleSalida = CombuSalida;

@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="ActualizarRegistros\CL_AdministrarRegistros.cs" />
     <Compile Include="CL_administrarComboBox.cs" />
+    <Compile Include="GrillaLaboral\CL_AdministrarPlanillaCierre.cs" />
     <Compile Include="GrillaLaboral\CL_AdministrarPlanillaSalida.cs" />
     <Compile Include="Proveedores\CL_Proveedores.cs" />
     <Compile Include="Empleados\CL_AdministrarEmpleados.cs" />

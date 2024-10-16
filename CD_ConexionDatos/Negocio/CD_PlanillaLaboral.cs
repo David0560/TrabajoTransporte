@@ -223,5 +223,26 @@ namespace CD_ConexionDatos.Negocio
 
             }
         }
+
+        // Completar planilla.
+        public bool CompletarPlanilla(PlanillaLab planilla)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                using (con = connectionBD.CreaInstacia().CrearConexion())
+                {
+                    con.Open();
+                    SqlCommand comando = new SqlCommand("spFinalizarPlanillaSalida", con);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@xid", planilla.Id);
+                    comando.Parameters.AddWithValue("@xKmS", planilla.KmSalida);
+                    comando.Parameters.AddWithValue("@xCS", planilla.CombustibleSalida);
+                    comando.Parameters.AddWithValue("@xHL", planilla.HoraLaboral);
+                    comando.ExecuteNonQuery();
+                    con.Close();
+                }
+                return true;
+            }
+        }
     }
 }

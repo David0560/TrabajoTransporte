@@ -57,11 +57,7 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
         }
         private void dtpFechas_ValueChanged(object sender, EventArgs e)
         {
-            // cargo el DGV mediate la fecha seleccionada.
-            DateTime fecha = dtpFechas.Value; // capturo el valor del DateTimePiquer
-            dgvSalidar.DataSource = null; // limpio el data grid
-            dgvSalidar.DataSource = PSalida.ListaSalida(fecha); // cargdo el datagrid
-            dgvSalidar.Columns["id"].Visible = false; // columna oculta
+            CargarPlanillas();
         }
         private void dgvSalidar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -80,7 +76,6 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
             //bloquear panel 
 
             int id = Convert.ToInt32(dgvSalidar.SelectedRows[0].Cells["id"].Value);
-            // fecha.
 
             // selecciono una valor del comboBox en el caso de ser null devuelve valor 0
             int id_empleado = (CmbChofer.SelectedValue != null) ? (int)CmbChofer.SelectedValue : 0;
@@ -102,12 +97,34 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            /*TimeSpan hora = Convert.To(mskHoraLabo.Text); //// revisar el valor a enviar
+            int id = Convert.ToInt32(this.dgvSalidar.SelectedRows[0].Cells["id"].Value);
+            TimeSpan hora = TimeSpan.Parse(mskHoraLabo.Text); //// capturar un dato y convertirlo en timespan
             int km = Convert.ToInt32(txbKmSalida.Text);
             int combustible = Convert.ToInt32(tbxCombustibleSalida.Text);
 
-            PlanillaLab Reg = new PlanillaLab(km, combustible, hora )*/;
+            PlanillaLab Reg = new PlanillaLab(id, km, combustible, hora );//objeto creado.
+
+            if (PSalida.guardarPlanilla(Reg))
+            {
+                MessageBox.Show($"El registro fue guardado");
+                CargarDatos();
+                ckbModificar.Checked = false; // bloqueo el check
+                servicio.LimpiarFormulario(this);//
+
+                LimpiarLabelGuardar();
+                mskHoraLabo.Clear();
+                limpiarLabelActualizar();
+                CargarPlanillas();
+                
+            }
+            else
+            {
+                MessageBox.Show($"error al cargar los datos");
+                limpiarLabelActualizar();
+
+            }
         }
+
         // metodos privados
         private void CargarDatos()
         {
@@ -138,6 +155,13 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
             lblNomChofer.Text = "";
             lblNomUnidad.Text = "";
         }
+        private void LimpiarLabelGuardar()
+        {
+            lblUnidad.Text = "";
+            lblRamal.Text = "";
+            lblSalida.Text = "";
+            lblChofer.Text = "";
+        }
         private void PermitirCambios()
         {
             if (ckbModificar.Checked)
@@ -151,6 +175,13 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
                 lblNomUnidad.Text = null;
             }
         }
-
+        private void CargarPlanillas()
+        {
+            // cargo el DGV mediate la fecha seleccionada.
+            DateTime fecha = dtpFechas.Value; // capturo el valor del DateTimePiquer
+            dgvSalidar.DataSource = null; // limpio el data grid
+            dgvSalidar.DataSource = PSalida.ListaSalida(fecha); // cargdo el datagrid
+            dgvSalidar.Columns["id"].Visible = false; // columna oculta
+        }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Forms.Documentacion
+namespace CV_Presentacion.Forms.Documentacion.Actualizar
 {
-    public partial class frm_MenuLicenciaEmpleado : Form
+    public partial class frm_Licencia : Form
     {
-        public frm_MenuLicenciaEmpleado()
+        public frm_Licencia()
         {
             InitializeComponent();
         }

@@ -175,16 +175,22 @@
     <Compile Include="Forms\Documentacion\Actualizar\frm_ActualizarRegistroCond.Designer.cs">
       <DependentUpon>frm_ActualizarRegistroCond.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Documentacion\Licencia\frm_Licencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Licencia\frm_Licencia.Designer.cs">
+      <DependentUpon>frm_Licencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Documentacion\Actualizar\frm_MenuActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Documentacion\Actualizar\frm_MenuActualizar.Designer.cs">
       <DependentUpon>frm_MenuActualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.cs">
+    <Compile Include="Forms\Documentacion\Licencia\frm_MenuLicenciaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.Designer.cs">
+    <Compile Include="Forms\Documentacion\Licencia\frm_MenuLicenciaEmpleado.Designer.cs">
       <DependentUpon>frm_MenuLicenciaEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Documentacion\frm_MenuRamales.cs">
@@ -447,7 +453,10 @@
     <EmbeddedResource Include="Forms\Documentacion\Actualizar\frm_MenuActualizar.resx">
       <DependentUpon>frm_MenuActualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\frm_MenuLicenciaEmpleado.resx">
+    <EmbeddedResource Include="Forms\Documentacion\Licencia\frm_Licencia.resx">
+      <DependentUpon>frm_Licencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Licencia\frm_MenuLicenciaEmpleado.resx">
       <DependentUpon>frm_MenuLicenciaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\frm_MenuRamales.resx">

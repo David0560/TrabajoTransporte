@@ -104,7 +104,7 @@ namespace CapaServicios
             }
         }
 
-        private void LimpiarControl(Control control)
+        public void LimpiarControl(Control control)
         {
             if (control is TextBox)
             {
@@ -122,14 +122,14 @@ namespace CapaServicios
             {
                 ((RadioButton)control).Checked = false;
             }
-            else if (control is MaskedTextBox)
+            /*else if (control is MaskedTextBox)
             {
                 ((MaskedTextBox)control).Clear();
             }
             else if (control is DateTimePicker)
             {
                 ((DateTimePicker)control).Value = DateTime.Now;
-            }
+            }*/
             else if (control is GroupBox)
             {
                 foreach (Control hijo in ((GroupBox)control).Controls)

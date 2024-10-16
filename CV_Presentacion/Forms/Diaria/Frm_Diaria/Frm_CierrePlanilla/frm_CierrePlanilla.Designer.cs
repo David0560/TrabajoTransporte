@@ -40,7 +40,7 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.btnTestigo = new System.Windows.Forms.Button();
@@ -64,12 +64,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
+            this.dgvCierre = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCierre)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -115,9 +114,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(417, 159);
+            this.groupBox1.Location = new System.Drawing.Point(437, 159);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(212, 240);
+            this.groupBox1.Size = new System.Drawing.Size(192, 240);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos ";
@@ -152,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 18);
+            this.label3.Location = new System.Drawing.Point(233, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 77;
@@ -160,17 +159,17 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(355, 14);
+            this.maskedTextBox1.Location = new System.Drawing.Point(305, 29);
             this.maskedTextBox1.Mask = "00:00";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(47, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(33, 20);
             this.maskedTextBox1.TabIndex = 78;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(228, 41);
+            this.label8.Location = new System.Drawing.Point(33, 62);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 80;
@@ -178,17 +177,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(293, 37);
+            this.textBox1.Location = new System.Drawing.Point(106, 59);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 20);
+            this.textBox1.Size = new System.Drawing.Size(70, 20);
             this.textBox1.TabIndex = 81;
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(71, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 82;
+            this.dtpFecha.Location = new System.Drawing.Point(71, 15);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 82;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // groupBox2
             // 
@@ -210,7 +210,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(206, 159);
+            this.groupBox2.Location = new System.Drawing.Point(223, 159);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(205, 240);
             this.groupBox2.TabIndex = 92;
@@ -387,7 +387,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(207, 405);
+            this.btnGuardar.Location = new System.Drawing.Point(227, 407);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(64, 22);
             this.btnGuardar.TabIndex = 65;
@@ -397,15 +397,15 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 37);
+            this.textBox2.Location = new System.Drawing.Point(106, 30);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 20);
+            this.textBox2.Size = new System.Drawing.Size(98, 20);
             this.textBox2.TabIndex = 94;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 41);
+            this.label9.Location = new System.Drawing.Point(21, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 93;
@@ -417,43 +417,33 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(206, 54);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.maskedTextBox1);
+            this.groupBox3.Location = new System.Drawing.Point(223, 54);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(418, 88);
+            this.groupBox3.Size = new System.Drawing.Size(401, 99);
             this.groupBox3.TabIndex = 95;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Recorrido";
             // 
-            // dataGridView1
+            // dgvCierre
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(189, 384);
-            this.dataGridView1.TabIndex = 96;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(503, 18);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(121, 13);
-            this.label21.TabIndex = 97;
-            this.label21.Text = "Numeracion del registro ";
+            this.dgvCierre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCierre.Location = new System.Drawing.Point(11, 54);
+            this.dgvCierre.Name = "dgvCierre";
+            this.dgvCierre.Size = new System.Drawing.Size(206, 384);
+            this.dgvCierre.TabIndex = 96;
             // 
             // frm_CierrePlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 464);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCierre);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -465,7 +455,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCierre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,7 +474,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox textBox2;
@@ -509,7 +499,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnCorte;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridView dgvCierre;
     }
 }
