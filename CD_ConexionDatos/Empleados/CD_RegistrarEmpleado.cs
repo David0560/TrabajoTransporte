@@ -38,6 +38,34 @@ namespace CD_ConexionDatos.Empleados
                 con.Close();
             }
         }
+        public void ModificoPersona(Persona persona)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+
+                SqlCommand comando = new SqlCommand("spModificarEmpleado", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                comando.Parameters.AddWithValue("@id", persona.Id);
+                comando.Parameters.AddWithValue("@xnombre", persona.Nombre);
+                comando.Parameters.AddWithValue("@xapellido", persona.Apellido);
+                comando.Parameters.AddWithValue("@xfecha_nacimiento", persona.Fecha_nacimiento);
+                comando.Parameters.AddWithValue("@xid_documento_ident", persona.Id_documento_iden);
+                comando.Parameters.AddWithValue("@xnumero_ident", persona.Numero_identidad);
+                comando.Parameters.AddWithValue("@xid_sexo", persona.Id_sexo);
+                comando.Parameters.AddWithValue("@xid_localidad", persona.Id_localidad);
+                comando.Parameters.AddWithValue("@xcalle", persona.Calle);
+                comando.Parameters.AddWithValue("@xnumero_domicilio", persona.Numero_domicilio);
+                comando.Parameters.AddWithValue("@xemail", persona.Email);
+                comando.Parameters.AddWithValue("@xid_tarea", persona.Id_tarea);
+
+                comando.ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
         public DataTable BuscarEmpleadosPorDNI(string DNI)
         {
             DataTable dataTable = new DataTable();

@@ -103,8 +103,50 @@ namespace CapaServicios
                 LimpiarControl(hijo);
             }
         }
-
-        private void LimpiarControl(Control control)
+   
+      public void BloquearControl(Control control)
+        {
+            if (control is TextBox ||
+                control is ComboBox ||
+                control is CheckBox ||
+                control is RadioButton ||
+                control is MaskedTextBox ||
+                control is DateTimePicker ||
+                control is Button) // Incluye Button aquí
+            {
+                control.Enabled = false; // Bloquear el control
+            }
+            else
+            {
+                // Recorrer los controles hijos si el control es un contenedor
+                foreach (Control hijo in control.Controls)
+                {
+                    BloquearControl(hijo);
+                }
+            }
+        }
+        public void DesbloquearControl(Control control)
+        {
+            if (control is TextBox ||
+                control is ComboBox ||
+                control is CheckBox ||
+                control is RadioButton ||
+                control is MaskedTextBox ||
+                control is DateTimePicker ||
+                control is Button) // Incluye Button aquí
+            {
+                control.Enabled = true; // Desbloquear el control
+            }
+            else
+            {
+                // Recorrer los controles hijos si el control es un contenedor
+                foreach (Control hijo in control.Controls)
+                {
+                    DesbloquearControl(hijo);
+                }
+            }
+        }
+            private void LimpiarControl(Control control)
         {
             if (control is TextBox)
             {

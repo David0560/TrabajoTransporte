@@ -1,6 +1,7 @@
 ﻿using CapaServicios;
 using CL_Negocios;
 using CL_Negocios.Empleados;
+using CL_Negocios.Entidades;
 using CV_Presentacion.Forms;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,46 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Capturamos los valores ingresados por el usuario
+                int id = Convert.ToInt32(lblId.Text);
+                string nombre = txtNombre.Text;
+                string apellido = txtApellid.Text;
+                string fechaNacimiento = mtbFecha.Text;
+                string numeroDocumento = txtNumeroDNI.Text;
+                string calle = txtDireccion.Text;
+                string numeroDomicilio = txtNumeroDomicilio.Text;
+                string email = txtEmail.Text;
+
+                int idDocumentoIdent = Convert.ToInt32(cbTipoDNI.SelectedValue);
+                int idSexo = Convert.ToInt32(cbSexo.SelectedValue);
+                int idLocalidad = Convert.ToInt32(cbCiudad.SelectedValue);
+                int idTarea = Convert.ToInt32(cboTarea.SelectedValue);
+
+                // Crear una instancia de la clase Persona con los datos capturados
+               Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea);
+
+                // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
+                CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
+                administradorEmpleados.ModificarPersona(modificopersona);
+
+                MessageBox.Show("Empleado editado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al guardar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            servicios.LimpiarFormulario(this);
+            servicios.BloquearControl(this);
+            txtBuscar.Enabled = true;
+            rbDni.Enabled = true;
+            rbNomAp.Enabled = true;
 
         }
 
@@ -38,7 +79,7 @@ namespace CV_Presentacion.Frm_Empleados
         {
             if (rbNomAp.Checked)
             {
-                string textoBusqueda = txtApellido.Text.Trim().ToLower();
+                string textoBusqueda = txtBuscar.Text.Trim().ToLower();
                 lsbEmpleado.Items.Clear(); // Limpiar resultados anteriores
 
                 if (string.IsNullOrEmpty(textoBusqueda))
@@ -66,7 +107,7 @@ namespace CV_Presentacion.Frm_Empleados
             }
             else if (rbDni.Checked)
             {
-                string dni = txtApellido.Text.Trim().ToLower();
+                string dni = txtBuscar.Text.Trim().ToLower();
                 lsbEmpleado.Items.Clear(); // Limpiar resultados anteriores
 
                 if (string.IsNullOrEmpty(dni))
@@ -95,18 +136,20 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void rbNomAp_CheckedChanged(object sender, EventArgs e)
         {
-            txtApellido.Text = "";
+            txtBuscar.Text = "";
         }
 
         private void rbDni_CheckedChanged(object sender, EventArgs e)
         {
-            txtApellido.Text = "";
+            txtBuscar.Text = "";
         }
 
         private void lsbEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             if (lsbEmpleado.SelectedItem != null)
             {
+             
                 string empleadoSeleccionado = lsbEmpleado.SelectedItem.ToString();
 
                 DataRow[] filasEncontradas;
@@ -115,11 +158,22 @@ namespace CV_Presentacion.Frm_Empleados
                 {
                     // Busca el empleado en el DataTable por Apellido
                     filasEncontradas = dtEmpleados.Select($"apellido = '{empleadoSeleccionado}'");
+                    servicios.BloquearControl(this);
+                    rbDni.Enabled = true;
+                    rbNomAp.Enabled = true;
+                    txtBuscar.Enabled = true; 
+                    btnEliminar.Enabled = true;
+               btnModificar.Enabled = true;
+
                 }
                 else if (rbDni.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorContacto
                 {
                     // Busca el empleado en el DataTable por número documento
                     filasEncontradas = dtEmpleados.Select($"numero_ident = '{empleadoSeleccionado}'");
+                    servicios.BloquearControl(this);
+                    txtBuscar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    btnModificar.Enabled = true;
                 }
                 else
                 {
@@ -130,15 +184,35 @@ namespace CV_Presentacion.Frm_Empleados
                 {
                     DataRow fila = filasEncontradas[0]; // Tomamos el primer resultado
 
+                    int id_sexo = Convert.ToInt32(fila["id_sexo"].ToString());
+                    int tipo_dni = Convert.ToInt32( fila["id_documento_ident"].ToString());
 
+                    lblId.Text = fila["id"].ToString();
                     txtNombre.Text = fila["nombre"].ToString();
                     txtApellid.Text = fila["apellido"].ToString();
                     mtbFecha.Text = fila["fecha_nacimiento"].ToString();
                     txtNumeroDNI.Text = fila["numero_ident"].ToString();
-                    //   cbSexo.Text = fila["sexo"].ToString();
+                 
                     txtEmail.Text = fila["email"].ToString();
                     txtDireccion.Text = fila["calle"].ToString();
                     txtNumeroDomicilio.Text = fila["numero_domicilo"].ToString();
+                   mtbFecha.Text = fila["fecha_nacimiento"].ToString();
+                 if( id_sexo == 1)
+                    {
+                        cbSexo.Text = "Mujer";
+                    }
+                    else
+                    {
+                        cbSexo.Text = "Hombre";
+                    }
+                    if (tipo_dni == 1)
+                    {
+                        cbTipoDNI.Text = "DNI";
+                    }
+                    else
+                    {
+                        cbTipoDNI.Text = "Elija el tipo de DNI";
+                    }
 
                 }
             }
@@ -146,7 +220,7 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void frm_ModificarEmpleados_Load(object sender, EventArgs e)
         {
-            //combo.seleccionCombo(c, "spVerTareas");
+            combo.seleccionCombo(cboTarea, "spVerTareas");
             combo.seleccionCombo(cbTipoDNI, "spVerDocumentoIdent");
             combo.seleccionCombo(cbSexo, "spVerSexo");
             combo.seleccionCombo(cbCiudad, "spVerCiudad");
@@ -181,6 +255,19 @@ namespace CV_Presentacion.Frm_Empleados
                     //MessageBox.Show("El valor seleccionado no es válido");
                 }
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            servicios.DesbloquearControl(this);
+            rbDni.Enabled = false;
+            rbNomAp.Enabled = false;
+            btnModificar.Enabled = false;
+            txtBuscar.Enabled = false;
+            lsbEmpleado.Enabled = false;
+            btnEliminar.Enabled = false;
+            
+
         }
     }
 }
