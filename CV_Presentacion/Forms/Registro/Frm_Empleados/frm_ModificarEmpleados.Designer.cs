@@ -34,19 +34,23 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Telefono = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboTarea = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.mtbFecha = new System.Windows.Forms.MaskedTextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cbSexo = new System.Windows.Forms.ComboBox();
             this.txtApellid = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbSexo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNumeroDNI = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cbTipoDNI = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.grpboxDireccion = new System.Windows.Forms.GroupBox();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
@@ -61,12 +65,10 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.rbDni = new System.Windows.Forms.RadioButton();
             this.rbNomAp = new System.Windows.Forms.RadioButton();
             this.lsbEmpleado = new System.Windows.Forms.ListBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.cboTarea = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpboxDireccion.SuspendLayout();
@@ -123,9 +125,12 @@
             this.btnEliminar.TabIndex = 48;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Telefono);
+            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cboTarea);
             this.groupBox1.Controls.Add(this.label2);
@@ -151,6 +156,43 @@
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
+            // 
+            // Telefono
+            // 
+            this.Telefono.AutoSize = true;
+            this.Telefono.Location = new System.Drawing.Point(351, 207);
+            this.Telefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Size = new System.Drawing.Size(61, 16);
+            this.Telefono.TabIndex = 48;
+            this.Telefono.Text = "Telefono";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(425, 204);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(184, 22);
+            this.txtTelefono.TabIndex = 49;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(351, 173);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 16);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Tarea:";
+            // 
+            // cboTarea
+            // 
+            this.cboTarea.FormattingEnabled = true;
+            this.cboTarea.Location = new System.Drawing.Point(420, 167);
+            this.cboTarea.Name = "cboTarea";
+            this.cboTarea.Size = new System.Drawing.Size(92, 24);
+            this.cboTarea.TabIndex = 46;
             // 
             // label2
             // 
@@ -180,6 +222,18 @@
             this.txtNombre.Size = new System.Drawing.Size(203, 22);
             this.txtNombre.TabIndex = 2;
             // 
+            // cbSexo
+            // 
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cbSexo.Location = new System.Drawing.Point(108, 174);
+            this.cbSexo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(121, 24);
+            this.cbSexo.TabIndex = 35;
+            // 
             // txtApellid
             // 
             this.txtApellid.Location = new System.Drawing.Point(132, 54);
@@ -197,18 +251,6 @@
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Apellido";
-            // 
-            // cbSexo
-            // 
-            this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cbSexo.Location = new System.Drawing.Point(108, 174);
-            this.cbSexo.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSexo.Name = "cbSexo";
-            this.cbSexo.Size = new System.Drawing.Size(121, 24);
-            this.cbSexo.TabIndex = 35;
             // 
             // label5
             // 
@@ -248,6 +290,16 @@
             this.label12.TabIndex = 33;
             this.label12.Text = "Numero:";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(41, 177);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 16);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Sexo";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -267,22 +319,12 @@
             this.cbTipoDNI.Size = new System.Drawing.Size(151, 24);
             this.cbTipoDNI.TabIndex = 32;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(41, 177);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 16);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Sexo";
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(95, 206);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(260, 22);
+            this.txtEmail.Size = new System.Drawing.Size(200, 22);
             this.txtEmail.TabIndex = 16;
             // 
             // grpboxDireccion
@@ -430,6 +472,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar";
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(531, 10);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(18, 16);
+            this.lblId.TabIndex = 56;
+            this.lblId.Text = "id";
+            // 
             // rbDni
             // 
             this.rbDni.AutoSize = true;
@@ -463,34 +514,6 @@
             this.lsbEmpleado.Size = new System.Drawing.Size(389, 36);
             this.lsbEmpleado.TabIndex = 53;
             this.lsbEmpleado.SelectedIndexChanged += new System.EventHandler(this.lsbEmpleado_SelectedIndexChanged);
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(531, 10);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 16);
-            this.lblId.TabIndex = 56;
-            this.lblId.Text = "id";
-            this.lblId.Visible = false;
-            // 
-            // cboTarea
-            // 
-            this.cboTarea.FormattingEnabled = true;
-            this.cboTarea.Location = new System.Drawing.Point(420, 167);
-            this.cboTarea.Name = "cboTarea";
-            this.cboTarea.Size = new System.Drawing.Size(92, 24);
-            this.cboTarea.TabIndex = 46;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(351, 173);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Tarea:";
             // 
             // frm_ModificarEmpleados
             // 
@@ -556,5 +579,7 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboTarea;
+        private System.Windows.Forms.Label Telefono;
+        private System.Windows.Forms.TextBox txtTelefono;
     }
 }
