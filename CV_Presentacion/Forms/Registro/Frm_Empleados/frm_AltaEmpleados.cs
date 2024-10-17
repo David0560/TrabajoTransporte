@@ -156,5 +156,10 @@ namespace CV_Presentacion.Forms
         {
 
         }
+
+        private void mskFIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

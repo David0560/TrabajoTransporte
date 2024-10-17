@@ -60,8 +60,9 @@ namespace CD_ConexionDatos.Empleados
                 comando.Parameters.AddWithValue("@xcalle", persona.Calle);
                 comando.Parameters.AddWithValue("@xnumero_domicilio", persona.Numero_domicilio);
                 comando.Parameters.AddWithValue("@xemail", persona.Email);
-                comando.Parameters.AddWithValue("@xTelefono", persona.Telefono);
                 comando.Parameters.AddWithValue("@xid_tarea", persona.Id_tarea);
+                comando.Parameters.AddWithValue("@xTelefono", persona.Telefono);
+                comando.Parameters.AddWithValue("@xFechaActualizado", persona.Fecha_modificacion);
 
                 comando.ExecuteNonQuery();
 

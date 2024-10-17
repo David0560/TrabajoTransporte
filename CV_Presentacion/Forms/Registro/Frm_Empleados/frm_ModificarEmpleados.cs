@@ -43,6 +43,7 @@ namespace CV_Presentacion.Frm_Empleados
                 string calle = txtDireccion.Text;
                 string numeroDomicilio = txtNumeroDomicilio.Text;
                 string email = txtEmail.Text;
+                string fechamodificacion = mskFIngreso.Text;
 
                 int telefono = Convert.ToInt32(txtTelefono.Text);
                 int idDocumentoIdent = Convert.ToInt32(cbTipoDNI.SelectedValue);
@@ -51,7 +52,7 @@ namespace CV_Presentacion.Frm_Empleados
                 int idTarea = Convert.ToInt32(cboTarea.SelectedValue);
 
                 // Crear una instancia de la clase Persona con los datos capturados
-                Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, telefono, idTarea);
+                Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea, telefono, DateTime.Parse(fechamodificacion));
 
                 // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
                 CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
@@ -70,6 +71,7 @@ namespace CV_Presentacion.Frm_Empleados
             }
             servicios.LimpiarFormulario(this);
             servicios.BloquearControl(this);
+            mskFIngreso.Enabled = true;
             txtBuscar.Enabled = true;
             rbDni.Enabled = true;
             rbNomAp.Enabled = true;
@@ -234,6 +236,7 @@ namespace CV_Presentacion.Frm_Empleados
             combo.seleccionCombo(cbTipoDNI, "spVerDocumentoIdent");
             combo.seleccionCombo(cbSexo, "spVerSexo");
             combo.seleccionCombo(cbCiudad, "spVerCiudad");
+            mskFIngreso.Text = DateTime.Now.ToShortDateString();
         }
 
         private void txtDepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -324,7 +327,21 @@ namespace CV_Presentacion.Frm_Empleados
             {
                 MessageBox.Show("Eliminación cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            lsbEmpleado.Items.Clear(); // Limpiar resultados anteriores
+            servicios.LimpiarFormulario(this);
+            servicios.BloquearControl(this);
+            mskFIngreso.Enabled = true;
+            txtBuscar.Enabled = true;
+            rbDni.Enabled = true;
+            rbNomAp.Enabled = true;
+            lsbEmpleado.Text = "";
+            lsbEmpleado.Enabled = true;
+
+
+
+        }
+
+        private void mskFIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
         }
     }

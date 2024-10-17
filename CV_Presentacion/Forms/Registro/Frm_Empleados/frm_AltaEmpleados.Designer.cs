@@ -403,6 +403,7 @@
             this.mskFIngreso.Size = new System.Drawing.Size(89, 22);
             this.mskFIngreso.TabIndex = 37;
             this.mskFIngreso.ValidatingType = typeof(System.DateTime);
+            this.mskFIngreso.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskFIngreso_MaskInputRejected);
             // 
             // mskFNacimiento
             // 

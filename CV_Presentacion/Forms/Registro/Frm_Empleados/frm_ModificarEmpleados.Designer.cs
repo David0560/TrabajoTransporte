@@ -69,6 +69,7 @@
             this.rbDni = new System.Windows.Forms.RadioButton();
             this.rbNomAp = new System.Windows.Forms.RadioButton();
             this.lsbEmpleado = new System.Windows.Forms.ListBox();
+            this.mskFIngreso = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpboxDireccion.SuspendLayout();
@@ -77,7 +78,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(215, 30);
+            this.txtBuscar.Location = new System.Drawing.Point(138, 29);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(389, 22);
@@ -457,6 +458,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.mskFIngreso);
             this.groupBox2.Controls.Add(this.lblId);
             this.groupBox2.Controls.Add(this.rbDni);
             this.groupBox2.Controls.Add(this.rbNomAp);
@@ -475,11 +477,12 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(531, 10);
+            this.lblId.Location = new System.Drawing.Point(477, 9);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 16);
             this.lblId.TabIndex = 56;
             this.lblId.Text = "id";
+            this.lblId.Visible = false;
             // 
             // rbDni
             // 
@@ -509,11 +512,24 @@
             // 
             this.lsbEmpleado.FormattingEnabled = true;
             this.lsbEmpleado.ItemHeight = 16;
-            this.lsbEmpleado.Location = new System.Drawing.Point(215, 54);
+            this.lsbEmpleado.Location = new System.Drawing.Point(138, 53);
             this.lsbEmpleado.Name = "lsbEmpleado";
             this.lsbEmpleado.Size = new System.Drawing.Size(389, 36);
             this.lsbEmpleado.TabIndex = 53;
             this.lsbEmpleado.SelectedIndexChanged += new System.EventHandler(this.lsbEmpleado_SelectedIndexChanged);
+            // 
+            // mskFIngreso
+            // 
+            this.mskFIngreso.Location = new System.Drawing.Point(542, 9);
+            this.mskFIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mskFIngreso.Mask = "00/00/0000";
+            this.mskFIngreso.Name = "mskFIngreso";
+            this.mskFIngreso.ReadOnly = true;
+            this.mskFIngreso.Size = new System.Drawing.Size(89, 22);
+            this.mskFIngreso.TabIndex = 50;
+            this.mskFIngreso.ValidatingType = typeof(System.DateTime);
+            this.mskFIngreso.Visible = false;
+            this.mskFIngreso.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskFIngreso_MaskInputRejected);
             // 
             // frm_ModificarEmpleados
             // 
@@ -581,5 +597,6 @@
         private System.Windows.Forms.ComboBox cboTarea;
         private System.Windows.Forms.Label Telefono;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.MaskedTextBox mskFIngreso;
     }
 }
