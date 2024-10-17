@@ -205,6 +205,36 @@
     <Compile Include="Forms\Documentacion\frm_MenuUnidad.Designer.cs">
       <DependentUpon>frm_MenuUnidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Documentacion\Licencias\frm_Licencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Licencias\frm_Licencias.Designer.cs">
+      <DependentUpon>frm_Licencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.Designer.cs">
+      <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Ramales\Ramales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Ramales\Ramales.Designer.cs">
+      <DependentUpon>Ramales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Turnos\Turnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Turnos\Turnos.Designer.cs">
+      <DependentUpon>Turnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Unidades\Unidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Unidades\Unidades.Designer.cs">
+      <DependentUpon>Unidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +488,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\frm_MenuUnidad.resx">
       <DependentUpon>frm_MenuUnidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Licencias\frm_Licencias.resx">
+      <DependentUpon>frm_Licencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.resx">
+      <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Ramales\Ramales.resx">
+      <DependentUpon>Ramales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Turnos\Turnos.resx">
+      <DependentUpon>Turnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Unidades\Unidades.resx">
+      <DependentUpon>Unidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
