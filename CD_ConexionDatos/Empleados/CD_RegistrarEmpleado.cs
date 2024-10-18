@@ -31,6 +31,7 @@ namespace CD_ConexionDatos.Empleados
                 comando.Parameters.AddWithValue("@xcalle", persona.Calle);
                 comando.Parameters.AddWithValue("@xnumero_domicilio", persona.Numero_domicilio);
                 comando.Parameters.AddWithValue("@xemail", persona.Email);
+                comando.Parameters.AddWithValue("@xTelefono", persona.Telefono);
                 comando.Parameters.AddWithValue("@xid_tarea", persona.Id_tarea);
 
                 comando.ExecuteNonQuery();
@@ -60,10 +61,36 @@ namespace CD_ConexionDatos.Empleados
                 comando.Parameters.AddWithValue("@xnumero_domicilio", persona.Numero_domicilio);
                 comando.Parameters.AddWithValue("@xemail", persona.Email);
                 comando.Parameters.AddWithValue("@xid_tarea", persona.Id_tarea);
+                comando.Parameters.AddWithValue("@xTelefono", persona.Telefono);
+                comando.Parameters.AddWithValue("@xFechaActualizado", persona.Fecha_modificacion);
 
                 comando.ExecuteNonQuery();
 
                 con.Close();
+            }
+        }
+        public void EliminoEmpleado(int id) // ELIMINAR
+        {
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand command = new SqlCommand("spEliminarEmpleado", con) // 
+                    {
+                        CommandType = CommandType.StoredProcedure //
+                    };
+                    command.Parameters.AddWithValue("@id", id);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de excepción
+                    throw new ApplicationException("Error al eliminar el empleado: " + ex.Message);
+                }
+
             }
         }
         public DataTable BuscarEmpleadosPorDNI(string DNI)

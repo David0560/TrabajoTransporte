@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ModificarProveedor));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblContacto = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,18 +54,17 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lsbProveedores = new System.Windows.Forms.ListBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.rbContacto = new System.Windows.Forms.RadioButton();
             this.rbEmpresa = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.labelId = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -86,6 +86,16 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del proveedor:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(443, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // lblEmpresa
             // 
@@ -209,6 +219,7 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Direccion:";
+        
             // 
             // txtPais
             // 
@@ -316,9 +327,9 @@
             this.groupBox3.Controls.Add(this.rbEmpresa);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(31, 7);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(626, 114);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
@@ -329,11 +340,23 @@
             this.lsbProveedores.FormattingEnabled = true;
             this.lsbProveedores.ItemHeight = 16;
             this.lsbProveedores.Location = new System.Drawing.Point(107, 54);
-            this.lsbProveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lsbProveedores.Margin = new System.Windows.Forms.Padding(4);
             this.lsbProveedores.Name = "lsbProveedores";
             this.lsbProveedores.Size = new System.Drawing.Size(327, 36);
             this.lsbProveedores.TabIndex = 28;
             this.lsbProveedores.SelectedIndexChanged += new System.EventHandler(this.lsbProveedores_SelectedIndexChanged);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Enabled = false;
+            this.btnModificar.Location = new System.Drawing.Point(487, 64);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(93, 36);
+            this.btnModificar.TabIndex = 36;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtBuscar
             // 
@@ -359,7 +382,7 @@
             // 
             this.rbContacto.AutoSize = true;
             this.rbContacto.Location = new System.Drawing.Point(529, 32);
-            this.rbContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbContacto.Margin = new System.Windows.Forms.Padding(4);
             this.rbContacto.Name = "rbContacto";
             this.rbContacto.Size = new System.Drawing.Size(81, 20);
             this.rbContacto.TabIndex = 4;
@@ -372,7 +395,7 @@
             // 
             this.rbEmpresa.AutoSize = true;
             this.rbEmpresa.Location = new System.Drawing.Point(444, 32);
-            this.rbEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.rbEmpresa.Name = "rbEmpresa";
             this.rbEmpresa.Size = new System.Drawing.Size(83, 20);
             this.rbEmpresa.TabIndex = 3;
@@ -391,18 +414,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre:";
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(487, 64);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(93, 36);
-            this.btnModificar.TabIndex = 36;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // labelId
             // 
             this.labelId.AutoSize = true;
@@ -411,16 +422,6 @@
             this.labelId.Size = new System.Drawing.Size(0, 16);
             this.labelId.TabIndex = 38;
             this.labelId.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(443, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
             // 
             // frm_ModificarProveedor
             // 
@@ -431,17 +432,17 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ModificarProveedor";
             this.Text = "frm_ModificarProveedor";
             this.Load += new System.EventHandler(this.frm_ModificarProveedor_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

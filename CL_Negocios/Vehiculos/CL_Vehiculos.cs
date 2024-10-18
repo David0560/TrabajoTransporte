@@ -2,6 +2,8 @@
 using CD_ConexionDatos;
 using CL_Servicios.Entidades;
 using CL_Negocios.Entidades;
+using CapaServicios.Entidades;
+using System.Data;
 
 namespace CL_Negocios
 {
@@ -41,6 +43,10 @@ namespace CL_Negocios
             {
                 Console.WriteLine("Ocurrió un error al guardar el vehículo: " + ex.Message);
             }
+        }
+        public DataTable ObtenerVehículosPorPatente(string patente)
+        {
+            return cdVehiculos.ObtengoVehículosPorPatente(patente);
         }
     }
 }

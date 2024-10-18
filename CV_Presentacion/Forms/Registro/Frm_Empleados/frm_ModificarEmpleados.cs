@@ -43,15 +43,17 @@ namespace CV_Presentacion.Frm_Empleados
                 string calle = txtDireccion.Text;
                 string numeroDomicilio = txtNumeroDomicilio.Text;
                 string email = txtEmail.Text;
+                string fechamodificacion = mskFIngreso.Text;
 
+                int telefono = Convert.ToInt32(txtTelefono.Text);
                 int idDocumentoIdent = Convert.ToInt32(cbTipoDNI.SelectedValue);
                 int idSexo = Convert.ToInt32(cbSexo.SelectedValue);
                 int idLocalidad = Convert.ToInt32(cbCiudad.SelectedValue);
                 int idTarea = Convert.ToInt32(cboTarea.SelectedValue);
 
                 // Crear una instancia de la clase Persona con los datos capturados
-               Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea);
-               
+                Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea, telefono, DateTime.Parse(fechamodificacion));
+
                 // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
                 CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
                 administradorEmpleados.ModificarPersona(modificopersona);
@@ -69,9 +71,15 @@ namespace CV_Presentacion.Frm_Empleados
             }
             servicios.LimpiarFormulario(this);
             servicios.BloquearControl(this);
+            mskFIngreso.Enabled = true;
             txtBuscar.Enabled = true;
             rbDni.Enabled = true;
             rbNomAp.Enabled = true;
+            lsbEmpleado.Text = "";
+            lsbEmpleado.Enabled = true;
+            
+            
+
 
         }
 
@@ -151,7 +159,7 @@ namespace CV_Presentacion.Frm_Empleados
             {
              
                 string empleadoSeleccionado = lsbEmpleado.SelectedItem.ToString();
-
+               
                 DataRow[] filasEncontradas;
 
                 if (rbNomAp.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorEmpresa
@@ -164,6 +172,8 @@ namespace CV_Presentacion.Frm_Empleados
                     txtBuscar.Enabled = true; 
                     btnEliminar.Enabled = true;
                btnModificar.Enabled = true;
+                    txtBuscar.Text = empleadoSeleccionado;
+                  
 
                 }
                 else if (rbDni.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorContacto
@@ -174,6 +184,7 @@ namespace CV_Presentacion.Frm_Empleados
                     txtBuscar.Enabled = true;
                     btnEliminar.Enabled = true;
                     btnModificar.Enabled = true;
+                    txtBuscar.Text = empleadoSeleccionado;
                 }
                 else
                 {
@@ -182,6 +193,7 @@ namespace CV_Presentacion.Frm_Empleados
 
                 if (filasEncontradas.Length > 0)
                 {
+                    lsbEmpleado.Visible = false;
                     DataRow fila = filasEncontradas[0]; // Tomamos el primer resultado
 
                     int id_sexo = Convert.ToInt32(fila["id_sexo"].ToString());
@@ -192,7 +204,7 @@ namespace CV_Presentacion.Frm_Empleados
                     txtApellid.Text = fila["apellido"].ToString();
                     mtbFecha.Text = fila["fecha_nacimiento"].ToString();
                     txtNumeroDNI.Text = fila["numero_ident"].ToString();
-                 
+                 txtTelefono.Text = fila["Telefono"].ToString();
                     txtEmail.Text = fila["email"].ToString();
                     txtDireccion.Text = fila["calle"].ToString();
                     txtNumeroDomicilio.Text = fila["numero_domicilo"].ToString();
@@ -224,6 +236,7 @@ namespace CV_Presentacion.Frm_Empleados
             combo.seleccionCombo(cbTipoDNI, "spVerDocumentoIdent");
             combo.seleccionCombo(cbSexo, "spVerSexo");
             combo.seleccionCombo(cbCiudad, "spVerCiudad");
+            mskFIngreso.Text = DateTime.Now.ToShortDateString();
         }
 
         private void txtDepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -267,6 +280,68 @@ namespace CV_Presentacion.Frm_Empleados
             lsbEmpleado.Enabled = false;
             btnEliminar.Enabled = false;
             
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show(
+      "¿Estás seguro de que deseas eliminar este empleado?",
+      "Confirmar Eliminación",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Warning);
+
+            // Verificar la respuesta del usuario
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    if (int.TryParse(lblId.Text, out int id))
+                    {
+                        CL_AdministrarEmpleados eliminarempleado = new CL_AdministrarEmpleados();
+                        eliminarempleado.ELiminarEmpleado(id);
+                        MessageBox.Show("Empleado eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Actualizar el DataGridView
+                        // Aquí deberías recargar los datos para que reflejen la eliminación
+
+                        btnGuardar.Enabled = false;
+                        btnModificar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al borrar empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Eliminación cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            servicios.LimpiarFormulario(this);
+            servicios.BloquearControl(this);
+            mskFIngreso.Enabled = true;
+            txtBuscar.Enabled = true;
+            rbDni.Enabled = true;
+            rbNomAp.Enabled = true;
+            lsbEmpleado.Text = "";
+            lsbEmpleado.Enabled = true;
+
+
+
+        }
+
+        private void mskFIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
         }
     }

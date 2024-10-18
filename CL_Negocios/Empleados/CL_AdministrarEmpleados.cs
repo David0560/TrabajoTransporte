@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using CapaServicios.Entidades;
+using CD_ConexionDatos;
 using CD_ConexionDatos.Empleados; 
 using CL_Negocios.Entidades;
 
@@ -45,6 +46,20 @@ namespace CL_Negocios.Empleados
                      Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
                  }
              }
+        public void ELiminarEmpleado(int id) //ELIMINAR
+        {
+            try
+            {
+
+                registrarEmpleado.EliminoEmpleado(id);
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocurrió un error al eliminar el proveedor: " + ex.Message);
+            }
+        }
 
     }
 

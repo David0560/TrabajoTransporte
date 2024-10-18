@@ -25,9 +25,11 @@ namespace CL_Negocios.Entidades
         public string Email { get; set; }
         public int Id_tarea { get; set;}
         public int Telefono { get; set; }
-        
 
-        public Persona(int id, string nombre, string apellido, DateTime fecha_nac, int id_documento_iden, string numero_identidad, int id_sexo, int id_localidad, string calle, int numero_domicilio, string email, int id_tarea, int telefono)
+        public DateTime Fecha_modificacion { get; set; }
+
+
+        public Persona(int id, string nombre, string apellido, DateTime fecha_nac, int id_documento_iden, string numero_identidad, int id_sexo, int id_localidad, string calle, int numero_domicilio, string email, int id_tarea, int telefono, DateTime fecha_modif)
         {
             this.Id = id;
             this.Nombre = nombre;
@@ -42,10 +44,10 @@ namespace CL_Negocios.Entidades
             this.Email = email;
             this.Id_tarea = id_tarea;
             this.Telefono = telefono;
-
+            this.Fecha_modificacion = fecha_modif;
 
         }
-        public Persona(string nombre,  string apellido, DateTime fecha_nac, int id_documento_iden, string numero_identidad, int id_sexo, int id_localidad, string calle, int numero_domicilio, string email, int id_tarea)
+        public Persona(string nombre,  string apellido, DateTime fecha_nac, int id_documento_iden, string numero_identidad, int id_sexo, int id_localidad, string calle, int numero_domicilio, string email, int telefono, int id_tarea)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -58,6 +60,7 @@ namespace CL_Negocios.Entidades
             this.Numero_domicilio = numero_domicilio;
             this.Email = email;
             this.Id_tarea = id_tarea;
+            this.Telefono = telefono;
         }
            public Persona(int id, string nombre, string apellido, DateTime fecha_nac, int id_documento_iden, string numero_identidad, int id_sexo, int id_localidad, string calle, int numero_domicilio, string email, int id_tarea)
         {

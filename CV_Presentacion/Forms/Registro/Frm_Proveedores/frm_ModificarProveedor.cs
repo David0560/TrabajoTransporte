@@ -217,8 +217,6 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             }
             lsbProveedores.Items.Clear(); // Limpiar resultados anteriores
 
-
-            ;
         }
 
         private void lblId_Click(object sender, EventArgs e)

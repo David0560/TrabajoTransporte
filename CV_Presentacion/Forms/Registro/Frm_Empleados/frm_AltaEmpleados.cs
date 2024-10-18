@@ -117,14 +117,14 @@ namespace CV_Presentacion.Forms
                 string calle = txtCalle.Text;
                 string numeroDomicilio = txtNumero.Text;
                 string email = txtEmail.Text;
-                
+                int telefono = Convert.ToInt32(txtTelefono.Text);
                 int idDocumentoIdent = Convert.ToInt32(cboDocumento.SelectedValue);
                 int idSexo = Convert.ToInt32(cboSexo.SelectedValue);
                 int idLocalidad = Convert.ToInt32(cboCiudad.SelectedValue);
                 int idTarea = Convert.ToInt32(cboTarea.SelectedValue);
 
                 // Crear una instancia de la clase Persona con los datos capturados
-                Persona nuevaPersona = new Persona(nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea);
+                Persona nuevaPersona = new Persona(nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, telefono, idTarea);
 
                 // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
                 CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
@@ -153,6 +153,11 @@ namespace CV_Presentacion.Forms
         }
 
         private void cboLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mskFIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
