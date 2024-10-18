@@ -63,9 +63,9 @@
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtDominio = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.lsbPatente = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -82,11 +82,11 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblVTV);
             this.groupBox2.Controls.Add(this.mskFechaOtorgada);
-            this.groupBox2.Location = new System.Drawing.Point(25, 395);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(33, 486);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(395, 58);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(527, 71);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VTV";
@@ -94,10 +94,11 @@
             // mskFechaVencimiento
             // 
             this.mskFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskFechaVencimiento.Location = new System.Drawing.Point(301, 28);
+            this.mskFechaVencimiento.Location = new System.Drawing.Point(401, 34);
+            this.mskFechaVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.mskFechaVencimiento.Mask = "00/00/0000";
             this.mskFechaVencimiento.Name = "mskFechaVencimiento";
-            this.mskFechaVencimiento.Size = new System.Drawing.Size(80, 23);
+            this.mskFechaVencimiento.Size = new System.Drawing.Size(105, 26);
             this.mskFechaVencimiento.TabIndex = 38;
             this.mskFechaVencimiento.ValidatingType = typeof(System.DateTime);
             // 
@@ -105,9 +106,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(33, 28);
+            this.label1.Location = new System.Drawing.Point(44, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 37;
             this.label1.Text = "Otorgada:";
             // 
@@ -115,27 +117,30 @@
             // 
             this.lblVTV.AutoSize = true;
             this.lblVTV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblVTV.Location = new System.Drawing.Point(219, 30);
+            this.lblVTV.Location = new System.Drawing.Point(292, 37);
+            this.lblVTV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVTV.Name = "lblVTV";
-            this.lblVTV.Size = new System.Drawing.Size(62, 13);
+            this.lblVTV.Size = new System.Drawing.Size(81, 17);
             this.lblVTV.TabIndex = 22;
             this.lblVTV.Text = "Vecimiento:";
             // 
             // mskFechaOtorgada
             // 
             this.mskFechaOtorgada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskFechaOtorgada.Location = new System.Drawing.Point(115, 26);
+            this.mskFechaOtorgada.Location = new System.Drawing.Point(153, 32);
+            this.mskFechaOtorgada.Margin = new System.Windows.Forms.Padding(4);
             this.mskFechaOtorgada.Mask = "00/00/0000";
             this.mskFechaOtorgada.Name = "mskFechaOtorgada";
-            this.mskFechaOtorgada.Size = new System.Drawing.Size(80, 23);
+            this.mskFechaOtorgada.Size = new System.Drawing.Size(105, 26);
             this.mskFechaOtorgada.TabIndex = 29;
             this.mskFechaOtorgada.ValidatingType = typeof(System.DateTime);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(529, 422);
+            this.btnAceptar.Location = new System.Drawing.Point(705, 519);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(72, 27);
+            this.btnAceptar.Size = new System.Drawing.Size(96, 33);
             this.btnAceptar.TabIndex = 40;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -170,9 +175,11 @@
             this.groupBox1.Controls.Add(this.txtModelo);
             this.groupBox1.Controls.Add(this.txtDominio);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.groupBox1.Location = new System.Drawing.Point(25, 91);
+            this.groupBox1.Location = new System.Drawing.Point(33, 112);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(587, 298);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(783, 367);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehiculo";
@@ -180,10 +187,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CV_Presentacion.Properties.Resources.addbuss__3_;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(127, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
@@ -191,26 +198,29 @@
             // txtMarcaChasis
             // 
             this.txtMarcaChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarcaChasis.Location = new System.Drawing.Point(116, 175);
+            this.txtMarcaChasis.Location = new System.Drawing.Point(155, 215);
+            this.txtMarcaChasis.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarcaChasis.Name = "txtMarcaChasis";
-            this.txtMarcaChasis.Size = new System.Drawing.Size(166, 23);
+            this.txtMarcaChasis.Size = new System.Drawing.Size(220, 26);
             this.txtMarcaChasis.TabIndex = 35;
             // 
             // txtNroChasis
             // 
             this.txtNroChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroChasis.Location = new System.Drawing.Point(116, 203);
+            this.txtNroChasis.Location = new System.Drawing.Point(155, 250);
+            this.txtNroChasis.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroChasis.Name = "txtNroChasis";
-            this.txtNroChasis.Size = new System.Drawing.Size(159, 23);
+            this.txtNroChasis.Size = new System.Drawing.Size(211, 26);
             this.txtNroChasis.TabIndex = 34;
             // 
             // lblMarcaMotor
             // 
             this.lblMarcaMotor.AutoSize = true;
             this.lblMarcaMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblMarcaMotor.Location = new System.Drawing.Point(33, 122);
+            this.lblMarcaMotor.Location = new System.Drawing.Point(44, 150);
+            this.lblMarcaMotor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarcaMotor.Name = "lblMarcaMotor";
-            this.lblMarcaMotor.Size = new System.Drawing.Size(70, 13);
+            this.lblMarcaMotor.Size = new System.Drawing.Size(91, 17);
             this.lblMarcaMotor.TabIndex = 32;
             this.lblMarcaMotor.Text = "Marca Motor:";
             // 
@@ -218,9 +228,10 @@
             // 
             this.lblMarcaChasis.AutoSize = true;
             this.lblMarcaChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblMarcaChasis.Location = new System.Drawing.Point(33, 180);
+            this.lblMarcaChasis.Location = new System.Drawing.Point(44, 222);
+            this.lblMarcaChasis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarcaChasis.Name = "lblMarcaChasis";
-            this.lblMarcaChasis.Size = new System.Drawing.Size(74, 13);
+            this.lblMarcaChasis.Size = new System.Drawing.Size(97, 17);
             this.lblMarcaChasis.TabIndex = 33;
             this.lblMarcaChasis.Text = "Marca Chasis:";
             // 
@@ -228,54 +239,59 @@
             // 
             this.cboCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCombustible.FormattingEnabled = true;
-            this.cboCombustible.Location = new System.Drawing.Point(411, 179);
-            this.cboCombustible.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCombustible.Location = new System.Drawing.Point(548, 220);
+            this.cboCombustible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCombustible.Name = "cboCombustible";
-            this.cboCombustible.Size = new System.Drawing.Size(143, 24);
+            this.cboCombustible.Size = new System.Drawing.Size(189, 28);
             this.cboCombustible.TabIndex = 31;
             // 
             // txtEstado
             // 
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(411, 151);
+            this.txtEstado.Location = new System.Drawing.Point(548, 186);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(129, 23);
+            this.txtEstado.Size = new System.Drawing.Size(171, 26);
             this.txtEstado.TabIndex = 30;
             // 
             // mskIngreso
             // 
             this.mskIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskIngreso.Location = new System.Drawing.Point(206, 18);
+            this.mskIngreso.Location = new System.Drawing.Point(275, 22);
+            this.mskIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.mskIngreso.Mask = "00/00/0000";
             this.mskIngreso.Name = "mskIngreso";
             this.mskIngreso.ReadOnly = true;
-            this.mskIngreso.Size = new System.Drawing.Size(80, 23);
+            this.mskIngreso.Size = new System.Drawing.Size(105, 26);
             this.mskIngreso.TabIndex = 28;
             this.mskIngreso.ValidatingType = typeof(System.DateTime);
             // 
             // numericUpDownPlaza
             // 
             this.numericUpDownPlaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownPlaza.Location = new System.Drawing.Point(144, 265);
+            this.numericUpDownPlaza.Location = new System.Drawing.Point(192, 326);
+            this.numericUpDownPlaza.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownPlaza.Name = "numericUpDownPlaza";
-            this.numericUpDownPlaza.Size = new System.Drawing.Size(40, 23);
+            this.numericUpDownPlaza.Size = new System.Drawing.Size(53, 26);
             this.numericUpDownPlaza.TabIndex = 27;
             // 
             // txtTipo
             // 
             this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(411, 208);
+            this.txtTipo.Location = new System.Drawing.Point(548, 256);
+            this.txtTipo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(143, 23);
+            this.txtTipo.Size = new System.Drawing.Size(189, 26);
             this.txtTipo.TabIndex = 19;
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblMarca.Location = new System.Drawing.Point(146, 53);
+            this.lblMarca.Location = new System.Drawing.Point(195, 65);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(40, 13);
+            this.lblMarca.Size = new System.Drawing.Size(51, 17);
             this.lblMarca.TabIndex = 2;
             this.lblMarca.Text = "Marca:";
             // 
@@ -283,9 +299,10 @@
             // 
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblModelo.Location = new System.Drawing.Point(147, 82);
+            this.lblModelo.Location = new System.Drawing.Point(196, 101);
+            this.lblModelo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(45, 13);
+            this.lblModelo.Size = new System.Drawing.Size(58, 17);
             this.lblModelo.TabIndex = 3;
             this.lblModelo.Text = "Modelo:";
             // 
@@ -293,9 +310,10 @@
             // 
             this.lblIngreso.AutoSize = true;
             this.lblIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblIngreso.Location = new System.Drawing.Point(145, 24);
+            this.lblIngreso.Location = new System.Drawing.Point(193, 30);
+            this.lblIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngreso.Name = "lblIngreso";
-            this.lblIngreso.Size = new System.Drawing.Size(42, 13);
+            this.lblIngreso.Size = new System.Drawing.Size(55, 17);
             this.lblIngreso.TabIndex = 4;
             this.lblIngreso.Text = "Ingreso";
             // 
@@ -303,9 +321,10 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblEstado.Location = new System.Drawing.Point(338, 156);
+            this.lblEstado.Location = new System.Drawing.Point(451, 192);
+            this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.Size = new System.Drawing.Size(56, 17);
             this.lblEstado.TabIndex = 24;
             this.lblEstado.Text = "Estado:";
             // 
@@ -313,9 +332,10 @@
             // 
             this.lblCantidadPlaza.AutoSize = true;
             this.lblCantidadPlaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblCantidadPlaza.Location = new System.Drawing.Point(33, 270);
+            this.lblCantidadPlaza.Location = new System.Drawing.Point(44, 332);
+            this.lblCantidadPlaza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadPlaza.Name = "lblCantidadPlaza";
-            this.lblCantidadPlaza.Size = new System.Drawing.Size(97, 13);
+            this.lblCantidadPlaza.Size = new System.Drawing.Size(129, 17);
             this.lblCantidadPlaza.TabIndex = 5;
             this.lblCantidadPlaza.Text = "Cantidad de plazas";
             // 
@@ -323,9 +343,10 @@
             // 
             this.lblCombustible.AutoSize = true;
             this.lblCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblCombustible.Location = new System.Drawing.Point(338, 185);
+            this.lblCombustible.Location = new System.Drawing.Point(451, 228);
+            this.lblCombustible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCombustible.Name = "lblCombustible";
-            this.lblCombustible.Size = new System.Drawing.Size(70, 13);
+            this.lblCombustible.Size = new System.Drawing.Size(93, 17);
             this.lblCombustible.TabIndex = 6;
             this.lblCombustible.Text = "Combustible: ";
             // 
@@ -333,45 +354,50 @@
             // 
             this.lblKms.AutoSize = true;
             this.lblKms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblKms.Location = new System.Drawing.Point(338, 127);
+            this.lblKms.Location = new System.Drawing.Point(451, 156);
+            this.lblKms.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKms.Name = "lblKms";
-            this.lblKms.Size = new System.Drawing.Size(30, 13);
+            this.lblKms.Size = new System.Drawing.Size(39, 17);
             this.lblKms.TabIndex = 7;
             this.lblKms.Text = "Kms:";
             // 
             // txtMarcaMotor
             // 
             this.txtMarcaMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarcaMotor.Location = new System.Drawing.Point(116, 119);
+            this.txtMarcaMotor.Location = new System.Drawing.Point(155, 146);
+            this.txtMarcaMotor.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarcaMotor.Name = "txtMarcaMotor";
-            this.txtMarcaMotor.Size = new System.Drawing.Size(183, 23);
+            this.txtMarcaMotor.Size = new System.Drawing.Size(243, 26);
             this.txtMarcaMotor.TabIndex = 21;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblTipo.Location = new System.Drawing.Point(338, 214);
+            this.lblTipo.Location = new System.Drawing.Point(451, 263);
+            this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(31, 13);
+            this.lblTipo.Size = new System.Drawing.Size(40, 17);
             this.lblTipo.TabIndex = 8;
             this.lblTipo.Text = "Tipo:";
             // 
             // txtNroMotor
             // 
             this.txtNroMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroMotor.Location = new System.Drawing.Point(116, 147);
+            this.txtNroMotor.Location = new System.Drawing.Point(155, 181);
+            this.txtNroMotor.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroMotor.Name = "txtNroMotor";
-            this.txtNroMotor.Size = new System.Drawing.Size(183, 23);
+            this.txtNroMotor.Size = new System.Drawing.Size(243, 26);
             this.txtNroMotor.TabIndex = 20;
             // 
             // lblNroMotor
             // 
             this.lblNroMotor.AutoSize = true;
             this.lblNroMotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblNroMotor.Location = new System.Drawing.Point(33, 151);
+            this.lblNroMotor.Location = new System.Drawing.Point(44, 186);
+            this.lblNroMotor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroMotor.Name = "lblNroMotor";
-            this.lblNroMotor.Size = new System.Drawing.Size(57, 13);
+            this.lblNroMotor.Size = new System.Drawing.Size(75, 17);
             this.lblNroMotor.TabIndex = 9;
             this.lblNroMotor.Text = "Nro Motor:";
             // 
@@ -379,136 +405,146 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.Location = new System.Drawing.Point(33, 209);
+            this.label10.Location = new System.Drawing.Point(44, 257);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.Size = new System.Drawing.Size(81, 17);
             this.label10.TabIndex = 10;
             this.label10.Text = "Nro Chasis:";
             // 
             // txtKms
             // 
             this.txtKms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKms.Location = new System.Drawing.Point(411, 123);
+            this.txtKms.Location = new System.Drawing.Point(548, 151);
+            this.txtKms.Margin = new System.Windows.Forms.Padding(4);
             this.txtKms.Name = "txtKms";
-            this.txtKms.Size = new System.Drawing.Size(129, 23);
+            this.txtKms.Size = new System.Drawing.Size(171, 26);
             this.txtKms.TabIndex = 18;
             // 
             // lblDominio
             // 
             this.lblDominio.AutoSize = true;
             this.lblDominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblDominio.Location = new System.Drawing.Point(33, 239);
+            this.lblDominio.Location = new System.Drawing.Point(44, 294);
+            this.lblDominio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDominio.Name = "lblDominio";
-            this.lblDominio.Size = new System.Drawing.Size(47, 13);
+            this.lblDominio.Size = new System.Drawing.Size(61, 17);
             this.lblDominio.TabIndex = 11;
             this.lblDominio.Text = "Patente:";
             // 
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(206, 47);
+            this.txtMarca.Location = new System.Drawing.Point(275, 58);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(155, 23);
+            this.txtMarca.Size = new System.Drawing.Size(205, 26);
             this.txtMarca.TabIndex = 12;
             // 
             // txtModelo
             // 
             this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.Location = new System.Drawing.Point(206, 75);
+            this.txtModelo.Location = new System.Drawing.Point(275, 92);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(4);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(189, 23);
+            this.txtModelo.Size = new System.Drawing.Size(251, 26);
             this.txtModelo.TabIndex = 13;
             // 
             // txtDominio
             // 
             this.txtDominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDominio.Location = new System.Drawing.Point(116, 234);
+            this.txtDominio.Location = new System.Drawing.Point(155, 288);
+            this.txtDominio.Margin = new System.Windows.Forms.Padding(4);
             this.txtDominio.Name = "txtDominio";
-            this.txtDominio.Size = new System.Drawing.Size(147, 23);
+            this.txtDominio.Size = new System.Drawing.Size(195, 26);
             this.txtDominio.TabIndex = 15;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblid);
+            this.groupBox3.Controls.Add(this.lsbPatente);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Controls.Add(this.textBox10);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(25, 6);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(33, 7);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(587, 80);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(783, 98);
             this.groupBox3.TabIndex = 53;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Buscar";
             // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(500, 71);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(44, 16);
+            this.lblid.TabIndex = 54;
+            this.lblid.Text = "label2";
+            this.lblid.Visible = false;
+            // 
+            // lsbPatente
+            // 
+            this.lsbPatente.FormattingEnabled = true;
+            this.lsbPatente.ItemHeight = 16;
+            this.lsbPatente.Location = new System.Drawing.Point(87, 51);
+            this.lsbPatente.Name = "lsbPatente";
+            this.lsbPatente.Size = new System.Drawing.Size(389, 36);
+            this.lsbPatente.TabIndex = 53;
+            this.lsbPatente.SelectedIndexChanged += new System.EventHandler(this.lsbPatente_SelectedIndexChanged);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(388, 17);
+            this.button1.Location = new System.Drawing.Point(484, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 27);
+            this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 52;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(153, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(62, 17);
-            this.radioButton2.TabIndex = 51;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Patente";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(67, 51);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton1.TabIndex = 50;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Marca";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(65, 20);
+            this.textBox10.Location = new System.Drawing.Point(87, 25);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(293, 20);
+            this.textBox10.Size = new System.Drawing.Size(389, 22);
             this.textBox10.TabIndex = 38;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 24);
+            this.label4.Location = new System.Drawing.Point(23, 31);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 39;
-            this.label4.Text = "por:";
+            this.label4.Text = "Patente:";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(451, 422);
+            this.button2.Location = new System.Drawing.Point(601, 519);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 27);
+            this.button2.Size = new System.Drawing.Size(96, 33);
             this.button2.TabIndex = 54;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // frm_ModificarVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 464);
+            this.ClientSize = new System.Drawing.Size(848, 571);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ModificarVehiculos";
             this.Text = "Modificar Unidades";
             this.groupBox2.ResumeLayout(false);
@@ -561,10 +597,10 @@
         private System.Windows.Forms.TextBox txtDominio;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox lsbPatente;
+        private System.Windows.Forms.Label lblid;
     }
 }

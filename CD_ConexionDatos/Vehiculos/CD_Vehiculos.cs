@@ -52,5 +52,29 @@ namespace CD_ConexionDatos
                 throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
             }
         }
+        public DataTable ObtengoVehículosPorPatente(string patente)
+        {
+            DataTable dt = new DataTable();
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand command = new SqlCommand("spObtenerVehiculosPorPatente", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    command.Parameters.AddWithValue("@Dominio", patente);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por empresa: " + ex.Message);
+                }
+            }
+            return dt;
+        }
+
     }
 }
