@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbTelefono = new System.Windows.Forms.TextBox();
+            this.txbDNI = new System.Windows.Forms.TextBox();
+            this.txbNumero = new System.Windows.Forms.TextBox();
+            this.txbDomicilio = new System.Windows.Forms.TextBox();
+            this.txbNombre = new System.Windows.Forms.TextBox();
+            this.txbApellido = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,20 +44,20 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnElimiar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txbTelefono);
+            this.groupBox2.Controls.Add(this.txbDNI);
+            this.groupBox2.Controls.Add(this.txbNumero);
+            this.groupBox2.Controls.Add(this.txbDomicilio);
+            this.groupBox2.Controls.Add(this.txbNombre);
+            this.groupBox2.Controls.Add(this.txbApellido);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
@@ -67,51 +67,51 @@
             this.groupBox2.Location = new System.Drawing.Point(19, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(304, 226);
-            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Testigos";
             // 
-            // textBox8
+            // txbTelefono
             // 
-            this.textBox8.Location = new System.Drawing.Point(80, 189);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(129, 20);
-            this.textBox8.TabIndex = 20;
+            this.txbTelefono.Location = new System.Drawing.Point(80, 189);
+            this.txbTelefono.Name = "txbTelefono";
+            this.txbTelefono.Size = new System.Drawing.Size(129, 20);
+            this.txbTelefono.TabIndex = 7;
             // 
-            // textBox7
+            // txbDNI
             // 
-            this.textBox7.Location = new System.Drawing.Point(112, 93);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(97, 20);
-            this.textBox7.TabIndex = 19;
+            this.txbDNI.Location = new System.Drawing.Point(112, 93);
+            this.txbDNI.Name = "txbDNI";
+            this.txbDNI.Size = new System.Drawing.Size(97, 20);
+            this.txbDNI.TabIndex = 4;
             // 
-            // textBox5
+            // txbNumero
             // 
-            this.textBox5.Location = new System.Drawing.Point(80, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(76, 20);
-            this.textBox5.TabIndex = 18;
+            this.txbNumero.Location = new System.Drawing.Point(80, 157);
+            this.txbNumero.Name = "txbNumero";
+            this.txbNumero.Size = new System.Drawing.Size(76, 20);
+            this.txbNumero.TabIndex = 6;
             // 
-            // textBox6
+            // txbDomicilio
             // 
-            this.textBox6.Location = new System.Drawing.Point(80, 125);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(204, 20);
-            this.textBox6.TabIndex = 17;
+            this.txbDomicilio.Location = new System.Drawing.Point(80, 125);
+            this.txbDomicilio.Name = "txbDomicilio";
+            this.txbDomicilio.Size = new System.Drawing.Size(204, 20);
+            this.txbDomicilio.TabIndex = 5;
             // 
-            // textBox4
+            // txbNombre
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 61);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 20);
-            this.textBox4.TabIndex = 16;
+            this.txbNombre.Location = new System.Drawing.Point(71, 61);
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.Size = new System.Drawing.Size(213, 20);
+            this.txbNombre.TabIndex = 3;
             // 
-            // textBox3
+            // txbApellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 20);
-            this.textBox3.TabIndex = 15;
+            this.txbApellido.Location = new System.Drawing.Point(71, 29);
+            this.txbApellido.Name = "txbApellido";
+            this.txbApellido.Size = new System.Drawing.Size(213, 20);
+            this.txbApellido.TabIndex = 2;
             // 
             // label13
             // 
@@ -172,42 +172,45 @@
             this.btnNuevo.Location = new System.Drawing.Point(95, 246);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 24);
-            this.btnNuevo.TabIndex = 31;
+            this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(247, 246);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 24);
-            this.btnSalir.TabIndex = 30;
+            this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(19, 246);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 24);
-            this.btnAgregar.TabIndex = 29;
+            this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dataGridView1
+            // dgvDatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 276);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(304, 136);
-            this.dataGridView1.TabIndex = 27;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(19, 276);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.Size = new System.Drawing.Size(304, 136);
+            this.dgvDatos.TabIndex = 12;
             // 
             // btnElimiar
             // 
             this.btnElimiar.Location = new System.Drawing.Point(171, 246);
             this.btnElimiar.Name = "btnElimiar";
             this.btnElimiar.Size = new System.Drawing.Size(75, 24);
-            this.btnElimiar.TabIndex = 28;
+            this.btnElimiar.TabIndex = 10;
             this.btnElimiar.Text = "Elimiar";
             this.btnElimiar.UseVisualStyleBackColor = true;
             // 
@@ -219,7 +222,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnElimiar);
             this.Name = "frm_Testigo";
@@ -227,19 +230,19 @@
             this.Text = "frm_Testigo";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbTelefono;
+        private System.Windows.Forms.TextBox txbDNI;
+        private System.Windows.Forms.TextBox txbNumero;
+        private System.Windows.Forms.TextBox txbDomicilio;
+        private System.Windows.Forms.TextBox txbNombre;
+        private System.Windows.Forms.TextBox txbApellido;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -249,7 +252,7 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button btnElimiar;
     }
 }

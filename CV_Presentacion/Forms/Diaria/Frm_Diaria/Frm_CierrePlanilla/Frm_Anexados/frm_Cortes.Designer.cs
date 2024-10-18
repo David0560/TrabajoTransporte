@@ -29,89 +29,82 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.mskHoraSalida = new System.Windows.Forms.MaskedTextBox();
+            this.mskHora = new System.Windows.Forms.MaskedTextBox();
+            this.txbMotivo = new System.Windows.Forms.TextBox();
+            this.txbRetoma = new System.Windows.Forms.TextBox();
+            this.txbLugar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCorte = new System.Windows.Forms.DataGridView();
             this.btnElimiar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCorte)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.mskHoraSalida);
+            this.groupBox2.Controls.Add(this.mskHora);
+            this.groupBox2.Controls.Add(this.txbMotivo);
+            this.groupBox2.Controls.Add(this.txbRetoma);
+            this.groupBox2.Controls.Add(this.txbLugar);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(20, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(304, 226);
-            this.groupBox2.TabIndex = 19;
+            this.groupBox2.Size = new System.Drawing.Size(304, 200);
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lesionados";
+            this.groupBox2.Text = "Cortes";
             // 
-            // textBox8
+            // mskHoraSalida
             // 
-            this.textBox8.Location = new System.Drawing.Point(71, 189);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(213, 20);
-            this.textBox8.TabIndex = 20;
+            this.mskHoraSalida.Location = new System.Drawing.Point(91, 158);
+            this.mskHoraSalida.Mask = "00:00";
+            this.mskHoraSalida.Name = "mskHoraSalida";
+            this.mskHoraSalida.Size = new System.Drawing.Size(40, 20);
+            this.mskHoraSalida.TabIndex = 6;
+            this.mskHoraSalida.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox7
+            // mskHora
             // 
-            this.textBox7.Location = new System.Drawing.Point(71, 93);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(170, 20);
-            this.textBox7.TabIndex = 19;
+            this.mskHora.Location = new System.Drawing.Point(71, 30);
+            this.mskHora.Mask = "00:00";
+            this.mskHora.Name = "mskHora";
+            this.mskHora.Size = new System.Drawing.Size(37, 20);
+            this.mskHora.TabIndex = 2;
+            this.mskHora.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox5
+            // txbMotivo
             // 
-            this.textBox5.Location = new System.Drawing.Point(86, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(84, 20);
-            this.textBox5.TabIndex = 18;
+            this.txbMotivo.Location = new System.Drawing.Point(71, 93);
+            this.txbMotivo.Name = "txbMotivo";
+            this.txbMotivo.Size = new System.Drawing.Size(213, 20);
+            this.txbMotivo.TabIndex = 4;
             // 
-            // textBox6
+            // txbRetoma
             // 
-            this.textBox6.Location = new System.Drawing.Point(71, 125);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(213, 20);
-            this.textBox6.TabIndex = 17;
+            this.txbRetoma.Location = new System.Drawing.Point(71, 125);
+            this.txbRetoma.Name = "txbRetoma";
+            this.txbRetoma.Size = new System.Drawing.Size(213, 20);
+            this.txbRetoma.TabIndex = 5;
             // 
-            // textBox4
+            // txbLugar
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 61);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 20);
-            this.textBox4.TabIndex = 16;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(71, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 20);
-            this.textBox3.TabIndex = 15;
+            this.txbLugar.Location = new System.Drawing.Point(71, 61);
+            this.txbLugar.Name = "txbLugar";
+            this.txbLugar.Size = new System.Drawing.Size(213, 20);
+            this.txbLugar.TabIndex = 3;
             // 
             // label13
             // 
@@ -149,15 +142,6 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Retomo:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 193);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Lugar:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -169,57 +153,61 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(98, 246);
+            this.btnNuevo.Location = new System.Drawing.Point(95, 220);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 24);
-            this.btnNuevo.TabIndex = 31;
+            this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(250, 246);
+            this.btnSalir.Location = new System.Drawing.Point(247, 220);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 24);
-            this.btnSalir.TabIndex = 30;
+            this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(22, 246);
+            this.btnAgregar.Location = new System.Drawing.Point(19, 220);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 24);
-            this.btnAgregar.TabIndex = 29;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dataGridView1
+            // dgvCorte
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 276);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(304, 136);
-            this.dataGridView1.TabIndex = 27;
+            this.dgvCorte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCorte.Location = new System.Drawing.Point(19, 250);
+            this.dgvCorte.Name = "dgvCorte";
+            this.dgvCorte.Size = new System.Drawing.Size(304, 136);
+            this.dgvCorte.TabIndex = 11;
             // 
             // btnElimiar
             // 
-            this.btnElimiar.Location = new System.Drawing.Point(174, 246);
+            this.btnElimiar.Location = new System.Drawing.Point(171, 220);
             this.btnElimiar.Name = "btnElimiar";
             this.btnElimiar.Size = new System.Drawing.Size(75, 24);
-            this.btnElimiar.TabIndex = 28;
+            this.btnElimiar.TabIndex = 9;
             this.btnElimiar.Text = "Elimiar";
             this.btnElimiar.UseVisualStyleBackColor = true;
+            this.btnElimiar.Click += new System.EventHandler(this.btnElimiar_Click);
             // 
             // frm_Cortes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 424);
+            this.ClientSize = new System.Drawing.Size(349, 401);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCorte);
             this.Controls.Add(this.btnElimiar);
             this.Controls.Add(this.groupBox2);
             this.Name = "frm_Cortes";
@@ -227,29 +215,27 @@
             this.Text = "frm_Cortes";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCorte)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbMotivo;
+        private System.Windows.Forms.TextBox txbRetoma;
+        private System.Windows.Forms.TextBox txbLugar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCorte;
         private System.Windows.Forms.Button btnElimiar;
+        private System.Windows.Forms.MaskedTextBox mskHoraSalida;
+        private System.Windows.Forms.MaskedTextBox mskHora;
     }
 }

@@ -91,8 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\ConfiguracionPassword.cs" />
+    <Compile Include="Entidades\Diaria\CierrePlanilla\Accidente.cs" />
     <Compile Include="Entidades\Diaria\CierrePlanilla\ContolUnidad.cs" />
     <Compile Include="Entidades\Diaria\CierrePlanillaLaboral.cs" />
+    <Compile Include="Entidades\Diaria\CierrePlanilla\CorteViaPublica.cs" />
+    <Compile Include="Entidades\Diaria\CierrePlanilla\Lesionados.cs" />
+    <Compile Include="Entidades\Diaria\CierrePlanilla\Testigo.cs" />
     <Compile Include="Entidades\Diaria\GrillaDiaria.cs" />
     <Compile Include="Entidades\Diaria\PlanillaLab.cs" />
     <Compile Include="Entidades\Frecuencia\Frecuencia.cs" />

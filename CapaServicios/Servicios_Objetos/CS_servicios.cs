@@ -152,5 +152,63 @@ namespace CapaServicios
                 }
             }
         }
+
+        public void LimpiarTodoControl(Control control)
+        {
+            if (control is TextBox)
+            {
+                ((TextBox)control).Clear();
+            }
+            else if (control is ComboBox)
+            {
+                ((ComboBox)control).SelectedIndex = -1;
+            }
+            else if (control is CheckBox)
+            {
+                ((CheckBox)control).Checked = false;
+            }
+            else if (control is RadioButton)
+            {
+                ((RadioButton)control).Checked = false;
+            }
+            else if (control is MaskedTextBox)
+            {
+                ((MaskedTextBox)control).Text = string.Empty;
+            }
+            else if (control is DateTimePicker)
+            {
+                ((DateTimePicker)control).Value = DateTime.Now;
+            }
+            else if (control is GroupBox)
+            {
+                foreach (Control hijo in ((GroupBox)control).Controls)
+                {
+                    LimpiarControl(hijo);
+                }
+            }
+            else if (control is Panel)
+            {
+                foreach (Control hijo in ((Panel)control).Controls)
+                {
+                    LimpiarControl(hijo);
+                }
+            }
+            else if (control is TableLayoutPanel)
+            {
+                foreach (Control hijo in ((TableLayoutPanel)control).Controls)
+                {
+                    LimpiarControl(hijo);
+                }
+            }
+        }
+
+
+        public void BloquearControl(Control control) { }
+
+        public void DesbloquearControl(Control control)
+        {
+
+        }
+
     }
 }

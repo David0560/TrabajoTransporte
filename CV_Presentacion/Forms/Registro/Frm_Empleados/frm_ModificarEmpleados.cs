@@ -51,7 +51,7 @@ namespace CV_Presentacion.Frm_Empleados
 
                 // Crear una instancia de la clase Persona con los datos capturados
                Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea);
-
+               
                 // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
                 CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
                 administradorEmpleados.ModificarPersona(modificopersona);

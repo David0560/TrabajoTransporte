@@ -107,6 +107,7 @@
     <Compile Include="Taller\CL_Articulo.cs" />
     <Compile Include="Taller\CL_RInsumos.cs" />
     <Compile Include="Usuarios\CL_AdministrarUsuario.cs" />
+    <Compile Include="ValidarObjeto.cs" />
     <Compile Include="Vehiculos\CL_Vehiculos.cs" />
   </ItemGroup>
   <ItemGroup>

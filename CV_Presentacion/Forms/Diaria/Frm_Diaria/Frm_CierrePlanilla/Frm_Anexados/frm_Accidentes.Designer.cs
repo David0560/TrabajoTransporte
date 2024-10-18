@@ -41,29 +41,29 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.grbUbicacion = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.mskHora = new System.Windows.Forms.MaskedTextBox();
+            this.txbAltura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbLugar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbTelefono = new System.Windows.Forms.TextBox();
+            this.txbNRegistro = new System.Windows.Forms.TextBox();
+            this.txbNumero = new System.Windows.Forms.TextBox();
+            this.txbDomicilio = new System.Windows.Forms.TextBox();
+            this.txbNombre = new System.Windows.Forms.TextBox();
+            this.txbApellido = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txbPoliza = new System.Windows.Forms.TextBox();
+            this.txbCSeguro = new System.Windows.Forms.TextBox();
+            this.txbTitulo = new System.Windows.Forms.TextBox();
+            this.txbPatente = new System.Windows.Forms.TextBox();
+            this.txbModelo = new System.Windows.Forms.TextBox();
+            this.txbMarca = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.txbDescripcion = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grbUbicacion.SuspendLayout();
@@ -181,10 +181,10 @@
             // 
             // grbUbicacion
             // 
-            this.grbUbicacion.Controls.Add(this.maskedTextBox1);
-            this.grbUbicacion.Controls.Add(this.textBox2);
+            this.grbUbicacion.Controls.Add(this.mskHora);
+            this.grbUbicacion.Controls.Add(this.txbAltura);
             this.grbUbicacion.Controls.Add(this.label1);
-            this.grbUbicacion.Controls.Add(this.textBox1);
+            this.grbUbicacion.Controls.Add(this.txbLugar);
             this.grbUbicacion.Controls.Add(this.lblLugar);
             this.grbUbicacion.Controls.Add(this.label2);
             this.grbUbicacion.Location = new System.Drawing.Point(12, 10);
@@ -194,21 +194,21 @@
             this.grbUbicacion.TabStop = false;
             this.grbUbicacion.Text = "Ubicación";
             // 
-            // maskedTextBox1
+            // mskHora
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(497, 24);
-            this.maskedTextBox1.Mask = "00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(39, 20);
-            this.maskedTextBox1.TabIndex = 5;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mskHora.Location = new System.Drawing.Point(497, 24);
+            this.mskHora.Mask = "00:00";
+            this.mskHora.Name = "mskHora";
+            this.mskHora.Size = new System.Drawing.Size(39, 20);
+            this.mskHora.TabIndex = 5;
+            this.mskHora.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox2
+            // txbAltura
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(88, 20);
-            this.textBox2.TabIndex = 4;
+            this.txbAltura.Location = new System.Drawing.Point(346, 24);
+            this.txbAltura.Name = "txbAltura";
+            this.txbAltura.Size = new System.Drawing.Size(88, 20);
+            this.txbAltura.TabIndex = 4;
             // 
             // label1
             // 
@@ -219,21 +219,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Altura:";
             // 
-            // textBox1
+            // txbLugar
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 20);
-            this.textBox1.TabIndex = 2;
+            this.txbLugar.Location = new System.Drawing.Point(67, 24);
+            this.txbLugar.Name = "txbLugar";
+            this.txbLugar.Size = new System.Drawing.Size(214, 20);
+            this.txbLugar.TabIndex = 2;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txbTelefono);
+            this.groupBox2.Controls.Add(this.txbNRegistro);
+            this.groupBox2.Controls.Add(this.txbNumero);
+            this.groupBox2.Controls.Add(this.txbDomicilio);
+            this.groupBox2.Controls.Add(this.txbNombre);
+            this.groupBox2.Controls.Add(this.txbApellido);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
@@ -247,47 +247,47 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Conductor";
             // 
-            // textBox8
+            // txbTelefono
             // 
-            this.textBox8.Location = new System.Drawing.Point(78, 184);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(79, 20);
-            this.textBox8.TabIndex = 20;
+            this.txbTelefono.Location = new System.Drawing.Point(78, 184);
+            this.txbTelefono.Name = "txbTelefono";
+            this.txbTelefono.Size = new System.Drawing.Size(79, 20);
+            this.txbTelefono.TabIndex = 20;
             // 
-            // textBox7
+            // txbNRegistro
             // 
-            this.textBox7.Location = new System.Drawing.Point(130, 91);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(122, 20);
-            this.textBox7.TabIndex = 19;
+            this.txbNRegistro.Location = new System.Drawing.Point(130, 91);
+            this.txbNRegistro.Name = "txbNRegistro";
+            this.txbNRegistro.Size = new System.Drawing.Size(122, 20);
+            this.txbNRegistro.TabIndex = 19;
             // 
-            // textBox5
+            // txbNumero
             // 
-            this.textBox5.Location = new System.Drawing.Point(78, 153);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(176, 20);
-            this.textBox5.TabIndex = 18;
+            this.txbNumero.Location = new System.Drawing.Point(78, 153);
+            this.txbNumero.Name = "txbNumero";
+            this.txbNumero.Size = new System.Drawing.Size(176, 20);
+            this.txbNumero.TabIndex = 18;
             // 
-            // textBox6
+            // txbDomicilio
             // 
-            this.textBox6.Location = new System.Drawing.Point(78, 122);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(176, 20);
-            this.textBox6.TabIndex = 17;
+            this.txbDomicilio.Location = new System.Drawing.Point(78, 122);
+            this.txbDomicilio.Name = "txbDomicilio";
+            this.txbDomicilio.Size = new System.Drawing.Size(176, 20);
+            this.txbDomicilio.TabIndex = 17;
             // 
-            // textBox4
+            // txbNombre
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 60);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 20);
-            this.textBox4.TabIndex = 16;
+            this.txbNombre.Location = new System.Drawing.Point(71, 60);
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.Size = new System.Drawing.Size(181, 20);
+            this.txbNombre.TabIndex = 16;
             // 
-            // textBox3
+            // txbApellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 15;
+            this.txbApellido.Location = new System.Drawing.Point(71, 29);
+            this.txbApellido.Name = "txbApellido";
+            this.txbApellido.Size = new System.Drawing.Size(181, 20);
+            this.txbApellido.TabIndex = 15;
             // 
             // label13
             // 
@@ -300,12 +300,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.textBox13);
-            this.groupBox3.Controls.Add(this.textBox14);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.txbPoliza);
+            this.groupBox3.Controls.Add(this.txbCSeguro);
+            this.groupBox3.Controls.Add(this.txbTitulo);
+            this.groupBox3.Controls.Add(this.txbPatente);
+            this.groupBox3.Controls.Add(this.txbModelo);
+            this.groupBox3.Controls.Add(this.txbMarca);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label9);
@@ -319,47 +319,47 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del Vehiculo";
             // 
-            // textBox12
+            // txbPoliza
             // 
-            this.textBox12.Location = new System.Drawing.Point(121, 178);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(113, 20);
-            this.textBox12.TabIndex = 26;
+            this.txbPoliza.Location = new System.Drawing.Point(121, 178);
+            this.txbPoliza.Name = "txbPoliza";
+            this.txbPoliza.Size = new System.Drawing.Size(113, 20);
+            this.txbPoliza.TabIndex = 26;
             // 
-            // textBox13
+            // txbCSeguro
             // 
-            this.textBox13.Location = new System.Drawing.Point(131, 148);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(128, 20);
-            this.textBox13.TabIndex = 25;
+            this.txbCSeguro.Location = new System.Drawing.Point(131, 148);
+            this.txbCSeguro.Name = "txbCSeguro";
+            this.txbCSeguro.Size = new System.Drawing.Size(128, 20);
+            this.txbCSeguro.TabIndex = 25;
             // 
-            // textBox14
+            // txbTitulo
             // 
-            this.textBox14.Location = new System.Drawing.Point(67, 118);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(192, 20);
-            this.textBox14.TabIndex = 24;
+            this.txbTitulo.Location = new System.Drawing.Point(67, 118);
+            this.txbTitulo.Name = "txbTitulo";
+            this.txbTitulo.Size = new System.Drawing.Size(192, 20);
+            this.txbTitulo.TabIndex = 24;
             // 
-            // textBox9
+            // txbPatente
             // 
-            this.textBox9.Location = new System.Drawing.Point(67, 88);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(119, 20);
-            this.textBox9.TabIndex = 23;
+            this.txbPatente.Location = new System.Drawing.Point(67, 88);
+            this.txbPatente.Name = "txbPatente";
+            this.txbPatente.Size = new System.Drawing.Size(119, 20);
+            this.txbPatente.TabIndex = 23;
             // 
-            // textBox10
+            // txbModelo
             // 
-            this.textBox10.Location = new System.Drawing.Point(67, 58);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(192, 20);
-            this.textBox10.TabIndex = 22;
+            this.txbModelo.Location = new System.Drawing.Point(67, 58);
+            this.txbModelo.Name = "txbModelo";
+            this.txbModelo.Size = new System.Drawing.Size(192, 20);
+            this.txbModelo.TabIndex = 22;
             // 
-            // textBox11
+            // txbMarca
             // 
-            this.textBox11.Location = new System.Drawing.Point(67, 28);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(192, 20);
-            this.textBox11.TabIndex = 21;
+            this.txbMarca.Location = new System.Drawing.Point(67, 28);
+            this.txbMarca.Name = "txbMarca";
+            this.txbMarca.Size = new System.Drawing.Size(192, 20);
+            this.txbMarca.TabIndex = 21;
             // 
             // label14
             // 
@@ -370,31 +370,33 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "Marca:";
             // 
-            // button1
+            // btnBorrar
             // 
-            this.button1.Location = new System.Drawing.Point(482, 347);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Borrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBorrar.Location = new System.Drawing.Point(482, 347);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 15;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // button2
+            // btnGuardar
             // 
-            this.button2.Location = new System.Drawing.Point(482, 379);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(482, 379);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // textBox15
+            // txbDescripcion
             // 
-            this.textBox15.Location = new System.Drawing.Point(13, 323);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(451, 86);
-            this.textBox15.TabIndex = 17;
+            this.txbDescripcion.Location = new System.Drawing.Point(13, 323);
+            this.txbDescripcion.Multiline = true;
+            this.txbDescripcion.Name = "txbDescripcion";
+            this.txbDescripcion.Size = new System.Drawing.Size(451, 86);
+            this.txbDescripcion.TabIndex = 17;
             // 
             // label15
             // 
@@ -413,7 +415,7 @@
             this.btnSalir.TabIndex = 19;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // frm_Accidentes
             // 
@@ -422,9 +424,9 @@
             this.ClientSize = new System.Drawing.Size(580, 424);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txbDescripcion);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grbUbicacion);
@@ -461,25 +463,25 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.MaskedTextBox mskHora;
+        private System.Windows.Forms.TextBox txbAltura;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txbLugar;
+        private System.Windows.Forms.TextBox txbNumero;
+        private System.Windows.Forms.TextBox txbDomicilio;
+        private System.Windows.Forms.TextBox txbNombre;
+        private System.Windows.Forms.TextBox txbApellido;
+        private System.Windows.Forms.TextBox txbNRegistro;
+        private System.Windows.Forms.TextBox txbTelefono;
+        private System.Windows.Forms.TextBox txbPatente;
+        private System.Windows.Forms.TextBox txbModelo;
+        private System.Windows.Forms.TextBox txbMarca;
+        private System.Windows.Forms.TextBox txbPoliza;
+        private System.Windows.Forms.TextBox txbCSeguro;
+        private System.Windows.Forms.TextBox txbTitulo;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txbDescripcion;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnSalir;
     }

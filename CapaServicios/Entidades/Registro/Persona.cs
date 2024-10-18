@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.MonthCalendar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CL_Negocios.Entidades
 {
@@ -72,5 +74,6 @@ namespace CL_Negocios.Entidades
             this.Email = email;
             this.Id_tarea = id_tarea;
         }
+
     }
 }
