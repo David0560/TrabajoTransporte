@@ -115,13 +115,11 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
                 mskHoraLabo.Clear();
                 limpiarLabelActualizar();
                 CargarPlanillas();
-                
             }
             else
             {
                 MessageBox.Show($"error al cargar los datos");
                 limpiarLabelActualizar();
-
             }
         }
 

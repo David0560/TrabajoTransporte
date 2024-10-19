@@ -15,6 +15,23 @@ namespace CV_Presentacion.Forms.Documentacion.Actualizar
         public frm_Licencia()
         {
             InitializeComponent();
+            ocultarCarga();
+        }
+
+        private void btnMas_Click(object sender, EventArgs e)
+        {
+            grbNuevaLicencia.Enabled = true;
+            lblNombreL.Focus();
+        }
+        private void ocultarCarga()
+        {
+            grbNuevaLicencia.Enabled = true;
+        }
+
+        private void btnGuardarL_Click(object sender, EventArgs e)
+        {
+
+            grbNuevaLicencia.Enabled = false;
         }
     }
 }
