@@ -2,6 +2,8 @@
 using System;
 using System.Windows.Forms;
 using CL_Negocios;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
 {
@@ -55,7 +57,7 @@ namespace CV_Presentacion.Forms.Registro.Frm_Vehiculos
             {
                 MessageBox.Show("Error al guardar el vehículo: " + ex.Message);
             }
-        }
 
+        }
     }
 }

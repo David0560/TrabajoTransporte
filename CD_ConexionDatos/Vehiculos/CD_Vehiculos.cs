@@ -1,6 +1,8 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using System;
+using CapaServicios.Entidades;
+using CL_Servicios.Entidades;
 
 namespace CD_ConexionDatos
 {
@@ -50,6 +52,60 @@ namespace CD_ConexionDatos
             {
                 // Manejo de excepción
                 throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
+            }
+        }
+        public void ModificarVehiculo(Vehiculo vehiculo) // Modificar
+        {
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand command = new SqlCommand("spModificarVehiculo", con) // Procedimiento almacenado
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Agregar los parámetros necesarios para la tabla Vehiculos
+                    command.Parameters.AddWithValue("@Id", vehiculo.Id);
+                    command.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta);
+                    command.Parameters.AddWithValue("@Dominio", vehiculo.Dominio);
+                    command.Parameters.AddWithValue("@Tipo", vehiculo.Tipo);
+                    command.Parameters.AddWithValue("@Marca", vehiculo.Marca);
+                    command.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
+                    command.Parameters.AddWithValue("@MarcaMotor", vehiculo.MarcaMotor);
+                    command.Parameters.AddWithValue("@NumeroMotor", vehiculo.NumeroMotor);
+                    command.Parameters.AddWithValue("@MarcaChasis", vehiculo.MarcaChasis);
+                    command.Parameters.AddWithValue("@NumeroChasis", vehiculo.NumeroChasis);
+                    command.Parameters.AddWithValue("@Estado", vehiculo.Estado);
+                    command.Parameters.AddWithValue("@CantidadPlazas", vehiculo.CantidadPlazas);
+                    command.Parameters.AddWithValue("@Km", vehiculo.Km);
+                    command.Parameters.AddWithValue("@IdCombustible", vehiculo.IdCombustible);
+
+                    // Ejecutar el comando para modificar el vehículo
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al modificar el vehículo: " + ex.Message);
+                }
+            }
+        }
+        public void ModificarVerificacion(int idVehiculo, DateTime fechaOtorgado, DateTime fechaVencimiento)
+        {
+
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("spModificarVerificacion", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                command.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
+                command.Parameters.AddWithValue("@FechaOtorgado", fechaOtorgado);
+                command.Parameters.AddWithValue("@FechaVencimiento", fechaVencimiento);
+                command.ExecuteNonQuery();
             }
         }
         public DataTable ObtengoVehículosPorPatente(string patente)

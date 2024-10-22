@@ -86,6 +86,7 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del proveedor:";
+ 
             // 
             // pictureBox1
             // 
@@ -219,7 +220,6 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Direccion:";
-        
             // 
             // txtPais
             // 

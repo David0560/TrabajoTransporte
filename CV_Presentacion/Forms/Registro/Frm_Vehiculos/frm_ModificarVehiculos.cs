@@ -2,6 +2,7 @@
 using CL_Negocios;
 using CL_Negocios.Empleados;
 using CL_Negocios.Entidades;
+using CL_Servicios.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.MonthCalendar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CV_Presentacion.Frm_Unidades
 {
@@ -193,56 +196,78 @@ namespace CV_Presentacion.Frm_Unidades
             {
                 // Capturamos los valores ingresados por el usuario
                 int id = Convert.ToInt32(lblid.Text);
-                string Marca = txtMarca.Text;
-                string Modelo = txtModelo.Text;
+                string dominio = txtDominio.Text;
+                string tipo = txtTipo.Text;
+                string marca = txtMarca.Text;
+                string modelo = txtModelo.Text;
+                string marcaMotor = txtMarcaMotor.Text;
+                string numeroMotor = txtNroMotor.Text;
+                string marcaChasis = txtMarcaChasis.Text;
+                string numeroChasis = txtNroChasis.Text;
+                string estado = txtEstado.Text;
+                int cantidadPlazas = (int)numericUpDownPlaza.Value;
+                decimal km = decimal.Parse(txtKms.Text);
+                int idCombustible;
+                 switch (cboCombustible.Text)
+    {
+        case "Diesel":
+            idCombustible = 1;
+            break;
+        case "Diesel Premium":
+            idCombustible = 2;
+            break;
+        case "Biodiesel":
+            idCombustible = 3;
+            break;
+        default:
+            throw new ArgumentException("Seleccione un tipo de combustible válido.");
+    }
 
-               
-    
 
-                string MarcaMotor = txtMarcaMotor.Text;
-                string NroMotor = txtNroMotor.Text;
-                string MarcaChasis = txtMarcaChasis.Text;
-                string NroChasis = txtNroChasis.Text;
-                string Patente = txtDominio.Text;
-                string CantPlazas = Convert.ToString(numericUpDownPlaza.Value);
-                string Km = txtKms.Text;
-                string Estado = txtEstado.Text;
-                int combustible;
-                switch (cboCombustible.Text)
+                // Agregar la información de la verificación (VTV)
+                DateTime fechaOtorgadoVTV = DateTime.Parse(mskFechaOtorgada.Text);
+                DateTime fechaVencimientoVTV = DateTime.Parse(mskFechaVencimiento.Text);
+
+                // Crear una instancia de la clase Vehiculo
+                var vehiculo = new Vehiculo
                 {
-                    case "Diesel":
-                        combustible = 1;
-                        break;
-                    case "Diesel Premium":
-                        combustible = 2;
-                        break;
-                    case "Biodiesel":
-                        combustible = 3;
-                        break;
-                }
-                string Tipo = txtTipo.Text;
+                    Id = id, // Asignamos el ID del vehículo
+                    Dominio = dominio,
+                    Tipo = tipo,
+                    Marca = marca,
+                    Modelo = modelo,
+                    MarcaMotor = marcaMotor,
+                    NumeroMotor = numeroMotor,
+                    MarcaChasis = marcaChasis,
+                    NumeroChasis = numeroChasis,
+                    Estado = estado,
+                    CantidadPlazas = cantidadPlazas,
+                    Km = km,
+                    IdCombustible = idCombustible,
+                    FechaOtorgadoVTV = fechaOtorgadoVTV,
+                    FechaVencimientoVTV = fechaVencimientoVTV
+                };
 
-              string FechaOtorgado = mskFechaOtorgada.Text;
-                string FechaVencimiento = mskFechaVencimiento.Text;
+                // Instanciamos la clase de negocio y guardamos el vehículo
+                CL_Vehiculos administrarVehiculos = new CL_Vehiculos();
+                administrarVehiculos.ModificarVehiculos(vehiculo);
 
+                // Modificar la verificación
+                administrarVehiculos.ModificarVerificacion(vehiculo.Id, vehiculo.FechaOtorgadoVTV, vehiculo.FechaVencimientoVTV);
 
-                // Crear una instancia de la clase Persona con los datos capturados
-            //    Persona modificopersona = new Persona(id, nombre, apellido, DateTime.Parse(fechaNacimiento), idDocumentoIdent, numeroDocumento, idSexo, idLocalidad, calle, Convert.ToInt32(numeroDomicilio), email, idTarea, telefono, DateTime.Parse(fechamodificacion));
-
-                // Instanciamos la clase CL_AdministrarEmpleados y guardamos el nuevo empleado
-              //  CL_AdministrarEmpleados administradorEmpleados = new CL_AdministrarEmpleados();
-                //administradorEmpleados.ModificarPersona(modificopersona);
-
-                MessageBox.Show("Empleado editado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Vehículo y verificación editados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ArgumentException ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Formato de datos incorrecto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al guardar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error al guardar el vehículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
