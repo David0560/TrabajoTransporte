@@ -48,5 +48,9 @@ namespace CL_Negocios
         {
             return cdVehiculos.ObtengoVehículosPorPatente(patente);
         }
+        public DataTable ObtenerVehículosPorVTV(string id_vehículo)
+        {
+            return cdVehiculos.ObtengoVehículosPorVTV(id_vehículo);
+        }
     }
 }

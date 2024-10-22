@@ -75,6 +75,32 @@ namespace CD_ConexionDatos
             }
             return dt;
         }
+        public DataTable ObtengoVehículosPorVTV(string id)
+        {
 
+            DataTable dt = new DataTable();
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand command = new SqlCommand("spObtenerVTVDeVehículos", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Asegúrate de que 'id' sea un número entero y lo conviertas adecuadamente
+                    command.Parameters.AddWithValue("@Id", Convert.ToInt32(id));
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por empresa: " + ex.Message);
+                }
+            }
+            return dt;
+        }
     }
 }
