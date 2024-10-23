@@ -42,7 +42,7 @@ namespace CV_Presentacion.Frm_Unidades
 
             if (string.IsNullOrEmpty(textoBusqueda))
             {
-                lsbPatente.Visible = false; // Ocultar el ListBox si no hay texto
+              //  lsbPatente.Visible = false; // Ocultar el ListBox si no hay texto
                 return; // No hacer nada si el textbox está vacío
             }
 
@@ -110,7 +110,8 @@ namespace CV_Presentacion.Frm_Unidades
                     {
                         DataRow filaVehiculo = filasVehiculos[0]; // Tomamos el primer resultado
                         txtBuscar.Text = filaVehiculo["Dominio"].ToString();
-                        lsbPatente.Items.Clear();
+                     
+                            lsbPatente.Items.Clear();
                         txtMarca.Enabled = false;
                         txtModelo.Enabled = false;
                         txtMarcaMotor.Enabled = false;
@@ -123,11 +124,12 @@ namespace CV_Presentacion.Frm_Unidades
                         cboCombustible.Enabled = false;
                         txtTipo.Enabled = false;
                         txtEstado.Enabled = false;
-                        lblid.Text = (filaVehiculo["id"].ToString());
                         
 
-                        // Llenar los datos del vehículo
-                        mskIngreso.Text = filaVehiculo["FechaAlta"].ToString();
+
+                            // Llenar los datos del vehículo
+                        lblid.Text = filaVehiculo["id"].ToString();
+                       mskIngreso.Text = filaVehiculo["FechaAlta"].ToString();
                         txtMarca.Text = filaVehiculo["Marca"].ToString();
                         txtModelo.Text = filaVehiculo["Modelo"].ToString();
                         txtMarcaMotor.Text = filaVehiculo["MarcaMotor"].ToString();
@@ -194,8 +196,10 @@ namespace CV_Presentacion.Frm_Unidades
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(lblid.Text) || !int.TryParse(lblid.Text, out int id))
+                    throw new ArgumentException("ID inválido.");
                 // Capturamos los valores ingresados por el usuario
-                int id = Convert.ToInt32(lblid.Text);
+              //  int id = Convert.ToInt32(lblid.Text);
                 string dominio = txtDominio.Text;
                 string tipo = txtTipo.Text;
                 string marca = txtMarca.Text;
@@ -207,7 +211,8 @@ namespace CV_Presentacion.Frm_Unidades
                 string estado = txtEstado.Text;
                 int cantidadPlazas = (int)numericUpDownPlaza.Value;
                 decimal km = decimal.Parse(txtKms.Text);
-                int idCombustible;
+                int idCombustible = 0;
+
                  switch (cboCombustible.Text)
     {
         case "Diesel":
@@ -249,11 +254,11 @@ namespace CV_Presentacion.Frm_Unidades
                 };
 
                 // Instanciamos la clase de negocio y guardamos el vehículo
-                CL_Vehiculos administrarVehiculos = new CL_Vehiculos();
-                administrarVehiculos.ModificarVehiculos(vehiculo);
+            
+                administradorVehiculos.ModificarVehiculos(vehiculo);
 
                 // Modificar la verificación
-                administrarVehiculos.ModificarVerificacion(vehiculo.Id, vehiculo.FechaOtorgadoVTV, vehiculo.FechaVencimientoVTV);
+                administradorVehiculos.ModificarVerificacion(vehiculo.Id, vehiculo.FechaOtorgadoVTV, vehiculo.FechaVencimientoVTV);
 
                 MessageBox.Show("Vehículo y verificación editados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

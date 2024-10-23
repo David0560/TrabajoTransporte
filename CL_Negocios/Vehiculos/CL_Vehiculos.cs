@@ -50,7 +50,23 @@ namespace CL_Negocios
             try
             {
 
-                cdVehiculos.ModificarVehiculo(vehiculo);
+                cdVehiculos.ModificarVehiculo(
+                    vehiculo.Id,
+                    vehiculo.FechaAlta,
+                    vehiculo.Dominio,
+                    vehiculo.Tipo,
+                    vehiculo.Marca,
+                    vehiculo.Modelo,
+                    vehiculo.MarcaMotor,
+                    vehiculo.NumeroMotor,
+                    vehiculo.MarcaChasis,
+                    vehiculo.NumeroChasis,
+                    vehiculo.Estado,
+                    vehiculo.CantidadPlazas,
+                    vehiculo.Km,
+                    vehiculo.IdCombustible
+           
+                );
 
             }
             catch (Exception ex)
@@ -59,9 +75,9 @@ namespace CL_Negocios
                 Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
             }
         }
-        public void ModificarVerificacion(int idVehiculo, DateTime fechaOtorgado, DateTime fechaVencimiento)
+        public void ModificarVerificacion(int Id, DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
         {
-            cdVehiculos.ModificarVerificacion(idVehiculo, fechaOtorgado, fechaVencimiento);
+            cdVehiculos.ModificarVerificacion(Id, fechaOtorgadoVTV, fechaVencimientoVTV);
         }
         public DataTable ObtenerVehículosPorPatente(string patente)
         {

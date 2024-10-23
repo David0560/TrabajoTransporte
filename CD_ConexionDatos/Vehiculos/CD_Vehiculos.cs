@@ -54,7 +54,11 @@ namespace CD_ConexionDatos
                 throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
             }
         }
-        public void ModificarVehiculo(Vehiculo vehiculo) // Modificar
+        public void ModificarVehiculo(int Id, DateTime FechaAlta, string Dominio, string Tipo, string Marca,
+                                   string Modelo, string MarcaMotor, string NumeroMotor,
+                                   string MarcaChasis, string NumeroChasis, string Estado,
+                                   int CantidadPlazas, decimal Km, int IdCombustible
+                               ) // Modificar
         {
             using (var con = connectionBD.CreaInstacia().CrearConexion())
             {
@@ -68,20 +72,20 @@ namespace CD_ConexionDatos
                     };
 
                     // Agregar los parámetros necesarios para la tabla Vehiculos
-                    command.Parameters.AddWithValue("@Id", vehiculo.Id);
-                    command.Parameters.AddWithValue("@FechaAlta", vehiculo.FechaAlta);
-                    command.Parameters.AddWithValue("@Dominio", vehiculo.Dominio);
-                    command.Parameters.AddWithValue("@Tipo", vehiculo.Tipo);
-                    command.Parameters.AddWithValue("@Marca", vehiculo.Marca);
-                    command.Parameters.AddWithValue("@Modelo", vehiculo.Modelo);
-                    command.Parameters.AddWithValue("@MarcaMotor", vehiculo.MarcaMotor);
-                    command.Parameters.AddWithValue("@NumeroMotor", vehiculo.NumeroMotor);
-                    command.Parameters.AddWithValue("@MarcaChasis", vehiculo.MarcaChasis);
-                    command.Parameters.AddWithValue("@NumeroChasis", vehiculo.NumeroChasis);
-                    command.Parameters.AddWithValue("@Estado", vehiculo.Estado);
-                    command.Parameters.AddWithValue("@CantidadPlazas", vehiculo.CantidadPlazas);
-                    command.Parameters.AddWithValue("@Km", vehiculo.Km);
-                    command.Parameters.AddWithValue("@IdCombustible", vehiculo.IdCombustible);
+                    command.Parameters.AddWithValue("@id",Id);
+               
+                    command.Parameters.AddWithValue("@Dominio", Dominio);
+                    command.Parameters.AddWithValue("@Tipo",Tipo);
+                    command.Parameters.AddWithValue("@Marca",Marca);
+                    command.Parameters.AddWithValue("@Modelo",Modelo);
+                    command.Parameters.AddWithValue("@MarcaMotor",MarcaMotor);
+                    command.Parameters.AddWithValue("@NumeroMotor",NumeroMotor);
+                    command.Parameters.AddWithValue("@MarcaChasis", MarcaChasis);
+                    command.Parameters.AddWithValue("@NumeroChasis", NumeroChasis);
+                    command.Parameters.AddWithValue("@Estado", Estado);
+                    command.Parameters.AddWithValue("@CantidadPlazas", CantidadPlazas);
+                    command.Parameters.AddWithValue("@Km", Km);
+                    command.Parameters.AddWithValue("@IdCombustible", IdCombustible);
 
                     // Ejecutar el comando para modificar el vehículo
                     command.ExecuteNonQuery();
@@ -102,7 +106,7 @@ namespace CD_ConexionDatos
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                command.Parameters.AddWithValue("@IdVehiculo", idVehiculo);
+                command.Parameters.AddWithValue("@Id", idVehiculo);
                 command.Parameters.AddWithValue("@FechaOtorgado", fechaOtorgado);
                 command.Parameters.AddWithValue("@FechaVencimiento", fechaVencimiento);
                 command.ExecuteNonQuery();
