@@ -46,7 +46,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(103)))), ((int)(((byte)(242)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(313, 240);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -67,8 +67,8 @@
             this.button2.Location = new System.Drawing.Point(84, 240);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 48);
-            this.button2.TabIndex = 1;
+            this.button2.Size = new System.Drawing.Size(156, 49);
+            this.button2.TabIndex = 0;
             this.button2.Text = "&Volver";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -141,9 +141,11 @@
             // 
             // frmRecuperarPassword
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(545, 376);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
