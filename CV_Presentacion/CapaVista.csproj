@@ -433,6 +433,12 @@
     <Compile Include="Forms\Registro\Frm_Vehiculos\frm_ModificarVehiculos.Designer.cs">
       <DependentUpon>frm_ModificarVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Usuario\Frm_Usuario\frm_Respaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuario\Frm_Usuario\frm_Respaldo.Designer.cs">
+      <DependentUpon>frm_Respaldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prueba.cs">

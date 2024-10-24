@@ -15,6 +15,7 @@ using CV_Presentacion.Forms.Diaria.Frm_Diaria.Frm_CierrePlanilla;
 using CV_Presentacion.Forms.Informes.Frm_Informes;
 using CL_Negocios.ActualizarRegistros;
 using Microsoft.Win32;
+using CV_Presentacion.Forms.Usuario.Frm_Usuario;
 
 namespace CV_Presentacion
 {
@@ -199,7 +200,11 @@ namespace CV_Presentacion
             OpenChildForm(new frm_ConfiguracionPass(), sender);
             ocultarSubMenu();
         }
-
+        private void btnRespaldo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Respaldo(), sender);
+            ocultarSubMenu();
+        }
         // Registros
         private void btnInfo01_Click(object sender, EventArgs e) //Empleados
         {
@@ -316,14 +321,12 @@ namespace CV_Presentacion
             // Opcional: cerrar el formulario principal
             this.Hide();
         }
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+
         /*private void btnAjustConfig_Click(object sender, EventArgs e)
 {
-   OpenChildForm(new frm_ConfigPrincipal(), sender);
-   ocultarSubMenu();
+OpenChildForm(new frm_ConfigPrincipal(), sender);
+ocultarSubMenu();
 }*/
 
 
