@@ -19,9 +19,9 @@ namespace CV_Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(frmMenu = new FrmMenu());
+            //Application.Run(frmMenu = new FrmMenu());
             //Application.Run(new frm_Empleado());
-            //Application.Run(new FrmMenu());
+            Application.Run(new frmLogin());
         }
     }
 }

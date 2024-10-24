@@ -1,14 +1,17 @@
 ﻿using CapaServicios;
+using CD_ConexionDatos;
 using CL_Negocios;
 using CL_Negocios.Usuarios;
 using Microsoft.VisualBasic;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CV_Presentacion.Frm_Usuario
 {
     public partial class frm_Bloqueos : Form
     {
+        CD_loginUsuario log = new CD_loginUsuario();
         CL_administrarComboBox combo = new CL_administrarComboBox();
         CL_administrarTablas tabla = new CL_administrarTablas();
         CL_administrarTablas tabla2 = new CL_administrarTablas();
@@ -25,7 +28,6 @@ namespace CV_Presentacion.Frm_Usuario
         {
             InitializeComponent();
             configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
-
         }
 
         private void frm_Bloqueos_Load(object sender, EventArgs e)
@@ -35,8 +37,8 @@ namespace CV_Presentacion.Frm_Usuario
             //
             servicio.parametrosDataGridView(dgvListaUsuarios);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
+            configure.Configuracion(4, 8, true, true, false);
         }
-
         private void btnGuardarBloqueos_Click(object sender, EventArgs e)
         {
             string nombre = this.dgvListaUsuarios.SelectedRows[0].Cells[3].Value.ToString();
@@ -44,10 +46,13 @@ namespace CV_Presentacion.Frm_Usuario
             int id = Convert.ToInt32(this.dgvListaUsuarios.SelectedRows[0].Cells[0].Value);
             string estado = Convert.ToString(Interaction.InputBox($"Realizará cambios en el estado del \nUsuario: \n \n{nombre} \n \nColoque el estado que desee para el usuario \n0 = bloqueado, 1 = activo"));
             registro.bloquearUsuario(id, estado);
+            if (estado=="1")
+            {
+                log.AumentarIntentosDeUsuario(id, 0);
+            }
             //registro.LimpiarControlesEnTabPage(tabBloqueos);
             dgvListaUsuarios.DataSource = tabla.ListarUsuarios();
         }
-
         private void btnNuevoPassword_Click(object sender, EventArgs e)
         {
 
@@ -55,10 +60,15 @@ namespace CV_Presentacion.Frm_Usuario
             DialogResult resultado = MessageBox.Show($"Generará una nueva contraseña para el Usuario \n {usuario} \n ¿Está seguro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (resultado == DialogResult.OK)
             {
-                int id = Convert.ToInt32(this.dgvListaUsuarios.SelectedRows[0].Cells[0].Value);
+                int id = Convert.ToInt32(this.dgvListaUsuarios.SelectedRows[0].Cells[0].Value); // id_usuario
                 string nombre = Convert.ToString(this.dgvListaUsuarios.SelectedRows[0].Cells[3].Value);
                 registro.enviarNuevoPassword(id, nombre, configure);
+
+                //obtener el idPersona usando el idUsuario
+                int idE = registro.idUsuarioPorIdEmpleado(id);
+                registro.enviarCorreo(idE);
             }
+
 
         }
     }

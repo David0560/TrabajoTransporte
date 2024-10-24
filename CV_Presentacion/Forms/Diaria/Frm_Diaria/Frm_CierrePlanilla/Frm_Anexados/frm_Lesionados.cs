@@ -27,22 +27,17 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
             cargar();
             servicio.estiloDataGrid(dgvDatos);
         }
-
-
         public List<Lesionados> GetListaLesionados()
         {
             return listaLesionados;
         }
-
         public void cargar()
         {
             dgvDatos.DataSource = null; // Limpiar la fuente de datos
             dgvDatos.DataSource = listaLesionados;
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
             Lesionados Dato = new Lesionados(
                txbApellido.Text,
                txbNombre.Text,
@@ -54,24 +49,19 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
             listaLesionados.Add(Dato);
             cargar();
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             servicio.LimpiarTodoControl(groupBox2);
             txbApellido.Focus();
         }
-
         private void btnElimiar_Click(object sender, EventArgs e)
         {
-
             if (dgvDatos.SelectedRows.Count > 0)
             {
-
                 // Obtener el índice de la fila seleccionada
                 int index = dgvDatos.SelectedRows[0].Index;
 

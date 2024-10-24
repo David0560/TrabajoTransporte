@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\ConfiguracionPassword.cs" />
+    <Compile Include="Entidades\CorreoElectronico.cs" />
     <Compile Include="Entidades\Diaria\CierrePlanilla\Accidente.cs" />
     <Compile Include="Entidades\Diaria\CierrePlanilla\ContolUnidad.cs" />
     <Compile Include="Entidades\Diaria\CierrePlanillaLaboral.cs" />

@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.mrkHora = new System.Windows.Forms.MaskedTextBox();
@@ -65,15 +59,23 @@
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCierre = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.lblUnidad = new System.Windows.Forms.Label();
             this.lblHoraS = new System.Windows.Forms.Label();
             this.lblHoraSal = new System.Windows.Forms.Label();
             this.lblRamal = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblKmsalida = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCierre)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -84,70 +86,6 @@
             this.button1.TabIndex = 60;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 68;
-            this.label4.Text = "Ramal:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 67;
-            this.label1.Text = "Unidad:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "Empleado:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblRamal);
-            this.groupBox1.Controls.Add(this.lblHoraSal);
-            this.groupBox1.Controls.Add(this.lblHoraS);
-            this.groupBox1.Controls.Add(this.lblUnidad);
-            this.groupBox1.Controls.Add(this.lblEmpleado);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(437, 159);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 240);
-            this.groupBox1.TabIndex = 69;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos ";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(17, 161);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(109, 13);
-            this.label20.TabIndex = 71;
-            this.label20.Text = "Hora Salida Vehiculo:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 70;
-            this.label6.Text = "Hora Servicio:";
             // 
             // label7
             // 
@@ -445,6 +383,51 @@
             this.dgvCierre.TabIndex = 96;
             this.dgvCierre.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCierre_CellContentDoubleClick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "Empleado:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 202);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 68;
+            this.label4.Text = "Ramal:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Unidad:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 70;
+            this.label6.Text = "Hora Servicio:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(17, 134);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(109, 13);
+            this.label20.TabIndex = 71;
+            this.label20.Text = "Hora Salida Vehiculo:";
+            // 
             // lblEmpleado
             // 
             this.lblEmpleado.AutoSize = true;
@@ -456,7 +439,7 @@
             // lblUnidad
             // 
             this.lblUnidad.AutoSize = true;
-            this.lblUnidad.Location = new System.Drawing.Point(67, 75);
+            this.lblUnidad.Location = new System.Drawing.Point(67, 67);
             this.lblUnidad.Name = "lblUnidad";
             this.lblUnidad.Size = new System.Drawing.Size(0, 13);
             this.lblUnidad.TabIndex = 73;
@@ -464,7 +447,7 @@
             // lblHoraS
             // 
             this.lblHoraS.AutoSize = true;
-            this.lblHoraS.Location = new System.Drawing.Point(97, 118);
+            this.lblHoraS.Location = new System.Drawing.Point(96, 101);
             this.lblHoraS.Name = "lblHoraS";
             this.lblHoraS.Size = new System.Drawing.Size(0, 13);
             this.lblHoraS.TabIndex = 74;
@@ -472,7 +455,7 @@
             // lblHoraSal
             // 
             this.lblHoraSal.AutoSize = true;
-            this.lblHoraSal.Location = new System.Drawing.Point(132, 161);
+            this.lblHoraSal.Location = new System.Drawing.Point(132, 134);
             this.lblHoraSal.Name = "lblHoraSal";
             this.lblHoraSal.Size = new System.Drawing.Size(0, 13);
             this.lblHoraSal.TabIndex = 75;
@@ -484,6 +467,44 @@
             this.lblRamal.Name = "lblRamal";
             this.lblRamal.Size = new System.Drawing.Size(0, 13);
             this.lblRamal.TabIndex = 76;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(17, 168);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.TabIndex = 77;
+            this.label15.Text = "Km salida:";
+            // 
+            // lblKmsalida
+            // 
+            this.lblKmsalida.AutoSize = true;
+            this.lblKmsalida.Location = new System.Drawing.Point(78, 168);
+            this.lblKmsalida.Name = "lblKmsalida";
+            this.lblKmsalida.Size = new System.Drawing.Size(0, 13);
+            this.lblKmsalida.TabIndex = 78;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblKmsalida);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.lblRamal);
+            this.groupBox1.Controls.Add(this.lblHoraSal);
+            this.groupBox1.Controls.Add(this.lblHoraS);
+            this.groupBox1.Controls.Add(this.lblUnidad);
+            this.groupBox1.Controls.Add(this.lblEmpleado);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(437, 159);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(192, 240);
+            this.groupBox1.TabIndex = 69;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos ";
             // 
             // frm_CierrePlanilla
             // 
@@ -500,13 +521,13 @@
             this.Controls.Add(this.button1);
             this.Name = "frm_CierrePlanilla";
             this.Text = "frm_registros2";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCierre)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,11 +536,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox mrkHora;
@@ -549,12 +565,19 @@
         private System.Windows.Forms.Button btnRecambio;
         private System.Windows.Forms.Label lblCorte;
         private System.Windows.Forms.Button btnCorte;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dgvCierre;
-        private System.Windows.Forms.Label lblRamal;
-        private System.Windows.Forms.Label lblHoraSal;
-        private System.Windows.Forms.Label lblHoraS;
-        private System.Windows.Forms.Label lblUnidad;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblEmpleado;
+        private System.Windows.Forms.Label lblUnidad;
+        private System.Windows.Forms.Label lblHoraS;
+        private System.Windows.Forms.Label lblHoraSal;
+        private System.Windows.Forms.Label lblRamal;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblKmsalida;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

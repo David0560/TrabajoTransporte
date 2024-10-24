@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CL_Negocios.GrillaLaboral
 {
@@ -29,6 +30,7 @@ namespace CL_Negocios.GrillaLaboral
         {
             if (planillaC.GuardarRegitrosCierre(objeto))
             {
+
                 return true;
             }
             else
@@ -37,6 +39,7 @@ namespace CL_Negocios.GrillaLaboral
             }
         }
 
+        //Guardar Adicionales al Cierre.
         public bool GuardarControlUnidad(ContolUnidad objeto, int id)
         {
             if (ValidarObjeto.TienePropiedadesConDatos(objeto))
@@ -50,8 +53,24 @@ namespace CL_Negocios.GrillaLaboral
                 return false;
             }
         }
-
-        public void GuardarCortes(List<CorteViaPublica> corte, int id)
+        public bool GuardarRecorrida(List<CorteViaPublica> corte, List<Accidente> accidente, List<Lesionados> lesionado, List<Testigo> testigo, int id)
+        {
+            if (id != 0)
+            {
+                GuardarCortes(corte, id);
+                GuardarAccidente(accidente, id);
+                GuardarLesionados(lesionado, id);
+                GuardarTestigo(testigo, id);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+       
+        private void GuardarCortes(List<CorteViaPublica> corte, int id)
         {
             if (ValidarObjeto.TieneRegistros(corte))
             {
@@ -70,5 +89,61 @@ namespace CL_Negocios.GrillaLaboral
 
             }
         }
+        private void GuardarAccidente(List<Accidente> accidente, int id)
+        {
+            if (ValidarObjeto.TieneRegistros(accidente))
+            {
+                foreach (var objeto in accidente) // corregir el metodo si no tiene registro.
+                {
+                    if (ValidarObjeto.TienePropiedadesConDatos(objeto))
+                    {
+                        planillaC.GuardarAccidente(objeto, id);
+                    }
+                    else
+                    {
+                    }
+                }
+
+            }
+        }
+        private void GuardarLesionados(List<Lesionados> lesionado, int id)
+        {
+            if (ValidarObjeto.TieneRegistros(lesionado))
+            {
+                foreach (var objeto in lesionado) // corregir el metodo si no tiene registro.
+                {
+                    if (ValidarObjeto.TienePropiedadesConDatos(objeto))
+                    {
+                        planillaC.GuardarLesionados(objeto, id);
+                    }
+                    else
+                    {
+                    }
+                }
+            }
+        }
+        private void GuardarTestigo(List<Testigo> testigo, int id)
+        {
+            if (ValidarObjeto.TieneRegistros(testigo))
+            {
+                foreach (var objeto in testigo) // corregir el metodo si no tiene registro.
+                {
+                    if (ValidarObjeto.TienePropiedadesConDatos(objeto))
+                    {
+                        planillaC.GuardarTestigo(objeto, id);
+                    }
+                    else  
+                    {
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
     }
 }

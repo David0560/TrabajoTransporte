@@ -9,6 +9,7 @@ namespace CD_ConexionDatos.Usuarios
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
         int cantidad;
+        int idEmpleado;
         //
         // relacionados al Usuario
         //
@@ -107,6 +108,58 @@ namespace CD_ConexionDatos.Usuarios
 
             return idUsuario;
         }
+        public int ObtenerIdEmpleadoPorIdUsuario(int idUsuario)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spUbicarIdEmpleadoPorIdUsuario", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xidUsuario", idUsuario);
 
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        idEmpleado= Convert.ToInt32(reader["id_persona"]);
+                    }
+                }
+                con.Close();
+            }
+
+            return idEmpleado;
+        }
+
+        public DataTable obtenerDatosMail(int idPersona)
+        {
+            try
+            {
+                using (con = connectionBD.CreaInstacia().CrearConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand("spEnviarMail", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.Add(new SqlParameter("@xidPersona", con));
+                        comando.Parameters["@xidPersona"].Value = idPersona;
+                        DataTable mail = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(comando);
+                        con.Open();
+                        da.Fill(mail);
+                        return mail;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally // permite colocar una condicion para saber el estado de la conexión
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close(); // cierra la conexión
+                }
+            }
+        }
     }
 }

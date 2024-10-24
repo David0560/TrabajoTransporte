@@ -34,16 +34,27 @@ namespace CL_Negocios
         {
             DataTable data =  _crearTablas.tablaPermisosPorFamilia(id_familia, "spListarPermisosPorTipoUser");
             return data;
-
+        }
+        public DataTable permisosParaCargar(int id)
+        {
+            DataTable data = _crearTablas.cargarRolesRestantes(id, "spListarPermisosNoEnFamilia");
+            return data;
         }
         public DataTable permisosPorUsuario(int id_usuario)
         {
             DataTable data = _crearTablas.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");
             return data;
         }
+        public DataTable permisosNoUsuario(int id_usuario)
+        {
+            DataTable data = _crearTablas.tablaPermisos(id_usuario, "spListarRolesNoUsuario");
+            return data;
+        }
         public DataTable ListarUsuarios()
         {
-            DataTable data = _crearTablas.listarQuery("spListarUsuarios");
+            DataTable data = new DataTable();
+            data = null;
+            data = _crearTablas.listarQuery("spListarUsuarios");
             return data;
         }
         public DataTable ListarPreguntas()
@@ -51,7 +62,6 @@ namespace CL_Negocios
             DataTable data = _crearTablas.listarQuery("spListarPreguntas");
             return data;
         }
-
         public DataTable nuevoPermisosParaUsuario(int id_usuario)
         {
             DataTable data = _crearTablas.tablaPermisos(id_usuario, "spListaPermisosPorUsuario");

@@ -130,6 +130,88 @@ namespace CD_ConexionDatos.Negocio
                 con.Close();
             }
         }
+        public void GuardarAccidente(Accidente objeto, int id)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+
+                SqlCommand comando = new SqlCommand("spGuardarNuevoAccidente", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                comando.Parameters.AddWithValue("@xlugar", objeto.Lugar);
+                comando.Parameters.AddWithValue("@xaltura", objeto.Altura);
+                comando.Parameters.AddWithValue("@xhora", objeto.Hora);
+
+                comando.Parameters.AddWithValue("@xapellido", objeto.Apellido);
+                comando.Parameters.AddWithValue("@xnombre", objeto.Nombre);
+                comando.Parameters.AddWithValue("@xnumeroRegistro", objeto.NumeroRegistro);
+                comando.Parameters.AddWithValue("@xdomicilio", objeto.Domicilio);
+                comando.Parameters.AddWithValue("@xnumero", objeto.Numero);
+                comando.Parameters.AddWithValue("@xtelefono", objeto.Telefono);
+
+                comando.Parameters.AddWithValue("@xmarca", objeto.Marca);
+                comando.Parameters.AddWithValue("@xmodelo", objeto.Modelo);
+                comando.Parameters.AddWithValue("@xpatente", objeto.Patente);
+                comando.Parameters.AddWithValue("@xtitularDelVehiculo", objeto.TitularDelVehiculo);
+                comando.Parameters.AddWithValue("@xcompañia", objeto.Compañia);
+                comando.Parameters.AddWithValue("@xnumeroPoliza", objeto.NumeroPoliza);
+                comando.Parameters.AddWithValue("@xdescripcion", objeto.Descripcion);
+                comando.Parameters.AddWithValue("@xid_CierreP", id);
+
+                comando.ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
+        public void GuardarLesionados(Lesionados objeto, int id)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+
+                SqlCommand comando = new SqlCommand("spGuardarNuevoLesionado", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                comando.Parameters.AddWithValue("@xnombre", objeto.Nombre);
+                comando.Parameters.AddWithValue("@xdomicilio", objeto.Domicilio);
+                comando.Parameters.AddWithValue("@xtelefono", objeto.Telefono);
+                comando.Parameters.AddWithValue("@xapellido", objeto.Apellido);
+                comando.Parameters.AddWithValue("@xdni", objeto.DNI);
+                comando.Parameters.AddWithValue("@xnumero", objeto.Numero);
+                comando.Parameters.AddWithValue("@xcierrep", id);
+
+                comando.ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
+        public void GuardarTestigo(Testigo objeto, int id)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+
+                SqlCommand comando = new SqlCommand("spGuardarNuevoTestigo", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                comando.Parameters.AddWithValue("@xdni", objeto.DNI);
+                comando.Parameters.AddWithValue("@xnombre", objeto.Nombre);
+                comando.Parameters.AddWithValue("@xdomicilio", objeto.Domicilio);
+                comando.Parameters.AddWithValue("@xtelefono", objeto.Telefono);
+                comando.Parameters.AddWithValue("@xcierrep", id);
+                comando.Parameters.AddWithValue("@xnumero", objeto.Numero);
+                comando.Parameters.AddWithValue("@xapellido", objeto.Apellido);            
+
+                comando.ExecuteNonQuery();
+
+                con.Close();
+            }
+        }
+
     }
 
 }

@@ -23,7 +23,7 @@ namespace CV_Presentacion.Forms.Frm_Registros
     {
         CL_AdministrarPlanillaCierre PCierre = new CL_AdministrarPlanillaCierre();
         CS_servicios servicio = new CS_servicios();
-
+        int id;
         private ContolUnidad ControlU; // Objeto para almacenar la persona de Form2
 
         private List<CorteViaPublica> listaCorte;
@@ -35,8 +35,12 @@ namespace CV_Presentacion.Forms.Frm_Registros
         {
             InitializeComponent();
             servicio.parametrosDataGridView(dgvCierre);
+
+            
+            
         }
 
+        //Botones con llamadas
         private void btnControlUnidad_Click(object sender, EventArgs e)
         {
             frm_ControlUnidad unidad = new frm_ControlUnidad();
@@ -70,7 +74,7 @@ namespace CV_Presentacion.Forms.Frm_Registros
 
             //recibir la lista de objetos desde formulario
             listaAccidente = accidente.GetListaAccidente();
-            lblAccidente.Text = listaCorte.Count().ToString();
+            lblAccidente.Text = listaAccidente.Count().ToString();
 
         }//listo
         private void btnLesionados_Click(object sender, EventArgs e)
@@ -89,8 +93,9 @@ namespace CV_Presentacion.Forms.Frm_Registros
 
             //recibir la lista de objetos desde formulariox
             listaTestigo = testigo.GetListaTestigo();
-            lblTestigo.Text = listaLesionado.Count().ToString();
+            lblTestigo.Text = listaTestigo.Count().ToString();
         }//listo
+
 
         private void CargarPlanillas()
         {
@@ -106,7 +111,7 @@ namespace CV_Presentacion.Forms.Frm_Registros
         }
         private void CargarRegistro()
         {
-            int id = Convert.ToInt32(this.dgvCierre.SelectedRows[0].Cells["id"].Value);
+            id = Convert.ToInt32(this.dgvCierre.SelectedRows[0].Cells["id"].Value);
             DataTable dt = new DataTable();
             dt = PCierre.verRegistro(id);
 
@@ -115,37 +120,45 @@ namespace CV_Presentacion.Forms.Frm_Registros
             lblHoraS.Text = dt.Rows[0][2].ToString();// Horalaboral
             lblHoraSal.Text = dt.Rows[0][3].ToString();// horaSAlida
             lblRamal.Text = dt.Rows[0][4].ToString();// ramal
+            lblKmsalida.Text = dt.Rows[0][5].ToString();// kilometros con los que salio
         }
-
         private void dgvCierre_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             CargarRegistro();
+            ErrorCargarUnidad();
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            int id = Convert.ToInt32(this.dgvCierre.SelectedRows[0].Cells["id"].Value);
+            id = Convert.ToInt32(this.dgvCierre.SelectedRows[0].Cells["id"].Value);
             int kmLlegada = Convert.ToInt32(txbKm.Text);
             int combustible = Convert.ToInt32(txbCombustible.Text);
             TimeSpan hora = TimeSpan.Parse(mrkHora.Text);
 
-            CierrePlanillaLaboral objeto = new CierrePlanillaLaboral(id, hora, kmLlegada,combustible);
-            
-            if (PCierre.GuardarCierre(objeto))
+            if (ValidarObjeto.ContieneDatos(ControlU)) 
             {
-                if (ControlU != null)
+                CierrePlanillaLaboral objeto = new CierrePlanillaLaboral(id, hora, kmLlegada, combustible);
+
+                if (PCierre.GuardarCierre(objeto))
                 {  
                     // Guardar el objeto en la base de datos
                     if (PCierre.GuardarControlUnidad(ControlU, id))
                     {
-                        MessageBox.Show("Control Unidad Guardado");
-                        PCierre.GuardarCortes(listaCorte, id);
-                    }else{
-                        MessageBox.Show("No se puede guardar. el control de unidad no tiene datos.");
+                        if (PCierre.GuardarRecorrida(listaCorte, listaAccidente, listaLesionado, listaTestigo, id))
+                        {
+                            MessageBox.Show("Todos los Documentos fueron guardados");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al cargar los registros, comuniquese con el administrador");
+                        }
+                        
+                    }
+                    else{
+                        MessageBox.Show("No se pudieron guardar los registros."); //
                     }
                 }else{
-                    MessageBox.Show("No se puede guardar. La control de unidad.");
+                    MessageBox.Show("No se puede guardar. La control de unidad.");//
                 }
                 MessageBox.Show($"El cierre fue guardado");
                 servicio.LimpiarFormulario(this);
@@ -157,7 +170,6 @@ namespace CV_Presentacion.Forms.Frm_Registros
                 limpiarLabelFormulario();
             }
         }
-
         private void limpiarLabelFormulario()
         {
             lblEmpleado.Text = "";
@@ -179,6 +191,24 @@ namespace CV_Presentacion.Forms.Frm_Registros
             if (lblControUnidad.Text == "1")
             {
                 btnControlUnidad.Enabled = false;
+            }
+            else
+            {
+                btnControlUnidad.Enabled = true;
+            }
+        }
+
+        private void MostrarContenido(int id) // pendiente (no esta funcionando)
+        {
+            if (id > 0)
+            {
+                btnControlUnidad.Enabled = false;
+                btnControlUnidad.Enabled = false;
+                btnCorte.Enabled = false;
+                btnRecambio.Enabled = false;
+                btnAccidente.Enabled = false;
+                btnLesionados.Enabled = false;
+                btnTestigo.Enabled = false;
             }
         }
     }

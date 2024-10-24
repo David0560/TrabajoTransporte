@@ -4,6 +4,8 @@ using CL_Negocios;
 using CapaServicios;
 using CL_Negocios.Entidades;
 using CL_Negocios.Usuarios;
+using CapaServicios.Entidades;
+using System.Web;
 
 
 namespace CV_Presentacion.Frm_Usuario
@@ -59,6 +61,7 @@ namespace CV_Presentacion.Frm_Usuario
 
                     // Registro del nuevo usuario
                     Usuario usuario = new Usuario(nombre, id_empleado, id_familia, fvp, fvu);
+
                     if (registro.insertarNuevoUsuario(usuario, configure))
                     {
                         MessageBox.Show("Nuevo Usuario cargado");
@@ -71,8 +74,13 @@ namespace CV_Presentacion.Frm_Usuario
                             Permisos permiso = new Permisos(id_famil_rol);
                             registro.insertarPermisoPorFamilia(permiso);
                         }
-
                         servicio.LimpiarControlesForm(this);
+
+                        // parametros para mail. id_empleado, nombre
+                        registro.enviarCorreo(id_empleado);
+
+
+
                     }
                     else
                     {
@@ -82,6 +90,7 @@ namespace CV_Presentacion.Frm_Usuario
                 else
                 {
                     MessageBox.Show("El empleado ya cuenta con un usuario");
+
                 }
             }
             else

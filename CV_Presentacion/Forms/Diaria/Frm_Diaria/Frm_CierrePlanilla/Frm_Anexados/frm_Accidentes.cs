@@ -23,20 +23,7 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
             txbApellido.Focus();
             listaAccidente = new List<Accidente>();
         }
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        public List<Accidente> GetListaAccidente()
-        {
-            return listaAccidente;
-        }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            servicio.LimpiarTodoControl(groupBox2);
-            txbApellido.Focus();
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -44,31 +31,40 @@ namespace CV_Presentacion.Forms.Diaria.Frm_Diaria
                 txbLugar.Text,
                 txbAltura.Text,
                 TimeSpan.Parse(mskHora.Text),
+
                 txbApellido.Text,
                 txbNombre.Text,
                 Convert.ToInt32(txbNRegistro.Text),
                 txbDomicilio.Text,
                 Convert.ToInt32(txbNumero.Text),
                 Convert.ToInt32(txbTelefono.Text),
+
                 txbMarca.Text,
                 txbModelo.Text,
                 txbPatente.Text,
                 txbTitulo.Text,
                 txbCSeguro.Text,
-                Convert.ToInt32(txbPoliza.Text),
+                txbPoliza.Text,
                 txbDescripcion.Text
                );
             listaAccidente.Add(Dato);
+            this.Close();
+
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
+        public List<Accidente> GetListaAccidente()
         {
-            this.Close();
+            return listaAccidente;
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             servicio.LimpiarControlesForm(this);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

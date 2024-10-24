@@ -63,6 +63,7 @@ namespace CD_ConexionDatos
 
         public DataTable listarQuery(string query)
         {
+            dt.Clear();
             try
             {
                 // primero creo una instancia de la clase connectionBD luego activo activo el constructor y por ultimo llamo al metodo para crear la conexion.
@@ -188,7 +189,39 @@ namespace CD_ConexionDatos
                 }
             }
         }
-
+        public DataTable cargarRolesRestantes(int id, string query)
+        {
+            //utilizo el DataReader que fue instanciado antes como dr"
+            //utiliso la variable declarada antes.
+            try
+            {
+                using (con = connectionBD.CreaInstacia().CrearConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand(query, con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.Add(new SqlParameter("@xid", con));
+                        comando.Parameters["@xid"].Value = id;
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(comando);
+                        con.Open();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally // permite colocar una condicion para saber el estado de la conexión
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close(); // cierra la conexión
+                }
+            }
+        }
         //
         // cargar roles en alta de usuario.
         //

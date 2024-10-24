@@ -9,6 +9,10 @@ namespace CL_Negocios
 {
     public static class ValidarObjeto
     {
+        public static bool ContieneDatos(object obj)
+        {
+            return obj != null;
+        }
         public static bool TieneRegistros<T>(List<T> lista)
         {
             return lista != null && lista.Count > 0;

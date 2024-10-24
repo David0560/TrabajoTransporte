@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using CapaSesion;
+using CL_Negocios.Entidades;
 
 namespace CD_ConexionDatos
 {
@@ -10,6 +11,8 @@ namespace CD_ConexionDatos
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
         int cantidad;
+        int cant;
+
         public int ubicarUsuarioExistent(string nombreUsuario)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
@@ -104,26 +107,76 @@ namespace CD_ConexionDatos
                 }
             }*/
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        // intentos en el login.
+        public void primerIngresoNuevoIntento(int idU)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spGuardarNuevointento", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xidU", idU);
+                comando.Parameters.AddWithValue("@xfecha", DateTime.Today);
+                comando.Parameters.AddWithValue("@xcant", 0);
+                comando.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+        public int cantidadDeIntentosDeUsuario(int idU)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
+            {
+                using (SqlCommand comando = new SqlCommand("spVerIntentosDelUsuario", con))
+                {
+                    
+                    comando.CommandType = CommandType.StoredProcedure;
+                    con.Open();// abro la conexion.
+                    comando.Parameters.Add(new SqlParameter("@xidU", con));
+                    comando.Parameters["@xidU"].Value = idU;
+
+                    using (SqlDataReader leer = comando.ExecuteReader())
+                    {
+                        while (leer.Read())
+                        {
+                            cant = Convert.ToInt32(leer["cantidad"]);
+                        }
+                    }
+                }
+            }
+            return cant;
+        }
+        public void AumentarIntentosDeUsuario(int idU, int CantInt)
+        {
+            using (con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("spActualizarIntentosDeUsuario", con);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@xidU", idU);
+                comando.Parameters.AddWithValue("@xfecha", DateTime.Today);
+                comando.Parameters.AddWithValue("@xcant", CantInt);
+                comando.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*public Usuario traerValoresUsuario(int id_usuario)
         {
             using (SqlCommand comando = new SqlCommand("spCargarDatosUsuario", con))
@@ -156,7 +209,7 @@ namespace CD_ConexionDatos
 
                 }
             }
-        }*/ 
+        }*/
 
 
 

@@ -40,7 +40,7 @@ namespace CV_Presentacion
             switch (valor)
             {
                 case 1:
-                    msgError("Usuario no encontrado");
+                    msgError("Error: Usuario y/o contraseña erronea.");
                     //MessageBox.Show("No se encuentra usuario con este nombre", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtUsuario.Clear();
                     txtPassword.Clear();
@@ -48,7 +48,7 @@ namespace CV_Presentacion
                     break;
 
                 case 2:
-                    msgError("password no ingresado o incorrecto");
+                    msgError("Error: comuniquese son personal de sistema");
                     //MessageBox.Show("El password no fue ingresado o es incorrecto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPassword.Clear();
                     txtPassword.Focus();

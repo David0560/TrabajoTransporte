@@ -119,6 +119,7 @@
     <Compile Include="Entidades\cachePermisosAlta.cs" />
     <Compile Include="Entidades\ContrasenaUsuario.cs" />
     <Compile Include="Entidades\Pregunta.cs" />
+    <Compile Include="Usuarios\CD_RolesFamiliasUsuarios.cs" />
     <Compile Include="Usuarios\operaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Conexion\SQLServerConexion.cs" />
