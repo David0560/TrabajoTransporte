@@ -78,7 +78,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.mskFechaVencimiento);
+            this.groupBox2.Controls.Add(this.btnAceptar);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblVTV);
             this.groupBox2.Controls.Add(this.mskFechaOtorgada);
@@ -86,7 +88,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(527, 71);
+            this.groupBox2.Size = new System.Drawing.Size(783, 71);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VTV";
@@ -138,7 +140,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(705, 519);
+            this.btnAceptar.Location = new System.Drawing.Point(666, 27);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 33);
@@ -535,7 +537,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(601, 519);
+            this.button2.Location = new System.Drawing.Point(562, 27);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 33);
@@ -548,10 +550,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 571);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ModificarVehiculos";

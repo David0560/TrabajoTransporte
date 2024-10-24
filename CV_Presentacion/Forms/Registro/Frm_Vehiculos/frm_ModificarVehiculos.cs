@@ -69,11 +69,14 @@ namespace CV_Presentacion.Frm_Unidades
        
         private void frm_ModificarVehiculos_Load(object sender, EventArgs e)
         {
-
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
             txtMarca.Enabled = true;
             txtModelo.Enabled = true;
             txtMarcaMotor.Enabled = true;
@@ -274,6 +277,9 @@ namespace CV_Presentacion.Frm_Unidades
             {
                 MessageBox.Show("Ocurrió un error al guardar el vehículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
+            servicios.LimpiarFormulario(this);
         }
 
         private void cboCombustible_SelectedIndexChanged(object sender, EventArgs e)
