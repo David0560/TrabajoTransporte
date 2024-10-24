@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CL_Negocios;
+using CL_Negocios.Idioma;
 using CV_Presentacion.Forms;
 
 
@@ -18,6 +19,7 @@ namespace CV_Presentacion
     public partial class frmLogin : Form
     {
         CL_administrarLogin login = new CL_administrarLogin();
+        CL_Idioma cl_Idioma = new CL_Idioma();
         #region Movimiento Ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -28,9 +30,22 @@ namespace CV_Presentacion
         public frmLogin()
         {
             InitializeComponent();
+            
             #region Mover Panel
             pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
             #endregion
+            CargarIdiomas();
+        }
+        private void CargarIdiomas()
+        {
+            try
+            {
+                cl_Idioma.CargarIdiomas(cboIdioma); // Carga los idiomas en el ComboBox
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar idiomas: " + ex.Message);
+            }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {

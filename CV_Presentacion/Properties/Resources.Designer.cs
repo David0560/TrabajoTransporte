@@ -153,9 +153,29 @@ namespace CV_Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap esp {
+            get {
+                object obj = ResourceManager.GetObject("esp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_seguridad_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-seguridad-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ing {
+            get {
+                object obj = ResourceManager.GetObject("ing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

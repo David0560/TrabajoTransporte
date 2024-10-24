@@ -39,6 +39,7 @@
             this.lblError = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBarra = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.pbxMostrarPass = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
             this.btnCerrarLogin = new System.Windows.Forms.PictureBox();
             this.pbxMostrar = new System.Windows.Forms.PictureBox();
             this.pbxOcultar = new System.Windows.Forms.PictureBox();
+            this.cboIdioma = new System.Windows.Forms.ComboBox();
             this.pnlBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -87,10 +89,11 @@
             // lblRecupero
             // 
             this.lblRecupero.AutoSize = true;
-            this.lblRecupero.Location = new System.Drawing.Point(246, 642);
+            this.lblRecupero.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecupero.Location = new System.Drawing.Point(190, 463);
             this.lblRecupero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecupero.Name = "lblRecupero";
-            this.lblRecupero.Size = new System.Drawing.Size(171, 20);
+            this.lblRecupero.Size = new System.Drawing.Size(185, 25);
             this.lblRecupero.TabIndex = 2;
             this.lblRecupero.Text = "Recuperar Contraseña";
             this.lblRecupero.Click += new System.EventHandler(this.lblRecupero_Click);
@@ -141,7 +144,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Ebrima", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(36, 533);
+            this.btnAceptar.Location = new System.Drawing.Point(36, 557);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(350, 54);
@@ -154,12 +157,12 @@
             // 
             this.lblError.AutoEllipsis = true;
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Font = new System.Drawing.Font("Ebrima", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblError.Location = new System.Drawing.Point(57, 463);
+            this.lblError.Location = new System.Drawing.Point(57, 460);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(113, 20);
+            this.lblError.Size = new System.Drawing.Size(120, 25);
             this.lblError.TabIndex = 13;
             this.lblError.Text = "mensaje error";
             this.lblError.Visible = false;
@@ -183,6 +186,17 @@
             this.pnlBarra.Name = "pnlBarra";
             this.pnlBarra.Size = new System.Drawing.Size(430, 50);
             this.pnlBarra.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ebrima", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(110, 505);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 28);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Idioma:";
             // 
             // btnCerrar
             // 
@@ -270,6 +284,16 @@
             this.pbxOcultar.TabIndex = 0;
             this.pbxOcultar.TabStop = false;
             // 
+            // cboIdioma
+            // 
+            this.cboIdioma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.cboIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboIdioma.FormattingEnabled = true;
+            this.cboIdioma.Location = new System.Drawing.Point(194, 505);
+            this.cboIdioma.Name = "cboIdioma";
+            this.cboIdioma.Size = new System.Drawing.Size(121, 28);
+            this.cboIdioma.TabIndex = 22;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnAceptar;
@@ -277,6 +301,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.ClientSize = new System.Drawing.Size(430, 680);
+            this.Controls.Add(this.cboIdioma);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBarra);
             this.Controls.Add(this.pbxMostrarPass);
@@ -335,5 +361,7 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboIdioma;
     }
 }

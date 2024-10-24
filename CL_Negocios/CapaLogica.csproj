@@ -95,6 +95,7 @@
     <Compile Include="CL_AjustesSistema.cs" />
     <Compile Include="GrillaLaboral\CL_AdministrarPlanillaCierre.cs" />
     <Compile Include="GrillaLaboral\CL_AdministrarPlanillaSalida.cs" />
+    <Compile Include="Idioma\CL_Idioma.cs" />
     <Compile Include="Proveedores\CL_Proveedores.cs" />
     <Compile Include="Empleados\CL_AdministrarEmpleados.cs" />
     <Compile Include="GrillaLaboral\CL_AdministrarGrilla.cs" />

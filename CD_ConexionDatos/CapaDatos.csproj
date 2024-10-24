@@ -99,6 +99,7 @@
     <Compile Include="Entidades\CD_Ramal.cs" />
     <Compile Include="Entidades\PlanillaDiaria\Ramal.cs" />
     <Compile Include="Entidades\PlanillaDiaria\Unidad.cs" />
+    <Compile Include="Idioma\CD_Idioma.cs" />
     <Compile Include="Negocio\CD_Choferes.cs" />
     <Compile Include="Entidades\PlanillaLaboral.cs" />
     <Compile Include="Login\CD_loginUsuario.cs" />
