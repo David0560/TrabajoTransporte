@@ -67,7 +67,7 @@ namespace CV_Presentacion.Frm_Empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al guardar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error al modificar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             servicios.LimpiarFormulario(this);
             servicios.BloquearControl(this);
@@ -77,7 +77,8 @@ namespace CV_Presentacion.Frm_Empleados
             rbNomAp.Enabled = true;
             lsbEmpleado.Text = "";
             lsbEmpleado.Enabled = true;
-            
+            groupBox1.Enabled = false;
+            grpboxDireccion.Enabled = false;
             
 
 
@@ -157,7 +158,8 @@ namespace CV_Presentacion.Frm_Empleados
            
             if (lsbEmpleado.SelectedItem != null)
             {
-             
+                grpboxDireccion.Enabled = true;
+                groupBox1.Enabled = true;
                 string empleadoSeleccionado = lsbEmpleado.SelectedItem.ToString();
                
                 DataRow[] filasEncontradas;
@@ -232,6 +234,8 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void frm_ModificarEmpleados_Load(object sender, EventArgs e)
         {
+            groupBox1.Enabled = false;
+            grpboxDireccion.Enabled = false;
             combo.seleccionCombo(cboTarea, "spVerTareas");
             combo.seleccionCombo(cbTipoDNI, "spVerDocumentoIdent");
             combo.seleccionCombo(cbSexo, "spVerSexo");

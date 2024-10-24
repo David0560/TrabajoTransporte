@@ -65,8 +65,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblid = new System.Windows.Forms.Label();
             this.lsbPatente = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
@@ -78,7 +78,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.mskFechaVencimiento);
+            this.groupBox2.Controls.Add(this.btnAceptar);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblVTV);
             this.groupBox2.Controls.Add(this.mskFechaOtorgada);
@@ -86,7 +88,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(527, 71);
+            this.groupBox2.Size = new System.Drawing.Size(783, 71);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VTV";
@@ -126,6 +128,7 @@
             // 
             // mskFechaOtorgada
             // 
+            this.mskFechaOtorgada.Enabled = false;
             this.mskFechaOtorgada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskFechaOtorgada.Location = new System.Drawing.Point(153, 32);
             this.mskFechaOtorgada.Margin = new System.Windows.Forms.Padding(4);
@@ -137,13 +140,14 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(705, 519);
+            this.btnAceptar.Location = new System.Drawing.Point(666, 27);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 33);
             this.btnAceptar.TabIndex = 40;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // groupBox1
             // 
@@ -239,11 +243,16 @@
             // 
             this.cboCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCombustible.FormattingEnabled = true;
+            this.cboCombustible.Items.AddRange(new object[] {
+            "Diesel",
+            "Diesel Premium ",
+            "Biodiesel"});
             this.cboCombustible.Location = new System.Drawing.Point(548, 220);
             this.cboCombustible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCombustible.Name = "cboCombustible";
             this.cboCombustible.Size = new System.Drawing.Size(189, 28);
             this.cboCombustible.TabIndex = 31;
+            this.cboCombustible.SelectedIndexChanged += new System.EventHandler(this.cboCombustible_SelectedIndexChanged);
             // 
             // txtEstado
             // 
@@ -256,6 +265,7 @@
             // 
             // mskIngreso
             // 
+            this.mskIngreso.Enabled = false;
             this.mskIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskIngreso.Location = new System.Drawing.Point(275, 22);
             this.mskIngreso.Margin = new System.Windows.Forms.Padding(4);
@@ -313,9 +323,9 @@
             this.lblIngreso.Location = new System.Drawing.Point(193, 30);
             this.lblIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngreso.Name = "lblIngreso";
-            this.lblIngreso.Size = new System.Drawing.Size(55, 17);
+            this.lblIngreso.Size = new System.Drawing.Size(75, 17);
             this.lblIngreso.TabIndex = 4;
-            this.lblIngreso.Text = "Ingreso";
+            this.lblIngreso.Text = "Fecha Alta";
             // 
             // lblEstado
             // 
@@ -463,8 +473,8 @@
             // 
             this.groupBox3.Controls.Add(this.lblid);
             this.groupBox3.Controls.Add(this.lsbPatente);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.btnModificar);
+            this.groupBox3.Controls.Add(this.txtBuscar);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(33, 7);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -495,24 +505,25 @@
             this.lsbPatente.TabIndex = 53;
             this.lsbPatente.SelectedIndexChanged += new System.EventHandler(this.lsbPatente_SelectedIndexChanged);
             // 
-            // button1
+            // btnModificar
             // 
-            this.button1.Location = new System.Drawing.Point(484, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 33);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(484, 21);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(92, 33);
+            this.btnModificar.TabIndex = 52;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox10
+            // txtBuscar
             // 
-            this.textBox10.Location = new System.Drawing.Point(87, 25);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(389, 22);
-            this.textBox10.TabIndex = 38;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.txtBuscar.Location = new System.Drawing.Point(87, 25);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(389, 22);
+            this.txtBuscar.TabIndex = 38;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label4
             // 
@@ -526,7 +537,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(601, 519);
+            this.button2.Location = new System.Drawing.Point(562, 27);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 33);
@@ -539,14 +550,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 571);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ModificarVehiculos";
             this.Text = "Modificar Unidades";
+            this.Load += new System.EventHandler(this.frm_ModificarVehiculos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -596,8 +606,8 @@
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtDominio;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListBox lsbPatente;

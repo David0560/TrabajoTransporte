@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,14 +18,24 @@ namespace CV_Presentacion
         private frmLogin loginForm;
         private Usuario usuario;
         private int intentosFallidos = 0; // Contador de intentos fallidos
+        #region Movimiento Ventana
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #endregion
 
         public frmRespuestas(Usuario usuario)
         {
             InitializeComponent();
+            #region Mover Panel
+            pnlBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarra_MouseDown);
+            #endregion
             this.usuario = usuario;
-
             // Mostrar preguntas del usuario en los labels correspondientes
             MostrarPreguntas();
+
         }
 
         private void MostrarPreguntas()
@@ -107,6 +118,23 @@ namespace CV_Presentacion
                 }
             }
         }
-        
+
+        private void pnlBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmRecuperarPassword recuperoPassword = new frmRecuperarPassword();
+            recuperoPassword.Show();
+        }
     }
 }

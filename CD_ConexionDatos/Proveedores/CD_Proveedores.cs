@@ -19,7 +19,7 @@ namespace CD_ConexionDatos
         {
             con = connectionBD.CreaInstacia().CrearConexion();
         }
-        public void ModificoProveedor(Proveedores proveedores) // ALTA
+        public void ModificoProveedor(Proveedores proveedores) // Modicicar
         {
             using (var con = connectionBD.CreaInstacia().CrearConexion())
             {

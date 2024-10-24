@@ -1,6 +1,8 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using System;
+using CapaServicios.Entidades;
+using CL_Servicios.Entidades;
 
 namespace CD_ConexionDatos
 {
@@ -52,6 +54,64 @@ namespace CD_ConexionDatos
                 throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
             }
         }
+        public void ModificarVehiculo(int Id, DateTime FechaAlta, string Dominio, string Tipo, string Marca,
+                                   string Modelo, string MarcaMotor, string NumeroMotor,
+                                   string MarcaChasis, string NumeroChasis, string Estado,
+                                   int CantidadPlazas, decimal Km, int IdCombustible
+                               ) // Modificar
+        {
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand command = new SqlCommand("spModificarVehiculo", con) // Procedimiento almacenado
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Agregar los parámetros necesarios para la tabla Vehiculos
+                    command.Parameters.AddWithValue("@id",Id);
+               
+                    command.Parameters.AddWithValue("@Dominio", Dominio);
+                    command.Parameters.AddWithValue("@Tipo",Tipo);
+                    command.Parameters.AddWithValue("@Marca",Marca);
+                    command.Parameters.AddWithValue("@Modelo",Modelo);
+                    command.Parameters.AddWithValue("@MarcaMotor",MarcaMotor);
+                    command.Parameters.AddWithValue("@NumeroMotor",NumeroMotor);
+                    command.Parameters.AddWithValue("@MarcaChasis", MarcaChasis);
+                    command.Parameters.AddWithValue("@NumeroChasis", NumeroChasis);
+                    command.Parameters.AddWithValue("@Estado", Estado);
+                    command.Parameters.AddWithValue("@CantidadPlazas", CantidadPlazas);
+                    command.Parameters.AddWithValue("@Km", Km);
+                    command.Parameters.AddWithValue("@IdCombustible", IdCombustible);
+
+                    // Ejecutar el comando para modificar el vehículo
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al modificar el vehículo: " + ex.Message);
+                }
+            }
+        }
+        public void ModificarVerificacion(int idVehiculo, DateTime fechaOtorgado, DateTime fechaVencimiento)
+        {
+
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("spModificarVerificacion", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                command.Parameters.AddWithValue("@Id", idVehiculo);
+                command.Parameters.AddWithValue("@FechaOtorgado", fechaOtorgado);
+                command.Parameters.AddWithValue("@FechaVencimiento", fechaVencimiento);
+                command.ExecuteNonQuery();
+            }
+        }
         public DataTable ObtengoVehículosPorPatente(string patente)
         {
             DataTable dt = new DataTable();
@@ -75,6 +135,32 @@ namespace CD_ConexionDatos
             }
             return dt;
         }
+        public DataTable ObtengoVehículosPorVTV(string id)
+        {
 
+            DataTable dt = new DataTable();
+            using (var con = connectionBD.CreaInstacia().CrearConexion())
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand command = new SqlCommand("spObtenerVTVDeVehículos", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    // Asegúrate de que 'id' sea un número entero y lo conviertas adecuadamente
+                    command.Parameters.AddWithValue("@Id", Convert.ToInt32(id));
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw new ApplicationException("Error al obtener proveedores por empresa: " + ex.Message);
+                }
+            }
+            return dt;
+        }
     }
 }

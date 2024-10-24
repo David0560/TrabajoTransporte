@@ -44,9 +44,48 @@ namespace CL_Negocios
                 Console.WriteLine("Ocurrió un error al guardar el vehículo: " + ex.Message);
             }
         }
+        public void ModificarVehiculos(Vehiculo vehiculo) //EDITAR
+        {
+
+            try
+            {
+
+                cdVehiculos.ModificarVehiculo(
+                    vehiculo.Id,
+                    vehiculo.FechaAlta,
+                    vehiculo.Dominio,
+                    vehiculo.Tipo,
+                    vehiculo.Marca,
+                    vehiculo.Modelo,
+                    vehiculo.MarcaMotor,
+                    vehiculo.NumeroMotor,
+                    vehiculo.MarcaChasis,
+                    vehiculo.NumeroChasis,
+                    vehiculo.Estado,
+                    vehiculo.CantidadPlazas,
+                    vehiculo.Km,
+                    vehiculo.IdCombustible
+           
+                );
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+            }
+        }
+        public void ModificarVerificacion(int Id, DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
+        {
+            cdVehiculos.ModificarVerificacion(Id, fechaOtorgadoVTV, fechaVencimientoVTV);
+        }
         public DataTable ObtenerVehículosPorPatente(string patente)
         {
             return cdVehiculos.ObtengoVehículosPorPatente(patente);
+        }
+        public DataTable ObtenerVehículosPorVTV(string id_vehículo)
+        {
+            return cdVehiculos.ObtengoVehículosPorVTV(id_vehículo);
         }
     }
 }

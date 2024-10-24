@@ -77,22 +77,22 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Silver;
-            this.lblPassword.Location = new System.Drawing.Point(155, 394);
+            this.lblPassword.Location = new System.Drawing.Point(144, 394);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(112, 32);
+            this.lblPassword.Size = new System.Drawing.Size(134, 32);
             this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "Password";
+            this.lblPassword.Text = "Contraseña";
             // 
             // lblRecupero
             // 
             this.lblRecupero.AutoSize = true;
-            this.lblRecupero.Location = new System.Drawing.Point(261, 642);
+            this.lblRecupero.Location = new System.Drawing.Point(246, 642);
             this.lblRecupero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecupero.Name = "lblRecupero";
-            this.lblRecupero.Size = new System.Drawing.Size(156, 20);
+            this.lblRecupero.Size = new System.Drawing.Size(171, 20);
             this.lblRecupero.TabIndex = 2;
-            this.lblRecupero.Text = "Recuperar password";
+            this.lblRecupero.Text = "Recuperar Contraseña";
             this.lblRecupero.Click += new System.EventHandler(this.lblRecupero_Click);
             // 
             // txtUsuario
