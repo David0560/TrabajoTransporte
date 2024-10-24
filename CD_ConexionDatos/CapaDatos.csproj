@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="ActualizarRegistros\CD_ActualizarRegistros.cs" />
     <Compile Include="ActualizarRegistros\CD_CrearGrilla.cs" />
+    <Compile Include="CD_AjustesSistema.cs" />
     <Compile Include="CD_cargarComboBox.cs" />
     <Compile Include="Empleados\CD_RegistrarEmpleado.cs" />
     <Compile Include="Entidades\CD_Ramal.cs" />

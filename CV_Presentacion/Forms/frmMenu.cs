@@ -20,6 +20,8 @@ namespace CV_Presentacion
 {
     public partial class FrmMenu : Form
     {
+        private Timer inactivityTimer;
+        private const int inactivityLimit = 300000; // 60000 equivale a 1 minuto en milisegundos
         public CL_AdministrarRegistros registro = new CL_AdministrarRegistros();
 
 
@@ -28,6 +30,14 @@ namespace CV_Presentacion
         public FrmMenu()
         {
             InitializeComponent();
+            inactivityTimer = new Timer();
+            inactivityTimer.Interval = inactivityLimit; // Tiempo de inactividad
+            inactivityTimer.Tick += InactivityTimer_Tick;
+            inactivityTimer.Start();
+
+            // Suscribirse a eventos de interacción
+            this.MouseMove += ResetInactivityTimer;
+            this.KeyDown += ResetInactivityTimer;
             diseñoSubMenu();
         }
         private void FrmMenu_Load(object sender, EventArgs e)
@@ -292,11 +302,29 @@ namespace CV_Presentacion
             OpenChildForm(new frm_ConfigPrincipal(), sender);
             ocultarSubMenu();
         }
-        /*private void btnAjustConfig_Click(object sender, EventArgs e)
+        private void ResetInactivityTimer(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_ConfigPrincipal(), sender);
-            ocultarSubMenu();
-        }*/
+            inactivityTimer.Stop();
+            inactivityTimer.Start();
+        }
+        private void InactivityTimer_Tick(object sender, EventArgs e)
+        {
+            inactivityTimer.Stop();
+            frmLogin loginForm = new frmLogin();
+            loginForm.Show();
+
+            // Opcional: cerrar el formulario principal
+            this.Hide();
+        }
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        /*private void btnAjustConfig_Click(object sender, EventArgs e)
+{
+   OpenChildForm(new frm_ConfigPrincipal(), sender);
+   ocultarSubMenu();
+}*/
 
 
     }
