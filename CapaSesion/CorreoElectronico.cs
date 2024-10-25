@@ -6,7 +6,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Windows.Forms;
 
 namespace CapaServicios.Entidades
 {
@@ -14,7 +13,7 @@ namespace CapaServicios.Entidades
     {
         public static void sendMail(string to, string asunto, string body)
         {
-            string from = "busmanager.Transporte@gmail.com"; //correo de la empresa
+            string from = "busmanager.transporte@Gmail.com"; //correo de la empresa
             string displayName = "Recuperacion de Cuenta"; //Lo que se ve al recibir el mail
             try
             {
@@ -30,7 +29,7 @@ namespace CapaServicios.Entidades
 
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587)//Aquí debes sustituir tu servidor SMTP y el puerto
                 {
-                    Credentials = new NetworkCredential(from, "BusmanagerTransporte2024"), //correo , contraseña de la cuenta de la empresa
+                    Credentials = new NetworkCredential(from, "suyu nfdg xhnu wxnj"), //correo , contraseña de la cuenta de la empresa
                     EnableSsl = true//En caso de que tu servidor de correo no utilice cifrado SSL,poner en false
                 };
                 client.Send(mail);
@@ -42,4 +41,5 @@ namespace CapaServicios.Entidades
             }
         }
     }
+    
 }

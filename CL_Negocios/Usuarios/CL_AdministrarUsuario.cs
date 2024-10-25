@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CD_ConexionDatos.CD_Permisos;
 using CapaServicios.Entidades;
 using System.Data;
+using CapaSesion;
 
 namespace CL_Negocios.Usuarios
 {
@@ -256,15 +257,6 @@ namespace CL_Negocios.Usuarios
         }
         public void enviarCorreo(int id_empleado)
         {
-            //enviar correo al Usuario.
-            //string smtpServer = "smtp-relay.gmail.com";
-            string smtpServer = "smtp.gmail.com";
-            int smtPort = 587;
-            string smtpUser = "busmanager.transporte@gmail.com";
-            string smtPass = "BusmanagerTransporte2024";
-
-            CorreoElectronico mail = new CorreoElectronico(smtpServer, smtPort, smtpUser, smtPass);
-
             // traer metodos con los valores de email, usuario, passwordtemporal
             DataTable Tmail = _crearRegistros.obtenerDatosMail(id_empleado);
 
@@ -272,7 +264,22 @@ namespace CL_Negocios.Usuarios
             string passwordT = Tmail.Rows[0][1].ToString();
             string correoE = Tmail.Rows[0][2].ToString();
 
-            mail.EnviarCuerpoMail(correoE, nombre, passwordT);
+            try
+            {
+                // Set the static properties for the email
+                ArmarMail.DireccionCorreo = correoE;
+                ArmarMail.Asunto = "Recuperación de Cuenta";
+                ArmarMail.NuevaContraseña = passwordT;
+                ArmarMail.NombreUsuario = nombre;
+
+                // Prepare and send the email
+                ArmarMail.Preparar();
+                Console.WriteLine("Correo enviado con éxito.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }
 
     }
