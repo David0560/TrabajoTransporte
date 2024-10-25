@@ -615,6 +615,9 @@
     <EmbeddedResource Include="Forms\Usuario\Frm_Usuario\frm_PregunrtasDeSeguridad.resx">
       <DependentUpon>frm_PregunrtasDeSeguridad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuario\Frm_Usuario\frm_Respaldo.resx">
+      <DependentUpon>frm_Respaldo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
