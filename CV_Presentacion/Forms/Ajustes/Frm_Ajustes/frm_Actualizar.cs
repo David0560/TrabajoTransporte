@@ -23,6 +23,15 @@ namespace CV_Presentacion.Forms
         {
             InitializeComponent();
         }
-       
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

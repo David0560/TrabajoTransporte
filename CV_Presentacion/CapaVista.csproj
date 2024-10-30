@@ -193,22 +193,22 @@
     <Compile Include="Forms\Documentacion\Licencia\frm_MenuLicenciaEmpleado.Designer.cs">
       <DependentUpon>frm_MenuLicenciaEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuRamales.cs">
+    <Compile Include="Forms\Documentacion\Ramales\frm_MenuRamales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuRamales.Designer.cs">
+    <Compile Include="Forms\Documentacion\Ramales\frm_MenuRamales.Designer.cs">
       <DependentUpon>frm_MenuRamales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuTurnosTrabajo.cs">
+    <Compile Include="Forms\Documentacion\Turnos\frm_MenuTurnosTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuTurnosTrabajo.Designer.cs">
+    <Compile Include="Forms\Documentacion\Turnos\frm_MenuTurnosTrabajo.Designer.cs">
       <DependentUpon>frm_MenuTurnosTrabajo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuUnidad.cs">
+    <Compile Include="Forms\Documentacion\Unidades\frm_MenuUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\frm_MenuUnidad.Designer.cs">
+    <Compile Include="Forms\Documentacion\Unidades\frm_MenuUnidad.Designer.cs">
       <DependentUpon>frm_MenuUnidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Documentacion\Licencias\frm_Licencias.cs">
@@ -223,23 +223,23 @@
     <Compile Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.Designer.cs">
       <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\Ramales\Ramales.cs">
+    <Compile Include="Forms\Documentacion\Ramales\frm_Ramales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\Ramales\Ramales.Designer.cs">
-      <DependentUpon>Ramales.cs</DependentUpon>
+    <Compile Include="Forms\Documentacion\Ramales\frm_Ramales.Designer.cs">
+      <DependentUpon>frm_Ramales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\Turnos\Turnos.cs">
+    <Compile Include="Forms\Documentacion\Turnos\frm_Turnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\Turnos\Turnos.Designer.cs">
-      <DependentUpon>Turnos.cs</DependentUpon>
+    <Compile Include="Forms\Documentacion\Turnos\frm_Turnos.Designer.cs">
+      <DependentUpon>frm_Turnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\Unidades\Unidades.cs">
+    <Compile Include="Forms\Documentacion\Unidades\frm_Unidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Documentacion\Unidades\Unidades.Designer.cs">
-      <DependentUpon>Unidades.cs</DependentUpon>
+    <Compile Include="Forms\Documentacion\Unidades\frm_Unidades.Designer.cs">
+      <DependentUpon>frm_Unidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -495,13 +495,13 @@
     <EmbeddedResource Include="Forms\Documentacion\Licencia\frm_MenuLicenciaEmpleado.resx">
       <DependentUpon>frm_MenuLicenciaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\frm_MenuRamales.resx">
+    <EmbeddedResource Include="Forms\Documentacion\Ramales\frm_MenuRamales.resx">
       <DependentUpon>frm_MenuRamales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\frm_MenuTurnosTrabajo.resx">
+    <EmbeddedResource Include="Forms\Documentacion\Turnos\frm_MenuTurnosTrabajo.resx">
       <DependentUpon>frm_MenuTurnosTrabajo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\frm_MenuUnidad.resx">
+    <EmbeddedResource Include="Forms\Documentacion\Unidades\frm_MenuUnidad.resx">
       <DependentUpon>frm_MenuUnidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\Licencias\frm_Licencias.resx">
@@ -510,14 +510,14 @@
     <EmbeddedResource Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.resx">
       <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\Ramales\Ramales.resx">
-      <DependentUpon>Ramales.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Documentacion\Ramales\frm_Ramales.resx">
+      <DependentUpon>frm_Ramales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\Turnos\Turnos.resx">
-      <DependentUpon>Turnos.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Documentacion\Turnos\frm_Turnos.resx">
+      <DependentUpon>frm_Turnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\Unidades\Unidades.resx">
-      <DependentUpon>Unidades.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Documentacion\Unidades\frm_Unidades.resx">
+      <DependentUpon>frm_Unidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

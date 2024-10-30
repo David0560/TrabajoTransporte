@@ -1,6 +1,6 @@
 ﻿namespace CV_Presentacion.Forms.Documentacion.Turnos
 {
-    partial class Turnos
+    partial class frm_Turnos
     {
         /// <summary>
         /// Required designer variable.

@@ -16,5 +16,10 @@ namespace CV_Presentacion.Frm_Informes
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

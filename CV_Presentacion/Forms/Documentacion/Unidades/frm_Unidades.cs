@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CV_Presentacion.Forms.Documentacion.Ramales
+namespace CV_Presentacion.Forms.Documentacion.Unidades
 {
-    public partial class Ramales : Form
+    public partial class frm_Unidades : Form
     {
-        public Ramales()
+        public frm_Unidades()
         {
             InitializeComponent();
         }

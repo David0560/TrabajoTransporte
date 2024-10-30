@@ -1,6 +1,6 @@
 ﻿namespace CV_Presentacion.Forms.Documentacion.Unidades
 {
-    partial class Unidades
+    partial class frm_Unidades
     {
         /// <summary>
         /// Required designer variable.

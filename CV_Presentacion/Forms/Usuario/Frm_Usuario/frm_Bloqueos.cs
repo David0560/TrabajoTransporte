@@ -28,6 +28,8 @@ namespace CV_Presentacion.Frm_Usuario
         {
             InitializeComponent();
             configuracionPasswordBLL = new ConfiguracionPasswordBLL(connectionString);
+            lblLeyendaBloqueo.Text = "Cambia el estado en el quese encuentra\nel usuario que fue seleccionado.";
+            lblLeyendaPassword.Text = "Generará un nuevo password al usuario\nseleccionado para que vuelva\nintentar el ingreso al sistema";
         }
 
         private void frm_Bloqueos_Load(object sender, EventArgs e)
@@ -68,8 +70,6 @@ namespace CV_Presentacion.Frm_Usuario
                 int idE = registro.idUsuarioPorIdEmpleado(id);
                 registro.enviarCorreo(idE);
             }
-
-
         }
     }
 }

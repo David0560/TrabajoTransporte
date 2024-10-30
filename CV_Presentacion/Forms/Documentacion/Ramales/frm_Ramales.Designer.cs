@@ -1,6 +1,6 @@
 ﻿namespace CV_Presentacion.Forms.Documentacion.Ramales
 {
-    partial class Ramales
+    partial class frm_Ramales
     {
         /// <summary>
         /// Required designer variable.
