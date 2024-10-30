@@ -45,18 +45,21 @@
             this.grbPregunta.Controls.Add(this.label13);
             this.grbPregunta.Controls.Add(this.btnGuardarPregunta);
             this.grbPregunta.Controls.Add(this.textBox7);
-            this.grbPregunta.Location = new System.Drawing.Point(23, 79);
+            this.grbPregunta.Location = new System.Drawing.Point(34, 122);
+            this.grbPregunta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbPregunta.Name = "grbPregunta";
-            this.grbPregunta.Size = new System.Drawing.Size(518, 90);
+            this.grbPregunta.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbPregunta.Size = new System.Drawing.Size(777, 138);
             this.grbPregunta.TabIndex = 8;
             this.grbPregunta.TabStop = false;
             this.grbPregunta.Text = "Agregar";
             // 
             // btnEliminarPregunta
             // 
-            this.btnEliminarPregunta.Location = new System.Drawing.Point(345, 55);
+            this.btnEliminarPregunta.Location = new System.Drawing.Point(518, 85);
+            this.btnEliminarPregunta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminarPregunta.Name = "btnEliminarPregunta";
-            this.btnEliminarPregunta.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarPregunta.Size = new System.Drawing.Size(112, 35);
             this.btnEliminarPregunta.TabIndex = 4;
             this.btnEliminarPregunta.Text = "&Eliminar";
             this.btnEliminarPregunta.UseVisualStyleBackColor = true;
@@ -65,17 +68,19 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 26);
+            this.label13.Location = new System.Drawing.Point(20, 40);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 13);
+            this.label13.Size = new System.Drawing.Size(126, 20);
             this.label13.TabIndex = 2;
             this.label13.Text = "Nueva pregunta:";
             // 
             // btnGuardarPregunta
             // 
-            this.btnGuardarPregunta.Location = new System.Drawing.Point(426, 55);
+            this.btnGuardarPregunta.Location = new System.Drawing.Point(639, 85);
+            this.btnGuardarPregunta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardarPregunta.Name = "btnGuardarPregunta";
-            this.btnGuardarPregunta.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarPregunta.Size = new System.Drawing.Size(112, 35);
             this.btnGuardarPregunta.TabIndex = 1;
             this.btnGuardarPregunta.Text = "&Guardar";
             this.btnGuardarPregunta.UseVisualStyleBackColor = true;
@@ -83,37 +88,43 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(115, 23);
+            this.textBox7.Location = new System.Drawing.Point(172, 35);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(386, 20);
+            this.textBox7.Size = new System.Drawing.Size(577, 26);
             this.textBox7.TabIndex = 3;
             // 
             // lblTituloPregunta
             // 
             this.lblTituloPregunta.AutoSize = true;
-            this.lblTituloPregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloPregunta.Location = new System.Drawing.Point(124, 40);
+            this.lblTituloPregunta.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloPregunta.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTituloPregunta.Location = new System.Drawing.Point(186, 62);
+            this.lblTituloPregunta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloPregunta.Name = "lblTituloPregunta";
-            this.lblTituloPregunta.Size = new System.Drawing.Size(319, 24);
+            this.lblTituloPregunta.Size = new System.Drawing.Size(434, 32);
             this.lblTituloPregunta.TabIndex = 7;
             this.lblTituloPregunta.Text = "Cargar nueva pregunta de seguridad";
             // 
             // dgvPreguntas
             // 
             this.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPreguntas.Location = new System.Drawing.Point(23, 183);
+            this.dgvPreguntas.Location = new System.Drawing.Point(34, 282);
+            this.dgvPreguntas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvPreguntas.Name = "dgvPreguntas";
-            this.dgvPreguntas.Size = new System.Drawing.Size(525, 254);
+            this.dgvPreguntas.RowHeadersWidth = 62;
+            this.dgvPreguntas.Size = new System.Drawing.Size(788, 391);
             this.dgvPreguntas.TabIndex = 6;
             // 
             // frm_PregunrtasDeSeguridad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 476);
+            this.ClientSize = new System.Drawing.Size(856, 732);
             this.Controls.Add(this.grbPregunta);
             this.Controls.Add(this.lblTituloPregunta);
             this.Controls.Add(this.dgvPreguntas);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_PregunrtasDeSeguridad";
             this.Text = "Form5";
             this.grbPregunta.ResumeLayout(false);

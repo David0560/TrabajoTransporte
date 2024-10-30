@@ -42,8 +42,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ebrima", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(95, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(578, 45);
@@ -185,19 +186,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Restaurar";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(239, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(301, 26);
-            this.textBox2.TabIndex = 12;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(239, 95);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(301, 26);
             this.textBox3.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(239, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(301, 26);
+            this.textBox2.TabIndex = 12;
             // 
             // frm_Respaldo
             // 
