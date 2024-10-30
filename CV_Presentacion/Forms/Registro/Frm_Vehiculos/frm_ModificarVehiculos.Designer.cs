@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.mskFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVTV = new System.Windows.Forms.Label();
             this.mskFechaOtorgada = new System.Windows.Forms.MaskedTextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtMarcaChasis = new System.Windows.Forms.TextBox();
@@ -68,7 +69,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +93,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VTV";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(562, 27);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 33);
+            this.button2.TabIndex = 54;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // mskFechaVencimiento
             // 
             this.mskFechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +114,17 @@
             this.mskFechaVencimiento.Size = new System.Drawing.Size(105, 26);
             this.mskFechaVencimiento.TabIndex = 38;
             this.mskFechaVencimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(666, 27);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(96, 33);
+            this.btnAceptar.TabIndex = 40;
+            this.btnAceptar.Text = "Guardar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label1
             // 
@@ -137,17 +159,6 @@
             this.mskFechaOtorgada.Size = new System.Drawing.Size(105, 26);
             this.mskFechaOtorgada.TabIndex = 29;
             this.mskFechaOtorgada.ValidatingType = typeof(System.DateTime);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(666, 27);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(96, 33);
-            this.btnAceptar.TabIndex = 40;
-            this.btnAceptar.Text = "Guardar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // groupBox1
             // 
@@ -534,16 +545,6 @@
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 39;
             this.label4.Text = "Patente:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(562, 27);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 33);
-            this.button2.TabIndex = 54;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // frm_ModificarVehiculos
             // 
