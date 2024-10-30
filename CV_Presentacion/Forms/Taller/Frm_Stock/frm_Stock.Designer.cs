@@ -1,6 +1,6 @@
 ﻿namespace CV_Presentacion.Forms.Frm_Taller
 {
-    partial class frm_Mecanica
+    partial class frm_Stock
     {
         /// <summary>
         /// Required designer variable.
@@ -34,20 +34,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(365, 219);
+            this.label1.Location = new System.Drawing.Point(203, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "taller2";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Stock materiales";
             // 
-            // frm_Taller2
+            // frm_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Name = "frm_Taller2";
-            this.Text = "frm_Taller2";
+            this.Name = "frm_Stock";
+            this.Text = "frm_mecanica";
             this.ResumeLayout(false);
             this.PerformLayout();
 

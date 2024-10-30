@@ -1,4 +1,5 @@
 ﻿using CV_Presentacion.Forms.Taller.Frm_Insumos;
+using CV_Presentacion.Forms.Taller.Frm_Mecanica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,17 +39,17 @@ namespace CV_Presentacion.Forms.Frm_Taller
         }
         private void frm_MenuMecanica_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Mecanica(), sender);
+            OpenChildForm(new frm_MecanicaAlta(), sender);
         }
 
         private void btnAltaMecanica_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_Mecanica(), sender);
+            OpenChildForm(new frm_MecanicaAlta(), sender);
         }
 
         private void btnModificarMecanica_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frm_MecanicaCierre(), sender);
         }
 
         private void btnBuscarMecanica_Click(object sender, EventArgs e)

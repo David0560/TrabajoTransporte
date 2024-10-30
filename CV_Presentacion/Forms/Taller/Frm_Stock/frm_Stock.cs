@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CV_Presentacion.Forms.Frm_Taller
 {
-    public partial class frm_Mecanica : Form
+    public partial class frm_Stock : Form
     {
-        public frm_Mecanica()
+        public frm_Stock()
         {
             InitializeComponent();
         }
