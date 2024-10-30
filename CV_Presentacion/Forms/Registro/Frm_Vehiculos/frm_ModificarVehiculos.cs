@@ -202,7 +202,7 @@ namespace CV_Presentacion.Frm_Unidades
                 if (string.IsNullOrWhiteSpace(lblid.Text) || !int.TryParse(lblid.Text, out int id))
                     throw new ArgumentException("ID inválido.");
                 // Capturamos los valores ingresados por el usuario
-              //  int id = Convert.ToInt32(lblid.Text);
+        //       int myid = Convert.ToInt32(lblid.Text);
                 string dominio = txtDominio.Text;
                 string tipo = txtTipo.Text;
                 string marca = txtMarca.Text;
@@ -283,6 +283,11 @@ namespace CV_Presentacion.Frm_Unidades
         }
 
         private void cboCombustible_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

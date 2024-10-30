@@ -73,7 +73,6 @@ namespace CD_ConexionDatos
 
                     // Agregar los parámetros necesarios para la tabla Vehiculos
                     command.Parameters.AddWithValue("@id",Id);
-               
                     command.Parameters.AddWithValue("@Dominio", Dominio);
                     command.Parameters.AddWithValue("@Tipo",Tipo);
                     command.Parameters.AddWithValue("@Marca",Marca);

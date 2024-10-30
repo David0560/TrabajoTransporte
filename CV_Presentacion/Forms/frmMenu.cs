@@ -21,8 +21,8 @@ namespace CV_Presentacion
 {
     public partial class FrmMenu : Form
     {
-        private Timer inactivityTimer;
-        private const int inactivityLimit = 300000; // 60000 equivale a 1 minuto en milisegundos
+      //  private Timer inactivityTimer;
+       // private const int inactivityLimit = 300000; // 60000 equivale a 1 minuto en milisegundos
         public CL_AdministrarRegistros registro = new CL_AdministrarRegistros();
 
 
@@ -31,8 +31,8 @@ namespace CV_Presentacion
         public FrmMenu()
         {
             InitializeComponent();
-            inactivityTimer = new Timer();
-            inactivityTimer.Interval = inactivityLimit; // Tiempo de inactividad
+     /*       inactivityTimer = new Timer();
+            inactivityTimer.Interval = inactivityLimit;
             inactivityTimer.Tick += InactivityTimer_Tick;
             inactivityTimer.Start();
 
@@ -40,6 +40,7 @@ namespace CV_Presentacion
             this.MouseMove += ResetInactivityTimer;
             this.KeyDown += ResetInactivityTimer;
             diseñoSubMenu();
+     */
         }
         private void FrmMenu_Load(object sender, EventArgs e)
         {
@@ -307,7 +308,7 @@ namespace CV_Presentacion
             OpenChildForm(new frm_ConfigPrincipal(), sender);
             ocultarSubMenu();
         }
-        private void ResetInactivityTimer(object sender, EventArgs e)
+   /*     private void ResetInactivityTimer(object sender, EventArgs e)
         {
             inactivityTimer.Stop();
             inactivityTimer.Start();
@@ -320,6 +321,12 @@ namespace CV_Presentacion
 
             // Opcional: cerrar el formulario principal
             this.Hide();
+        }
+   */
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

@@ -64,15 +64,15 @@ namespace CL_Negocios
                     vehiculo.Estado,
                     vehiculo.CantidadPlazas,
                     vehiculo.Km,
-                    vehiculo.IdCombustible
+                    vehiculo.IdCombustible);
            
-                );
+                
 
             }
             catch (Exception ex)
             {
 
-                Console.WriteLine("Ocurrió un error al guardar el proveedor: " + ex.Message);
+                Console.WriteLine("Ocurrió un error al guardar el vehículo: " + ex.Message);
             }
         }
         public void ModificarVerificacion(int Id, DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
