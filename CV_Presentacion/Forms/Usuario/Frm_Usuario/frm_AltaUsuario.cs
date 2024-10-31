@@ -126,5 +126,10 @@ namespace CV_Presentacion.Frm_Usuario
                 listaPermiso();
             }
         }
+
+        public void DeshabilitarbtnGuardar()
+        {
+            button3.Enabled = false;
+        }
     }
 }

@@ -116,6 +116,7 @@
             this.Controls.Add(this.dgvPreguntas);
             this.Name = "frm_PregunrtasDeSeguridad";
             this.Text = "Form5";
+            this.Load += new System.EventHandler(this.frm_PregunrtasDeSeguridad_Load);
             this.grbPregunta.ResumeLayout(false);
             this.grbPregunta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreguntas)).EndInit();

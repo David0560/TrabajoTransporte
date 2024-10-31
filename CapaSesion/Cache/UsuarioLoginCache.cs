@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CapaSesion.Cache;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +15,7 @@ namespace CapaSesion
         public static string Apellido { get; set; }
         public static string Email { get; set; }
         public static string Familia { get; set; }
-        
-
+        public static List<PermisosUsuario> permisoUser { get; set; }
 
     }
 }

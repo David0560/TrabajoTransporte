@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaServicios;
+using System.Security.Permissions;
 
 namespace CD_ConexionDatos.Password
 {
     public class CD_RegistrosPassword
     {
         SqlConnection con = new SqlConnection(); // instancio la cadena para la conexion
+        string pass = "";
         public void GuardarNuevaContraseña(ContrasenaUsuario constrasena)
         {
             using (con = connectionBD.CreaInstacia().CrearConexion())
@@ -144,6 +146,36 @@ namespace CD_ConexionDatos.Password
 
             return idUsuario;
         }
+        public string ObtenerUltimoPass(int idUser)
+        {
+            
+            using (con = connectionBD.CreaInstacia().CrearConexion()) // realizo la conexion
+            {
+                
+                using (SqlCommand comando = new SqlCommand("spObtenerUltimoPasswordDeUsuario", con))
+                {
+                    con.Open();
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.Add(new SqlParameter("@xidUser", con));
+                    comando.Parameters["@xidUser"].Value = idUser;
+
+                    using (SqlDataReader leer = comando.ExecuteReader())
+                    {
+                        while (leer.Read())
+                        {
+                            pass = leer["contraseña"].ToString();
+                        }
+
+                    }
+                    con.Close();
+                }
+
+            }
+            return pass;
+        }
+
+
+
         private string ObtenerContraseñaActualDesdeBD(int idUsuario)
         {
             using (SqlConnection con = connectionBD.CreaInstacia().CrearConexion())

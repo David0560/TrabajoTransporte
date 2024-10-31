@@ -18,8 +18,6 @@ namespace CL_Negocios.Usuarios
         CS_contraseña _password = new CS_contraseña();
         CD_RegistrosPassword _dbPass = new CD_RegistrosPassword();
         CD_RegistrosPermisos _permisos = new CD_RegistrosPermisos();
-        
-
 
         private CD_RegistrosUsuarios _crearRegistros; //creo una propiedad con un objeto Crear Registro
         public CL_AdministrarUsuario()
@@ -154,7 +152,7 @@ namespace CL_Negocios.Usuarios
         }
 
         //
-        //validaciones y metodos
+        //validaciones y metodos  
         //
         public DateTime? ValidarFecha(string valor)
         {

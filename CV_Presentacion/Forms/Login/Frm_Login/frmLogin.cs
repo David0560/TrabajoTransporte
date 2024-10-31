@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaServicios;
 using CL_Negocios;
 using CL_Negocios.Idioma;
 using CV_Presentacion.Forms;
@@ -20,6 +21,7 @@ namespace CV_Presentacion
     {
         CL_administrarLogin login = new CL_administrarLogin();
         CL_Idioma cl_Idioma = new CL_Idioma();
+        CS_servicios servicio = new CS_servicios();
         #region Movimiento Ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -98,7 +100,8 @@ namespace CV_Presentacion
                     frm_Actualizar frmCambiar = new frm_Actualizar(txtUsuario.Text.ToString());
                     this.Hide(); 
                     frmCambiar.ShowDialog(); 
-                    this.Show(); 
+                    this.Show();
+                    servicio.LimpiarControlesForm(this);
                     break;
 
 

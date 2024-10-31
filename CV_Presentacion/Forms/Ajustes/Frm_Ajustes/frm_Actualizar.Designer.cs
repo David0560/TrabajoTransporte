@@ -43,15 +43,15 @@
             // 
             // txtContraseñaActual
             // 
-            this.txtContraseñaActual.Location = new System.Drawing.Point(175, 163);
+            this.txtContraseñaActual.Location = new System.Drawing.Point(198, 107);
             this.txtContraseñaActual.Name = "txtContraseñaActual";
-            this.txtContraseñaActual.Size = new System.Drawing.Size(228, 20);
+            this.txtContraseñaActual.Size = new System.Drawing.Size(128, 20);
             this.txtContraseñaActual.TabIndex = 1;
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(93, 115);
+            this.lblUsuario.Location = new System.Drawing.Point(135, 79);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 3;
@@ -60,7 +60,7 @@
             // lblContraseñaActual
             // 
             this.lblContraseñaActual.AutoSize = true;
-            this.lblContraseñaActual.Location = new System.Drawing.Point(61, 167);
+            this.lblContraseñaActual.Location = new System.Drawing.Point(87, 111);
             this.lblContraseñaActual.Name = "lblContraseñaActual";
             this.lblContraseñaActual.Size = new System.Drawing.Size(94, 13);
             this.lblContraseñaActual.TabIndex = 4;
@@ -68,7 +68,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(327, 264);
+            this.btnAceptar.Location = new System.Drawing.Point(240, 210);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 11;
@@ -79,7 +79,7 @@
             // lblRepetir
             // 
             this.lblRepetir.AutoSize = true;
-            this.lblRepetir.Location = new System.Drawing.Point(17, 222);
+            this.lblRepetir.Location = new System.Drawing.Point(40, 166);
             this.lblRepetir.Name = "lblRepetir";
             this.lblRepetir.Size = new System.Drawing.Size(141, 13);
             this.lblRepetir.TabIndex = 6;
@@ -87,15 +87,15 @@
             // 
             // txtNuevaContraseña
             // 
-            this.txtNuevaContraseña.Location = new System.Drawing.Point(175, 189);
+            this.txtNuevaContraseña.Location = new System.Drawing.Point(198, 133);
             this.txtNuevaContraseña.Name = "txtNuevaContraseña";
-            this.txtNuevaContraseña.Size = new System.Drawing.Size(228, 20);
+            this.txtNuevaContraseña.Size = new System.Drawing.Size(128, 20);
             this.txtNuevaContraseña.TabIndex = 12;
             // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(241, 115);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(195, 79);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(35, 13);
             this.lblNombreUsuario.TabIndex = 9;
@@ -104,7 +104,7 @@
             // lblNuevaContraseña
             // 
             this.lblNuevaContraseña.AutoSize = true;
-            this.lblNuevaContraseña.Location = new System.Drawing.Point(61, 193);
+            this.lblNuevaContraseña.Location = new System.Drawing.Point(85, 137);
             this.lblNuevaContraseña.Name = "lblNuevaContraseña";
             this.lblNuevaContraseña.Size = new System.Drawing.Size(96, 13);
             this.lblNuevaContraseña.TabIndex = 5;
@@ -112,14 +112,14 @@
             // 
             // txtRepetir
             // 
-            this.txtRepetir.Location = new System.Drawing.Point(175, 218);
+            this.txtRepetir.Location = new System.Drawing.Point(198, 162);
             this.txtRepetir.Name = "txtRepetir";
-            this.txtRepetir.Size = new System.Drawing.Size(228, 20);
+            this.txtRepetir.Size = new System.Drawing.Size(128, 20);
             this.txtRepetir.TabIndex = 13;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(175, 264);
+            this.btnVolver.Location = new System.Drawing.Point(88, 210);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 14;
@@ -131,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 53);
+            this.label1.Location = new System.Drawing.Point(76, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 20);
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 464);
+            this.ClientSize = new System.Drawing.Size(409, 265);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtRepetir);

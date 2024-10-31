@@ -1,4 +1,5 @@
-﻿using CL_Negocios;
+﻿using CapaServicios;
+using CL_Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,25 +16,11 @@ namespace CV_Presentacion.Frm_Usuario
     {
 
         CL_administrarPreguntas pre = new CL_administrarPreguntas();
+        CS_servicios servicio = new CS_servicios();
         public frm_PregunrtasDeSeguridad()
         {
             InitializeComponent();
-
         }
-
-        /*private void ckbPregunta_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckbPregunta.CheckState == CheckState.Checked) //desactivo el grupo que contiene agregar una nueva pregunta.
-            {
-                grbPregunta.Visible = false;
-                lblTituloPregunta.Text = "Opción de configuracion bloqueada.";
-            }
-            else
-            {
-                grbPregunta.Visible = true;
-                lblTituloPregunta.Text = "Cargar nueva pregunta de seguridad";
-            }
-        }*/
 
         private void btnEliminarPregunta_Click_1(object sender, EventArgs e)
         {
@@ -42,8 +29,7 @@ namespace CV_Presentacion.Frm_Usuario
             if (resultado == DialogResult.OK)
             {
                 pre.eliminarPregunta(id);
-                //registro.LimpiarControlesEnTabPage(tabPreguntas);
-
+                listados();
             }
         }
 
@@ -54,11 +40,26 @@ namespace CV_Presentacion.Frm_Usuario
             if (valor)
             {
                 MessageBox.Show("pregunta guardad");
+                listados();
             }
             else
             {
                 MessageBox.Show("se esperaba un nueva pregunta intente nuevamente.");
             }
+        }
+
+        private void frm_PregunrtasDeSeguridad_Load(object sender, EventArgs e)
+        {
+            listados();
+        }
+
+        private void listados() 
+        {
+            dgvPreguntas.DataSource = null;
+            servicio.parametrosDataGridView(dgvPreguntas);
+
+            dgvPreguntas.DataSource = pre.Preguntas();
+            dgvPreguntas.Columns["id"].Visible = false; // columna oculta
         }
     }
 }

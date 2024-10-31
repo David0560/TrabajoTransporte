@@ -103,6 +103,7 @@ namespace CD_ConexionDatos.Usuarios
                 con.Close();
             }
         }
-
+        // permisos de usuario
+       
     }
 }

@@ -16,6 +16,12 @@ using CV_Presentacion.Forms.Informes.Frm_Informes;
 using CL_Negocios.ActualizarRegistros;
 using Microsoft.Win32;
 using CV_Presentacion.Forms.Usuario.Frm_Usuario;
+using CL_Negocios.Usuarios;
+using System.Collections.Generic;
+using CL_Negocios;
+using CL_Negocios.Entidades;
+using static System.Windows.Forms.LinkLabel;
+using CapaSesion.Cache;
 
 namespace CV_Presentacion
 {
@@ -24,13 +30,16 @@ namespace CV_Presentacion
       //  private Timer inactivityTimer;
        // private const int inactivityLimit = 300000; // 60000 equivale a 1 minuto en milisegundos
         public CL_AdministrarRegistros registro = new CL_AdministrarRegistros();
-
-
+        public CL_GestionarPermisos gestorPermiso;
 
         private Form activeForm;
         public FrmMenu()
         {
             InitializeComponent();
+            OcultarBotonesEnPanel(pnlMenu);
+            gestorPermiso = new CL_GestionarPermisos();
+            PermisosUsuario();
+            diseñoSubMenu();
      /*       inactivityTimer = new Timer();
             inactivityTimer.Interval = inactivityLimit;
             inactivityTimer.Tick += InactivityTimer_Tick;
@@ -39,7 +48,7 @@ namespace CV_Presentacion
             // Suscribirse a eventos de interacción
             this.MouseMove += ResetInactivityTimer;
             this.KeyDown += ResetInactivityTimer;
-            diseñoSubMenu();
+            ;
      */
         }
         private void FrmMenu_Load(object sender, EventArgs e)
@@ -329,14 +338,204 @@ namespace CV_Presentacion
 
         }
 
+        // Cargar los permisos del usuario actual
+        private void PermisosUsuario()
+        {
+            // Cargar los permisos del usuario actual
+            List<PermisosUsuario> permisosU = gestorPermiso.obtenerPermisos(Convert.ToInt32(UsuarioLoginCache.Id_usuario));
 
-        /*private void btnAjustConfig_Click(object sender, EventArgs e)
-{
-OpenChildForm(new frm_ConfigPrincipal(), sender);
-ocultarSubMenu();
-}*/
+            // Activar o desactivar botones según los permisos
+           
+            foreach (var permiso in permisosU)
+            {
+                switch (permiso.IdFamilia)
+                {
+                    case 1: // Admin
+                        btnUsuario.Visible = true;
+                        btnAjustes.Visible = true;
+                        OcultarBotonesEnPanel(pnlUsuario);
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 1:
+                                    btmUserAlta.Visible = true;
+                                    break;
 
+                                case 2:
+                                    btmUserPermisos.Visible = true;
+                                    break;
 
+                                case 3:
+                                    btmUserBloqueos.Visible = true;
+                                    break;
+
+                                case 4:
+                                    btmUserGrupos.Visible = true;
+                                    break;
+
+                                case 5:
+                                    btnUserPreguntas.Visible = true;
+                                    break;
+
+                                case 6:
+                                    btmUserConfiguracion.Visible = true;
+                                    break;
+
+                                case 7:
+                                    btnRespaldo.Visible = true;
+                                    break;
+                                case 8:
+                                    break;
+
+                            }
+                        }
+                        break;
+                    case 2: // Directivos
+                        btnInformes.Visible = true;
+                        btnAjustes.Visible = true;
+                        OcultarBotonesEnPanel(pnlInformes);
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 9:
+                                    btnInfoEstadisticas.Visible = true;
+                                    break;
+
+                                case 10:
+                                    btnInfoInfo.Visible = true;
+                                    break;
+                                case 11:
+                                    break;
+                                case 12:
+                                    break;
+
+                            }
+                        }
+                        break;
+                    case 3: //Administrativo
+                        btnRegistros.Visible = true; // registros
+                        OcultarBotonesEnPanel(pnlRegistros);
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 13:
+                                    btnRegEmpleados.Visible = true;
+                                    break;
+                                case 14:
+                                    btnRegVehiculos.Visible = true;
+                                    break;
+                                case 15:
+                                    btnRegProveedores.Visible = true;
+                                    break;
+                            }
+                        }
+                        btnDocumento.Visible = true;
+                        OcultarBotonesEnPanel(pnlDocumentacion);
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 16:
+                                    btnDocLicencia.Visible = true;
+                                    break;
+
+                                case 17:
+                                    btnDocTurno.Visible = true;
+                                    break;
+
+                                case 18:
+                                    btnDocUnidad.Visible = true;
+                                    break;
+
+                                case 19:
+                                    btnDocRamales.Visible = true;
+                                    break;
+
+                                case 20:
+                                    btnDocVtv.Visible = true;
+                                    break;
+
+                            }
+                        }
+                        btnDiaria.Visible = true;
+                        OcultarBotonesEnPanel(pnlDiaria);
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 21:
+                                    btnDiaGrillaLaboral.Visible = true;
+                                    break;
+
+                                case 22:
+                                    btnDiaPlanillaS.Visible = true;
+                                    break;
+
+                                case 23:
+                                    btnDiaPlanillaC.Visible = true;
+                                    break;
+                                case 24:
+                                    break;
+                            }
+                        }
+                        btnTaller.Visible = true;
+                        OcultarBotonesEnPanel(pnlTaller);
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 25:
+                                    btnTallerCargaInsumos.Visible = true;
+                                    break;
+                                case 26:
+                                    btnTallerStock.Visible = true;
+                                    break;
+                                case 27:
+                                    btnTallerMecanica.Visible = true;
+                                    break;
+                                case 28:
+                                    break;
+                                case 29:
+                                    break;
+                            }
+                        }
+                        break;
+                    /*case 4:
+                        btnAjustes.Visible = true;
+                        foreach (var permiso2 in permisosU)
+                        {
+                            switch (permiso2.Id)
+                            {
+                                case 1:
+                                    btnAjustActPass.Visible = true;
+                                    break;
+
+                                case 2:
+                                    btnAjustConfig.Visible = true;
+                                    break;
+                            }
+                        }
+                        break;*/
+
+                        // ...
+                }
+
+            }
+        }
+
+        private void OcultarBotonesEnPanel(Panel miPanel)
+        {
+            foreach (Control control in miPanel.Controls)
+            {
+                if (control is Button) // Verifica si el control es un botón
+                {
+                    control.Visible = false; // Oculta el botón
+                }
+            }
+        }
     }
 }
 

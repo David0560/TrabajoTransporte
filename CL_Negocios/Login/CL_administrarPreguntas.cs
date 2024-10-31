@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace CL_Negocios
         private CD_Pregunta pregunta = new CD_Pregunta();
         private CD_PreguntaUsuario preguntaUsuario = new CD_PreguntaUsuario();
         private CD_RegistrosPassword _password = new CD_RegistrosPassword();
+        private CD_listarTablas lTablas = new CD_listarTablas();
 
         // Crea una nueva pregunta en la base de datos si el texto no está vacío
         public bool crearNuevaPregunta(string text)
@@ -48,6 +50,12 @@ namespace CL_Negocios
             int idUsuario = _password.ObtenerIdUsuarioPorNombre(nombreUsuario); // Obtiene el ID del usuario por su nombre
             preguntaUsuario.GuardarRespuestasUsuario(idUsuario, preguntasYRespuestas); // Guarda las respuestas del usuario
         }
-
+        // ver lista de preguntas de seguridad
+        public DataTable Preguntas()
+        {
+            string query = "spListarPreguntas";
+            DataTable tablaPregunta = lTablas.listarQuery(query);
+            return tablaPregunta;
+        }
     }
 }

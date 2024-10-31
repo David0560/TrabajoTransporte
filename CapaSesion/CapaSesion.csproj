@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmarMail.cs" />
+    <Compile Include="Cache\PermisosUsuario.cs" />
     <Compile Include="Cache\UsuarioLoginCache.cs" />
     <Compile Include="CorreoElectronico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
