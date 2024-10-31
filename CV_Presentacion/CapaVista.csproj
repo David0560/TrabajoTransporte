@@ -223,6 +223,12 @@
     <Compile Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.Designer.cs">
       <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Documentacion\Nuevo Ramal\frm_NuevoRamal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Nuevo Ramal\frm_NuevoRamal.Designer.cs">
+      <DependentUpon>frm_NuevoRamal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Documentacion\Ramales\Ramales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -515,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.resx">
       <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documentacion\Nuevo Ramal\frm_NuevoRamal.resx">
+      <DependentUpon>frm_NuevoRamal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\Ramales\Ramales.resx">
       <DependentUpon>Ramales.cs</DependentUpon>
