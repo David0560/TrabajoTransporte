@@ -223,7 +223,13 @@
     <Compile Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.Designer.cs">
       <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Documentacion\Ramales\frm_Ramales.cs">
+    <Compile Include="Forms\Documentacion\Nuevo Ramal\frm_NuevoRamal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Nuevo Ramal\frm_NuevoRamal.Designer.cs">
+      <DependentUpon>frm_NuevoRamal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documentacion\Ramales\Ramales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Documentacion\Ramales\frm_Ramales.Designer.cs">
@@ -295,6 +301,12 @@
     <Compile Include="Forms\Taller\Frm_Insumos\frm_MenuCargarInsumos.Designer.cs">
       <DependentUpon>frm_MenuCargarInsumos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Taller\Frm_Mecanica\frm_MecanicaCierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Taller\Frm_Mecanica\frm_MecanicaCierre.Designer.cs">
+      <DependentUpon>frm_MecanicaCierre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Taller\Frm_Mecanica\frm_MenuMecanica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,11 +361,11 @@
     <Compile Include="Forms\Registro\Frm_Empleados\frm_AltaEmpleados.Designer.cs">
       <DependentUpon>frm_AltaEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Taller\Frm_Mecanica\frm_Mecanica.cs">
+    <Compile Include="Forms\Taller\Frm_Mecanica\frm_MecanicaAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Taller\Frm_Mecanica\frm_Mecanica.Designer.cs">
-      <DependentUpon>frm_Mecanica.cs</DependentUpon>
+    <Compile Include="Forms\Taller\Frm_Mecanica\frm_MecanicaAlta.Designer.cs">
+      <DependentUpon>frm_MecanicaAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\Frm_Login\frmGuardarRespuestas.cs">
       <SubType>Form</SubType>
@@ -510,8 +522,8 @@
     <EmbeddedResource Include="Forms\Documentacion\Licencias\frm_ModificarLicencias.resx">
       <DependentUpon>frm_ModificarLicencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Documentacion\Ramales\frm_Ramales.resx">
-      <DependentUpon>frm_Ramales.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Documentacion\Ramales\Ramales.resx">
+      <DependentUpon>Ramales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Documentacion\Turnos\frm_Turnos.resx">
       <DependentUpon>frm_Turnos.cs</DependentUpon>
@@ -570,8 +582,8 @@
     <EmbeddedResource Include="Forms\Taller\Frm_Insumos\frm_MenuCargarInsumos.resx">
       <DependentUpon>frm_MenuCargarInsumos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Taller\Frm_Mecanica\frm_Mecanica.resx">
-      <DependentUpon>frm_Mecanica.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Taller\Frm_Mecanica\frm_MecanicaAlta.resx">
+      <DependentUpon>frm_MecanicaAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Frm_Login\frmGuardarRespuestas.resx">
       <DependentUpon>frmGuardarRespuestas.cs</DependentUpon>
@@ -590,6 +602,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Frm_Login\frmRespuestas.resx">
       <DependentUpon>frmRespuestas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Taller\Frm_Mecanica\frm_MecanicaCierre.resx">
+      <DependentUpon>frm_MecanicaCierre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Taller\Frm_Mecanica\frm_MenuMecanica.resx">
       <DependentUpon>frm_MenuMecanica.cs</DependentUpon>
