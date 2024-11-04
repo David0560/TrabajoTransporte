@@ -54,10 +54,10 @@ namespace CL_Negocios.Empleados
                 registrarEmpleado.EliminoEmpleado(id);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                Console.WriteLine("Ocurrió un error al eliminar el proveedor: " + ex.Message);
+                throw;
             }
         }
 

@@ -27,9 +27,9 @@ namespace CD_ConexionDatos
                 {
                     con.Open();
 
-                    SqlCommand command = new SqlCommand("spModificarProveedor", con) // Puedes usar un procedimiento almacenado si lo prefieres
+                    SqlCommand command = new SqlCommand("spModificarProveedor", con)
                     {
-                        CommandType = CommandType.StoredProcedure // Cambiar a CommandType.Text si no usas SP
+                        CommandType = CommandType.StoredProcedure
                     };
                     command.Parameters.AddWithValue("@Id", proveedores.Id);
                     command.Parameters.AddWithValue("@Empresa", proveedores.NombreEmpresa);
@@ -46,7 +46,7 @@ namespace CD_ConexionDatos
                 }
                 catch (Exception ex)
                 {
-                    // Manejo de excepción
+
                     throw new ApplicationException("Error al guardar el proveedor: " + ex.Message);
                 }
                 finally
@@ -140,32 +140,42 @@ namespace CD_ConexionDatos
         }
         public void EliminarProveedor(int proveedorId) // ELIMINAR
         {
+
             using (var con = connectionBD.CreaInstacia().CrearConexion())
             {
                 try
                 {
                     con.Open();
 
-                    SqlCommand command = new SqlCommand("spEliminarProveedor", con) // 
+                    SqlCommand command = new SqlCommand("spEliminarProveedor", con)
                     {
-                        CommandType = CommandType.StoredProcedure //
+                        CommandType = CommandType.StoredProcedure
+
                     };
                     command.Parameters.AddWithValue("@Id", proveedorId);
-
                     command.ExecuteNonQuery();
+                }
+                catch (SqlException sqlEx)
+                {
+                    // Manejo de excepción más específico
+                    throw new ApplicationException("Error al eliminar el proveedor en la base de datos: " + sqlEx.Message);
                 }
                 catch (Exception ex)
                 {
-                    // Manejo de excepción
+                    // Manejo de excepción general
                     throw new ApplicationException("Error al eliminar el proveedor: " + ex.Message);
                 }
-             
+                finally
+                {
+                    con.Close();
+                }
             }
         }
-
-
     }
+}
 
-    }
 
+    
+
+   
 

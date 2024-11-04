@@ -44,27 +44,26 @@ namespace CL_Negocios
                 Console.WriteLine("Ocurrió un error al guardar el vehículo: " + ex.Message);
             }
         }
-        public void ModificarVehiculos(Vehiculo vehiculo) //EDITAR
+        public void ModificarVehiculos(Vehiculo vehiculomodif) //EDITAR
         {
 
             try
             {
 
                 cdVehiculos.ModificarVehiculo(
-                    vehiculo.Id,
-                    vehiculo.FechaAlta,
-                    vehiculo.Dominio,
-                    vehiculo.Tipo,
-                    vehiculo.Marca,
-                    vehiculo.Modelo,
-                    vehiculo.MarcaMotor,
-                    vehiculo.NumeroMotor,
-                    vehiculo.MarcaChasis,
-                    vehiculo.NumeroChasis,
-                    vehiculo.Estado,
-                    vehiculo.CantidadPlazas,
-                    vehiculo.Km,
-                    vehiculo.IdCombustible);
+                    vehiculomodif.Id,
+                    vehiculomodif.Dominio,
+                    vehiculomodif.Tipo,
+                    vehiculomodif.Marca,
+                    vehiculomodif.Modelo,
+                    vehiculomodif.MarcaMotor,
+                    vehiculomodif.NumeroMotor,
+                    vehiculomodif.MarcaChasis,
+                    vehiculomodif.NumeroChasis,
+                    vehiculomodif.Estado,
+                    vehiculomodif.CantidadPlazas,
+                    vehiculomodif.Km,
+                    vehiculomodif.IdCombustible);
            
                 
 
@@ -75,9 +74,9 @@ namespace CL_Negocios
                 Console.WriteLine("Ocurrió un error al guardar el vehículo: " + ex.Message);
             }
         }
-        public void ModificarVerificacion(int Id, DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
+        public void ModificarVerificacion(Vehiculo vehiculoVTV)
         {
-            cdVehiculos.ModificarVerificacion(Id, fechaOtorgadoVTV, fechaVencimientoVTV);
+            cdVehiculos.ModificarVerificacion(vehiculoVTV.Id, vehiculoVTV.FechaOtorgadoVTV, vehiculoVTV.FechaVencimientoVTV);
         }
         public DataTable ObtenerVehículosPorPatente(string patente)
         {

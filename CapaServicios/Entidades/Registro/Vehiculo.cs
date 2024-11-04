@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 
 namespace CL_Servicios.Entidades
 {
-    public class Vehiculo {
+    public class Vehiculo
+    {
         public int Id { get; set; }
         public DateTime FechaAlta { get; set; }
         public string Dominio { get; set; }
@@ -22,8 +23,37 @@ namespace CL_Servicios.Entidades
         public DateTime FechaOtorgadoVTV { get; set; }
         public DateTime FechaVencimientoVTV { get; set; }
 
+
+
+
+        public Vehiculo() { }
+        public Vehiculo(int id, DateTime fo, DateTime fv)
+        {
+            Id = id;
+            FechaOtorgadoVTV = fo;
+            FechaVencimientoVTV = fv;
+        }
+        public Vehiculo(int id, string dominio, string tipo, string marca, string modelo, string marcaMotor, string numeroMotor, string marcaChasis , string numeroChasis, string estado, int cantidadPlazas, decimal km, int idCombustible)
+        {
+            Id = id; // Asignamos el ID del vehículo
+            Dominio = dominio;
+            Tipo = tipo;
+            Marca = marca;
+            Modelo = modelo;
+            MarcaMotor = marcaMotor;
+            NumeroMotor = numeroMotor;
+            MarcaChasis = marcaChasis;
+            NumeroChasis = numeroChasis;
+            Estado = estado;
+            CantidadPlazas = cantidadPlazas;
+            Km = km;
+          IdCombustible = idCombustible;
+
+        }
+
     }
 }
+
 
       /*  // Propiedades públicas
         public int Id

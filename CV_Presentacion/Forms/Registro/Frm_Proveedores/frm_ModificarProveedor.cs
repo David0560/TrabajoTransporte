@@ -189,22 +189,27 @@ namespace CV_Presentacion.Forms.Frm_Proveedores
             {
                 try
                 {
-                    if (int.TryParse(labelId.Text, out int id))
-                    {
+                    int id = Convert.ToInt32(labelId.Text);
+                   
                         CL_Proveedores eliminarProveedor = new CL_Proveedores();
                         eliminarProveedor.ELiminarProveedores(id);
                         MessageBox.Show("Proveedor eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Actualizar el DataGridView
-                        // Aquí deberías recargar los datos para que reflejen la eliminación
+                    
                         
                         btnGuardar.Enabled = false;
                         btnModificar.Enabled = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("ID de proveedor no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        txtNombreEmpresa.Clear();
+                        txtContacto.Clear(); 
+                        txtTelefono.Clear();
+                        txtEmail.Clear();
+                        txtCiudad.Clear();
+                        txtPais.Clear();
+                        txtCalle. Clear();
+                        txtNumero. Clear();
+                        txtCP. Clear    ();
+                        txtTelefono. Clear();
+             
                 }
                 catch (Exception ex)
                 {

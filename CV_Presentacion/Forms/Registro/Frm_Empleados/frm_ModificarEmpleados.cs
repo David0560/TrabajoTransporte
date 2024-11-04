@@ -86,6 +86,9 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
+           
+            btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
             if (rbNomAp.Checked)
             {
                 string textoBusqueda = txtBuscar.Text.Trim().ToLower();
@@ -155,38 +158,42 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void lsbEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+ 
+
             if (lsbEmpleado.SelectedItem != null)
             {
-                grpboxDireccion.Enabled = true;
-                groupBox1.Enabled = true;
+
+                servicios.BloquearControl(this);
+
+
                 string empleadoSeleccionado = lsbEmpleado.SelectedItem.ToString();
                
                 DataRow[] filasEncontradas;
 
-                if (rbNomAp.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorEmpresa
+                if (rbNomAp.Checked) 
                 {
                     // Busca el empleado en el DataTable por Apellido
                     filasEncontradas = dtEmpleados.Select($"apellido = '{empleadoSeleccionado}'");
-                    servicios.BloquearControl(this);
-                    rbDni.Enabled = true;
+            
+                 rbDni.Enabled = true;
                     rbNomAp.Enabled = true;
                     txtBuscar.Enabled = true; 
-                    btnEliminar.Enabled = true;
-               btnModificar.Enabled = true;
+             
+             
                     txtBuscar.Text = empleadoSeleccionado;
-                  
+                
+
 
                 }
-                else if (rbDni.Checked) // Suponiendo que tienes un RadioButton llamado rbBuscarPorContacto
+                else if (rbDni.Checked) 
                 {
                     // Busca el empleado en el DataTable por número documento
                     filasEncontradas = dtEmpleados.Select($"numero_ident = '{empleadoSeleccionado}'");
-                    servicios.BloquearControl(this);
                     txtBuscar.Enabled = true;
                     btnEliminar.Enabled = true;
                     btnModificar.Enabled = true;
                     txtBuscar.Text = empleadoSeleccionado;
+          
                 }
                 else
                 {
@@ -234,8 +241,6 @@ namespace CV_Presentacion.Frm_Empleados
 
         private void frm_ModificarEmpleados_Load(object sender, EventArgs e)
         {
-            groupBox1.Enabled = false;
-            grpboxDireccion.Enabled = false;
             combo.seleccionCombo(cboTarea, "spVerTareas");
             combo.seleccionCombo(cbTipoDNI, "spVerDocumentoIdent");
             combo.seleccionCombo(cbSexo, "spVerSexo");
@@ -268,8 +273,7 @@ namespace CV_Presentacion.Frm_Empleados
                 }
                 else
                 {
-                    // Manejar el caso en que no se pueda convertir el valor a entero
-                    //MessageBox.Show("El valor seleccionado no es válido");
+              
                 }
             }
         }
@@ -277,6 +281,7 @@ namespace CV_Presentacion.Frm_Empleados
         private void btnModificar_Click(object sender, EventArgs e)
         {
             servicios.DesbloquearControl(this);
+            btnGuardar.Enabled = true;
             rbDni.Enabled = false;
             rbNomAp.Enabled = false;
             btnModificar.Enabled = false;
@@ -305,26 +310,20 @@ namespace CV_Presentacion.Frm_Empleados
             {
                 try
                 {
-                    if (int.TryParse(lblId.Text, out int id))
-                    {
+                    int id = Convert.ToInt32(lblId.Text);
                         CL_AdministrarEmpleados eliminarempleado = new CL_AdministrarEmpleados();
                         eliminarempleado.ELiminarEmpleado(id);
                         MessageBox.Show("Empleado eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Actualizar el DataGridView
-                        // Aquí deberías recargar los datos para que reflejen la eliminación
-
                         btnGuardar.Enabled = false;
                         btnModificar.Enabled = false;
-                    }
-                    else
-                    {
+            
                         MessageBox.Show("Error al borrar empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al eliminar el proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al eliminar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

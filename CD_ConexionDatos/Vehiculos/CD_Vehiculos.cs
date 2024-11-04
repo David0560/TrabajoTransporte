@@ -54,11 +54,10 @@ namespace CD_ConexionDatos
                 throw new ApplicationException("Error al guardar el vehículo: " + ex.Message);
             }
         }
-        public void ModificarVehiculo(int Id, DateTime FechaAlta, string Dominio, string Tipo, string Marca,
-                                   string Modelo, string MarcaMotor, string NumeroMotor,
-                                   string MarcaChasis, string NumeroChasis, string Estado,
-                                   int CantidadPlazas, decimal Km, int IdCombustible
-                               ) // Modificar
+        public void ModificarVehiculo(int Id, string Dominio, string Tipo, string Marca,
+     string Modelo, string MarcaMotor, string NumeroMotor,
+     string MarcaChasis, string NumeroChasis, string Estado,
+     int CantidadPlazas, decimal Km, int IdCombustible)
         {
             using (var con = connectionBD.CreaInstacia().CrearConexion())
             {
@@ -66,19 +65,19 @@ namespace CD_ConexionDatos
                 {
                     con.Open();
 
-                    SqlCommand command = new SqlCommand("spModificarVehiculo", con) // Procedimiento almacenado
+                    SqlCommand command = new SqlCommand("spModificarVehiculo", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
-                    // Agregar los parámetros necesarios para la tabla Vehiculos
-                    command.Parameters.AddWithValue("@id",Id);
+                    // Asegúrate de que todos los parámetros coincidan con el procedimiento almacenado
+                    command.Parameters.AddWithValue("@Id", Id);
                     command.Parameters.AddWithValue("@Dominio", Dominio);
-                    command.Parameters.AddWithValue("@Tipo",Tipo);
-                    command.Parameters.AddWithValue("@Marca",Marca);
-                    command.Parameters.AddWithValue("@Modelo",Modelo);
-                    command.Parameters.AddWithValue("@MarcaMotor",MarcaMotor);
-                    command.Parameters.AddWithValue("@NumeroMotor",NumeroMotor);
+                    command.Parameters.AddWithValue("@Tipo", Tipo);
+                    command.Parameters.AddWithValue("@Marca", Marca);
+                    command.Parameters.AddWithValue("@Modelo", Modelo);
+                    command.Parameters.AddWithValue("@MarcaMotor", MarcaMotor);
+                    command.Parameters.AddWithValue("@NumeroMotor", NumeroMotor);
                     command.Parameters.AddWithValue("@MarcaChasis", MarcaChasis);
                     command.Parameters.AddWithValue("@NumeroChasis", NumeroChasis);
                     command.Parameters.AddWithValue("@Estado", Estado);
@@ -86,8 +85,11 @@ namespace CD_ConexionDatos
                     command.Parameters.AddWithValue("@Km", Km);
                     command.Parameters.AddWithValue("@IdCombustible", IdCombustible);
 
-                    // Ejecutar el comando para modificar el vehículo
-                    command.ExecuteNonQuery();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("No se actualizó ningún registro. Verifique que el ID sea correcto.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -95,7 +97,8 @@ namespace CD_ConexionDatos
                 }
             }
         }
-        public void ModificarVerificacion(int idVehiculo, DateTime fechaOtorgado, DateTime fechaVencimiento)
+
+        public void ModificarVerificacion(int id, DateTime fechaOtorgadoVTV, DateTime fechaVencimientoVTV)
         {
 
             using (var con = connectionBD.CreaInstacia().CrearConexion())
@@ -105,9 +108,9 @@ namespace CD_ConexionDatos
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                command.Parameters.AddWithValue("@Id", idVehiculo);
-                command.Parameters.AddWithValue("@FechaOtorgado", fechaOtorgado);
-                command.Parameters.AddWithValue("@FechaVencimiento", fechaVencimiento);
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@FechaOtorgado", fechaOtorgadoVTV);
+                command.Parameters.AddWithValue("@FechaVencimiento", fechaVencimientoVTV);
                 command.ExecuteNonQuery();
             }
         }
